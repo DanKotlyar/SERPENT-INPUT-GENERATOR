@@ -34,7 +34,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
-    packages=['serpentGenerator', 'transientGtf.functions',
+    packages=['serpentGenerator',
               'serpentGenerator.data'],
     package_data={
         'serpentGenerator.data': ['data/{}'.format(ext) for ext in DATA_EXTS],

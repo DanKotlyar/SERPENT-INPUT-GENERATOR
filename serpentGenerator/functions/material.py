@@ -14,10 +14,11 @@ Created on Fri June 17 11:00:00 2021 @author: Isaac Naupa
 email: iaguirre6@gatech.edu
 """
 import numpy as np
-
+from matplotlib import colors
 from serpentGenerator.functions.checkerrors import (
     _isstr, _isndarray, _isnumber, _ispositive, _isbool
 )
+import warnings
 
 class material:
     """Basic data definition for a material object.
@@ -79,12 +80,12 @@ class material:
         _isndarray(self.nuclides, "material nuclides")
         _isndarray(self.fractions, "material nuclide fractions")
         if self.dens == 0.00:
-            print("material density is not set")
+            warnings.warn("material density is not set")
         else:
             _isnumber(self.dens, "material density")
         if self.temp != 0.00:
             _isnumber(self.temp, "material density")
-            _isnumber(self.temp, "material density")
+            _ispositive(self.temp, "material density")
         _isstr(self.xsLib, "xs library suffix for material nuclides")
         _isstr(self.modLib, "moderator library for moderating material")
         _isstr(self.color, "material color for plotting")
@@ -93,10 +94,9 @@ class material:
 
         if self.isModer == True:
             if self.modLib == "":
-                print("thermal scattering library not set for moderating material")
+                warnings.warn("thermal scattering library not set for material")
         if self.xsLib == "":
-                print("material xs library suffix not set for nuclides")
-
+                warnings.warn("material xs library suffix not set for nuclides")
 
     def toString(self):
         """display properties of material object in string form
@@ -112,13 +112,25 @@ class material:
             input in serpent input file.
         """
         self.__matCheck()
+
+        rgbString = "rgb "
+
+        if self.color != "":
+            rgbTuple = colors.to_rgb(self.color) 
+            rgbArray = np.asarray(rgbTuple) * 255
+            rgbArray = rgbArray.astype(int)
+            rgbString = rgbString + str(rgbArray).replace("[", "").replace("]", "")
+        else:
+            rgbString = ""
+    
+
         matString = ""
         tempString = "" if self.temp == 0.00 else "tmp "+ str(self.temp)
         burnString = "" if self.isBurn == False else "burn 1"
         moderString = "" if self.isModer == False else "moder " + self.modLib
 
         matHeader = "mat " + self.name +"    "+str(self.dens)+ " "+moderString +" "\
-            +burnString +" "+ tempString+" "+ self.color +"\n"
+            +burnString +" "+ tempString+" "+ rgbString +"\n"
         matString = matString + matHeader
         matNucFracStr = ""
         for i in range(0, len(self.nuclides)):
@@ -162,7 +174,6 @@ class material:
         --------
 
         """
-
         if not hasattr(self, attr):
             raise AttributeError("{} has no attribute {}"
                                  .format(self, attr))
