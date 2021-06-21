@@ -158,3 +158,22 @@ def _anynegative(var, description):
         raise ValueError("{} cannot have any negative values {}"
                          .format(description, var))
 
+def _isinstance(var, instance, description):
+    """checks if the variable of an ndarray of instance type"""
+    if not isinstance(var, instance):
+        raise TypeError("{} must be of {} type and not {}"
+                        .format(description, instance, var))
+
+def _isinstanceList(var, instance, description):
+    """checks if the variable of an ndarray of instance type"""
+    _islist(var, description)
+    if not all(isinstance(i, instance) for i in var):
+        raise TypeError("{} must be a list of {} type and not {}"
+                        .format(description, instance, var))
+
+def _isinstanceArray(var, instance, description):
+    """checks if the variable of an ndarray of instance type"""
+    _isndarray(var, description)
+    if not all(isinstance(i, instance) for i in var):
+        raise TypeError("{} must be a ndarray of {} type and not {}"
+                        .format(description, instance, var))
