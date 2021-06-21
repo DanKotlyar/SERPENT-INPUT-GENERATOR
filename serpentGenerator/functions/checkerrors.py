@@ -97,6 +97,14 @@ def _ispositive(var, description):
         raise ValueError("{} must be positive and not {}"
                          .format(description, var))
 
+def _ispositiveWZero(var, description):
+    """checks if the variable is positive"""
+    _isnumber(var, description)
+    if not var >= 0:
+        raise ValueError("{} must be positive and not {}"
+                         .format(description, var))
+
+
 def _isSorted(var, reverse, description):
     """checks if the variable is sorted on ascending or descending order"""
     order = "ascending" if reverse == False else "descending"
