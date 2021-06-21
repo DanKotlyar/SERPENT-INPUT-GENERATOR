@@ -64,8 +64,8 @@ class pin:
         _ispositive(self.nregions, "number of regions in pin")
         _isinstanceArray(self.materials, material, "pin materials array")
         _ispositiveArray(self.radii, "pin radii array")
-        _isSorted(self.radii, "pin radii array")
-        #add raddi increasing 
+        if self.radii.size != 0:
+            _isSorted(self.radii, False, "pin radii array") #asceding order
 
     def toString(self):
         """display properties of pin element in string form

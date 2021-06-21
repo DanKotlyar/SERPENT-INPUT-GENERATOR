@@ -100,7 +100,7 @@ def _ispositive(var, description):
 def _isSorted(var, reverse, description):
     """checks if the variable is sorted on ascending or descending order"""
     order = "ascending" if reverse == False else "descending"
-    if sorted(var, reverse = reverse) != var:
+    if (sorted(var, reverse = reverse) != var).all():
         raise ValueError("{} must be sorted in {} order and not {}"
                          .format(description, order, var))
 
