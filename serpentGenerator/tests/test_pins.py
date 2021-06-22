@@ -1,6 +1,6 @@
 """test_pins
 
-Tests to compare the pins class.
+Tests for the pins class.
 
 Created on Fri May 25 11:00:00 2021 @author: Isaac Naupa
 email: iaguirre6@gatech.edu

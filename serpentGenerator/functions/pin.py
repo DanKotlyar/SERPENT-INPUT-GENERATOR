@@ -94,7 +94,7 @@ class pin:
             else:
                 pinString = pinString + self.materials[i].name +"\n"
 
-        return pinString
+        return pinString + "\n"
 
     def set(self, attr, val):
         """Assign value/s to a certain property
