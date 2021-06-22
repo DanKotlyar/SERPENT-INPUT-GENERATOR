@@ -172,7 +172,12 @@ class material:
 
         Examples
         --------
-
+        >>> testMat.set('dens', -.700)
+        >>> testMat.set('nuclides', np.array([1001, 8016]))
+        >>> testMat.set('fractions', np.array([.333330, .666670]))
+        >>> testMat.set('xsLib', "06c")
+        >>> testMat.set('modLib', "lwtr 1001")
+        >>> testMat.set('color','orange' )
         """
         if not hasattr(self, attr):
             raise AttributeError("{} has no attribute {}"
