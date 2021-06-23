@@ -139,7 +139,7 @@ def _is2darray(var, description):
     """checks if the array is 2D"""
     _isndarray(var, description)
     if np.array(var).ndim != 2:
-        raise TypeError("{} must be 1D array and not {}"
+        raise TypeError("{} must be 2D array and not {}"
                         .format(description, var))
 
 
