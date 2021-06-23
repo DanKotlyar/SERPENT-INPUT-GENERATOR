@@ -51,7 +51,7 @@ class sqLat:
         self.yo = yo
         self.nelements = nelements
         self.pitch = pitch
-        self.map = np.empty((nelements, nelements))
+        self.map = np.array([[]])
 
     def setMap(self, map):
         """Assign a map layout for the sqaure lattice
