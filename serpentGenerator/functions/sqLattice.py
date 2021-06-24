@@ -110,7 +110,7 @@ class sqLat:
         >>> p2 = pin('2', 3)
         >>> latMap1 = np.array([[p1, p2, p1], [p2, p1, p2], [p1, p2, p1]])
         >>> lat1.setMap(latMap1)
-        >>> print(lat1.toString())
+        >>> print(lat1.toString()) 
         """
         if self.map.size == 0:
             raise ValueError("lattice map cannot be empty")

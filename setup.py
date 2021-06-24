@@ -36,7 +36,8 @@ setuptools.setup(
     python_requires='>=3.6',
     packages=['serpentGenerator',
               'serpentGenerator.data', 'serpentGenerator.functions', 
-              'serpentGenerator.tests','serpentGenerator.manuals'],
+              'serpentGenerator.tests','serpentGenerator.manuals',
+              'serpentGenerator.examples'],
     package_data={
         'serpentGenerator.data': ['data/{}'.format(ext) for ext in DATA_EXTS],
     },
