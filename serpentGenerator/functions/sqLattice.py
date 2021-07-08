@@ -8,9 +8,8 @@ email: iaguirre6@gatech.edu
 
 from serpentGenerator.functions.pin import pin
 import numpy as np
-from numpy.lib.function_base import _median_dispatcher
 from serpentGenerator.functions.checkerrors import (
-    _is2darray, _isstr, _isinstance, _isinstanceList, _isnumber, _ispositive
+    _is2darray, _isstr, _isinstance, _isnumber, _ispositive
 )   
 
 class sqLat:
@@ -84,6 +83,81 @@ class sqLat:
             raise ValueError("lattice map must be of square shape and not {}"
                             .format(map.shape))
         self.map = map
+
+    def replacePin(self, oldPin, newPin):
+        """replaces desired pin object with a new pin object from lattice map layout.
+
+        The purpose of the ``replacePin`` function is to replace a pin currently in 
+        the lattice map layout with a new pin object.
+
+        Parameters
+        ----------
+        oldPin : pin object
+            pin object to be removed from the lattice map layout.
+        newPin : pin object
+            pin object to replace removed pin object from the lattice map layout.
+    
+        Raises
+        ------
+        TypeError
+            If ``oldPin`` is not a pin object.
+            If ``newPin`` is not a pin object.
+
+        Examples
+        --------
+        >>> lat1 = sqLat("101", 0, 0, 3, 1.260)
+        >>> p1 = pin('1', 3)
+        >>> p2 = pin('2', 3)
+        >>> latMap1 = np.array([[p1, p2, p1], [p2, p1, p2], [p1, p2, p1]])
+        >>> lat1.setMap(latMap1)
+        >>> lat2 = lat1.duplicateLat("102")
+        >>> p2 = pin('3', 3)
+        >>> lat2.replacePin(p1, p3)
+        """
+        _isinstance(oldPin, pin, "old pin object")
+        _isinstance(newPin, pin, "new pin object")
+
+        for i in range(0, self.nelements):
+            for j in range(0, self.nelements):
+                if (self.map[i][j].id == oldPin.id):
+                    self.map[i][j] = newPin
+
+    def duplicateLat(self, newLatId):
+        """returns a deep copy of the sqLat object must set a new lat id for the new
+         duplicated lattice.
+
+        The purpose of the ``duplicateLat`` function is to return a deep copy of a 
+        sqLat object. The user must provide a new lattice id for the copy, 
+        as lattice ids must be unique. 
+
+        Parameters
+        ----------
+        newLatId : str
+            lattice id to be set for the copy lattice being returned.
+    
+        Returns
+        -------
+        newLat : sqLat object
+            copy of the orginal sqLat object. 
+
+        Raises
+        ------
+        TypeError
+            If ``newLatId`` is not str.
+
+        Examples
+        --------
+        >>> lat1 = sqLat("101", 0, 0, 3, 1.260)
+        >>> p1 = pin('1', 3)
+        >>> p2 = pin('2', 3)
+        >>> latMap1 = np.array([[p1, p2, p1], [p2, p1, p2], [p1, p2, p1]])
+        >>> lat1.setMap(latMap1)
+        >>> lat2 = lat1.duplicateLat("102")
+        """
+        _isstr(newLatId, "new lattice universe id")
+        newLat = sqLat(newLatId, self.xo, self.yo, self.nelements, self.pitch)
+        newLat.map = self.map
+        return newLat
             
     def toString(self):
         """display properties of lattice in string form
