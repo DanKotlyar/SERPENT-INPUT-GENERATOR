@@ -102,6 +102,8 @@ class sqLat:
         TypeError
             If ``oldPin`` is not a pin object.
             If ``newPin`` is not a pin object.
+        ValueError
+            If the lattice map is empty.
 
         Examples
         --------
@@ -114,6 +116,9 @@ class sqLat:
         >>> p2 = pin('3', 3)
         >>> lat2.replacePin(p1, p3)
         """
+        if self.map.size == 0:
+            raise ValueError("lattice map cannot be empty")
+
         _isinstance(oldPin, pin, "old pin object")
         _isinstance(newPin, pin, "new pin object")
 
