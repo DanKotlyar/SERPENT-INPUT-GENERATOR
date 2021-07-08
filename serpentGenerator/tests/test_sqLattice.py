@@ -76,7 +76,6 @@ def test_replacePin():
         lat1.replacePin(p2, p3)
 
 
-
 def test_toString():
     with pt.raises(ValueError):
         lat1 = sqLat("101", 0, 0, 3, 1.260)
