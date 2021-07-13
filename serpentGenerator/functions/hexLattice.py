@@ -33,6 +33,7 @@ class hexLat:
         number of elements in the y direction of the hex lattice, i.e. 17 x 17
     pitch : float 
         lattice pitch between elements
+
     """
 
     def __init__(self, id, type, xo, yo, nxelements, nyelements, pitch):
@@ -81,9 +82,16 @@ class hexLat:
         Raises
         ------
         TypeError
-            If ``map`` is not an ndarray.
+            If ``map`` is not an 2d ndarray.
         ValueError
             If the shape of ``map`` is not sqaure.
+        ValueError
+            If the map shape does not match with the predetermined
+            number of elements in the x direction.
+        ValueError
+            If the map shape does not match with the predetermined
+            number of elements in the y direction.
+
         
         Examples
         --------
@@ -99,11 +107,11 @@ class hexLat:
                             .format(map.shape))
 
         if map.shape[0] != self.nxelements:
-            raise ValueError("lattice map have {} elements in the x-dir not {}"
+            raise ValueError("lattice map must have {} elements in the x-dir not {}"
                                     .format(self.nxelements, map.shape[0]))
 
         if map.shape[1] != self.nyelements:
-            raise ValueError("lattice map have {} elements in the x-dir not {}"
+            raise ValueError("lattice map must have {} elements in the y-dir not {}"
                                     .format(self.nyelements, map.shape[1]))
 
         self.map = map

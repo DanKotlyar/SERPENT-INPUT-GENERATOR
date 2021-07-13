@@ -82,6 +82,9 @@ class sqLat:
         if map.shape[0] != map.shape[1]:
             raise ValueError("lattice map must be of square shape and not {}"
                             .format(map.shape))
+        if map.shape[0] != self.nelements:
+            raise ValueError("lattice map must be {} by {} elements not {} }"
+                                .format(self.nelements, self.nelements,  map.shape))        
         self.map = map
 
     def replacePin(self, oldPin, newPin):
