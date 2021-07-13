@@ -1,0 +1,201 @@
+"""pinStack
+
+class representing a pinStack Lattice 
+
+Created on Wed June 23 11:00:00 2021 @author: Isaac Naupa
+email: iaguirre6@gatech.edu
+"""
+
+from serpentGenerator.functions.pin import pin
+import numpy as np
+from serpentGenerator.functions.checkerrors import (
+    _isstr, _isinstanceArray, _isnumber, _isnumberArray, _ispositive, _isSorted,
+    _isinstance
+)   
+
+class pinStack:
+    """Defines a finite one-dimensional vertical stack in z-direction. 
+    The stack is infinite in xy-plane.
+
+    This class is responsible for modeling a pinStack lattice.
+
+    Attributes
+    ----------
+    id : str
+        lattice universe/id name
+    xo : float
+        lattice origin x-coordinate
+    yo : float
+        lattice origin y-coordinate
+    nelements : int
+        number of axial layers in pinstack lattice
+    pins : pin object 1d array
+        array of pin objects in the pinstack lattice
+    heights : 1d float array
+        array of heights corresponding to the pins in the pinstack lattice.
+
+    """
+
+    def __init__(self, id, xo, yo, nelements):
+        """Define the basic data to be collected
+        Examples
+        --------
+        >>> lat1 = pinStack("101", 0, 0, 22)
+        """
+        _isstr(id, "lattice id")
+        _isnumber(xo, "x coordinate for lattice origin")
+        _isnumber(yo, "y coordinate for lattice origin")
+        _isnumber(nelements, "number of axial lattice elements")
+        _ispositive(nelements, "number of  axial lattice elements")
+
+        self.id = id
+        self.type = type
+        self.xo = xo
+        self.yo = yo
+        self.nelements = nelements
+        self.pins = np.array([])
+        self.heights = np.array([])
+
+    def setStack(self, pins, heights):
+        """Assign the pins for the pinstack lattice with their corresponding heights 
+
+        The purpose of the ``setStack`` function is to set the map layout for the
+        pinstack lattice with the corresponding pins and pin heights. 
+
+        Parameters
+        ----------
+        pins : pin object 1d array
+            array of pin objects in the pinstack lattice
+        heights : 1d array
+            array of heights corresponding to the pins in the pinstack lattice.
+
+        Raises
+        ------
+        TypeError
+            If ``pins`` is not an nd array of pin objects.
+        TypeError
+            If ``heights`` is not an nd array of numbers.
+        ValueError
+            If ``heights`` is not in increasing order 
+        ValueError
+            If ``pins`` array length does not match the number of axial elements in
+            the pinstack lattice
+        ValueError
+            If ``heights`` array length does not match the number of axial elements 
+            in the pinstack lattice
+
+        
+        Examples
+        --------
+        >>> lat1 = pinStack("101", 0, 0, 4)
+        >>> p1 = pin('1', 3)
+        >>> p2 = pin('2', 3)
+        >>> pins1 = np.array([p1, p2, p2, p1])
+        >>> heights1 = np.array([-20, 0, 20.2, 40.1])
+        >>> lat1.setStack(pins1, heights1)
+        """
+        _isinstanceArray(pins, pin, "array of pin object for the pinstack")
+        _isnumberArray(heights, "height array for the pins in the pinstack")
+        _isSorted(heights, False, "height array for the pins in the pinstack")
+
+
+        if len(pins) != self.nelements:
+            raise ValueError("pins array must have {} elements not {}"
+                                    .format(self.nelements, len(pins)))
+        if len(heights) != self.nelements:
+            raise ValueError("heights array must have {} elements not {}"
+                                    .format(self.nelements, len(pins)))
+
+        self.pins = pins
+        self.heights = heights
+
+    def replacePin(self, oldPin, newPin):
+        """replaces desired pin object with a new pin object from lattice map layout.
+
+        The purpose of the ``replacePin`` function is to replace a pin currently in 
+        the lattice map layout with a new pin object.
+
+        Parameters
+        ----------
+        oldPin : pin object
+            pin object to be removed from the lattice map layout.
+        newPin : pin object
+            pin object to replace removed pin object from the lattice map layout.
+    
+        Raises
+        ------
+        TypeError
+            If ``oldPin`` is not a pin object.
+            If ``newPin`` is not a pin object.
+        ValueError
+            If the ``pins`` array is not set for the pinstack
+        ValueError
+            If the ``heights`` array is not set for the pinstack
+
+        Examples
+        --------
+        >>> lat1 = pinStack("101", 0, 0, 4)
+        >>> p1 = pin('1', 3)
+        >>> p2 = pin('2', 3)
+        >>> pins1 = np.array([p1, p2, p2, p1])
+        >>> heights1 = np.array([-20, 0, 20.2, 40.1])
+        >>> lat1.setStack(pins1, heights1)
+        >>> lat2 = lat1.duplicateLat("102")
+        >>> p3 = pin('3', 3)
+        >>> lat2.replacePin(p1, p3)
+        """
+        if len(self.pins) == 0:
+            raise ValueError("pins for the pinstack must be set")
+        if len(self.heights) == 0:
+            raise ValueError("pin heights for the pinstack must be set")
+
+        _isinstance(oldPin, pin, "old pin object")
+        _isinstance(newPin, pin, "new pin object")
+
+        for i in range(0, self.nelements):
+            if (self.pins[i].id == oldPin.id):
+                self.pins[i] = newPin
+            
+    def toString(self):
+        """display properties of pinstack lattice in string form
+
+        The purpose of the ``toString`` function is to directly convert the lattice
+        object into a string format for the purpose of convinince when working with 
+        textfiles.
+
+        Returns
+        -------
+        str
+            lattice obj in str format representing the typical input methodology for
+            the serpent input file.
+            
+        Raises
+        ------
+        ValueError
+            If the lattice map is empty.
+        
+        Examples
+        --------
+        >>> lat1 = pinStack("101", 0, 0, 4)
+        >>> p1 = pin('1', 3)
+        >>> p2 = pin('2', 3)
+        >>> pins1 = np.array([p1, p2, p2, p1])
+        >>> heights1 = np.array([-20, 0, 20.2, 40.1])
+        >>> lat1.setStack(pins1, heights1)
+        >>> print(lat1.toString())
+        """
+
+        if ((len(self.pins) == 0) | (len(self.heights) == 0)):
+            raise ValueError("pinstack pins and heights cannot be empty")
+        
+        latHeader = self.id +" "+ "9"+ " "+str(self.xo) + " "+ str(self.yo)\
+             + " " + str(self.nelements) + "\n"
+
+        mapString = ""
+        for i in range(0, self.nelements):
+            mapString = mapString + self.pins[i].id + "\t"\
+                + str(self.heights[i]) +"\n"
+
+        latString = latHeader + mapString + "\n"
+        return latString
+
