@@ -160,11 +160,11 @@ class hexLat:
                     self.map[i][j] = newPin
 
     def duplicateLat(self, newLatId):
-        """returns a deep copy of the sqLat object must set a new lat id for the new
+        """returns a deep copy of the hexLat object must set a new lat id for the new
          duplicated lattice.
 
         The purpose of the ``duplicateLat`` function is to return a deep copy of a 
-        sqLat object. The user must provide a new lattice id for the copy, 
+        hexLat object. The user must provide a new lattice id for the copy, 
         as lattice ids must be unique. 
 
         Parameters

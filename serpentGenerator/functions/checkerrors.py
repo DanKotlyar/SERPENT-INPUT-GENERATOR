@@ -24,9 +24,10 @@ def _isnumber(var, description):
 def _isnumberArray(var, description):
     """checks if the array consist of scalars"""
     _isndarray(var, description)
-    if not (isinstance(var, numbers.Real)).all():
+    if not all(isinstance(i, numbers.Real) for i in var):
         raise TypeError("{} must be an array of scalars and not {}".
-                        format(description, var))
+                format(description, var))
+
 
 
 def _isint(var, description):

@@ -109,6 +109,45 @@ class pinStack:
         self.pins = pins
         self.heights = heights
 
+    def duplicateLat(self, newLatId):
+        """returns a deep copy of the pinStack object must set a new lat id for the
+         new duplicated lattice.
+
+        The purpose of the ``duplicateLat`` function is to return a deep copy of a 
+        pinStack object. The user must provide a new lattice id for the copy, 
+        as lattice ids must be unique. 
+
+        Parameters
+        ----------
+        newLatId : str
+            lattice id to be set for the copy lattice being returned.
+    
+        Returns
+        -------
+        newLat : pinStack object
+            copy of the orginal pinStack object. 
+
+        Raises
+        ------
+        TypeError
+            If ``newLatId`` is not str.
+
+        Examples
+        --------
+        >>> lat1 = pinStack("101", 0, 0, 4)
+        >>> p1 = pin('1', 3)
+        >>> p2 = pin('2', 3)
+        >>> pins1 = np.array([p1, p2, p2, p1])
+        >>> heights1 = np.array([-20, 0, 20.2, 40.1])
+        >>> lat1.setStack(pins1, heights1)
+        >>> lat2 = lat1.duplicateLat("102")
+        """
+        _isstr(newLatId, "new lattice universe id")
+        newLat = pinStack(newLatId, self.xo, self.yo, self.nelements)
+        newLat.pins = self.pins
+        newLat.heights = self.heights
+        return newLat
+
     def replacePin(self, oldPin, newPin):
         """replaces desired pin object with a new pin object from lattice map layout.
 
