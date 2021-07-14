@@ -116,7 +116,7 @@ def _ispositiveWZero(var, description):
 def _isSorted(var, reverse, description):
     """checks if the variable is sorted on ascending or descending order"""
     order = "ascending" if reverse == False else "descending"
-    if (sorted(var, reverse = reverse) != var).all():
+    if not all(sorted(var, reverse = reverse) == var):
         raise ValueError("{} must be sorted in {} order and not {}"
                          .format(description, order, var))
 

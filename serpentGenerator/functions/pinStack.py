@@ -96,6 +96,7 @@ class pinStack:
         """
         _isinstanceArray(pins, pin, "array of pin object for the pinstack")
         _isnumberArray(heights, "height array for the pins in the pinstack")
+
         _isSorted(heights, False, "height array for the pins in the pinstack")
 
 
@@ -167,9 +168,8 @@ class pinStack:
             If ``oldPin`` is not a pin object.
             If ``newPin`` is not a pin object.
         ValueError
-            If the ``pins`` array is not set for the pinstack
-        ValueError
-            If the ``heights`` array is not set for the pinstack
+            If the ``pins`` or ``heights`` array is not set for the pinstack
+
 
         Examples
         --------
@@ -183,10 +183,8 @@ class pinStack:
         >>> p3 = pin('3', 3)
         >>> lat2.replacePin(p1, p3)
         """
-        if len(self.pins) == 0:
-            raise ValueError("pins for the pinstack must be set")
-        if len(self.heights) == 0:
-            raise ValueError("pin heights for the pinstack must be set")
+        if ((len(self.pins) == 0) | (len(self.heights) == 0)):
+            raise ValueError("pinstack pins and heights cannot be empty")
 
         _isinstance(oldPin, pin, "old pin object")
         _isinstance(newPin, pin, "new pin object")
