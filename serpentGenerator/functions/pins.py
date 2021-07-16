@@ -189,4 +189,5 @@ class pins:
             raise KeyError("{} has no pinId {}"
                                  .format(self.pins, removedPinId))
         self.pins.pop(removedPinId)
+        self.npins = self.npins - 1
         

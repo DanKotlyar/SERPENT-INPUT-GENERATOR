@@ -157,8 +157,8 @@ class lats:
 
         for i in range(0, len(newLats)):
             if newLats[i].id in self.lats:
-                raise KeyError("{} has a duplicate pinId: {} with an existing pin in"
-                    "the pinCard.".format(newLats[i], newLats[i].id))
+                raise KeyError("{} has a duplicate latId: {} with an existing lat in"
+                    " the lats object.".format(newLats[i], newLats[i].id))
             self.lats[newLats[i].id] = newLats[i]
 
         self.nlats = self.nlats + len(newLats)
@@ -196,4 +196,5 @@ class lats:
             raise KeyError("{} has no pinId {}"
                                  .format(self.lats, removedLatId))
         self.lats.pop(removedLatId)
+        self.nlats = self.nlats - 1
         
