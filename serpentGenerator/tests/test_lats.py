@@ -1,143 +1,100 @@
-"""test_pins
+"""test_lats
 
-Tests for the pins class.
+Tests for the lats class.
 
 Created on Fri May 25 11:00:00 2021 @author: Isaac Naupa
 email: iaguirre6@gatech.edu
 
-Script to test the pins.py class
+Script to test the lats.py class
 """
 import pytest as pt
 import numpy as np
-from serpentGenerator.data.materialLibrary import MATLIB
-from serpentGenerator.functions.material import material
+from serpentGenerator.functions.sqLattice import sqLat
+from serpentGenerator.functions.hexLattice import hexLat
+from serpentGenerator.functions.pinStack import pinStack 
 from serpentGenerator.functions.pin import pin
-from serpentGenerator.functions.pins import pins
+from serpentGenerator.functions.lats import lats
 
-def test_addPinExceptions():
-    with pt.raises(KeyError):
-        pinLib = pins()
-        pin1 = pin("1", 3) 
-        materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-            MATLIB['lightWater']], dtype = material )
-        radii1 = np.array([.45, .47])
-        pin1.set('materials', materials1)
-        pin1.set('radii', radii1)
-
-        pinLib.addPin(pin1)
-
-        pin2 = pin1.duplicatePin("1")
-
-        pinLib.addPin(pin2)
-
+def test_addlatExceptions():
     with pt.raises(TypeError):
-        pinLib = pins()
-        pinLib.addPin(MATLIB['Zr'])
-
-def test_getPinExceptions():
+        latLib = lats()
+        p1 = pin("1", 3)
+        latLib.addLat(p1)
 
     with pt.raises(KeyError):
-        pinLib = pins()
-        pinLib.getPin("1")
+        latLib = lats()
+        p1 = pin('1', 3)
+        p2 = pin('2', 3)
+        p3 = pin('3', 3)
+        l2 = sqLat("102", 0, 0, 3, 1.260)
+        latMap2 = np.array([[p1, p2, p1], [p2, p1, p2], [p1, p2, p1]])
+        l2.setMap(latMap2)
+        latLib.addLat(l2)
 
-    with pt.raises(TypeError):
-        pinLib = pins()
-        pinLib.getPin(1)
+        l3 = l2.duplicateLat("102")
+        latLib.addLat(l3)
 
-def test_removePinExceptions():
+
+def test_getlatExceptions():
+
     with pt.raises(KeyError):
-        pinLib = pins()
-        pin1 = pin("1", 3) 
-        materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-            MATLIB['lightWater']], dtype = material )
-        radii1 = np.array([.45, .47])
-        pin1.set('materials', materials1)
-        pin1.set('radii', radii1)
-
-        pin2 = pin1.duplicatePin("2")
-
-        pins1= [pin1, pin2]
-
-        pinLib.addPins(pins1)
-
-        pinLib.removePin("3")
+        latLib = lats()
+        latLib.getLat("1")
 
     with pt.raises(TypeError):
-        pinLib = pins()
-        pin1 = pin("1", 3) 
-        materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-            MATLIB['lightWater']], dtype = material )
-        radii1 = np.array([.45, .47])
-        pin1.set('materials', materials1)
-        pin1.set('radii', radii1)
+        latLib = lats()
+        latLib.getLat(1)
 
-        pin2 = pin1.duplicatePin("2")
+def test_removeLatExceptions():
+    with pt.raises(KeyError):
+        latLib = lats()
+        p1 = pin('1', 3)
+        p2 = pin('2', 3)
+        p3 = pin('3', 3)
+        l2 = sqLat("102", 0, 0, 3, 1.260)
+        latMap2 = np.array([[p1, p2, p1], [p2, p1, p2], [p1, p2, p1]])
+        l2.setMap(latMap2)
 
-        pins1= [pin1, pin2]
+        latLib.addLat(l2)
+        latLib.removeLat("103")
 
-        pinLib.addPins(pins1)
+    with pt.raises(TypeError):
+        latLib = lats()
+        p1 = pin('1', 3)
+        p2 = pin('2', 3)
+        p3 = pin('3', 3)
+        l2 = sqLat("102", 0, 0, 3, 1.260)
+        latMap2 = np.array([[p1, p2, p1], [p2, p1, p2], [p1, p2, p1]])
+        l2.setMap(latMap2)
+
+        latLib.addLat(l2)
+        latLib.removeLat(l2)
+
+
+def test_addlatsExceptions():
+    with pt.raises(KeyError):
+        latLib = lats()
+        p1 = pin('1', 3)
+        p2 = pin('2', 3)
+        p3 = pin('3', 3)
+        l2 = sqLat("102", 0, 0, 3, 1.260)
+        latMap2 = np.array([[p1, p2, p1], [p2, p1, p2], [p1, p2, p1]])
+        l2.setMap(latMap2)
         
-        pinLib.removePin(pin1)
 
-
-def test_addPinsExceptions():
-    with pt.raises(KeyError):
-        pinLib = pins()
-        pin1 = pin("1", 3) 
-        materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-            MATLIB['lightWater']], dtype = material )
-        radii1 = np.array([.45, .47])
-        pin1.set('materials', materials1)
-        pin1.set('radii', radii1)
-
-        pin2 = pin1.duplicatePin("1")
-
-        pins1= [pin1, pin2]
-
-        pinLib.addPins(pins1)
+        l3 = l2.duplicateLat("102")
+        latLib.addLats([l3, l2])
 
     with pt.raises(TypeError):
-        pinLib = pins()
-        pin1 = pin("1", 3) 
-        materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-            MATLIB['lightWater']], dtype = material )
-        radii1 = np.array([.45, .47])
-        pin1.set('materials', materials1)
-        pin1.set('radii', radii1)
+        latLib = lats()
+        p1 = pin('1', 3)
+        p2 = pin('2', 3)
+        p3 = pin('3', 3)
+        l2 = sqLat("102", 0, 0, 3, 1.260)
+        latMap2 = np.array([[p1, p2, p1], [p2, p1, p2], [p1, p2, p1]])
+        l2.setMap(latMap2)
+        
 
+        l3 = l2.duplicateLat("103")
+        latLib.addLats([l3, l2.id])
 
-        pinLib.addPins([MATLIB['Zr'], pin1])
-
-
-
-
-    
-def test_toString():
-    pinLib = pins()
-    pin1 = pin("1", 3) 
-    materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-        MATLIB['lightWater']], dtype = material )
-    radii1 = np.array([.45, .47])
-    pin1.set('materials', materials1)
-    pin1.set('radii', radii1)
-
-    pin2 = pin1.duplicatePin("2")
-
-    pins1 = [pin1, pin2]
-    
-
-    pinLib.addPins(pins1)
-
-    print(pinLib.toString())
-
-def test_addPin():
-    pinLib = pins()
-    pin1 = pin("1", 3) 
-    materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-        MATLIB['lightWater']], dtype = material )
-    radii1 = np.array([.45, .47])
-    pin1.set('materials', materials1)
-    pin1.set('radii', radii1)
-    pinLib.addPin(pin1)
-
-    assert pin1 == pinLib.pins[pin1.id]
