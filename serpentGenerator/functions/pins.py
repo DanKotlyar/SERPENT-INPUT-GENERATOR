@@ -3,7 +3,7 @@
 class representing a pin array (pins), a container for storage and processing
 of pin elements.
 
-Created on Fri May 25 11:00:00 2021 @author: Isaac Naupa
+email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 from serpentGenerator.functions.pin import pin
@@ -14,7 +14,7 @@ from serpentGenerator.functions.checkerrors import (
 class pins:
     """Basic data definition for the pins class
 
-    This class is responsible to store (using ``addPins``) and retrieve (using
+    This class is responsible for storing (using ``addPins``) and retrieve (using
     ``getPins``) pins from the pins array.
     The data collected in the ``pins`` class is used to describe the
     dimensions, materials, and so on for every pin.
@@ -29,7 +29,7 @@ class pins:
     #general storage pins array 
 
     def __init__(self):
-        """Define the basic data to be collected for the pinCard obj"""
+        """Define the basic data to be collected for the pins object"""
         self.npins = 0
         self.pins = {}
 
@@ -89,7 +89,7 @@ class pins:
         self.npins = self.npins + 1
 
     def getPin(self, pinId):
-        """Obtain the value for a certain property
+        """Retreive pin from pins object using corresponding pinId
 
         Parameters
         ----------
@@ -123,10 +123,10 @@ class pins:
         return self.pins[pinId]
 
     def addPins(self, newPins):
-        """sets a list of pin element objects to the pinCard.
+        """sets a list (multiple) of pin element objects to the pins obj.
 
         The purpose of the ``addPins`` function is to add a list of pins to the 
-        pinCard. 
+        pinCard.
 
         Parameters
         ----------

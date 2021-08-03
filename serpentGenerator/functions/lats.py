@@ -3,7 +3,7 @@
 class representing a lattice array (lats), a container for storage and processing
 of lattice elements.
 
-Created on Fri May 25 11:00:00 2021 @author: Isaac Naupa
+email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 from serpentGenerator.functions.hexLattice import hexLat
@@ -17,8 +17,9 @@ from serpentGenerator.functions.checkerrors import (
 class lats:
     """Basic data definition for the lats class
 
-    This class is responsible to store (using ``addLats``) and retrieve (using
-    ``getLet``) lattices from the lats element.
+    This class is responsible to store (using ``addLat``) and retrieve (using
+    ``getLat``) lattices from the lats element.
+    
     The data collected in the ``lats`` object is used to describe the
     dimensions, materials, and so on for every lattice.
 

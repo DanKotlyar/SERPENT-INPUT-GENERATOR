@@ -10,7 +10,7 @@ serpent convention aswell.
 density: + (atomic density), - (mass density)
 nuclide fractions: + (atomic fractions/densities), -(mass fractions/densities)
 
-Created on Fri June 17 11:00:00 2021 @author: Isaac Naupa
+email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 import numpy as np
@@ -25,8 +25,6 @@ class material:
 
     This class is responsible to store (using ``set``) and retrieve (using
     ``get``) data for a material.
-    The data collected in the ``materials`` class is used to describe the
-    proerties for every material.
 
     Attributes
     ----------
@@ -102,14 +100,13 @@ class material:
         """display properties of material object in string form
 
         The purpose of the ``toString`` function is to directly convert a material 
-        into a string format for the purpose of convinince when working with 
-        textfiles.
+        into a string format for convinience with textfiles.
 
         Returns
         -------
         str
             material obj in str format representing the typical input methodology for
-            input in serpent input file.
+            the serpent input file.
         """
         self.__matCheck()
 
@@ -142,12 +139,13 @@ class material:
     def set(self, attr, val):
         """Assign value/s to a certain property
 
-        The purpose of the ``set`` function is to update a certain attribute
-        by adding a new value to it. All the keys(attr) for a material are pre defined
+        The purpose of the ``set`` function is to update a certain attribute.
+        All the keys(attr) for a material are pre defined
         in advance. If the attirbute is not present, an attribute error will be
         raised. if the value being assgined to the attribute is of the incorrect type
         a type error is raised. A final validation check is called to make sure the 
         data entered for the material is in the correct format. 
+
         Parameters
         ----------
         attr : str

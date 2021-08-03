@@ -4,13 +4,13 @@
 class representing a pin element with attributes and functions to process each pin. 
 pin elements will be stored in the pinCard class.
 
-Created on Fri May 25 11:00:00 2021 @author: Isaac Naupa
+email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 
 import numpy as np
 from serpentGenerator.functions.checkerrors import (
-    _isstr, _isint, _isinstanceArray, _isndarray, _ispositive,
+    _isstr, _isint, _isinstanceArray, _ispositive,
     _ispositiveArray, _isSorted
 )
 
@@ -20,8 +20,6 @@ class pin:
 
     This class is responsible to store (using ``set``) and retrieve (using
     ``get``) data for a pin .
-    The data collected in the ``pinCard`` class is used to describe the
-    dimensions, materials, and so on for every pin.
 
     Attributes
     ----------
@@ -105,6 +103,7 @@ class pin:
         raised. if the value being assgined to the attribute is of the incorrect type
         a type error is raised. A final validation check is called to make sure the 
         data entered for the pin is in the correct format. 
+
         Parameters
         ----------
         attr : str
@@ -183,7 +182,7 @@ class pin:
         return getattr(self, attr)
 
     def duplicatePin(self, newPinId):
-        """returns a deep copy of the pin objectmust set a new pin id for the new
+        """returns a deep copy of the pin object, must set a new pin id for the new
          duplicated pin.
 
         The purpose of the ``duplicatePin`` function is to return a deep copy of a 

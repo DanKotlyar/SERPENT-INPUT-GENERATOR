@@ -4,14 +4,13 @@
 class representing a general surface element with attributes and functions 
 to process each surface. 
 
-Created on Fri May 25 11:00:00 2021 @author: Isaac Naupa
+email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 
 import numpy as np
 from serpentGenerator.functions.checkerrors import (
-    _isstr, _isint, _isinstanceArray, _isndarray, _ispositive,
-    _ispositiveArray, _isSorted, _isnumberArray
+    _isstr, _isnumberArray
 )
 
 class surf:
@@ -26,7 +25,7 @@ class surf:
     type : str
         surface geometry type, geometry types listed at serpent wiki
     params : ndarray 
-        surface geometry parameters, geometry parameers listed at serpent wiki
+        surface geometry parameters, geometry parameters listed at serpent wiki
     """
 
     def __init__(self, id, type, params):
@@ -48,7 +47,7 @@ class surf:
         -------
         str
             surf element in str format representing the typical input methodology for
-            input in serpent input file.
+            the serpent input file.
         """
         paramString = ""
         for i in range(0, len(self.params)):

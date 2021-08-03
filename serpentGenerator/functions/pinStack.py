@@ -1,8 +1,8 @@
 """pinStack
 
-class representing a pinStack Lattice 
+class representing a pinStack lattice 
 
-Created on Wed June 23 11:00:00 2021 @author: Isaac Naupa
+email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 
@@ -14,7 +14,7 @@ from serpentGenerator.functions.checkerrors import (
 )   
 
 class pinStack:
-    """Defines a finite one-dimensional vertical stack in z-direction. 
+    """Defines a finite one-dimensional vertical pin stack in z-direction. 
     The stack is infinite in xy-plane.
 
     This class is responsible for modeling a pinStack lattice.

@@ -2,14 +2,14 @@
 
 class representing a Hexagonal Lattice 
 
-Created on Wed June 23 11:00:00 2021 @author: Isaac Naupa
+email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 
 from serpentGenerator.functions.pin import pin
 import numpy as np
 from serpentGenerator.functions.checkerrors import (
-    _is2darray, _isstr, _isinstance, _isnumber, _ispositive
+    _is2darray, _isstr, _isinstance, _isnumber, _ispositive, _isinstanceArray
 )   
 
 class hexLat:
@@ -22,7 +22,7 @@ class hexLat:
     id : str
         lattice universe/id name
     type : str
-        hexagonal lattice type: "Y" or "X" 
+        hexagonal lattice type: "Y" or "X", follows serpent convention
     xo : float
         lattice origin x-coordinate
     yo : float
@@ -83,6 +83,8 @@ class hexLat:
         ------
         TypeError
             If ``map`` is not an 2d ndarray.
+        TypeError
+            If ``map`` does not consist of pin objects.
         ValueError
             If the shape of ``map`` is not sqaure.
         ValueError
@@ -102,6 +104,7 @@ class hexLat:
         >>> lat1.setMap(latMap1)
         """
         _is2darray(map, "lattice map")
+        _isinstanceArray(map, pin, "lattice map: 2d array of pin objects")
         if map.shape[0] != map.shape[1]:
             raise ValueError("lattice map must be of square shape and not {}"
                             .format(map.shape))

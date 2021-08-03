@@ -5,7 +5,7 @@ material library consisitng of a pre generated dictionary of various materials o
 used in light water reactors. The user can import the material library to save time 
 when generating input files using preset material definitions. 
 
-Created on Fri June 17 11:00:00 2021 @author: Isaac Naupa
+email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 import numpy as np
