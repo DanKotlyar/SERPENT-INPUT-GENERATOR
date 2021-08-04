@@ -28,8 +28,8 @@ class material:
 
     Attributes
     ----------
-    name : str
-        material name
+    id : str
+        material id/name
     isBurn : bool
         True/False is material burnable
     isModer : bool
@@ -50,12 +50,12 @@ class material:
         if material is of moderating type the thermal scattering data library is
         specified i.e. "ltwr 1001" for H-1
     """
-    def __init__(self, name, isBurn, isModer):
+    def __init__(self, id, isBurn, isModer):
         """Define the basic data to be collected"""
-        _isstr(name, "material name")
+        _isstr(id, "material id/name")
         _isbool(isBurn, "True/False is material burnable")
         _isbool(isModer, "True/False is material moderator")
-        self.name = name
+        self.id = id
         self.isBurn = isBurn
         self.isModer = isModer
         self.dens = 0.00
@@ -74,7 +74,7 @@ class material:
         and are in the correct format.
         
         """
-        _isstr(self.name, "material name")
+        _isstr(self.id, "material id")
         _isndarray(self.nuclides, "material nuclides")
         _isndarray(self.fractions, "material nuclide fractions")
         if self.dens == 0.00:
@@ -124,16 +124,17 @@ class material:
         matString = ""
         tempString = "" if self.temp == 0.00 else "tmp "+ str(self.temp)
         burnString = "" if self.isBurn == False else "burn 1"
-        moderString = "" if self.isModer == False else "moder " + self.modLib
+        moderString = "" if ((self.isModer == False)|(self.modLib == "None")) \
+            else "moder " + self.modLib
 
-        matHeader = "mat " + self.name +"    "+str(self.dens)+ " "+moderString +" "\
+        matHeader = "mat " + self.id +"    "+str(self.dens)+ " "+moderString +" "\
             +burnString +" "+ tempString+" "+ rgbString +"\n"
         matString = matString + matHeader
         matNucFracStr = ""
         for i in range(0, len(self.nuclides)):
             matNucFracStr = matNucFracStr + str(self.nuclides[i]) +"."+ self.xsLib \
             +"\t" + str(self.fractions[i]) + "\n"
-        matString = matString + matNucFracStr
+        matString = matString + matNucFracStr +"\n"
         return matString
 
     def set(self, attr, val):
