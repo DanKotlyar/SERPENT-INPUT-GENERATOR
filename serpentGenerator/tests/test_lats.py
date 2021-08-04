@@ -2,7 +2,7 @@
 
 Tests for the lats class.
 
-Created on Fri May 25 11:00:00 2021 @author: Isaac Naupa
+email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 
 Script to test the lats.py class
@@ -16,10 +16,11 @@ from serpentGenerator.functions.pin import pin
 from serpentGenerator.functions.lats import lats
 
 def test_addlatExceptions():
+    """ test lats object addLat method"""
     with pt.raises(TypeError):
         latLib = lats()
         p1 = pin("1", 3)
-        latLib.addLat(p1)
+        latLib.addLat(p1) # must be a lattice obj method
 
     with pt.raises(KeyError):
         latLib = lats()
@@ -32,20 +33,21 @@ def test_addlatExceptions():
         latLib.addLat(l2)
 
         l3 = l2.duplicateLat("102")
-        latLib.addLat(l3)
+        latLib.addLat(l3) # lats cannot have matching id with existing lat
 
 
 def test_getlatExceptions():
-
+    """ test lats object getLat method"""
     with pt.raises(KeyError):
         latLib = lats()
-        latLib.getLat("1")
+        latLib.getLat("1") # matching lat id not found in lats obj
 
     with pt.raises(TypeError):
         latLib = lats()
-        latLib.getLat(1)
+        latLib.getLat(1) #lat id must be str
 
 def test_removeLatExceptions():
+    """ test lats object removeLat method"""
     with pt.raises(KeyError):
         latLib = lats()
         p1 = pin('1', 3)
@@ -56,7 +58,7 @@ def test_removeLatExceptions():
         l2.setMap(latMap2)
 
         latLib.addLat(l2)
-        latLib.removeLat("103")
+        latLib.removeLat("103") #lat id not found in lats obj
 
     with pt.raises(TypeError):
         latLib = lats()
@@ -68,10 +70,11 @@ def test_removeLatExceptions():
         l2.setMap(latMap2)
 
         latLib.addLat(l2)
-        latLib.removeLat(l2)
+        latLib.removeLat(l2) # must be a lat id str
 
 
 def test_addlatsExceptions():
+    """ test lats object addLats method"""
     with pt.raises(KeyError):
         latLib = lats()
         p1 = pin('1', 3)
@@ -83,7 +86,7 @@ def test_addlatsExceptions():
         
 
         l3 = l2.duplicateLat("102")
-        latLib.addLats([l3, l2])
+        latLib.addLats([l3, l2]) #lats cannot having matching id 
 
     with pt.raises(TypeError):
         latLib = lats()
@@ -96,5 +99,5 @@ def test_addlatsExceptions():
         
 
         l3 = l2.duplicateLat("103")
-        latLib.addLats([l3, l2.id])
+        latLib.addLats([l3, l2.id]) # must be lat objs added
 
