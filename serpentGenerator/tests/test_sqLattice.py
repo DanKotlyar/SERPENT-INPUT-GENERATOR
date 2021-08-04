@@ -12,6 +12,7 @@ import numpy as np
 from serpentGenerator.functions.pin import pin
 from serpentGenerator.functions.sqLattice import sqLat
 
+
 def test_init():
     """ test sqLat object initialization"""
     with pt.raises(TypeError):
@@ -42,7 +43,7 @@ def test_setMap():
         p1 = pin('1', 3)
         p2 = pin('2', 3)
         latMap1 = np.array([[p1, p2, p1], [p2, p1, p2], [p1, p2, p1], [p2, p1, p2]])
-        lat1.setMap(latMap1) # map must be 2d array  in shape
+        lat1.setMap(latMap1) # map must be 2d array in shape
     
 def test_duplicateLat():
     """ test sqLat object duplicate lat method"""

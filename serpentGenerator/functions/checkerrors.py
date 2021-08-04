@@ -13,6 +13,7 @@ email: dan.kotlyar@me.gatech.edu
 
 import numbers
 import numpy as np
+from itertools import chain
 
 
 def _isnumber(var, description):
@@ -186,9 +187,24 @@ def _isinstanceList(var, instance, description):
         raise TypeError("{} must be a list of {} type and not {}"
                         .format(description, instance, var))
 
+def _isinstanceNDList(var, instance, description):
+    """checks if the variable of an ndarray of instance type"""
+    _islist(var, description)
+    if not all(isinstance(i, instance) for i in chain.from_iterable(var)):
+        raise TypeError("{} must be a list of {} type and not {}"
+                        .format(description, instance, var))
+
 def _isinstanceArray(var, instance, description):
     """checks if the variable of an ndarray of instance type"""
     _isndarray(var, description)
     if not all(isinstance(i, instance) for i in var):
         raise TypeError("{} must be a ndarray of {} type and not {}"
                         .format(description, instance, var))
+
+def _isinstanceNDArray(var, instance, description):
+    """checks if the variable of an ndarray of instance type"""
+    _isndarray(var, description)
+    if not all(isinstance(i, instance) for i in chain.from_iterable(var)):
+        raise TypeError("{} must be a ndarray of {} type and not {}"
+                        .format(description, instance, var))
+

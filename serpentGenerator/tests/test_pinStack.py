@@ -37,7 +37,7 @@ def test_setStack():
         heights1 = np.array([-20, 0, 20.2, 40.1])
         lat1.setStack(pins1, heights1) #pins array must be of pin objects
 
-    with pt.raises(TypeError):
+    with pt.raises(ValueError):
         lat1 = pinStack("101", 0, 0, 4)
         p1 = pin('1', 3)
         p2 = pin('2', 3)

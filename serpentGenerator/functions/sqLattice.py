@@ -9,7 +9,7 @@ email: iaguirre6@gatech.edu
 from serpentGenerator.functions.pin import pin
 import numpy as np
 from serpentGenerator.functions.checkerrors import (
-    _is2darray, _isstr, _isinstance, _isnumber, _ispositive, _isinstanceArray
+    _is2darray, _isstr, _isinstance, _isnumber, _ispositive, _isinstanceNDArray
 )   
 
 class sqLat:
@@ -81,7 +81,7 @@ class sqLat:
         >>> lat1.setMap(latMap1)
         """
         _is2darray(map, "lattice map")
-        _isinstanceArray(map, pin, "map: 2d array of pin objects")
+        _isinstanceNDArray(map, pin, "map: 2d array of pin objects")
         if map.shape[0] != map.shape[1]:
             raise ValueError("lattice map must be of square shape and not {} "
                             .format(map.shape))
