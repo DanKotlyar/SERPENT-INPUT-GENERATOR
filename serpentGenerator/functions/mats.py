@@ -81,8 +81,7 @@ class mats:
         >>> matLib.addMat(m1)
         """
         if not (isinstance(newMat, material)):
-            raise TypeError("{} must be of type: {}, {},"
-                " or {}".format(newMat, material))
+            raise TypeError("{} must be of type: {} ".format(newMat, material))
 
         if newMat.id in self.mats:
             raise KeyError("{} has a duplicate matId: {} with an existing mat in"
@@ -151,9 +150,8 @@ class mats:
         """
         for i in range(0, len(newMats)):
             if not (isinstance(newMats[i], material)):
-                raise TypeError("{} must be of type a list of: {}, {},"
-                    " or {} objects "
-                    "not {}".format("newMats", material, newMats))
+                raise TypeError("newMats list must be a list of {} "
+                    "not {}".format(material, newMats))
 
         for i in range(0, len(newMats)):
             if newMats[i].id in self.mats:

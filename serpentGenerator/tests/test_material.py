@@ -31,7 +31,7 @@ def test_set():
 
     with pt.raises(TypeError):
         testMat = material("water", False, True)
-        testMat.set('name', 1) #name must be str
+        testMat.set('id', 1) #id must be str
 
     with pt.raises(TypeError):
         testMat = material("water", False, True)
