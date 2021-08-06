@@ -230,8 +230,8 @@ class pinStack:
 
         mapString = ""
         for i in range(0, self.nelements):
-            mapString = mapString + self.pins[i].id + "\t"\
-                + str(self.heights[i]) +"\n"
+            mapString = mapString + str(self.heights[i]) + "\t"\
+                + self.pins[i].id +"\n"
 
         latString = latHeader + mapString + "\n"
         return latString

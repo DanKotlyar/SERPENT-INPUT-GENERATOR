@@ -87,10 +87,10 @@ class pin:
         for i in range(0,len(self.materials)):
 
             if (i != (len(self.materials)-1)):
-                pinString = pinString + self.materials[i].name +"\t" \
+                pinString = pinString + self.materials[i].id +"\t" \
                   + str(self.radii[i]) +"\n"
             else:
-                pinString = pinString + self.materials[i].name +"\n"
+                pinString = pinString + self.materials[i].id +"\n"
 
         return pinString + "\n"
 

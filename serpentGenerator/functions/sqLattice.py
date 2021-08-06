@@ -6,6 +6,7 @@ email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 
+from serpentGenerator.functions.pinStack import pinStack
 from serpentGenerator.functions.pin import pin
 import numpy as np
 from serpentGenerator.functions.checkerrors import (
@@ -68,7 +69,7 @@ class sqLat:
         TypeError
             If ``map`` is not an 2darray.
         TypeError
-            If ``map`` does not consist of pin objects.
+            If ``map`` does not consist of pin objects or pinStack objs.
         ValueError
             If the shape of ``map`` is not sqaure.
         
@@ -81,7 +82,15 @@ class sqLat:
         >>> lat1.setMap(latMap1)
         """
         _is2darray(map, "lattice map")
-        _isinstanceNDArray(map, pin, "map: 2d array of pin objects")
+
+        if(isinstance(map[0][0], pin)):
+            _isinstanceNDArray(map, pin, "map: 2d array of pin objects")         
+        elif(isinstance(map[0][0], pinStack)):
+            _isinstanceNDArray(map, pinStack, "map: 2d array of pinStack objects")     
+        else:
+            raise ValueError("lattice map must consist of pin or pinstack objects"
+                "not {}".format(map))
+
         if map.shape[0] != map.shape[1]:
             raise ValueError("lattice map must be of square shape and not {} "
                             .format(map.shape))

@@ -224,3 +224,42 @@ class material:
             raise AttributeError("{} has no attribute {}"
                                  .format(self, attr))
         return getattr(self, attr)
+
+    def duplicateMat(self, newMatId):
+        """returns a deep copy of the material object must set a new mat id for the
+         new duplicated material.
+
+        The purpose of the ``duplicateMat`` function is to return a deep copy of a 
+        material object. The user must provide a new material id for the copy, 
+        as material ids must be unique. 
+
+        Parameters
+        ----------
+        newMatId : str
+            material id to be set for the copy material being returned.
+    
+        Returns
+        -------
+        newMat : material object
+            copy of the orginal material object. 
+
+        Raises
+        ------
+        TypeError
+            If ``newMatId`` is not str.
+
+        Examples
+        --------
+        >>> mat1 = MATLIB['Zr]
+        >>> mat2 = mat1.duplicateMat("Zr1")
+        """
+        _isstr(newMatId, "new material id")
+        newMat = material(newMatId, self.isBurn, self.isModer)
+        newMat.dens = self.dens
+        newMat.nuclides = self.nuclides
+        newMat.fractions = self.fractions
+        newMat.temp = self.temp
+        newMat.xsLib = self.xsLib
+        newMat.modLib = self.modLib
+        newMat.color = self.color
+        return newMat
