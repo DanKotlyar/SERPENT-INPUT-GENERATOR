@@ -78,7 +78,7 @@ class cell:
         >>> heights1 = np.array([-20, 0, 20.2, 40.1])
         >>> lat1.setStack(pins1, heights1)
         """
-        if (self.matId == ""):
+        if (self.matId != ""):
             raise ValueError("Fill cannot be set if material for the cell is set")
         _isstr(fill, "filling universe name")
         self.fill = fill

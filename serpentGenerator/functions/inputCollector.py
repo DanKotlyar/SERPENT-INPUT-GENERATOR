@@ -4,6 +4,20 @@ This class is meant to be a container for all input data, the data will then be
 converted into a serpent inputfile.
 """
 
+import numpy as np
+
+from serpentGenerator.functions.hexLattice import hexLat
+from serpentGenerator.functions.sqLattice import sqLat
+from serpentGenerator.functions.pinStack import pinStack
+from serpentGenerator.functions.lats import lats
+from serpentGenerator.functions.cell import cell
+from serpentGenerator.functions.pins import pins
+from serpentGenerator.functions.mats import mats
+from serpentGenerator.functions.surf import surf
+
+from serpentGenerator.functions.checkerrors import (
+    _isinstance
+)
 class inputCollector:
     """Basic data definition for an inputCollector obj
 
@@ -22,19 +36,35 @@ class inputCollector:
         mats obj containing mats desired in input file.
     """
 
-    def __init__(self, mainLat, lats, pins, mats):
+    def __init__(self, layout, channels, layers, materials, border, flags = None):
+        if not (isinstance(layout, (hexLat, sqLat, pinStack))):
+            raise TypeError("{} must be of type: {}, {},"
+                " or {}".format(layout, hexLat, sqLat, pinStack))
+
+        _isinstance(channels, lats, "channels")
+        _isinstance(layers, pins, "channel axial layers")
+        _isinstance(materials, mats, "materials")
+        _isinstance(border, surf, "border surface")
+
         self.input = {}
-        self.input['mainLat'] = mainLat
-        self.input['lats'] = lats
-        self.input['pins'] = pins
-        self.input['mats'] = mats
+        self.input['layout'] = layout
+        self.input['channels'] = channels
+        self.input['layers'] = layers
+        self.input['materials'] = materials
+        self.input['border'] = border
+        self.input['cells'] = self._createCells(layout, border)
         self.input['depletion'] = None
         self.input['burnup'] = None
         self.input['xs'] = None
-        self.input['surfs'] = None
-        self.input['cells'] = None
         self.input['settings'] = None
 
+    def _createCells(self, mainLat, border):
+        inside = cell("inBorder", "0", np.array([border]), np.array([1]))
+        inside.setFill(mainLat.id)
+
+        outside = cell("outBorder", "0", np.array([border]), np.array([0]), "outside")
+
+        return [inside, outside]
 
     def toString(self):
         """display input in stringForm.
