@@ -52,11 +52,11 @@ class inputCollector:
         self.input['layers'] = layers
         self.input['materials'] = materials
         self.input['border'] = border
-        self.input['cells'] = self._createCells(layout, border)
-        self.input['depletion'] = None
-        self.input['burnup'] = None
-        self.input['xs'] = None
-        self.input['settings'] = None
+        # self.input['cells'] = self._createCells(layout, border)
+        # self.input['depletion'] = None
+        # self.input['burnup'] = None
+        # self.input['xs'] = None
+        # self.input['settings'] = None
 
     def _createCells(self, mainLat, border):
         inside = cell("inBorder", "0", np.array([border]), np.array([1]))
