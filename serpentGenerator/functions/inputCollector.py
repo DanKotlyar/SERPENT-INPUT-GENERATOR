@@ -36,27 +36,27 @@ class inputCollector:
         mats obj containing mats desired in input file.
     """
 
-    def __init__(self, layout, channels, layers, materials, border, flags = None):
+    def __init__(self, layout, channels, layers, materials, housing = None,
+        flagBurn = True, flagXS = True, flagSettings = True):
         if not (isinstance(layout, (hexLat, sqLat, pinStack))):
             raise TypeError("{} must be of type: {}, {},"
                 " or {}".format(layout, hexLat, sqLat, pinStack))
-
+        
         _isinstance(channels, lats, "channels")
         _isinstance(layers, pins, "channel axial layers")
         _isinstance(materials, mats, "materials")
-        _isinstance(border, surf, "border surface")
 
         self.input = {}
         self.input['layout'] = layout
         self.input['channels'] = channels
         self.input['layers'] = layers
         self.input['materials'] = materials
-        self.input['border'] = border
-        # self.input['cells'] = self._createCells(layout, border)
-        # self.input['depletion'] = None
+        self.input['housing'] = housing
+        # self.input['cells'] = None
         # self.input['burnup'] = None
         # self.input['xs'] = None
         # self.input['settings'] = None
+
 
     def _createCells(self, mainLat, border):
         inside = cell("inBorder", "0", np.array([border]), np.array([1]))
