@@ -54,6 +54,7 @@ class inputCollector:
         self.flagBurn = flagBurn
         self.flagXS = flagXS
         self.flagSettings = flagSettings
+
         self.input = {}
         self.input['layout'] = layout
         self.input['channels'] = channels
@@ -78,6 +79,21 @@ class inputCollector:
         finalCells = cells()
         finalCells.addCells([inside, outside])
         return finalCells
+
+    def setBurnup(self, inventory, opTime, burnPoints, isDayTot = False):
+        unit = ""
+        if(isDayTot):
+            time = np.geomspace(1,opTime, burnPoints)
+            unit = "daytot"
+        else:
+            time = np.geomspace(0,opTime, burnPoints)
+            unit = "butot"
+            
+        timeString = ""
+        for i in range(0, len(time)):
+            timeString = timeString + str(round(time[i],2)) +" "
+        burnupString = "dep "+self.unit+" "+ timeString+ "\n"
+        return burnupString
 
     def toString(self):
         """display input in stringForm.
