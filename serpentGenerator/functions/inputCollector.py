@@ -14,6 +14,9 @@ from serpentGenerator.functions.cell import cell
 from serpentGenerator.functions.pins import pins
 from serpentGenerator.functions.mats import mats
 from serpentGenerator.functions.surf import surf
+from serpentGenerator.functions.surfs import surfs
+from serpentGenerator.functions.cells import cells
+from serpentGenerator.functions.housing import housing as hous
 
 from serpentGenerator.functions.checkerrors import (
     _isinstance
@@ -45,30 +48,36 @@ class inputCollector:
         _isinstance(channels, lats, "channels")
         _isinstance(layers, pins, "channel axial layers")
         _isinstance(materials, mats, "materials")
+        _isinstance(housing, hous, 'core housing')
 
+        self.housing = housing
+        self.flagBurn = flagBurn
+        self.flagXS = flagXS
+        self.flagSettings = flagSettings
         self.input = {}
         self.input['layout'] = layout
         self.input['channels'] = channels
         self.input['layers'] = layers
         self.input['materials'] = materials
-        self.input['housing'] = housing
-        self.flagBurn = flagBurn
-        self.flagXS = flagXS
-        self.flagSettings = flagSettings
+        self.input['surfs'] = self._setSurfs()
+        self.input['cells'] = self._setCells()
+
+    def _setSurfs(self):
+        finalSurfs = surfs()
+        finalSurfs.addSurf(self.housing.border)
+        return finalSurfs
+
+    def _setCells(self):
+        inside = cell("inBorder", "0", np.array([self.housing.border]), 
+            np.array([1]))
+        inside.setFill(self.input['layout'].id)
+
+        outside = cell("outBorder", "0", np.array([self.housing.border]), 
+            np.array([0]), "outside")
         
-        # self.input['cells'] = None
-        # self.input['burnup'] = None
-        # self.input['xs'] = None
-        # self.input['settings'] = None
-
-
-    def _createCells(self, mainLat, border):
-        inside = cell("inBorder", "0", np.array([border]), np.array([1]))
-        inside.setFill(mainLat.id)
-
-        outside = cell("outBorder", "0", np.array([border]), np.array([0]), "outside")
-
-        return [inside, outside]
+        finalCells = cells()
+        finalCells.addCells([inside, outside])
+        return finalCells
 
     def toString(self):
         """display input in stringForm.
