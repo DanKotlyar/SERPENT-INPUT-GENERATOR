@@ -77,8 +77,8 @@ class surfs:
         Examples
         --------
         >>> surfLib = surfs()
-        >>> m1 = MATLIB['Zr']
-        >>> surfLib.addSurf(m1)
+        >>> s1 = surf("1", "sqc", np.array([0, 0, 10.75, 0]))
+        >>> surfLib.addSurf(s1)
         """
         if not (isinstance(newSurf, surf)):
             raise TypeError("{} must be of type: {} ".format(newSurf, surf))
@@ -112,9 +112,9 @@ class surfs:
         Examples
         --------
         >>> surfLib = surfs()
-        >>> m1 = MATLIB['Zr']
-        >>> surfLib.addSurf(l1)
-        >>> retrievedSurf = surfLib.getSurf('Zr)
+        >>> s1 = surf("1", "sqc", np.array([0, 0, 10.75, 0]))
+        >>> surfLib.addSurf(s1)
+        >>> retrievedSurf = surfLib.getSurf('1')
         """
         _isstr(surfId, "surface Id")
 
@@ -144,8 +144,9 @@ class surfs:
         Examples
         --------
         >>> surfLib = surfs()
-        >>> surfLib.addSurf(MATLIB['Zr'])
-        >>> surfs1 = [m1, m2 , m3]
+        >>> s1 = surf("1", "sqc", np.array([0, 0, 10.75, 0]))
+        >>> surfLib.addSurf(s1)
+        >>> surfs1 = [s1, s2, s3]
         >>> surfLib.addSurfs(surfs1)
         """
         for i in range(0, len(newSurfs)):
@@ -182,11 +183,11 @@ class surfs:
         Examples
         --------
         >>> surfLib = surfs()
-        >>> surfs1 = [m1, m2 , m3]
+        >>> surfs1 = [s1, s2 , s3]
         >>> surfLib.addSurfs(surfs1)
-        >>> m4 = MATLIB['Zr']
-        >>> surfLib.addSurf(m4)
-        >>> surfLib.removeSurf('Zr')
+        >>> s4 = surf("1", "sqc", np.array([0, 0, 10.75, 0]))
+        >>> surfLib.addSurf(s4)
+        >>> surfLib.removeSurf('1')
         """
         _isstr(removedSurfId, "surfId for surf to be removed")
 
