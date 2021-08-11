@@ -52,6 +52,10 @@ class inputCollector:
         self.input['layers'] = layers
         self.input['materials'] = materials
         self.input['housing'] = housing
+        self.flagBurn = flagBurn
+        self.flagXS = flagXS
+        self.flagSettings = flagSettings
+        
         # self.input['cells'] = None
         # self.input['burnup'] = None
         # self.input['xs'] = None

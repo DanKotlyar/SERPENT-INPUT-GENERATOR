@@ -75,7 +75,7 @@ class surfs:
             array.
 
         Examples
-        --------
+        --------    
         >>> surfLib = surfs()
         >>> s1 = surf("1", "sqc", np.array([0, 0, 10.75, 0]))
         >>> surfLib.addSurf(s1)
