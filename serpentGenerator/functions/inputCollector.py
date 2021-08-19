@@ -19,7 +19,8 @@ from serpentGenerator.functions.cells import cells
 from serpentGenerator.functions.housing import housing as hous
 
 from serpentGenerator.functions.checkerrors import (
-    _isinstance
+    _isinstance, _is1darray, _isbool, _isint, _ispositive, _ispositiveArray,
+    _is1dlist
 )
 class inputCollector:
     """Basic data definition for an inputCollector obj
@@ -40,7 +41,7 @@ class inputCollector:
     """
 
     def __init__(self, layout, channels, layers, materials, housing = None,
-        flagBurn = True, flagXS = True, flagSettings = True):
+        flagXS = True, flagBurn = True, flagBranch = True, flagSettings = True):
         if not (isinstance(layout, (hexLat, sqLat, pinStack))):
             raise TypeError("{} must be of type: {}, {},"
                 " or {}".format(layout, hexLat, sqLat, pinStack))
@@ -51,8 +52,9 @@ class inputCollector:
         _isinstance(housing, hous, 'core housing')
 
         self.housing = housing
-        self.flagBurn = flagBurn
         self.flagXS = flagXS
+        self.flagBurn = flagBurn
+        self.flagBranch = flagBranch
         self.flagSettings = flagSettings
 
         self.input = {}
@@ -62,6 +64,11 @@ class inputCollector:
         self.input['materials'] = materials
         self.input['surfs'] = self._setSurfs()
         self.input['cells'] = self._setCells()
+
+        self.burnup = {}
+        self.xs = {}
+        self.branch = {}
+        self.settings = {}
 
     def _setSurfs(self):
         finalSurfs = surfs()
@@ -80,20 +87,77 @@ class inputCollector:
         finalCells.addCells([inside, outside])
         return finalCells
 
-    def setBurnup(self, inventory, opTime, burnPoints, isDayTot = False):
-        unit = ""
-        if(isDayTot):
-            time = np.geomspace(1,opTime, burnPoints)
-            unit = "daytot"
-        else:
-            time = np.geomspace(0,opTime, burnPoints)
-            unit = "butot"
-            
+    def setBurnup(self, inventory, burnPoints, isDayTot = False):
+        _is1darray(inventory, "nuclide inventory for burnup")
+        _is1darray(burnPoints, "burnup points/steps, units: MWd/KgU, Daytot")
+        _isbool(isDayTot, "unit for burnup points, True: Daytot, False: MWd/KgU")
+
         timeString = ""
-        for i in range(0, len(time)):
-            timeString = timeString + str(round(time[i],2)) +" "
-        burnupString = "dep "+self.unit+" "+ timeString+ "\n"
-        return burnupString
+        unit = "dayTot" if isDayTot else "butot"
+            
+        for i in range(0, len(burnPoints)):
+            timeString = timeString + str(round(burnPoints[i], 4)) + " "
+
+        burnupString = "dep "+unit+" "+ timeString+ "\n"
+
+        invString = ""
+        for i in range(0, len(inventory)):
+            invString = invString + str(inventory[i]) + "\n "
+
+        invString = "set inventory \n " + invString + "\n"
+
+        self.burnup['inventory'] = inventory
+        self.burnup['unit'] = unit
+        self.burnup['burnPoints'] = burnPoints
+        self.burnup['toString'] = burnupString
+
+    def setXS(self, ngroups, ebounds, universes, setFPPXS=False, setADF=False, 
+        surfADF = None):
+        _isint(ngroups, "num of energy groups used in xs gen")
+        _ispositive(ngroups, "num of energy groups used in xs gen")
+        _is1darray(ebounds, "energy group boundaries used for xs gen")
+        _ispositiveArray(ebounds, "energy group boundaries used for xs gen")
+        _is1dlist(universes, "universes used for xs gen")
+        if (surfADF != None):
+            _isinstance(surfADF, surf, "super imposed surface for ADF calculations")
+
+        if((setADF == True) & (surfADF == None)):
+            raise ValueError("setADF flag was set to true, "
+                "surfADF must be set.")
+
+        self.xs['ngroups'] = ngroups
+        self.xs['ebounds'] = ebounds
+        self.xs['universes'] = universes
+        self.xs['setFPPXS'] = setFPPXS
+        self.xs['setADF'] = setADF
+
+        xsString = ""
+        gcuString = ""
+        for i in range(0, len(universes)):
+            gcuString = gcuString + universes[i].id + "  "
+        gcuString = "set gcu " + gcuString + "\n"
+
+        nfgString = ""
+        for i in range(0, len(ebounds)):
+            nfgString = nfgString + str(round(ebounds[i], 4)) + " "
+        nfgString = "set nfg " + str(ngroups) + " " + nfgString + "\n"
+
+        adfString = "" if not setADF else surfADF.toString() \
+             + "set adf 0 " + surfADF.id + " full \n"
+
+        FPPString = "" if not setFPPXS else "set poi 1 \n"
+
+        xsString = gcuString + nfgString + FPPString + adfString + "\n"
+
+        self.xs['toString'] = xsString
+
+
+    def setBranching(self, branches):
+            pass
+
+    def setSettings(self, power, bc, sym, activeCycles, nonActiveCycle, nparticle,
+        setPCC = False):
+            pass
 
     def toString(self):
         """display input in stringForm.
@@ -113,4 +177,5 @@ class inputCollector:
         for key in self.input:
             if self.input[key] != None:
                 inputString = inputString + self.input[key].toString()
+        
         return inputString
