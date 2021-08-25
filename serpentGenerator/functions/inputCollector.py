@@ -2,6 +2,9 @@
 
 This class is meant to be a container for all input data, the data will then be 
 converted into a serpent inputfile.
+
+email: dan.kotlyar@me.gatech.edu
+email: iaguirre6@gatech.edu
 """
 
 import numpy as np

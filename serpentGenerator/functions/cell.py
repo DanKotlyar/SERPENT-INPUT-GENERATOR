@@ -34,9 +34,8 @@ class cell:
         optional fill parameter for cell filling universes
     """
 
-    def __init__(self, id, univ, surfs, dirs, matId = ""):
+    def __init__(self, id, surfs, dirs, matId = ""):
         _isstr(id, "cell id")
-        _isstr(univ, "cell universe")
         _isstr(matId, "cell material name")
         _isinstanceArray(surfs, surf, "surfaces to be set in cell")
         _isnumberArray(dirs, "surface orientations for cell")
@@ -45,7 +44,6 @@ class cell:
             raise ValueError("surfs and dirs array must be of equal length")
 
         self.id = id
-        self.univ = univ
         self.surfs = surfs
         self.dirs = dirs
         self.matId = matId
@@ -114,6 +112,6 @@ class cell:
         fillString = "" if self.fill == "" else " fill " + self.fill + " "
         matString = "" if self.matId == "" else " " +self.matId + " "
 
-        return "cell "+self.id+" "+self.univ+ matString +fillString +surfString +"\n"
+        return "cell "+self.id+" "+ matString +fillString +surfString +"\n"
 
  
