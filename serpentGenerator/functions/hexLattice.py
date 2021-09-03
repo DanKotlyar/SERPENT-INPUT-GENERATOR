@@ -6,13 +6,14 @@ email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 
+from serpentGenerator.functions.universe import universe
 from serpentGenerator.functions.pin import pin
 import numpy as np
 from serpentGenerator.functions.checkerrors import (
     _is2darray, _isstr, _isinstance, _isnumber, _ispositive, _isinstanceNDArray
 )   
 
-class hexLat:
+class hexLat(universe):
     """Basic data definition for a Hexagonal Lattice object.
 
     This class is responsible to model a Hexagonal lattice.
@@ -239,8 +240,8 @@ class hexLat:
         
         typeString =  str(2) if self.type == "X" else str(3)
         
-        latHeader = self.id +" "+ typeString+" "+str(self.xo) + " "+ str(self.yo)\
-             + " " + str(self.nxelements) + " " \
+        latHeader = "lat "+ self.id +" "+ typeString+" "+str(self.xo) + " "\
+            + str(self.yo) + " " + str(self.nxelements) + " " \
             + str(self.nyelements) + " " +str(self.pitch) + "\n"
 
         mapString = ""

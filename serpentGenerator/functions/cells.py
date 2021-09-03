@@ -53,7 +53,7 @@ class cells:
         for key in self.cells:
             cellsString = cellsString + self.cells[key].toString()
             
-        return cellsString
+        return cellsString + "\n"
 
     def addCell(self, newCell):
         """Assign individual cell to the cells object.

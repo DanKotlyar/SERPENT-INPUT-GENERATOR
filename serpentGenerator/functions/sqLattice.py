@@ -8,15 +8,16 @@ email: iaguirre6@gatech.edu
 
 from serpentGenerator.functions.pinStack import pinStack
 from serpentGenerator.functions.pin import pin
+from serpentGenerator.functions.universe import universe
 import numpy as np
 from serpentGenerator.functions.checkerrors import (
     _is2darray, _isstr, _isinstance, _isnumber, _ispositive, _isinstanceNDArray
 )   
 
-class sqLat:
-    """Basic data definition for a sqLat object.
+class sqLat(universe):
+    """Basic data definition for a sqLat object
 
-    This class is responsible to model a square lattice.
+    This class is responsible to model a square lattice
 
     Attributes
     ----------
@@ -209,8 +210,9 @@ class sqLat:
         if self.map.size == 0:
             raise ValueError("lattice map cannot be empty")
         
-        latHeader = self.id +" "+ str(self.xo) +" "+ str(self.yo) + " "\
-             + " "+ str(self.nelements) + " " +str(self.pitch) + "\n"
+        latHeader = "lat "+ self.id +" 1 "+ str(self.xo) +" "+ str(self.yo) + " "\
+            + " "+ str(self.nelements) + " " + str(self.nelements) + " "\
+            +str(self.pitch) + "\n"
 
         mapString = ""
         for i in range(0, self.nelements):

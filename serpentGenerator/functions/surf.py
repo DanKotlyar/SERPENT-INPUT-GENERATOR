@@ -16,7 +16,7 @@ from serpentGenerator.functions.checkerrors import (
 class surf:
     """Basic data definition for a surface object
 
-    This class is responsible to model a general surface object.
+    This class is responsible to model a general surface object
 
     Attributes
     ----------

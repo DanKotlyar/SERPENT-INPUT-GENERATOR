@@ -53,7 +53,7 @@ class surfs:
         for key in self.surfs:
             surfsString = surfsString + self.surfs[key].toString()
             
-        return surfsString
+        return surfsString + "\n"
 
     def addSurf(self, newSurf):
         """Assign individual surface to the surfs object.

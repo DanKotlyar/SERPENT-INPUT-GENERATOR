@@ -7,13 +7,15 @@ email: iaguirre6@gatech.edu
 """
 
 from serpentGenerator.functions.pin import pin
+from serpentGenerator.functions.pins import pins as pdic
+from serpentGenerator.functions.universe import universe
 import numpy as np
 from serpentGenerator.functions.checkerrors import (
     _isstr, _isinstanceArray, _isnumber, _isnumberArray, _ispositive, _isSorted,
     _isinstance
 )   
 
-class pinStack:
+class pinStack(universe):
     """Defines a finite one-dimensional vertical pin stack in z-direction. 
     The stack is infinite in xy-plane.
 
@@ -55,6 +57,12 @@ class pinStack:
         self.nelements = nelements
         self.pins = np.array([])
         self.heights = np.array([])
+        self._pinsDict = pdic()
+
+    def _createPinDict(self, pinsArray):
+        for i in range(0, len(pinsArray)):
+            if pinsArray[i].id not in self._pinsDict.pins:
+                self._pinsDict.addPin(pinsArray[i])
 
     def setStack(self, pins, heights):
         """Assign the pins for the pinstack lattice with their corresponding heights 
@@ -107,6 +115,7 @@ class pinStack:
             raise ValueError("heights array must have {} elements not {}"
                                     .format(self.nelements, len(pins)))
 
+        self._createPinDict(pins)
         self.pins = pins
         self.heights = heights
 
@@ -225,7 +234,7 @@ class pinStack:
         if ((len(self.pins) == 0) | (len(self.heights) == 0)):
             raise ValueError("pinstack pins and heights cannot be empty")
         
-        latHeader = self.id +" "+ "9"+ " "+str(self.xo) + " "+ str(self.yo)\
+        latHeader = "lat "+ self.id +" "+ "9"+ " "+str(self.xo) + " "+ str(self.yo)\
              + " " + str(self.nelements) + "\n"
 
         mapString = ""

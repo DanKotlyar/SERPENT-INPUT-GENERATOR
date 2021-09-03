@@ -1,40 +1,43 @@
-"""inputCollector
+"""core
 
 This class is meant to be a container for all input data, the data will then be 
-converted into a serpent inputfile.
+converted into a serpent inputfile modeling a reactor core.
 
 email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 
 import numpy as np
+import copy
 
+from serpentGenerator.functions.universe import universe
 from serpentGenerator.functions.hexLattice import hexLat
 from serpentGenerator.functions.sqLattice import sqLat
 from serpentGenerator.functions.pinStack import pinStack
-from serpentGenerator.functions.lats import lats
-from serpentGenerator.functions.cell import cell
-from serpentGenerator.functions.pins import pins
+from serpentGenerator.functions.lats import lats as ldict
+from serpentGenerator.functions.cell import cell 
+from serpentGenerator.functions.pins import pins as pdict
 from serpentGenerator.functions.mats import mats
-from serpentGenerator.functions.surf import surf
-from serpentGenerator.functions.surfs import surfs
-from serpentGenerator.functions.cells import cells
+from serpentGenerator.functions.surf import surf 
+from serpentGenerator.functions.surfs import surfs as sdict
+from serpentGenerator.functions.cells import cells as cdict
 from serpentGenerator.functions.housing import housing as hous
 
 from serpentGenerator.functions.checkerrors import (
     _isinstance, _is1darray, _isbool, _isint, _ispositive, _ispositiveArray,
     _is1dlist
 )
-class inputCollector:
-    """Basic data definition for an inputCollector obj
+
+class core:
+    """Basic data definition for an core obj
 
     This class will serve as the main input collector for creation of serpent
-    input files.
+    input files modeling a reactor core.
 
     Attributes
     ----------
-    mainLat : lattice obj sqaure/hex
-        reactor core layout (main lattice)
+    mainUniv : 
+        reactor core layout (main universe)
     lats : lats obj 
         lats obj containing lats desired in input file.
     pins : pins obj
@@ -43,52 +46,92 @@ class inputCollector:
         mats obj containing mats desired in input file.
     """
 
-    def __init__(self, layout, channels, layers, materials, housing = None,
+    def __init__(self, mainUniv, housing, lats, pins, materials,
         flagXS = True, flagBurn = True, flagBranch = True, flagSettings = True):
-        if not (isinstance(layout, (hexLat, sqLat, pinStack))):
+        if not (isinstance(mainUniv, universe)):
             raise TypeError("{} must be of type: {}, {},"
-                " or {}".format(layout, hexLat, sqLat, pinStack))
+                " or {}".format(mainUniv, universe))
         
-        _isinstance(channels, lats, "channels")
-        _isinstance(layers, pins, "channel axial layers")
+        _isinstance(lats, ldict, "channels")
+        _isinstance(pins, pdict, "channel axial layers")
         _isinstance(materials, mats, "materials")
         _isinstance(housing, hous, 'core housing')
 
-        self.housing = housing
         self.flagXS = flagXS
         self.flagBurn = flagBurn
         self.flagBranch = flagBranch
         self.flagSettings = flagSettings
 
         self.input = {}
-        self.input['layout'] = layout
-        self.input['channels'] = channels
-        self.input['layers'] = layers
         self.input['materials'] = materials
-        self.input['surfs'] = self._setSurfs()
-        self.input['cells'] = self._setCells()
-
+        self.input['pins'] = pins
+        self.input['lats'] = lats
+        self.input['mainLat'] = mainUniv
+        self.input['housing'] = housing
+        self.input['main'] = self._setCoreGeom(mainUniv, housing)
+        
         self.burnup = {}
         self.xs = {}
         self.branch = {}
         self.settings = {}
 
-    def _setSurfs(self):
-        finalSurfs = surfs()
-        finalSurfs.addSurf(self.housing.border)
-        return finalSurfs
+    def _parseMainUniv(self, mainUniv):
+        pass #TBD
 
-    def _setCells(self):
-        inside = cell("inBorder", "0", np.array([self.housing.border]), 
-            np.array([1]))
-        inside.setFill(self.input['layout'].id)
+    def _setCoreGeom(self, mainUniv, housing):
 
-        outside = cell("outBorder", "0", np.array([self.housing.border]), 
+        main = universe("0")
+
+        csurfs = sdict()
+        ccells = cdict()
+        core = cell("core", np.array([housing.surfs.getSurf("cr1")]), np.array([1]))
+        core.setFill(mainUniv.id)
+
+        housing.cells.addCell(core)
+
+        voidSurf = surf("voidBorder", "cuboid", 
+            np.array([-1*housing.radiiCR[len(housing.radiiCR)-1], 
+            housing.radiiCR[len(housing.radiiCR)-1],
+            -1*housing.radiiCR[len(housing.radiiCR)-1], 
+            housing.radiiCR[len(housing.radiiCR)-1], 0, housing.coreHeight]))
+
+        csurfs.addSurf(voidSurf)
+
+        voidBuffer = cell("voidBuffer", 
+            np.array([housing.surfs.getSurf("cr"+str(len(housing.radiiCR))), 
+            voidSurf]), np.array([0, 1]), "void")
+
+        housing.cells.addCell(voidBuffer)
+
+        fillRegion = cell("coreFill", np.array([voidSurf]), np.array([1]))
+        fillRegion.setFill(housing.id)
+
+        voidRegion = cell("voidRegion", np.array([voidSurf]),
             np.array([0]), "outside")
-        
-        finalCells = cells()
-        finalCells.addCells([inside, outside])
-        return finalCells
+
+        ccells.addCells([fillRegion, voidRegion])
+
+        main.surfs = csurfs
+        main.cells = ccells
+
+        return main
+
+
+    def writeFile(self, filename):
+        file = open(filename, "w+")
+        file.truncate(0)
+        file.close()
+        file = open(filename,"a") 
+        file.write(self.toString() + "\n")
+        file.close()
+
+
+
+
+
+
+
+
 
     def setBurnup(self, inventory, burnPoints, isDayTot = False):
         _is1darray(inventory, "nuclide inventory for burnup")

@@ -8,6 +8,7 @@ email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 
+
 import numpy as np
 from serpentGenerator.functions.checkerrors import (
     _isstr, _isinstanceArray, _isnumberArray
@@ -24,7 +25,7 @@ class cell:
     ----------
     id : str
         cell id/name
-    univ : str
+    universe : str
         cell universe name
     surfs : ndarray (surf objects) 
         surfaces to construct cell
@@ -48,6 +49,7 @@ class cell:
         self.dirs = dirs
         self.matId = matId
         self.fill = ""
+        self.universe = None
 
     def setFill(self, fill):
         """Assigns the filling lattice for the cell.
@@ -99,12 +101,13 @@ class cell:
 
         def sign(orientation):
             if(orientation == 1):
-                sign = ""
-            else:
                 sign = "-"
+            else:
+                sign = ""
                 
             return sign
         
+        uniString = "" if self.universe == None else self.universe + " "
         surfString = ""
         for i in range(0,len(self.surfs)):
             surfString = surfString + sign(self.dirs[i]) + self.surfs[i].id + " "
@@ -112,6 +115,6 @@ class cell:
         fillString = "" if self.fill == "" else " fill " + self.fill + " "
         matString = "" if self.matId == "" else " " +self.matId + " "
 
-        return "cell "+self.id+" "+ matString +fillString +surfString +"\n"
+        return "cell "+self.id+" "+uniString+ matString +fillString +surfString +"\n"
 
  

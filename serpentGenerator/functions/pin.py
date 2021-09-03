@@ -13,9 +13,10 @@ from serpentGenerator.functions.checkerrors import (
     _isstr, _isint, _isinstanceArray, _ispositive,
     _ispositiveArray, _isSorted
 )
-
+from serpentGenerator.functions.universe import universe
 from serpentGenerator.functions.material import material
-class pin:
+
+class pin(universe):
     """Basic data definition for a pin element
 
     This class is responsible to store (using ``set``) and retrieve (using
