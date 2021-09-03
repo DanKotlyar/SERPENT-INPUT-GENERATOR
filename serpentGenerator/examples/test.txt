@@ -587,4 +587,17 @@ surf voidBorder cuboid -152.0 152.0 -152.0 152.0 0.0 455.0
 cell coreFill 0  fill housing -voidBorder 
 cell voidRegion 0  outside voidBorder 
 
+set inventory 
+ 541350
+ 922340
+ 922350
+ 942390
+ 
+dep dayTot 1 5 10 20 35 50 100 150 200 250 300 350 400 450 500 550 600 700 850 1000 
+set gcu FA  
+set nfg 2 0.0 
+set poi 1 
+surf voidBorder cuboid -152.0 152.0 -152.0 152.0 0.0 455.0 
+set adf 0 voidBorder full 
+
 

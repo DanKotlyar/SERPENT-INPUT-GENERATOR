@@ -150,6 +150,8 @@ class core:
 
         invString = "set inventory \n " + invString + "\n"
 
+        burnupString = invString + burnupString
+
         self.burnup['inventory'] = inventory
         self.burnup['unit'] = unit
         self.burnup['burnPoints'] = burnPoints
@@ -214,5 +216,9 @@ class core:
         for key in self.input:
             if self.input[key] != None:
                 inputString = inputString + self.input[key].toString()
-        
+
+        if ((self.flagBurn) & ('toString' in self.burnup)):
+            inputString = inputString + self.burnup['toString']
+        if ((self.flagXS) & ('toString' in self.xs)):
+            inputString = inputString + self.xs['toString']
         return inputString
