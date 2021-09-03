@@ -8,7 +8,6 @@ email: iaguirre6@gatech.edu
 """
 
 import numpy as np
-import copy
 
 from serpentGenerator.functions.universe import universe
 from serpentGenerator.functions.hexLattice import hexLat
@@ -68,8 +67,7 @@ class core:
         self.input['lats'] = lats
         self.input['mainLat'] = mainUniv
         self.input['housing'] = housing
-        self.input['main'] = self._setCoreGeom(mainUniv, housing)
-        
+        self.input['main'], self.voidSurf = self._setCoreGeom(mainUniv, housing)
         self.burnup = {}
         self.xs = {}
         self.branch = {}
@@ -114,7 +112,7 @@ class core:
         main.surfs = csurfs
         main.cells = ccells
 
-        return main
+        return main, voidSurf
 
 
     def writeFile(self, filename):
@@ -157,20 +155,13 @@ class core:
         self.burnup['burnPoints'] = burnPoints
         self.burnup['toString'] = burnupString
 
-    def setXS(self, ngroups, ebounds, universes, setFPPXS=False, setADF=False, 
-        surfADF = None):
+    def setXS(self, ngroups, ebounds, universes, setFPPXS=False, setADF=False):
         _isint(ngroups, "num of energy groups used in xs gen")
         _ispositive(ngroups, "num of energy groups used in xs gen")
         _is1darray(ebounds, "energy group boundaries used for xs gen")
         _ispositiveArray(ebounds, "energy group boundaries used for xs gen")
         _is1dlist(universes, "universes used for xs gen")
-        if (surfADF != None):
-            _isinstance(surfADF, surf, "super imposed surface for ADF calculations")
-
-        if((setADF == True) & (surfADF == None)):
-            raise ValueError("setADF flag was set to true, "
-                "surfADF must be set.")
-
+        
         self.xs['ngroups'] = ngroups
         self.xs['ebounds'] = ebounds
         self.xs['universes'] = universes
@@ -188,15 +179,15 @@ class core:
             nfgString = nfgString + str(round(ebounds[i], 4)) + " "
         nfgString = "set nfg " + str(ngroups) + " " + nfgString + "\n"
 
-        adfString = "" if not setADF else surfADF.toString() \
-             + "set adf 0 " + surfADF.id + " full \n"
+        adfString = "" if not setADF else self.voidSurf.toString() \
+             + "set adf 0 " + self.voidSurf.id + " full \n"
 
         FPPString = "" if not setFPPXS else "set poi 1 \n"
 
         xsString = gcuString + nfgString + FPPString + adfString + "\n"
 
         self.xs['toString'] = xsString
-
+        #set gcu -1 if xsflag false
 
     def setBranching(self, branches):
             pass
