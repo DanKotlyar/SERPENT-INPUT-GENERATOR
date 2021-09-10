@@ -84,10 +84,10 @@ class sqLat(universe):
         """
         _is2darray(map, "lattice map")
 
-        if(isinstance(map[0][0], pin)):
-            _isinstanceNDArray(map, pin, "map: 2d array of pin objects")         
-        elif(isinstance(map[0][0], pinStack)):
-            _isinstanceNDArray(map, pinStack, "map: 2d array of pinStack objects")     
+        if(isinstance(map[0][0], universe)):
+            _isinstanceNDArray(map, universe, "map: 2d array of pin objects")         
+        # elif(isinstance(map[0][0], pinStack)):
+        #     _isinstanceNDArray(map, pinStack, "map: 2d array of pinStack objects")     
         else:
             raise ValueError("lattice map must consist of pin or pinstack objects"
                 "not {}".format(map))
