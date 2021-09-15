@@ -14,6 +14,7 @@ email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 import numpy as np
+import copy
 from matplotlib import colors
 from serpentGenerator.functions.checkerrors import (
     _isstr, _isndarray, _isnumber, _ispositive, _isbool
@@ -65,6 +66,7 @@ class material:
         self.xsLib = ""
         self.modLib = ""
         self.color = ""
+        self.rgb = ""
 
     def __matCheck(self):
         """Runs through the material object values and performs several error checks.
@@ -110,18 +112,9 @@ class material:
         """
         self.__matCheck()
 
-        rgbString = "rgb "
-
-        if self.color != "":
-            rgbTuple = colors.to_rgb(self.color) 
-            rgbArray = np.asarray(rgbTuple) * 255
-            rgbArray = rgbArray.astype(int)
-            rgbString = rgbString + str(rgbArray).replace("[", "").replace("]", "")
-        else:
-            rgbString = ""
-    
-
         matString = ""
+
+        rgbString = "" if(self.rgb == "") else "rgb "+self.rgb
         tempString = "" if self.temp == 0.00 else "tmp "+ str(self.temp)
         burnString = "" if self.isBurn == False else "burn 1"
         moderString = "" if ((self.isModer == False)|(self.modLib == "None")) \
@@ -129,11 +122,14 @@ class material:
 
         matHeader = "mat " + self.id +"    "+str(self.dens)+ " "+moderString +" "\
             +burnString +" "+ tempString+" "+ rgbString +"\n"
+
         matString = matString + matHeader
+
         matNucFracStr = ""
         for i in range(0, len(self.nuclides)):
             matNucFracStr = matNucFracStr + str(self.nuclides[i]) +"."+ self.xsLib \
             +"\t" + str(self.fractions[i]) + "\n"
+            
         matString = matString + matNucFracStr +"\n"
         return matString
 
@@ -254,12 +250,6 @@ class material:
         >>> mat2 = mat1.duplicateMat("Zr1")
         """
         _isstr(newMatId, "new material id")
-        newMat = material(newMatId, self.isBurn, self.isModer)
-        newMat.dens = self.dens
-        newMat.nuclides = self.nuclides
-        newMat.fractions = self.fractions
-        newMat.temp = self.temp
-        newMat.xsLib = self.xsLib
-        newMat.modLib = self.modLib
-        newMat.color = self.color
+        newMat = copy.deepcopy(self)
+        newMat.id = newMatId
         return newMat

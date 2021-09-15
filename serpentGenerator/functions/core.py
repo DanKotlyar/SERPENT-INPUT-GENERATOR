@@ -72,6 +72,7 @@ class core:
         self.xs = {}
         self.branch = {}
         self.settings = {}
+        self.plot = {}
 
     def _parseMainUniv(self, mainUniv):
         pass #TBD
@@ -126,7 +127,20 @@ class core:
 
 
 
+    def setPlot(self, types, res = 5000, plotOnly = False):
+        self.plot['types'] = types
+        self.plot['res'] = res
 
+        xtra = "" if not plotOnly else "set pop 20 5 50 \nset gcu -1 \n"
+
+        plotString = ""
+        for i in range(0, len(types)):
+            plotString = plotString+"plot "+str(types[i])+" "+str(res)+" "\
+                +str(res)+"\n"
+
+        plotString =  plotString + xtra
+        
+        self.plot['toString'] = plotString
 
 
 
@@ -221,4 +235,7 @@ class core:
             inputString = inputString + self.burnup['toString']
         if ((self.flagXS) & ('toString' in self.xs)):
             inputString = inputString + self.xs['toString']
+        if ('toString' in self.plot):
+            inputString = inputString + self.plot['toString']
+            
         return inputString

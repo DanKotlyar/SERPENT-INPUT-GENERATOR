@@ -44,6 +44,7 @@ class pin(universe):
         _isstr(id, "id")
         _isint(nregions, "numOfRegions")
         _ispositive(nregions, "numOfRegions")
+        super().__init__(id)
         self.id = id # pin universe id
         self.nregions = nregions # number of pin regions
         self.materials = np.array([],dtype = material) # pin materials 

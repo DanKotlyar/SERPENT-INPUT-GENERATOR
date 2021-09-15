@@ -9,7 +9,9 @@ email: iaguirre6@gatech.edu
 from serpentGenerator.functions.pin import pin
 from serpentGenerator.functions.pins import pins as pdic
 from serpentGenerator.functions.universe import universe
+
 import numpy as np
+import copy
 from serpentGenerator.functions.checkerrors import (
     _isstr, _isinstanceArray, _isnumber, _isnumberArray, _ispositive, _isSorted,
     _isinstance
@@ -64,7 +66,7 @@ class pinStack(universe):
             if pinsArray[i].id not in self._pinsDict.pins:
                 self._pinsDict.addPin(pinsArray[i])
 
-    def setStack(self, pins, heights):
+    def setStack(self, univs, heights):
         """Assign the pins for the pinstack lattice with their corresponding heights 
 
         The purpose of the ``setStack`` function is to set the map layout for the
@@ -102,21 +104,21 @@ class pinStack(universe):
         >>> heights1 = np.array([-20, 0, 20.2, 40.1])
         >>> lat1.setStack(pins1, heights1)
         """
-        _isinstanceArray(pins, pin, "array of pin object for the pinstack")
+        _isinstanceArray(univs, universe, "array of pin object for the pinstack")
         _isnumberArray(heights, "height array for the pins in the pinstack")
 
         _isSorted(heights, False, "height array for the pins in the pinstack")
 
 
-        if len(pins) != self.nelements:
+        if len(univs) != self.nelements:
             raise ValueError("pins array must have {} elements not {}"
-                                    .format(self.nelements, len(pins)))
+                                    .format(self.nelements, len(univs)))
         if len(heights) != self.nelements:
             raise ValueError("heights array must have {} elements not {}"
-                                    .format(self.nelements, len(pins)))
+                                    .format(self.nelements, len(univs)))
 
-        self._createPinDict(pins)
-        self.pins = pins
+        # self._createPinDict(univs)
+        self.pins = univs
         self.heights = heights
 
     def duplicateLat(self, newLatId):
@@ -153,9 +155,8 @@ class pinStack(universe):
         >>> lat2 = lat1.duplicateLat("102")
         """
         _isstr(newLatId, "new lattice universe id")
-        newLat = pinStack(newLatId, self.xo, self.yo, self.nelements)
-        newLat.pins = self.pins
-        newLat.heights = self.heights
+        newLat = copy.deepcopy(self)
+        newLat.id = newLatId
         return newLat
 
     def replacePin(self, oldPin, newPin):
@@ -195,8 +196,8 @@ class pinStack(universe):
         if ((len(self.pins) == 0) | (len(self.heights) == 0)):
             raise ValueError("pinstack pins and heights cannot be empty")
 
-        _isinstance(oldPin, pin, "old pin object")
-        _isinstance(newPin, pin, "new pin object")
+        _isinstance(oldPin, universe, "old pin object")
+        _isinstance(newPin, universe, "new pin object")
 
         for i in range(0, self.nelements):
             if (self.pins[i].id == oldPin.id):
@@ -243,5 +244,13 @@ class pinStack(universe):
                 + self.pins[i].id +"\n"
 
         latString = latHeader + mapString + "\n"
+
+        geomString = ""
+        for i in range(0, self.nelements):
+            if (self.pins[i].cells.ncells != 0):
+                geomString = geomString + self.pins[i].toString()
+
+        latString = latString + geomString
+
         return latString
 

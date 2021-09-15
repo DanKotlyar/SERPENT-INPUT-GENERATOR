@@ -9,6 +9,7 @@ email: iaguirre6@gatech.edu
 from serpentGenerator.functions.pinStack import pinStack
 from serpentGenerator.functions.pin import pin
 from serpentGenerator.functions.universe import universe
+import copy
 import numpy as np
 from serpentGenerator.functions.checkerrors import (
     _is2darray, _isstr, _isinstance, _isnumber, _ispositive, _isinstanceNDArray
@@ -135,8 +136,8 @@ class sqLat(universe):
         if self.map.size == 0:
             raise ValueError("lattice map cannot be empty")
 
-        _isinstance(oldPin, pin, "old pin object")
-        _isinstance(newPin, pin, "new pin object")
+        _isinstance(oldPin, universe, "old pin object")
+        _isinstance(newPin, universe, "new pin object")
 
         for i in range(0, self.nelements):
             for j in range(0, self.nelements):
@@ -176,8 +177,8 @@ class sqLat(universe):
         >>> lat2 = lat1.duplicateLat("102")
         """
         _isstr(newLatId, "new lattice universe id")
-        newLat = sqLat(newLatId, self.xo, self.yo, self.nelements, self.pitch)
-        newLat.map = self.map
+        newLat = copy.deepcopy(self)
+        newLat.id = newLatId
         return newLat
             
     def toString(self):
