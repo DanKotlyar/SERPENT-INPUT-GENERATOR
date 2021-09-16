@@ -1,7 +1,7 @@
 """universe
 
 This class represents a universe, following from the tradtional serpent/mcnp universe
-based geometry
+based geometry.
 """
 
 from serpentGenerator.functions.cell import cell
@@ -10,15 +10,13 @@ from serpentGenerator.functions.surfs import surfs as sdict
 from serpentGenerator.functions.cells import cells as cdict
 
 from serpentGenerator.functions.checkerrors import (
-    _isinstance, _is1darray, _isbool, _isint, _ispositive, _ispositiveArray,
-    _is1dlist, _isinstanceList
+    _isstr, _isinstanceList
 )
 
 
 class universe:
     """Basic data definition for a universe obj.
 
-    
     Attributes
     ----------
     id : str
@@ -29,6 +27,7 @@ class universe:
         cells obj consisting of all cells making up the universe
     """
     def __init__(self, id):
+        _isstr(id, "universe id")
         self.id = id
         self.cells = cdict()
         self.surfs = sdict()
@@ -48,3 +47,4 @@ class universe:
         return univString
         
 
+bob = universe()
