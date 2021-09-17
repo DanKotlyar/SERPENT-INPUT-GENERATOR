@@ -66,7 +66,7 @@ fuel3	0.4095
 water	4750.0
 clad
 
-pin W
+pin W1
 water
 
 pin RT
@@ -92,7 +92,7 @@ lat FC3 9 0 0 3
 
 lat GT1 9 0 0 3
 0.0	RB
-20.0	bigT1
+20.0	T1
 220.0	RT
 
 surf crt11 cyl 0.0 0.0 0.5715 
@@ -108,22 +108,22 @@ surf clt12 pad 0.0 0.0 0.58725 0.5962500000000001 80.0 100.0
 surf clt13 pad 0.0 0.0 0.58725 0.5962500000000001 170.0 190.0 
 surf clt14 pad 0.0 0.0 0.58725 0.5962500000000001 260.0 280.0 
 
-cell bapadt11 bigT1  B4C -bat11 
-cell bapadt12 bigT1  B4C -bat12 
-cell bapadt13 bigT1  B4C -bat13 
-cell bapadt14 bigT1  B4C -bat14 
-cell clpadt11 bigT1  clad -clt11 
-cell clpadt12 bigT1  clad -clt12 
-cell clpadt13 bigT1  clad -clt13 
-cell clpadt14 bigT1  clad -clt14 
-cell cc11 bigT1  water -crt11 
-cell cc12 bigT1  clad crt11 -crt12 
-cell cc13 bigT1  clad crt13 -crt14 
-cell cc14 bigT1  water crt14 
+cell bapadt11 T1  B4C -bat11 
+cell bapadt12 T1  B4C -bat12 
+cell bapadt13 T1  B4C -bat13 
+cell bapadt14 T1  B4C -bat14 
+cell clpadt11 T1  clad -clt11 
+cell clpadt12 T1  clad -clt12 
+cell clpadt13 T1  clad -clt13 
+cell clpadt14 T1  clad -clt14 
+cell cc11 T1  water -crt11 
+cell cc12 T1  clad crt11 -crt12 
+cell cc13 T1  clad crt13 -crt14 
+cell cc14 T1  water crt14 
 
 lat GT2 9 0 0 3
 0.0	RB
-20.0	bigT2
+20.0	T2
 220.0	RT
 
 surf crt21 cyl 0.0 0.0 0.5715 
@@ -139,22 +139,22 @@ surf clt22 pad 0.0 0.0 0.5873 0.5962000000000001 72.5 107.5
 surf clt23 pad 0.0 0.0 0.5873 0.5962000000000001 162.5 197.5 
 surf clt24 pad 0.0 0.0 0.5873 0.5962000000000001 252.5 287.5 
 
-cell bapadt21 bigT2  B4C -bat21 
-cell bapadt22 bigT2  B4C -bat22 
-cell bapadt23 bigT2  B4C -bat23 
-cell bapadt24 bigT2  B4C -bat24 
-cell clpadt21 bigT2  clad -clt21 
-cell clpadt22 bigT2  clad -clt22 
-cell clpadt23 bigT2  clad -clt23 
-cell clpadt24 bigT2  clad -clt24 
-cell cc21 bigT2  water -crt21 
-cell cc22 bigT2  clad crt21 -crt22 
-cell cc23 bigT2  clad crt23 -crt24 
-cell cc24 bigT2  water crt24 
+cell bapadt21 T2  B4C -bat21 
+cell bapadt22 T2  B4C -bat22 
+cell bapadt23 T2  B4C -bat23 
+cell bapadt24 T2  B4C -bat24 
+cell clpadt21 T2  clad -clt21 
+cell clpadt22 T2  clad -clt22 
+cell clpadt23 T2  clad -clt23 
+cell clpadt24 T2  clad -clt24 
+cell cc21 T2  water -crt21 
+cell cc22 T2  clad crt21 -crt22 
+cell cc23 T2  clad crt23 -crt24 
+cell cc24 T2  water crt24 
 
 lat GT3 9 0 0 3
 0.0	RB
-20.0	bigT3
+20.0	T3
 220.0	RT
 
 surf crt31 cyl 0.0 0.0 0.5715 
@@ -170,22 +170,22 @@ surf clt32 pad 0.0 0.0 0.5908 0.5927 75.0 105.0
 surf clt33 pad 0.0 0.0 0.5908 0.5927 165.0 195.0 
 surf clt34 pad 0.0 0.0 0.5908 0.5927 255.0 285.0 
 
-cell bapadt31 bigT3  B4C -bat31 
-cell bapadt32 bigT3  B4C -bat32 
-cell bapadt33 bigT3  B4C -bat33 
-cell bapadt34 bigT3  B4C -bat34 
-cell clpadt31 bigT3  clad -clt31 
-cell clpadt32 bigT3  clad -clt32 
-cell clpadt33 bigT3  clad -clt33 
-cell clpadt34 bigT3  clad -clt34 
-cell cc31 bigT3  water -crt31 
-cell cc32 bigT3  clad crt31 -crt32 
-cell cc33 bigT3  clad crt33 -crt34 
-cell cc34 bigT3  water crt34 
+cell bapadt31 T3  B4C -bat31 
+cell bapadt32 T3  B4C -bat32 
+cell bapadt33 T3  B4C -bat33 
+cell bapadt34 T3  B4C -bat34 
+cell clpadt31 T3  clad -clt31 
+cell clpadt32 T3  clad -clt32 
+cell clpadt33 T3  clad -clt33 
+cell clpadt34 T3  clad -clt34 
+cell cc31 T3  water -crt31 
+cell cc32 T3  clad crt31 -crt32 
+cell cc33 T3  clad crt33 -crt34 
+cell cc34 T3  water crt34 
 
 lat WG1 9 0 0 3
 0.0	RB
-20.0	W
+20.0	W1
 220.0	RT
 
 lat FA1 1 0 0  19 19 1.26

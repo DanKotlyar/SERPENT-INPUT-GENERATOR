@@ -47,7 +47,7 @@ class sqLat(universe):
         _ispositive(nelements, "number of lattice elements i.e. 17 x 17")
         _isnumber(pitch, "lattice pitch")
         _ispositive(pitch, "lattice pitch")
-
+        super().__init__(id)
         self.id = id
         self.xo = xo
         self.yo = yo
@@ -222,6 +222,19 @@ class sqLat(universe):
             mapString = mapString + "\n"
 
         latString = latHeader + mapString + "\n"
+
+        geomString = ""
+        unique = {}
+        for i in range(0, self.nelements):
+            for j in range(0, self.nelements):
+                if (self.map[i][j].id not in unique):
+                    unique[self.map[i][j].id] = self.map[i][j]
+
+        for key in unique:
+            if (unique[key].cells.ncells != 0):
+                geomString = geomString + unique[key].toString()
+
+        latString = latString + geomString
         return latString
 
 

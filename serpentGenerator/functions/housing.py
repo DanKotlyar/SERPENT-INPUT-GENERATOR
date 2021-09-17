@@ -17,7 +17,7 @@ from serpentGenerator.functions.cell import cell
 import numpy as np
 
 class housing(universe):
-    def __init__(self, coreWidth, coreHeight, defaultCRFlag = True, radiiCR = None, 
+    def __init__(self, width, height, defaultCRFlag = True, radiiCR = None, 
     matsCR = None, border = None, baffle = None, barrel = None, thermalShield = None,
     neutronShield = None, vessel = None):
         if (defaultCRFlag & ((radiiCR == None) | (matsCR == None))):
@@ -31,17 +31,21 @@ class housing(universe):
         self.thermalShield = thermalShield
         self.neutronShield = neutronShield
         self.vessel = vessel
-        self.coreWidth = coreWidth
-        self.coreHeight = coreHeight
+        self.width = width
+        self.height = height
         self.radiiCR = radiiCR
         self.matsCR = matsCR
+        self.defaultCRFlag = defaultCRFlag
 
-        self._concRings(radiiCR, matsCR)
+        if defaultCRFlag:
+            self._concRings(radiiCR, matsCR)
+        else:
+            self._border(width)
 
     def _concRings(self, radii, mats):
 
         for i in range(0, len(radii)):
-            radii[i] = radii[i] + self.coreWidth/2
+            radii[i] = radii[i] + self.width/2
 
         for i in range(0, len(radii)):
             self.surfs.addSurf(surf("cr"+str(i+1), "cyl",
@@ -51,6 +55,11 @@ class housing(universe):
             self.cells.addCell(cell("cc"+str(i+1), 
             np.array([self.surfs.getSurf("cr"+str(i+1)), 
             self.surfs.getSurf("cr"+str(i+2))]), np.array([0, 1]), mats[i].id))
+
+    def _border(self, width):      
+        borderSurf = surf("border", "sqc", np.array([0.0, 0.0, width/2]))
+        self.border = borderSurf
+        self.surfs.addSurf(borderSurf)
 
         
 

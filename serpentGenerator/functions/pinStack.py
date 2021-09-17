@@ -51,7 +51,7 @@ class pinStack(universe):
         _isnumber(yo, "y coordinate for lattice origin")
         _isnumber(nelements, "number of axial lattice elements")
         _ispositive(nelements, "number of  axial lattice elements")
-
+        super().__init__(id)
         self.id = id
         self.type = type
         self.xo = xo

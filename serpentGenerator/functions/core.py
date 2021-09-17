@@ -50,12 +50,15 @@ class core:
         if not (isinstance(mainUniv, universe)):
             raise TypeError("{} must be of type: {}, {},"
                 " or {}".format(mainUniv, universe))
-        
-        _isinstance(lats, ldict, "channels")
-        _isinstance(pins, pdict, "channel axial layers")
-        _isinstance(materials, mats, "materials")
-        _isinstance(housing, hous, 'core housing')
+                
+        if not (lats == None):
+            _isinstance(lats, ldict, "channels")
+        if not (pins == None):
+            _isinstance(pins, pdict, "channel axial layers")
+        if not (housing == None):
+            _isinstance(housing, hous, 'core housing')
 
+        _isinstance(materials, mats, "materials")
         self.flagXS = flagXS
         self.flagBurn = flagBurn
         self.flagBranch = flagBranch
@@ -83,32 +86,45 @@ class core:
 
         csurfs = sdict()
         ccells = cdict()
-        core = cell("core", np.array([housing.surfs.getSurf("cr1")]), np.array([1]))
-        core.setFill(mainUniv.id)
 
-        housing.cells.addCell(core)
+        if housing.defaultCRFlag:
+            core = cell("core", np.array([housing.surfs.getSurf("cr1")]), 
+                np.array([1]))
+            core.setFill(mainUniv.id)
 
-        voidSurf = surf("voidBorder", "cuboid", 
-            np.array([-1*housing.radiiCR[len(housing.radiiCR)-1], 
-            housing.radiiCR[len(housing.radiiCR)-1],
-            -1*housing.radiiCR[len(housing.radiiCR)-1], 
-            housing.radiiCR[len(housing.radiiCR)-1], 0, housing.coreHeight]))
+            housing.cells.addCell(core)
 
-        csurfs.addSurf(voidSurf)
+            voidSurf = surf("voidBorder", "cuboid", 
+                np.array([-1*housing.radiiCR[len(housing.radiiCR)-1], 
+                housing.radiiCR[len(housing.radiiCR)-1],
+                -1*housing.radiiCR[len(housing.radiiCR)-1], 
+                housing.radiiCR[len(housing.radiiCR)-1], 0, housing.height]))
 
-        voidBuffer = cell("voidBuffer", 
-            np.array([housing.surfs.getSurf("cr"+str(len(housing.radiiCR))), 
-            voidSurf]), np.array([0, 1]), "void")
+            csurfs.addSurf(voidSurf)
 
-        housing.cells.addCell(voidBuffer)
+            voidBuffer = cell("voidBuffer", 
+                np.array([housing.surfs.getSurf("cr"+str(len(housing.radiiCR))), 
+                voidSurf]), np.array([0, 1]), "void")
 
-        fillRegion = cell("coreFill", np.array([voidSurf]), np.array([1]))
-        fillRegion.setFill(housing.id)
+            housing.cells.addCell(voidBuffer)
 
-        voidRegion = cell("voidRegion", np.array([voidSurf]),
-            np.array([0]), "outside")
+            fillRegion = cell("coreFill", np.array([voidSurf]), np.array([1]))
+            fillRegion.setFill(housing.id)
 
-        ccells.addCells([fillRegion, voidRegion])
+            voidRegion = cell("voidRegion", np.array([voidSurf]),
+                np.array([0]), "outside")
+
+            ccells.addCells([fillRegion, voidRegion])
+
+        else:
+            core = cell("in", np.array([housing.border]), np.array([1]))
+            core.setFill(mainUniv.id)
+
+            voidRegion = cell("out", np.array([housing.border]), np.array([0]),
+                "outside")
+            ccells.addCells([core, voidRegion])
+
+            voidSurf = housing.border
 
         main.surfs = csurfs
         main.cells = ccells

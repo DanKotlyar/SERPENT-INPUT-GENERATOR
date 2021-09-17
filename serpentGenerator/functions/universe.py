@@ -26,6 +26,7 @@ class universe:
     cells : cells obj
         cells obj consisting of all cells making up the universe
     """
+    
     def __init__(self, id):
         _isstr(id, "universe id")
         self.id = id
@@ -46,5 +47,3 @@ class universe:
         univString = self.surfs.toString() + self.cells.toString()
         return univString
         
-
-bob = universe()
