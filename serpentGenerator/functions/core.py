@@ -50,7 +50,7 @@ class core:
         if not (isinstance(mainUniv, universe)):
             raise TypeError("{} must be of type: {}, {},"
                 " or {}".format(mainUniv, universe))
-                
+
         if not (lats == None):
             _isinstance(lats, ldict, "channels")
         if not (pins == None):
@@ -208,7 +208,7 @@ class core:
 
         nfgString = ""
         for i in range(0, len(ebounds)):
-            nfgString = nfgString + str(round(ebounds[i], 4)) + " "
+            nfgString = nfgString + str(round(ebounds[i], 9)) + " "
         nfgString = "set nfg " + str(ngroups) + " " + nfgString + "\n"
 
         adfString = "" if not setADF else self.voidSurf.toString() \
@@ -224,9 +224,45 @@ class core:
     def setBranching(self, branches):
             pass
 
-    def setSettings(self, power, bc, sym, activeCycles, nonActiveCycle, nparticle,
-        setPCC = False):
-            pass
+    def setSettings(self, power, bc, sym, egrid, nps, nact, nskip, setPCC = False,
+        misc = []):
+            _ispositive(power, "power")
+            self.settings['power'] = power
+            self.settings['bc'] = bc
+            self.settings['sym'] = sym
+            self.settings['egrid'] = egrid
+            self.settings['nps'] = nps
+            self.settings['nact'] = nact
+            self.settings['nskip'] = nskip
+            self.settings['setPCC'] = setPCC
+
+            setString = ""
+
+            setString = setString + "set power "+str(power) + "\n"
+
+            bcString = ""
+            for i in range(0, len(bc)):
+                bcString = bcString + str(bc[i]) + " "
+            bcString = "set bc " + bcString + "\n"
+
+            setString = setString + "set sym "+str(sym) + "\n"
+            setString = setString + "set pop "+str(nps)+" "+ str(nact)+" "\
+                +str(nskip)+ "\n"
+            
+            pccString = "set pcc 0" if not setPCC else "set pcc 1"
+            setString = setString + pccString +"\n"
+            egString = ""
+            for i in range(0, len(egrid)):
+                egString = egString + str(egrid[i]) + " "
+            egString = "set egrid "+ egString + "\n"
+            setString = "set egrid "
+            miscString = ""
+            for i in range(0, len(misc)):
+                miscString = miscString + misc[i] + "\n"
+
+            setString = setString + miscString
+
+            self.settings['toString'] = setString
 
     def toString(self):
         """display input in stringForm.
@@ -251,6 +287,8 @@ class core:
             inputString = inputString + self.burnup['toString']
         if ((self.flagXS) & ('toString' in self.xs)):
             inputString = inputString + self.xs['toString']
+        if ((self.flagSettings) & ('toString' in self.settings)):
+            inputString = inputString + self.settings['toString']
         if ('toString' in self.plot):
             inputString = inputString + self.plot['toString']
             

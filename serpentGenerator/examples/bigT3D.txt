@@ -301,8 +301,13 @@ surf voidBorder cuboid -131.01456000000002 131.01456000000002 -131.0145600000000
 cell coreFill 0  fill housing -voidBorder 
 cell voidRegion 0  outside voidBorder 
 
+set gcu RB  RT  
+set nfg 2 6.25e-07 
+
+set power 200000000.0
+set sym 0
+set pop 1850000 300 50
+set pcc 0
 plot 1 10000 10000
 plot 3 10000 10000
-set pop 20 5 50 
-set gcu -1 
 
