@@ -21,6 +21,7 @@ from serpentGenerator.functions.surf import surf
 from serpentGenerator.functions.surfs import surfs as sdict
 from serpentGenerator.functions.cells import cells as cdict
 from serpentGenerator.functions.housing import housing as hous
+from serpentGenerator.functions.branches import branches as bdict
 
 from serpentGenerator.functions.checkerrors import (
     _isinstance, _is1darray, _isbool, _isint, _ispositive, _ispositiveArray,
@@ -221,8 +222,20 @@ class core:
         self.xs['toString'] = xsString
         #set gcu -1 if xsflag false
 
-    def setBranching(self, branches):
-            pass
+    def setBranching(self, branches, fuelTemps = None, modTemps= None, modDens = None, bppms = None):
+        _isinstance(branches, bdict, "branches")
+        self.branch['nbranch'] = branches.nbranches
+        self.branch['pertFT'] = branches.pertFT
+        self.branch['pertMT'] = branches.pertMT
+        self.branch['pertMD'] = branches.pertMD
+        self.branch['pertBPPM'] = branches.pertBPPM
+
+        self.branch['fuelTemps'] = fuelTemps
+        self.branch['modTemps'] = modTemps
+        self.branch['modDens'] = modDens
+        self.branch['bppms'] = bppms
+
+        self.branch['toString'] = branches.toString()
 
     def setSettings(self, power, bc, sym, egrid, nps, nact, nskip, setPCC = False,
         misc = []):
