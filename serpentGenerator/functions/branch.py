@@ -50,38 +50,7 @@ class branch:
         return branchString
 
 
-    @staticmethod
-    def branchBuilderPWR(nomFuel = None, nomMod = None, fuelTemps=None, 
-    modTemps = None, modDens = None, bppms = None):
 
-        nfuelt = len(fuelTemps) if (fuelTemps != None) else 1
-        nmodt = len(modTemps) if (modTemps != None) else 1
-        nmodd = len(modDens) if (modDens != None) else 1
-        nbppm = len(bppms) if (bppms != None) else 1
-
-        numBranches = nfuelt*nmodt*nmodd*nbppm
-        branches = [None]*numBranches
-        counter = 0
-
-        def matsBuilderPWR(nomMat, modDens, bppms):
-            numMats = nmodd*nbppm
-            mats = [None]*numMats
-            mats = [ [0]*len(bppms) for i in range(len(modDens))]
-            counter = 0
-
-            for i in range(0, len(modDens)):
-                for j in range(0, len(bppms)):
-                    mats[i][j] = nomMat.duplicateMat(nomMat.id+"d"+str(modDens[i])+"b"+str(bppms[j]))
-
-                    counter = counter + 1
-            return mats
-        mats = matsBuilderPWR(nomMod, modDens, bppms)
-
-        for i in range(0, len(fuelTemps)):
-            for k in range(0, len(modDens)):
-                for o in range(0, len(bppms)):
-                    branches[counter] = branch("f"+str(fuelTemps[i])+"d"+str(modDens[k])+"b"+str(bppms[o]), repmat = [nomMod, mats[k][o]], stp = [nomFuel, nomFuel.dens, fuelTemps[i]])
-                    counter = counter + 1 
 
 
 

@@ -77,9 +77,8 @@ class core:
         self.branch = {}
         self.settings = {}
         self.plot = {}
+        self.coef = {}
 
-    def _parseMainUniv(self, mainUniv):
-        pass #TBD
 
     def _setCoreGeom(self, mainUniv, housing):
 
@@ -222,20 +221,46 @@ class core:
         self.xs['toString'] = xsString
         #set gcu -1 if xsflag false
 
-    def setBranching(self, branches, fuelTemps = None, modTemps= None, modDens = None, bppms = None):
+    def setBranching(self, branches):
         _isinstance(branches, bdict, "branches")
+        self.input['materials'].addMats(branches.mats)
+        self.branch['branches'] = branches
         self.branch['nbranch'] = branches.nbranches
-        self.branch['pertFT'] = branches.pertFT
-        self.branch['pertMT'] = branches.pertMT
-        self.branch['pertMD'] = branches.pertMD
-        self.branch['pertBPPM'] = branches.pertBPPM
+        self.branch['isPertFT'] = branches.isPertFT
+        self.branch['isPertMT'] = branches.isPertMT
+        self.branch['isPertMD'] = branches.isPertMD
+        self.branch['isPertBPPM'] = branches.isPertBPPM
 
-        self.branch['fuelTemps'] = fuelTemps
-        self.branch['modTemps'] = modTemps
-        self.branch['modDens'] = modDens
-        self.branch['bppms'] = bppms
+        self.branch['fuelTemps'] = branches.pertFT
+        self.branch['modTemps'] = branches.pertMT
+        self.branch['modDens'] = branches.pertMD
+        self.branch['bppms'] = branches.pertBPPM
 
         self.branch['toString'] = branches.toString()
+
+    def _setCoef(self):
+
+        coefString = ""
+        if (self.flagBranch & self.flagBurn & ('toString' in self.burnup) & ('toString' in self.branch)):
+            coefString = "coef "+ str(len(self.burnup['burnPoints']))+ str(self.burnup['burnPoints'] +"\n")
+            branchnames =""
+            for key in self.branch['branches'].branches:
+                branchnames = branchnames + self.branch['branches'].branches[key].id + " "
+            branchnames = branchnames + "\n"
+            coefString = coefString + str(self.branch['nbranch']) +" "+ branchnames + "\n"
+        elif (self.flagBranch & ('toString' in self.branch)):
+            coefString = "coef 1 0 \n"
+            branchnames =""
+            for key in self.branch['branches'].branches:
+                branchnames = branchnames + self.branch['branches'].branches[key].id + " "
+            branchnames = branchnames + "\n"
+            coefString = coefString + str(self.branch['nbranch']) +" "+ branchnames + "\n"
+        elif (self.flagBurn & ('toString' in self.burnup)):
+            coefString = "coef "+ str(len(self.burnup['burnPoints']))+ str(self.burnup['burnPoints']) +"\n"
+        else:
+            pass
+
+        self.coef['toString'] = coefString
 
     def setSettings(self, power, bc, sym, egrid, nps, nact, nskip, setPCC = False,
         misc = []):
@@ -302,7 +327,12 @@ class core:
             inputString = inputString + self.xs['toString']
         if ((self.flagSettings) & ('toString' in self.settings)):
             inputString = inputString + self.settings['toString']
+        if ((self.flagBranch) & ('toString' in self.branch)):
+            inputString = inputString + self.branch['toString']
         if ('toString' in self.plot):
             inputString = inputString + self.plot['toString']
+
+        self._setCoef()
+        inputString = inputString + self.coef['toString']
             
         return inputString
