@@ -293,7 +293,8 @@ class core:
             for i in range(0, len(egrid)):
                 egString = egString + str(egrid[i]) + " "
             egString = "set egrid "+ egString + "\n"
-            setString = "set egrid "
+
+            setString = setString + egString
             miscString = ""
             for i in range(0, len(misc)):
                 miscString = miscString + misc[i] + "\n"

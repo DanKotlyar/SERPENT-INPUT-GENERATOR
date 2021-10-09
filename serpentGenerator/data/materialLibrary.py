@@ -35,11 +35,11 @@ with h.File(setDataPath(__matLibFile),"r") as hdf:
         return density
 
     def __getIsBurn(matName):
-        isBurn = bool(__mat.get(matName).get("isBurn"))
+        isBurn = bool(int(np.array(__mat.get(matName).get("isBurn"))))
         return isBurn
     
     def __getIsModer(matName):
-        isModer = bool(__mat.get(matName).get("isModer"))
+        isModer = bool(int(np.array(__mat.get(matName).get("isModer"))))
         return isModer
 
     def __getXSLib(matName):
@@ -66,4 +66,5 @@ with h.File(setDataPath(__matLibFile),"r") as hdf:
         MATLIB[key].xsLib = __getXSLib(key)
         MATLIB[key].modLib = __getModLib(key)
         MATLIB[key].color = __getColor(key)
+        print(MATLIB[key].toString())
 

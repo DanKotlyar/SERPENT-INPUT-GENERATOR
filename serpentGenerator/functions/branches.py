@@ -7,7 +7,10 @@ A container for individual branches.
 email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
+import numpy as np
 from serpentGenerator.functions.branch import branch
+from serpentGenerator.functions.mix import mix
+from serpentGenerator.data.materialLibrary import MATLIB
 from serpentGenerator.functions.checkerrors import (
     _isinstanceList, _islist
 )
@@ -66,22 +69,34 @@ class branches:
         counter = 0
 
         def matsBuilderPWR(nomMat, modDens, bppms):
-            numMats = nmodd*nbppm
+            numMats = nmodd
+            numMixs = nmodd*nbppm
             branchMats = [None]*numMats
+            branchMixs = [None]*numMixs
             mats = [ [0]*len(bppms) for i in range(len(modDens))]
+            mixs = [ [0]*len(bppms) for i in range(len(modDens))]
             counter = 0
             for i in range(0, len(modDens)):
                 for j in range(0, len(bppms)):
-                    mats[i][j] = nomMat.duplicateMat(nomMat.id+"d"+str(modDens[i])+"b"+str(bppms[j]))
-                    branchMats[counter] = nomMat.duplicateMat(nomMat.id+"d"+str(modDens[i])+"b"+str(bppms[j]))
+                    mats[i][j] = nomMat.duplicateMat(nomMat.id+"d"+str(modDens[i]))
+                    mats[i][j].set('dens', -1*float(modDens[i]/1000))
+                    mixs[i][j] = mix(nomMat.id+"d"+str(modDens[i])+"b"+str(bppms[j]), [mats[i][j], MATLIB['boron']], [-1*(1 - bppms[j]*1e-6), -1*bppms[j]*1e-6])
+                    branchMixs[counter] = mixs[i][j]
                     counter = counter + 1
-            return mats, branchMats
-        mats, branchMats = matsBuilderPWR(nomMod, modDens, bppms)
+                branchMats[i] = mats[i][0]
+            
+            branchMats = branchMats+branchMixs
+
+            for i in range(0, len(branchMats)):
+                print(branchMats[i].toString())
+
+            return mixs, branchMats
+        mixs, branchMats = matsBuilderPWR(nomMod, modDens, bppms)
 
         for i in range(0, len(fuelTemps)):
             for k in range(0, len(modDens)):
                 for o in range(0, len(bppms)):
-                    branchs[counter] = branch("f"+str(fuelTemps[i])+"d"+str(modDens[k])+"b"+str(bppms[o]), repmat = [nomMod, mats[k][o]], stp = [nomFuel, nomFuel.dens, fuelTemps[i]])
+                    branchs[counter] = branch("f"+str(fuelTemps[i])+"d"+str(modDens[k])+"b"+str(bppms[o]), repmat = [nomMod, mixs[k][o]], stp = [nomFuel, nomFuel.dens, fuelTemps[i]])
                     counter = counter + 1
 
         branchy = branches(pertFT=fuelTemps, pertMD=modDens, pertBPPM=bppms)
@@ -89,4 +104,19 @@ class branches:
         branchy.mats = branchMats
 
         return branchy
+
+fuel1 = MATLIB['UO2'].duplicateMat("fuel1")
+fuel1.set('fractions', np.array([-0.04319337211, -0.83830401789, -.11850261])) # 4.9 % wt enrichment
+fuel1.set('dens', -10.5216)
+fuel1.set('rgb', "238 59 49")
+
+mod = MATLIB['lightWater'].duplicateMat("water")
+mod.set("isBurn", False)
+mod.set('rgb', "198 226 255")
+
+
+fuelTemps = [600, 900, 1200, 1500]
+modDens = [600, 700, 800]
+bppm = [0, 750, 1500]
+branches1 = branches.branchBuilderPWR(nomFuel=fuel1, nomMod= mod, fuelTemps=fuelTemps, modDens=modDens, bppms=bppm)
 

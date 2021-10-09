@@ -1,14 +1,14 @@
-mat fuel1    -10.2141  burn 1  rgb 238 59 49
+mat fuel1    -10.5216  burn 1  rgb 238 59 49
 92235.09c	-0.04319337211
 92238.09c	-0.83830401789
 8016.09c	-0.11850261
 
-mat fuel2    -10.2141  burn 1  rgb 255 165 0
+mat fuel2    -10.5216  burn 1  rgb 255 165 0
 92235.09c	-0.04319337211
 92238.09c	-0.83830401789
 8016.09c	-0.11850261
 
-mat fuel3    -10.2141  burn 1  rgb 255 255 0
+mat fuel3    -10.5216  burn 1  rgb 255 255 0
 92235.09c	-0.04319337211
 92238.09c	-0.83830401789
 8016.09c	-0.11850261
@@ -51,41 +51,53 @@ mat B4C    1.0    rgb 255 255 0
 5010.06c	0.199
 5011.06c	0.801
 
-mat waterd600b0    -0.7 moder ltwr 1001   rgb 198 226 255
+mat waterd600    -0.6 moder ltwr 1001   rgb 198 226 255
 1001.06c	0.66667
 8016.06c	0.33333
 
-mat waterd600b750    -0.7 moder ltwr 1001   rgb 198 226 255
+mat waterd700    -0.7 moder ltwr 1001   rgb 198 226 255
 1001.06c	0.66667
 8016.06c	0.33333
 
-mat waterd600b1500    -0.7 moder ltwr 1001   rgb 198 226 255
+mat waterd800    -0.8 moder ltwr 1001   rgb 198 226 255
 1001.06c	0.66667
 8016.06c	0.33333
 
-mat waterd700b0    -0.7 moder ltwr 1001   rgb 198 226 255
-1001.06c	0.66667
-8016.06c	0.33333
+mix waterd600b0
+waterd600	-1.0
+boron	0.0
 
-mat waterd700b750    -0.7 moder ltwr 1001   rgb 198 226 255
-1001.06c	0.66667
-8016.06c	0.33333
+mix waterd600b750
+waterd600	-0.99925
+boron	-0.00075
 
-mat waterd700b1500    -0.7 moder ltwr 1001   rgb 198 226 255
-1001.06c	0.66667
-8016.06c	0.33333
+mix waterd600b1500
+waterd600	-0.9985
+boron	-0.0015
 
-mat waterd800b0    -0.7 moder ltwr 1001   rgb 198 226 255
-1001.06c	0.66667
-8016.06c	0.33333
+mix waterd700b0
+waterd700	-1.0
+boron	0.0
 
-mat waterd800b750    -0.7 moder ltwr 1001   rgb 198 226 255
-1001.06c	0.66667
-8016.06c	0.33333
+mix waterd700b750
+waterd700	-0.99925
+boron	-0.00075
 
-mat waterd800b1500    -0.7 moder ltwr 1001   rgb 198 226 255
-1001.06c	0.66667
-8016.06c	0.33333
+mix waterd700b1500
+waterd700	-0.9985
+boron	-0.0015
+
+mix waterd800b0
+waterd800	-1.0
+boron	0.0
+
+mix waterd800b750
+waterd800	-0.99925
+boron	-0.00075
+
+mix waterd800b1500
+waterd800	-0.9985
+boron	-0.0015
 
 pin F3
 fuel3	0.4095
