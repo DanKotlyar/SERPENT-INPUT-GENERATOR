@@ -240,10 +240,21 @@ class core:
 
     def _setCoef(self):
 
+        def burnupOutput(burnup):
+            timeString = ""
+            unit = -1 if (burnup['unit'] == 'dayTot') else 1
+                
+            for i in range(0, len(burnup['burnPoints'])):
+                timeString = timeString + str(unit*round(burnup['burnPoints'][i], 7)) + " "
+
+            burnupString = str(len(burnup['burnPoints'])) + " " + timeString+ "\n"
+
+            return burnupString
+
         coefString = ""
         if (self.flagBranch & self.flagBurn & ('toString' in self.burnup) & ('toString' in self.branch)):
-            coefString = "coef "+ str(len(self.burnup['burnPoints']))+ str(self.burnup['burnPoints'] +"\n")
-            branchnames =""
+            coefString = "coef "+ burnupOutput(self.burnup)
+            branchnames = ""
             for key in self.branch['branches'].branches:
                 branchnames = branchnames + self.branch['branches'].branches[key].id + " "
             branchnames = branchnames + "\n"
@@ -256,7 +267,7 @@ class core:
             branchnames = branchnames + "\n"
             coefString = coefString + str(self.branch['nbranch']) +" "+ branchnames + "\n"
         elif (self.flagBurn & ('toString' in self.burnup)):
-            coefString = "coef "+ str(len(self.burnup['burnPoints']))+ str(self.burnup['burnPoints']) +"\n"
+            coefString = "coef "+ burnupOutput(self.burnup)
         else:
             pass
 
