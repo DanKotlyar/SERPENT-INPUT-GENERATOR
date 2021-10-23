@@ -25,7 +25,7 @@ from serpentGenerator.functions.branches import branches as bdict
 
 from serpentGenerator.functions.checkerrors import (
     _isinstance, _is1darray, _isbool, _isint, _ispositive, _ispositiveArray,
-    _is1dlist
+    _is1dlist, _isstr
 )
 
 class core:
@@ -78,6 +78,7 @@ class core:
         self.settings = {}
         self.plot = {}
         self.coef = {}
+        self.xsLibs = ""
 
 
     def _setCoreGeom(self, mainUniv, housing):
@@ -141,6 +142,14 @@ class core:
         file.close()
 
 
+    def setXSLib(self, absolutePath, thermScattLibs):
+        _isstr(absolutePath, "i.e. 'user/xsdata/endfb7'")
+        _isstr(thermScattLibs, "i.e. 'therm lwtr lwj.11t'")
+        path = "set acelib "+ absolutePath + "/sss_endfb7u.xsdata" +"\n"
+        path = path + "set declib "+ absolutePath + "/sss_endfb7.dec" +"\n"
+        path = path + "set nfylib "+ absolutePath + "/sss_endfb7.nfy" +"\n"
+        path = path + thermScattLibs +"\n"
+        self.xsLibs = path
 
 
     def setPlot(self, types, res = 5000, plotOnly = False):
@@ -347,5 +356,6 @@ class core:
             inputString = inputString + self.xs['toString']
             self._setCoef()
             inputString = inputString + self.coef['toString']
-            y7h6txQSWDEFRPO-LS
+
+        inputString = inputString + self.xsLibs
         return inputString

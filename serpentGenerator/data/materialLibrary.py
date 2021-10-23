@@ -66,5 +66,5 @@ with h.File(setDataPath(__matLibFile),"r") as hdf:
         MATLIB[key].xsLib = __getXSLib(key)
         MATLIB[key].modLib = __getModLib(key)
         MATLIB[key].color = __getColor(key)
-        print(MATLIB[key].toString())
-
+        # print(MATLIB[key].toString())
+    MATLIB['lightWater'].modLib = "lwtr 1001"
