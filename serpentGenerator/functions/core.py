@@ -145,9 +145,9 @@ class core:
     def setXSLib(self, absolutePath, thermScattLibs):
         _isstr(absolutePath, "i.e. 'user/xsdata/endfb7'")
         _isstr(thermScattLibs, "i.e. 'therm lwtr lwj.11t'")
-        path = "set acelib '"+ absolutePath + "/sss_endfb7u.xsdata'" +"\n"
-        path = path + "set declib '"+ absolutePath + "/sss_endfb7.dec'" +"\n"
-        path = path + "set nfylib '"+ absolutePath + "/sss_endfb7.nfy'" +"\n"
+        path = 'set acelib "'+ absolutePath + '/sss_endfb7u.xsdata"' +"\n"
+        path = path + 'set declib "'+ absolutePath + '/sss_endfb7.dec"' +"\n"
+        path = path + 'set nfylib "'+ absolutePath + '/sss_endfb7.nfy"' +"\n"
         path = path + thermScattLibs +"\n"
         self.xsLibs = path
 
