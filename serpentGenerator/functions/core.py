@@ -343,8 +343,9 @@ class core:
             inputString = inputString + self.branch['toString']
         if ('toString' in self.plot):
             inputString = inputString + self.plot['toString']
-
-        self._setCoef()
-        inputString = inputString + self.coef['toString']
-            
+        if ((self.flagXS) & ('toString' in self.xs)):
+            inputString = inputString + self.xs['toString']
+            self._setCoef()
+            inputString = inputString + self.coef['toString']
+            y7h6txQSWDEFRPO-LS
         return inputString
