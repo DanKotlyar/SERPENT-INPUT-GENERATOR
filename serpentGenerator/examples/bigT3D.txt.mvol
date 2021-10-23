@@ -1,14 +1,15 @@
 % --- Material volumes:
 
-% Produced Fri Oct 15 17:26:58 2021 by MC volume calculation routine by
+% Produced Sat Oct 23 02:14:01 2021 by MC volume calculation routine by
 % sampling 1000000 random points in the geometry.
 
 set mvol
 
-fuel1           1 1.34907E+05 % (0.010)
-fuel2           1 4.44879E+05 % (0.006)
-fuel3           1 4.46247E+05 % (0.006)
-water           0 6.62718E+06 % (0.001)
-clad            0 4.34618E+06 % (0.002)
-reflector       0 9.26916E+05 % (0.004)
-B4C             0 3.04847E+03 % (0.079)
+fuel1           1 2.28372E+05 % (0.009)
+fuel2           1 3.09906E+05 % (0.007)
+fuel3           1 4.17113E+05 % (0.006)
+fuel4           1 7.80573E+04 % (0.017)
+water           0 6.27705E+06 % (0.001)
+clad            0 4.70130E+06 % (0.002)
+reflector       0 9.32354E+05 % (0.004)
+B4C             0 7.08564E+02 % (0.137)
