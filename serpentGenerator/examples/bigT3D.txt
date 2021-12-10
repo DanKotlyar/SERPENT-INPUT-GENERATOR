@@ -329,7 +329,7 @@ cell cc3 housing  clad cr3 -cr4
 cell core housing  fill CORE1 -cr1 
 cell voidBuffer housing  void cr4 -voidBorder 
 
-surf voidBorder cuboid -146.4152 146.4152 -146.4152 146.4152 0.0 240.0 
+surf voidBorder cuboid -232.8304 232.8304 -232.8304 232.8304 0.0 240.0 
 
 cell coreFill 0  fill housing -voidBorder 
 cell voidRegion 0  outside voidBorder 

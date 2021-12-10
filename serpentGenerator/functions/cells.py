@@ -90,8 +90,9 @@ class cells:
             raise TypeError("{} must be of type: {} ".format(newCell, cell))
 
         if newCell.id in self.cells:
+            match = self.cells[newCell.id]
             raise KeyError("{} has a duplicate cellId: {} with an existing cell in"
-                "the cells element.".format(newCell, newCell.id))
+                " the cells element.".format(newCell.toString(), match.toString()))
 
         self.cells[newCell.id] = newCell
         self.ncells = self.ncells + 1
