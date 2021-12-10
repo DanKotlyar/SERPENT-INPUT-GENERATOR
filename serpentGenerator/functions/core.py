@@ -303,6 +303,8 @@ class core:
                 bcString = bcString + str(bc[i]) + " "
             bcString = "set bc " + bcString + "\n"
 
+            setString = setString + bcString
+
             setString = setString + "set sym "+str(sym) + "\n"
             setString = setString + "set pop "+str(nps)+" "+ str(nact)+" "\
                 +str(nskip)+ "\n"

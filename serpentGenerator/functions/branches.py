@@ -86,11 +86,8 @@ class branches:
                 branchMats[i] = mats[i][0]
             
             branchMats = branchMats+branchMixs
-
-            for i in range(0, len(branchMats)):
-                print(branchMats[i].toString())
-
             return mixs, branchMats
+
         mixs, branchMats = matsBuilderPWR(nomMod, modDens, bppms)
 
         for i in range(0, len(fuelTemps)):
@@ -104,19 +101,3 @@ class branches:
         branchy.mats = branchMats
 
         return branchy
-
-fuel1 = MATLIB['UO2'].duplicateMat("fuel1")
-fuel1.set('fractions', np.array([-0.04319337211, -0.83830401789, -.11850261])) # 4.9 % wt enrichment
-fuel1.set('dens', -10.5216)
-fuel1.set('rgb', "238 59 49")
-
-mod = MATLIB['lightWater'].duplicateMat("water")
-mod.set("isBurn", False)
-mod.set('rgb', "198 226 255")
-
-
-fuelTemps = [600, 900, 1200, 1500]
-modDens = [600, 700, 800]
-bppm = [0, 750, 1500]
-branches1 = branches.branchBuilderPWR(nomFuel=fuel1, nomMod= mod, fuelTemps=fuelTemps, modDens=modDens, bppms=bppm)
-

@@ -13,7 +13,12 @@ mat fuel3    -10.5216  burn 1  rgb 255 255 0
 92238.09c	-0.83830401789
 8016.09c	-0.11850261
 
-mat water    -0.7 moder ltwr 1001   rgb 198 226 255
+mat fuel4    -10.5216  burn 1  rgb 255 255 255
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat water    -0.7 moder lwtr 1001   rgb 198 226 255
 1001.06c	0.66667
 8016.06c	0.33333
 
@@ -47,20 +52,25 @@ mat reflector    0.070462    rgb 204 153 255
 1001.06c	0.47165
 8016.06c	0.23583
 
-mat B4C    0.027475231284511632    rgb 255 255 0
-5010.06c	0.09891083262424188
-5011.06c	0.010990092513804653
-6012.06c	0.027475231284511632
+mat B4C    -2.52  burn 1  rgb 255 255 0
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
 
 pin F2
-fuel2	0.4095
-water	4750.0
-clad
+fuel2	0.4096
+clad	0.476
+water
+
+pin G1
+water	0.5531
+clad	0.6133
+water
 
 pin W1
 water
 
-lat FA 1 0 0  19 19 1.26
+lat FA 1 0 0  19 19 1.2623
 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 
 W1 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 W1 
 W1 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 W1 
@@ -70,7 +80,7 @@ W1 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 W1
 W1 F2 F2 T2 F2 F2 T2 F2 F2 T2 F2 F2 T2 F2 F2 T2 F2 F2 W1 
 W1 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 W1 
 W1 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 W1 
-W1 F2 F2 T2 F2 F2 T2 F2 F2 T2 F2 F2 T2 F2 F2 T2 F2 F2 W1 
+W1 F2 F2 T2 F2 F2 T2 F2 F2 G1 F2 F2 T2 F2 F2 T2 F2 F2 W1 
 W1 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 W1 
 W1 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 W1 
 W1 F2 F2 T2 F2 F2 T2 F2 F2 T2 F2 F2 T2 F2 F2 T2 F2 F2 W1 
@@ -81,18 +91,18 @@ W1 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 W1
 W1 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 W1 
 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 
 
-surf crt21 cyl 0.0 0.0 0.5715 
-surf crt22 cyl 0.0 0.0 0.5873 
-surf crt23 cyl 0.0 0.0 0.5962000000000001 
-surf crt24 cyl 0.0 0.0 0.612 
-surf bat21 pad 0.0 0.0 0.5873 0.5962000000000001 17.5 72.5 
-surf bat22 pad 0.0 0.0 0.5873 0.5962000000000001 107.5 162.5 
-surf bat23 pad 0.0 0.0 0.5873 0.5962000000000001 197.5 252.5 
-surf bat24 pad 0.0 0.0 0.5873 0.5962000000000001 287.5 342.5 
-surf clt21 pad 0.0 0.0 0.5873 0.5962000000000001 342.5 17.5 
-surf clt22 pad 0.0 0.0 0.5873 0.5962000000000001 72.5 107.5 
-surf clt23 pad 0.0 0.0 0.5873 0.5962000000000001 162.5 197.5 
-surf clt24 pad 0.0 0.0 0.5873 0.5962000000000001 252.5 287.5 
+surf crt21 cyl 0.0 0.0 0.5531 
+surf crt22 cyl 0.0 0.0 0.57875 
+surf crt23 cyl 0.0 0.0 0.58765 
+surf crt24 cyl 0.0 0.0 0.6133 
+surf bat21 pad 0.0 0.0 0.57875 0.58765 17.5 72.5 
+surf bat22 pad 0.0 0.0 0.57875 0.58765 107.5 162.5 
+surf bat23 pad 0.0 0.0 0.57875 0.58765 197.5 252.5 
+surf bat24 pad 0.0 0.0 0.57875 0.58765 287.5 342.5 
+surf clt21 pad 0.0 0.0 0.57875 0.58765 342.5 17.5 
+surf clt22 pad 0.0 0.0 0.57875 0.58765 72.5 107.5 
+surf clt23 pad 0.0 0.0 0.57875 0.58765 162.5 197.5 
+surf clt24 pad 0.0 0.0 0.57875 0.58765 252.5 287.5 
 
 cell bapadt21 T2  B4C -bat21 
 cell bapadt22 T2  B4C -bat22 
@@ -107,14 +117,30 @@ cell cc22 T2  clad crt21 -crt22
 cell cc23 T2  clad crt23 -crt24 
 cell cc24 T2  water crt24 
 
-surf border sqc 0.0 0.0 10.75182 
+surf border sqc 0.0 0.0 10.8019 
 
 
 
 cell in 0  fill FA -border 
 cell out 0  outside border 
 
-plot 3 5000 5000
-set pop 20 5 50 
-set gcu -1 
+set inventory 
+ 541350
+ 922340
+ 922350
+ 942390
+ 
+dep butot 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 1.0 2.0 4.5 6.0 8.5 10.0 12.5 14.0 16.5 18.0 20.0 22.0 24.0 26.0 28.0 30.0 32.0 36.0 40.0 44.0 50.0 
+set power 27027.027027027027
+set bc 2 
+set sym 0
+set pop 20000 40 20
+set pcc 0
+set egrid 5e-05 1e-09 15.0 
+ene 1 1 1E-11 0.625E-6 15
+include bigT_FA2_2D.txt.mvol
+set acelib "/mnt/c/Users/iaguirre6/Documents/xsdata/endfb7/sss_endfb7u.xsdata"
+set declib "/mnt/c/Users/iaguirre6/Documents/xsdata/endfb7/sss_endfb7.dec"
+set nfylib "/mnt/c/Users/iaguirre6/Documents/xsdata/endfb7/sss_endfb7.nfy"
+therm lwtr lwj3.11t
 
