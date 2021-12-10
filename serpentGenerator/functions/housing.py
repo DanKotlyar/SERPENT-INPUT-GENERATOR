@@ -15,7 +15,7 @@ from serpentGenerator.functions.cells import cells
 from serpentGenerator.functions.cell import cell
 
 import numpy as np
-
+import copy 
 class housing(universe):
     def __init__(self, width, height, defaultCRFlag = True, radiiCR = None, 
     matsCR = None, border = None, baffle = None, barrel = None, thermalShield = None,
@@ -61,6 +61,7 @@ class housing(universe):
         self.border = borderSurf
         self.surfs.addSurf(borderSurf)
 
-        
+    def duplicate(self):
+        return copy.deepcopy(self)
 
 
