@@ -115,101 +115,101 @@ lat FC3 9 0 0 5
 lat GT1 9 0 0 5
 0.0	RB
 20.0	G1
-25.0	T1
+25.0	T11
 210.0	G1
 220.0	RT
 
-surf crt11 cyl 0.0 0.0 0.5531 
-surf crt12 cyl 0.0 0.0 0.5787 
-surf crt13 cyl 0.0 0.0 0.5877 
-surf crt14 cyl 0.0 0.0 0.6133 
-surf bat11 pad 0.0 0.0 0.5787 0.5877 10.0 80.0 
-surf bat12 pad 0.0 0.0 0.5787 0.5877 100.0 170.0 
-surf bat13 pad 0.0 0.0 0.5787 0.5877 190.0 260.0 
-surf bat14 pad 0.0 0.0 0.5787 0.5877 280.0 350.0 
-surf clt11 pad 0.0 0.0 0.5787 0.5877 350.0 10.0 
-surf clt12 pad 0.0 0.0 0.5787 0.5877 80.0 100.0 
-surf clt13 pad 0.0 0.0 0.5787 0.5877 170.0 190.0 
-surf clt14 pad 0.0 0.0 0.5787 0.5877 260.0 280.0 
+surf crt111 cyl 0.0 0.0 0.5531 
+surf crt121 cyl 0.0 0.0 0.5787 
+surf crt131 cyl 0.0 0.0 0.5877 
+surf crt141 cyl 0.0 0.0 0.6133 
+surf bat111 pad 0.0 0.0 0.5787 0.5877 10.0 80.0 
+surf bat121 pad 0.0 0.0 0.5787 0.5877 100.0 170.0 
+surf bat131 pad 0.0 0.0 0.5787 0.5877 190.0 260.0 
+surf bat141 pad 0.0 0.0 0.5787 0.5877 280.0 350.0 
+surf clt111 pad 0.0 0.0 0.5787 0.5877 350.0 10.0 
+surf clt121 pad 0.0 0.0 0.5787 0.5877 80.0 100.0 
+surf clt131 pad 0.0 0.0 0.5787 0.5877 170.0 190.0 
+surf clt141 pad 0.0 0.0 0.5787 0.5877 260.0 280.0 
 
-cell bapadt11 T1  B4C -bat11 
-cell bapadt12 T1  B4C -bat12 
-cell bapadt13 T1  B4C -bat13 
-cell bapadt14 T1  B4C -bat14 
-cell clpadt11 T1  clad -clt11 
-cell clpadt12 T1  clad -clt12 
-cell clpadt13 T1  clad -clt13 
-cell clpadt14 T1  clad -clt14 
-cell cc11 T1  water -crt11 
-cell cc12 T1  clad crt11 -crt12 
-cell cc13 T1  clad crt13 -crt14 
-cell cc14 T1  water crt14 
+cell bapadt111 T11  B4C -bat111 
+cell bapadt121 T11  B4C -bat121 
+cell bapadt131 T11  B4C -bat131 
+cell bapadt141 T11  B4C -bat141 
+cell clpadt111 T11  clad -clt111 
+cell clpadt121 T11  clad -clt121 
+cell clpadt131 T11  clad -clt131 
+cell clpadt141 T11  clad -clt141 
+cell cc111 T11  water -crt111 
+cell cc121 T11  clad crt111 -crt121 
+cell cc131 T11  clad crt131 -crt141 
+cell cc141 T11  water crt141 
 
 lat GT2 9 0 0 5
 0.0	RB
 20.0	G1
-25.0	T2
+25.0	T21
 210.0	G1
 220.0	RT
 
-surf crt21 cyl 0.0 0.0 0.5531 
-surf crt22 cyl 0.0 0.0 0.57875 
-surf crt23 cyl 0.0 0.0 0.58765 
-surf crt24 cyl 0.0 0.0 0.6133 
-surf bat21 pad 0.0 0.0 0.57875 0.58765 17.5 72.5 
-surf bat22 pad 0.0 0.0 0.57875 0.58765 107.5 162.5 
-surf bat23 pad 0.0 0.0 0.57875 0.58765 197.5 252.5 
-surf bat24 pad 0.0 0.0 0.57875 0.58765 287.5 342.5 
-surf clt21 pad 0.0 0.0 0.57875 0.58765 342.5 17.5 
-surf clt22 pad 0.0 0.0 0.57875 0.58765 72.5 107.5 
-surf clt23 pad 0.0 0.0 0.57875 0.58765 162.5 197.5 
-surf clt24 pad 0.0 0.0 0.57875 0.58765 252.5 287.5 
+surf crt211 cyl 0.0 0.0 0.5531 
+surf crt221 cyl 0.0 0.0 0.57875 
+surf crt231 cyl 0.0 0.0 0.58765 
+surf crt241 cyl 0.0 0.0 0.6133 
+surf bat211 pad 0.0 0.0 0.57875 0.58765 17.5 72.5 
+surf bat221 pad 0.0 0.0 0.57875 0.58765 107.5 162.5 
+surf bat231 pad 0.0 0.0 0.57875 0.58765 197.5 252.5 
+surf bat241 pad 0.0 0.0 0.57875 0.58765 287.5 342.5 
+surf clt211 pad 0.0 0.0 0.57875 0.58765 342.5 17.5 
+surf clt221 pad 0.0 0.0 0.57875 0.58765 72.5 107.5 
+surf clt231 pad 0.0 0.0 0.57875 0.58765 162.5 197.5 
+surf clt241 pad 0.0 0.0 0.57875 0.58765 252.5 287.5 
 
-cell bapadt21 T2  B4C -bat21 
-cell bapadt22 T2  B4C -bat22 
-cell bapadt23 T2  B4C -bat23 
-cell bapadt24 T2  B4C -bat24 
-cell clpadt21 T2  clad -clt21 
-cell clpadt22 T2  clad -clt22 
-cell clpadt23 T2  clad -clt23 
-cell clpadt24 T2  clad -clt24 
-cell cc21 T2  water -crt21 
-cell cc22 T2  clad crt21 -crt22 
-cell cc23 T2  clad crt23 -crt24 
-cell cc24 T2  water crt24 
+cell bapadt211 T21  B4C -bat211 
+cell bapadt221 T21  B4C -bat221 
+cell bapadt231 T21  B4C -bat231 
+cell bapadt241 T21  B4C -bat241 
+cell clpadt211 T21  clad -clt211 
+cell clpadt221 T21  clad -clt221 
+cell clpadt231 T21  clad -clt231 
+cell clpadt241 T21  clad -clt241 
+cell cc211 T21  water -crt211 
+cell cc221 T21  clad crt211 -crt221 
+cell cc231 T21  clad crt231 -crt241 
+cell cc241 T21  water crt241 
 
 lat GT3 9 0 0 5
 0.0	RB
 20.0	G1
-25.0	T3
+25.0	T31
 210.0	G1
 220.0	RT
 
-surf crt31 cyl 0.0 0.0 0.5531 
-surf crt32 cyl 0.0 0.0 0.58225 
-surf crt33 cyl 0.0 0.0 0.5841500000000001 
-surf crt34 cyl 0.0 0.0 0.6133 
-surf bat31 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
-surf bat32 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
-surf bat33 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
-surf bat34 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
-surf clt31 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
-surf clt32 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
-surf clt33 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
-surf clt34 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+surf crt311 cyl 0.0 0.0 0.5531 
+surf crt321 cyl 0.0 0.0 0.58225 
+surf crt331 cyl 0.0 0.0 0.5841500000000001 
+surf crt341 cyl 0.0 0.0 0.6133 
+surf bat311 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat321 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat331 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat341 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt311 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt321 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt331 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt341 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
 
-cell bapadt31 T3  B4C -bat31 
-cell bapadt32 T3  B4C -bat32 
-cell bapadt33 T3  B4C -bat33 
-cell bapadt34 T3  B4C -bat34 
-cell clpadt31 T3  clad -clt31 
-cell clpadt32 T3  clad -clt32 
-cell clpadt33 T3  clad -clt33 
-cell clpadt34 T3  clad -clt34 
-cell cc31 T3  water -crt31 
-cell cc32 T3  clad crt31 -crt32 
-cell cc33 T3  clad crt33 -crt34 
-cell cc34 T3  water crt34 
+cell bapadt311 T31  B4C -bat311 
+cell bapadt321 T31  B4C -bat321 
+cell bapadt331 T31  B4C -bat331 
+cell bapadt341 T31  B4C -bat341 
+cell clpadt311 T31  clad -clt311 
+cell clpadt321 T31  clad -clt321 
+cell clpadt331 T31  clad -clt331 
+cell clpadt341 T31  clad -clt341 
+cell cc311 T31  water -crt311 
+cell cc321 T31  clad crt311 -crt321 
+cell cc331 T31  clad crt331 -crt341 
+cell cc341 T31  water crt341 
 
 lat CT1 9 0 0 3
 0.0	RB
@@ -294,7 +294,7 @@ WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1
 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
-WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 CT1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
@@ -310,9 +310,9 @@ WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1
 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 
 WA1 WA1 WA1 WA1 FA3 FA3 FA3 WA1 WA1 WA1 WA1 
 WA1 WA1 WA1 FA3 FA2 FA2 FA2 FA3 WA1 WA1 WA1 
-WA1 WA1 FA3 FA2 FA1 FA2 FA1 FA2 FA3 WA1 WA1 
-WA1 WA1 FA3 FA2 FA2 FA1 FA2 FA2 FA3 WA1 WA1 
-WA1 WA1 FA3 FA2 FA1 FA2 FA1 FA2 FA3 WA1 WA1 
+WA1 WA1 FA3 FA2 FA1 FA1 FA1 FA2 FA3 WA1 WA1 
+WA1 WA1 FA3 FA2 FA1 FA1 FA1 FA2 FA3 WA1 WA1 
+WA1 WA1 FA3 FA2 FA1 FA1 FA1 FA2 FA3 WA1 WA1 
 WA1 WA1 WA1 FA3 FA2 FA2 FA2 FA3 WA1 WA1 WA1 
 WA1 WA1 WA1 WA1 FA3 FA3 FA3 WA1 WA1 WA1 WA1 
 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 
@@ -335,6 +335,8 @@ cell coreFill 0  fill housing -voidBorder
 cell voidRegion 0  outside voidBorder 
 
 set inventory 
+ 50100
+ 50110
  541350
  922340
  922350

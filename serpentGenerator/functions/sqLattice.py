@@ -144,6 +144,51 @@ class sqLat(universe):
                 if (self.map[i][j].id == oldPin.id):
                     self.map[i][j] = newPin
 
+
+    def replaceFirstInst(self, oldPin, newPin):
+        """replaces desired pin object with a new pin object from lattice map layout.
+
+        The purpose of the ``replacePin`` function is to replace a pin currently in 
+        the lattice map layout with a new pin object.
+
+        Parameters
+        ----------
+        oldPin : pin object
+            pin object to be removed from the lattice map layout.
+        newPin : pin object
+            pin object to replace removed pin object from the lattice map layout.
+    
+        Raises
+        ------
+        TypeError
+            If ``oldPin`` is not a pin object.
+            If ``newPin`` is not a pin object.
+        ValueError
+            If the lattice map is empty.
+
+        Examples
+        --------
+        >>> lat1 = sqLat("101", 0, 0, 3, 1.260)
+        >>> p1 = pin('1', 3)
+        >>> p2 = pin('2', 3)
+        >>> latMap1 = np.array([[p1, p2, p1], [p2, p1, p2], [p1, p2, p1]])
+        >>> lat1.setMap(latMap1)
+        >>> lat2 = lat1.duplicateLat("102")
+        >>> p2 = pin('3', 3)
+        >>> lat2.replacePin(p1, p3)
+        """
+        if self.map.size == 0:
+            raise ValueError("lattice map cannot be empty")
+
+        _isinstance(oldPin, universe, "old pin object")
+        _isinstance(newPin, universe, "new pin object")
+
+        for i in range(0, self.nelements):
+            for j in range(0, self.nelements):
+                if (self.map[i][j].id == oldPin.id):
+                    self.map[i][j] = newPin
+                    return
+
     def duplicateLat(self, newLatId):
         """returns a deep copy of the sqLat object must set a new lat id for the new
          duplicated lattice.

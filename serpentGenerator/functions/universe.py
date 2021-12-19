@@ -9,6 +9,8 @@ from serpentGenerator.functions.surf import surf
 from serpentGenerator.functions.surfs import surfs as sdict
 from serpentGenerator.functions.cells import cells as cdict
 
+import copy 
+
 from serpentGenerator.functions.checkerrors import (
     _isstr, _isinstanceList
 )
@@ -46,4 +48,9 @@ class universe:
 
         univString = self.surfs.toString() + self.cells.toString()
         return univString
-        
+    
+    def duplicate(self, newId):
+        _isstr(newId, "new universe id")
+        newUniv = copy.deepcopy(self)
+        newUniv.id = newId
+        return newUniv
