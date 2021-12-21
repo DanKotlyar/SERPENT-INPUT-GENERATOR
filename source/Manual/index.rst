@@ -10,19 +10,14 @@ to use the different containers and function to easily add, edit, and retrieve d
 Containers
 -------------
 
-Multiple containers exist to enable easy addition and edit of data
-
-	1. :ref:`Material Container <material_cont>`: define a single or multiple ``TransmutationData`` containers.
-	2. Insert Containers
-
+Multiple :ref:`Containers <functions>` exist to enable easy addition and edit of data
 
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: Contents:
+   :caption: Contents:\
 
-   material_cont.rst
-
+   functions
 
 
 	
