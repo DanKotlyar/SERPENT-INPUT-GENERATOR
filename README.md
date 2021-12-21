@@ -2,16 +2,14 @@
 # SERPENT-GENERATOR
 ====================
 
-Serpent input generator to allow for quick and efficient 
-generation of input files.1111
+SIMBA (Serpent Interface for Multi-physics Based Applications)is a python-based package that aims to facilitate the creation of organized, large-scale, detailed input files for use in the SERPENT monte carlo code. It can also be used to facilitate workflows for multi-physics based applications. The package enables a user-friendly interface, with detailed error checking and documentation. The package is currently hosted on a private repository but will be made available open source to the public to be used by the serpent community soon.
 
 Description
 ============
 This generator includes the following:
-1. Produce general input 3D files.
-2. Generate input files with the capability to generate cross sections.
-3. ....
-4. ....
+1. Produce general 2D  & 3D input files.
+2. Methods to facilitate XS Generation .
+3. Methods to facilitate Multiphysics workflows.
 
 Installation
 ============
