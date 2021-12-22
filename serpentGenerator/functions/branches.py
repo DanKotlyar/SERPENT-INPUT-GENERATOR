@@ -7,22 +7,46 @@ A container for individual branches.
 email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
-import numpy as np
+import numbers
 from serpentGenerator.functions.branch import branch
+from serpentGenerator.functions.material import material
 from serpentGenerator.functions.mix import mix
 from serpentGenerator.data.materialLibrary import MATLIB
 from serpentGenerator.functions.checkerrors import (
-    _isinstanceList, _islist
+    _isinstanceList, _isinstance
 )
 class branches:
+    """Basic data definition for a branches bject. Includes types of perturbations
+    and their respective values. A container for individual branches. 
 
+    Attributes
+    ----------
+    pertFT : list of numbers
+        list of fuel temperature perturbations
+    pertMD : list of numbers
+        list of moderator density perturbations
+    pertBPPM : list of numbers
+        list of bppm perturbations
+
+    Raises
+    ------
+    TypeError
+        If ``pertBPPM``, ``pertMD``, ``pertFT are not list of numbers
+
+    Examples
+    --------
+    >>> pertFT = [600, 900, 1200] #Kelvin
+    >>> pertMD = [600, 700, 800] #kg/m^3
+    >>> pertBPPM = [500, 1000, 1500] #ppm
+    >>> b1 = branches(pertFT, pertMD, pertBPPM)
+    """
     def __init__(self, pertFT = None, pertMD= None, pertBPPM = None):
-        if (pertFT != None):
-            _islist(pertFT, "fuel temp perturbations")
-        if (pertMD != None):
-            _islist(pertMD, "mod dens perturbations")
-        if (pertBPPM != None):
-            _islist(pertBPPM, "bppm perturbations")
+        if not (isinstance(pertFT, type(None))):
+            _isinstanceList(pertFT, numbers.Number, "fuel temp perturbations")
+        if not (isinstance(pertMD, type(None))):
+            _isinstanceList(pertMD, numbers.Number, "mod dens perturbations")
+        if not (isinstance(pertBPPM, type(None))):
+            _isinstanceList(pertBPPM, numbers.Number, "bppm perturbations")
 
         self.pertFT = pertFT
         self.pertMD = pertMD
@@ -54,6 +78,50 @@ class branches:
     @staticmethod
     def branchBuilderPWR(nomFuel = None, nomMod = None, fuelTemps=None, 
         modDens = None, bppms = None):
+        """The ``branchBuilderPWR`` function generates branches and materials 
+        for different combinations of perturbations. Currently it is tailored for
+        PWR systems where the most common branch generations are fuel temperature,
+        moderator density, and boron ppm concentrations. 
+
+        Attributes
+        ----------
+        nomFuel : material object
+            fuel material at nominal operating conditions
+        nomMod : material object
+            moderating material at nominal operating conditions
+        fuelTemps : list of numbers
+            list of fuel temperature perturbations
+        modDens : list of numbers
+            list of moderator density perturbations
+        bppms : list of numbers
+            list of bppm perturbations
+
+        Raises
+        ------
+        TypeError
+            If ``fuelTemps``, ``modDens``, ``bppms`` are not list of numbers
+            If ``nomFuel``, ``nomMod`` are not material objects
+
+        Examples
+        --------
+        >>> pertFT = [600, 900, 1200] #Kelvin
+        >>> pertMD = [600, 700, 800] #kg/m^3
+        >>> pertBPPM = [500, 1000, 1500] #ppm
+        >>> nomFuel = MATLIB['UO2']
+        >>> nomMod = MATLIB['lightWater']
+        >>> branches = branches.branchBuilderPWR(nomFuel, nomMod, 
+        >>>     pertFT, pertMD, pertBPPM)
+        """
+        if not (isinstance(nomFuel, type(None))):
+            _isinstance(nomFuel, material, "fuel material at nominal conditions")
+        if not (isinstance(nomMod, type(None))):
+            _isinstance(nomMod, material, "mod material at nominal conditions")
+        if not (isinstance(fuelTemps, type(None))):
+            _isinstanceList(fuelTemps, numbers.Number, "fuel temps for branches")
+        if not (isinstance(modDens, type(None))):
+            _isinstanceList(modDens, numbers.Number, "mod dens for branches")
+        if not (isinstance(bppms, type(None))):
+            _isinstanceList(bppms, numbers.Number, "bppms for branches")
 
         isPertFT = True if (fuelTemps != None) else False
         isPertMD = True if (modDens != None) else False
