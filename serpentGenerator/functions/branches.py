@@ -66,6 +66,8 @@ class branches:
         numBranches = nfuelt*nmodd*nbppm
         branchs = [None]*numBranches
 
+        branchy = None
+
         def matsBuilderPWRMB(nomMat, modDens, bppms):
             numMats = nmodd
             numMixs = nmodd*nbppm
@@ -233,7 +235,7 @@ class branches:
             mixs, branchMats = matsBuilderPWRB(nomMod, bppms)
             branchy = setBranchesFB(fuelTemps, bppms, mixs, branchMats, nomFuel)
         elif(isPertFT):
-            mixs, branchMats = matsBuilderPWRNONE(nomMod)
+            branchMats = matsBuilderPWRNONE(nomMod)
             branchy = setBranchesF(fuelTemps, branchMats, nomFuel)
         elif(isPertMD):
             mixs, branchMats = matsBuilderPWRM(nomMod, modDens)
