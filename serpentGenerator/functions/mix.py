@@ -38,7 +38,7 @@ class mix(material):
     --------
     >>> mixmats = [water, boron]
     >>> massfracs = [.999750, .000250]
-    >>> mix1 = mix("boratedWater, mixmats, massfracs)
+    >>> mix1 = mix(boratedWater, mixmats, massfracs)
     """
     def __init__(self, id, mats, massfracs):
         _isstr(id, "mix id")
