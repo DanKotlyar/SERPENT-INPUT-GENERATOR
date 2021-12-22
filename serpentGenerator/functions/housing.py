@@ -75,9 +75,9 @@ class housing(universe):
             raise ValueError("defaultCR flag set true but radiiCR"
             "or matsCR arguments not given.")
 
-        if not (isinstance(radiiCR, None)):
+        if not (isinstance(radiiCR, type(None))):
             _isinstanceList(radiiCR, numbers.Number, "radii for concentric rings")
-        if not (isinstance(matsCR, None)):
+        if not (isinstance(matsCR, type(None))):
             _isinstanceList(matsCR, material, "materials for concentric rings")
 
         super().__init__("housing") 
