@@ -61,6 +61,33 @@ class branches:
         self.nbranches = 0
 
     def addBranches(self, branches):
+        """sets a list of branch objects to the branches element.
+
+        The purpose of the ``addbranches`` function is to add a list of branches to 
+        the branches object. 
+
+        Parameters
+        ----------
+        newbranches: list
+            branch objects list to add to the branches element
+
+        Raises
+        ------
+        TypeError
+            If ``branches`` is not a list of branch objects
+        keyError
+            If any of the branchIds match any branches in the branches object
+
+        Examples
+        --------
+        >>> b1 = branch(id = "test1", repmat = [MATLIB['Zr'], MATLIB['Zr']], 
+        >>>     stp = [MATLIB['UO2'], -10.56, 600])
+        >>> b2 = branch(id = "test2", repmat = [MATLIB['Zr'], MATLIB['Zr']], 
+        >>>     stp = [MATLIB['UO2'], -10.56, 600])
+        >>> branches1 = [b1, b2]
+        >>> branches = ()
+        >>> branchLib.addbranches(branches1)
+        """
         _isinstanceList(branches, branch, "branch list")
 
         for i in range(0, len(branches)):
@@ -69,6 +96,18 @@ class branches:
         self.nbranches = self.nbranches + len(branches)
 
     def toString(self):
+        """display properties of branches array in string form
+
+        The purpose of the ``toString`` function is to directly convert a branches
+        array element into a string format for convinince when working with 
+        textfiles.
+
+        Returns
+        -------
+        str
+            branches array in str format representing the typical input methodology
+            forinput in serpent input file.
+        """
         branchString = ""
         for key in self.branches:
             branchString = branchString + self.branches[key].toString()
