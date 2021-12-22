@@ -25,8 +25,6 @@ class cell:
     ----------
     id : str
         cell id/name
-    universe : str
-        cell universe name
     surfs : ndarray (surf objects) 
         surfaces to construct cell
     dirs : ndarray 
