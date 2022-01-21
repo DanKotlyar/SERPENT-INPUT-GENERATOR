@@ -1,0 +1,43 @@
+.. _materialNew_cont:
+
+Material
+----------
+
+Class representing a material with attributes and function to process each material
+object. Material attributes such as density and nuclide, and nuclide fractions 
+follow same convention as serpent i.e +,- for density unit type and nuclide naming
+follows Z*1000 + A, nuclide fraction type i.e weight fraction, atomic fraction follow
+serpent convention aswell. 
+
+density: + (atomic density), - (mass density)
+nuclide fractions: + (atomic fractions/densities), -(mass fractions/densities)
+
+	
+Basic data definition for a material object.
+
+This class is responsible to store (using ``set``) and retrieve (using
+``get``) data for a material.
+
+Attributes
+----------
+id : str
+	material id/name
+isBurn : bool
+	True/False is material burnable
+isModer : bool
+	True/False is material a moderator
+dens : float
+	density: + (atomic density), - (mass density)
+nuclides : ndarray
+	nuclide naming follows Z*1000 + A
+fractions : ndarray
+	nuclide fractions: +(atomic fractions/densities), -(mass fractions/densities)
+temp : float
+	optional set tmp parameter, temp (K)
+rgb: str
+	optional material color rbg string for plotting
+xsLib : str
+	material xs library suffix, i.e. "09c"
+modLib : str
+	if material is of moderating type the thermal scattering data library is
+	specified i.e. "ltwr 1001" for H-1

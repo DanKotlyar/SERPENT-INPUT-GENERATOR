@@ -1,0 +1,3418 @@
+mat fuelAssem1    -10.5216  burn 1  rgb 255 59 35
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem2    -10.5216  burn 1  rgb 255 59 40
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem3    -10.5216  burn 1  rgb 255 59 45
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem4    -10.5216  burn 1  rgb 255 59 50
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem5    -10.5216  burn 1  rgb 255 59 55
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem6    -10.5216  burn 1  rgb 255 59 60
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem7    -10.5216  burn 1  rgb 255 59 65
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem8    -10.5216  burn 1  rgb 255 59 70
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem9    -10.5216  burn 1  rgb 255 59 75
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem10    -10.5216  burn 1  rgb 255 59 80
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem11    -10.5216  burn 1  rgb 255 59 85
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem12    -10.5216  burn 1  rgb 255 59 90
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem13    -10.5216  burn 1  rgb 255 59 95
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem14    -10.5216  burn 1  rgb 255 59 100
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem15    -10.5216  burn 1  rgb 255 59 105
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem16    -10.5216  burn 1  rgb 255 59 110
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem17    -10.5216  burn 1  rgb 255 59 115
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem18    -10.5216  burn 1  rgb 255 59 120
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem19    -10.5216  burn 1  rgb 255 59 125
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem20    -10.5216  burn 1  rgb 255 59 130
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem21    -10.5216  burn 1  rgb 255 59 135
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem22    -10.5216  burn 1  rgb 255 59 140
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem23    -10.5216  burn 1  rgb 255 59 145
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem24    -10.5216  burn 1  rgb 255 59 150
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem25    -10.5216  burn 1  rgb 255 59 155
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem26    -10.5216  burn 1  rgb 255 59 160
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem27    -10.5216  burn 1  rgb 255 59 165
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem28    -10.5216  burn 1  rgb 255 59 170
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem29    -10.5216  burn 1  rgb 255 59 175
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem30    -10.5216  burn 1  rgb 255 59 180
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem31    -10.5216  burn 1  rgb 255 59 185
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem32    -10.5216  burn 1  rgb 255 59 190
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem33    -10.5216  burn 1  rgb 255 59 195
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem34    -10.5216  burn 1  rgb 255 59 200
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem35    -10.5216  burn 1  rgb 255 59 205
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem36    -10.5216  burn 1  rgb 255 59 210
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuelAssem37    -10.5216  burn 1  rgb 255 59 215
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat burnAbsAssem1    -2.52  burn 1  rgb 255 255 5
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem2    -2.52  burn 1  rgb 255 255 10
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem3    -2.52  burn 1  rgb 255 255 15
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem4    -2.52  burn 1  rgb 255 255 20
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem5    -2.52  burn 1  rgb 255 255 25
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem6    -2.52  burn 1  rgb 255 255 30
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem7    -2.52  burn 1  rgb 255 255 35
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem8    -2.52  burn 1  rgb 255 255 40
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem9    -2.52  burn 1  rgb 255 255 45
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem10    -2.52  burn 1  rgb 255 255 50
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem11    -2.52  burn 1  rgb 255 255 55
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem12    -2.52  burn 1  rgb 255 255 60
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem13    -2.52  burn 1  rgb 255 255 65
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem14    -2.52  burn 1  rgb 255 255 70
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem15    -2.52  burn 1  rgb 255 255 75
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem16    -2.52  burn 1  rgb 255 255 80
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem17    -2.52  burn 1  rgb 255 255 85
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem18    -2.52  burn 1  rgb 255 255 90
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem19    -2.52  burn 1  rgb 255 255 95
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem20    -2.52  burn 1  rgb 255 255 100
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem21    -2.52  burn 1  rgb 255 255 105
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem22    -2.52  burn 1  rgb 255 255 110
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem23    -2.52  burn 1  rgb 255 255 115
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem24    -2.52  burn 1  rgb 255 255 120
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem25    -2.52  burn 1  rgb 255 255 125
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem26    -2.52  burn 1  rgb 255 255 130
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem27    -2.52  burn 1  rgb 255 255 135
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem28    -2.52  burn 1  rgb 255 255 140
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem29    -2.52  burn 1  rgb 255 255 145
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem30    -2.52  burn 1  rgb 255 255 150
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem31    -2.52  burn 1  rgb 255 255 155
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem32    -2.52  burn 1  rgb 255 255 160
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem33    -2.52  burn 1  rgb 255 255 165
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem34    -2.52  burn 1  rgb 255 255 170
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem35    -2.52  burn 1  rgb 255 255 175
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem36    -2.52  burn 1  rgb 255 255 180
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat burnAbsAssem37    -2.52  burn 1  rgb 255 255 185
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+mat blnktAssem1    -10.5216  burn 1  rgb 255 255 255
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem2    -10.5216  burn 1  rgb 250 250 250
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem3    -10.5216  burn 1  rgb 245 245 245
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem4    -10.5216  burn 1  rgb 240 240 240
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem5    -10.5216  burn 1  rgb 235 235 235
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem6    -10.5216  burn 1  rgb 230 230 230
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem7    -10.5216  burn 1  rgb 225 225 225
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem8    -10.5216  burn 1  rgb 220 220 220
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem9    -10.5216  burn 1  rgb 215 215 215
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem10    -10.5216  burn 1  rgb 210 210 210
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem11    -10.5216  burn 1  rgb 205 205 205
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem12    -10.5216  burn 1  rgb 200 200 200
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem13    -10.5216  burn 1  rgb 195 195 195
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem14    -10.5216  burn 1  rgb 190 190 190
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem15    -10.5216  burn 1  rgb 185 185 185
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem16    -10.5216  burn 1  rgb 180 180 180
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem17    -10.5216  burn 1  rgb 175 175 175
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem18    -10.5216  burn 1  rgb 170 170 170
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem19    -10.5216  burn 1  rgb 165 165 165
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem20    -10.5216  burn 1  rgb 160 160 160
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem21    -10.5216  burn 1  rgb 155 155 155
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem22    -10.5216  burn 1  rgb 150 150 150
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem23    -10.5216  burn 1  rgb 145 145 145
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem24    -10.5216  burn 1  rgb 140 140 140
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem25    -10.5216  burn 1  rgb 135 135 135
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem26    -10.5216  burn 1  rgb 130 130 130
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem27    -10.5216  burn 1  rgb 125 125 125
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem28    -10.5216  burn 1  rgb 120 120 120
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem29    -10.5216  burn 1  rgb 115 115 115
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem30    -10.5216  burn 1  rgb 110 110 110
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem31    -10.5216  burn 1  rgb 105 105 105
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem32    -10.5216  burn 1  rgb 100 100 100
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem33    -10.5216  burn 1  rgb 95 95 95
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem34    -10.5216  burn 1  rgb 90 90 90
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem35    -10.5216  burn 1  rgb 85 85 85
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem36    -10.5216  burn 1  rgb 80 80 80
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat blnktAssem37    -10.5216  burn 1  rgb 75 75 75
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat fuel1    -10.5216  burn 1  rgb 238 59 49
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuel2    -10.5216  burn 1  rgb 255 165 0
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuel3    -10.5216  burn 1  rgb 255 255 0
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuel4    -10.5216  burn 1  rgb 255 255 255
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat water    -7.2 moder lwtr 1001   rgb 198 226 255
+1001.06c	0.66667
+8016.06c	0.33333
+
+mat clad    -6.55    rgb 183 183 183
+40090.06c	0.5145
+40091.06c	0.1122
+40092.06c	0.1715
+40094.06c	0.1738
+40096.06c	0.028
+
+mat reflector    0.070462    rgb 204 153 255
+40090.06c	0.0059311
+40091.06c	0.0012934
+40092.06c	0.001977
+40094.06c	0.0020035
+40096.06c	0.00032278
+26054.06c	0.011217
+26056.06c	0.17738
+26057.06c	0.0042545
+26058.06c	0.00054149
+24050.06c	0.0024673
+24052.06c	0.04758
+24053.06c	0.0053951
+24054.06c	0.001343
+28058.06c	0.017122
+28060.06c	0.0065978
+28061.06c	0.00028421
+28062.06c	0.00091398
+28064.06c	0.0002329
+25055.06c	0.0056687
+1001.06c	0.47165
+8016.06c	0.23583
+
+mat B4C    -2.52  burn 1  rgb 255 255 0
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+pin FPAssem1
+fuelAssem1	0.4096
+clad	0.476
+water
+
+pin FPAssem2
+fuelAssem2	0.4096
+clad	0.476
+water
+
+pin FPAssem3
+fuelAssem3	0.4096
+clad	0.476
+water
+
+pin FPAssem4
+fuelAssem4	0.4096
+clad	0.476
+water
+
+pin FPAssem5
+fuelAssem5	0.4096
+clad	0.476
+water
+
+pin FPAssem6
+fuelAssem6	0.4096
+clad	0.476
+water
+
+pin FPAssem7
+fuelAssem7	0.4096
+clad	0.476
+water
+
+pin FPAssem8
+fuelAssem8	0.4096
+clad	0.476
+water
+
+pin FPAssem9
+fuelAssem9	0.4096
+clad	0.476
+water
+
+pin FPAssem10
+fuelAssem10	0.4096
+clad	0.476
+water
+
+pin FPAssem11
+fuelAssem11	0.4096
+clad	0.476
+water
+
+pin FPAssem12
+fuelAssem12	0.4096
+clad	0.476
+water
+
+pin FPAssem13
+fuelAssem13	0.4096
+clad	0.476
+water
+
+pin FPAssem14
+fuelAssem14	0.4096
+clad	0.476
+water
+
+pin FPAssem15
+fuelAssem15	0.4096
+clad	0.476
+water
+
+pin FPAssem16
+fuelAssem16	0.4096
+clad	0.476
+water
+
+pin FPAssem17
+fuelAssem17	0.4096
+clad	0.476
+water
+
+pin FPAssem18
+fuelAssem18	0.4096
+clad	0.476
+water
+
+pin FPAssem19
+fuelAssem19	0.4096
+clad	0.476
+water
+
+pin FPAssem20
+fuelAssem20	0.4096
+clad	0.476
+water
+
+pin FPAssem21
+fuelAssem21	0.4096
+clad	0.476
+water
+
+pin FPAssem22
+fuelAssem22	0.4096
+clad	0.476
+water
+
+pin FPAssem23
+fuelAssem23	0.4096
+clad	0.476
+water
+
+pin FPAssem24
+fuelAssem24	0.4096
+clad	0.476
+water
+
+pin FPAssem25
+fuelAssem25	0.4096
+clad	0.476
+water
+
+pin FPAssem26
+fuelAssem26	0.4096
+clad	0.476
+water
+
+pin FPAssem27
+fuelAssem27	0.4096
+clad	0.476
+water
+
+pin FPAssem28
+fuelAssem28	0.4096
+clad	0.476
+water
+
+pin FPAssem29
+fuelAssem29	0.4096
+clad	0.476
+water
+
+pin FPAssem30
+fuelAssem30	0.4096
+clad	0.476
+water
+
+pin FPAssem31
+fuelAssem31	0.4096
+clad	0.476
+water
+
+pin FPAssem32
+fuelAssem32	0.4096
+clad	0.476
+water
+
+pin FPAssem33
+fuelAssem33	0.4096
+clad	0.476
+water
+
+pin FPAssem34
+fuelAssem34	0.4096
+clad	0.476
+water
+
+pin FPAssem35
+fuelAssem35	0.4096
+clad	0.476
+water
+
+pin FPAssem36
+fuelAssem36	0.4096
+clad	0.476
+water
+
+pin FPAssem37
+fuelAssem37	0.4096
+clad	0.476
+water
+
+pin BLNKAssem1
+fuelAssem1	0.4096
+clad	0.476
+water
+
+pin BLNKAssem2
+fuelAssem2	0.4096
+clad	0.476
+water
+
+pin BLNKAssem3
+fuelAssem3	0.4096
+clad	0.476
+water
+
+pin BLNKAssem4
+fuelAssem4	0.4096
+clad	0.476
+water
+
+pin BLNKAssem5
+fuelAssem5	0.4096
+clad	0.476
+water
+
+pin BLNKAssem6
+fuelAssem6	0.4096
+clad	0.476
+water
+
+pin BLNKAssem7
+fuelAssem7	0.4096
+clad	0.476
+water
+
+pin BLNKAssem8
+fuelAssem8	0.4096
+clad	0.476
+water
+
+pin BLNKAssem9
+fuelAssem9	0.4096
+clad	0.476
+water
+
+pin BLNKAssem10
+fuelAssem10	0.4096
+clad	0.476
+water
+
+pin BLNKAssem11
+fuelAssem11	0.4096
+clad	0.476
+water
+
+pin BLNKAssem12
+fuelAssem12	0.4096
+clad	0.476
+water
+
+pin BLNKAssem13
+fuelAssem13	0.4096
+clad	0.476
+water
+
+pin BLNKAssem14
+fuelAssem14	0.4096
+clad	0.476
+water
+
+pin BLNKAssem15
+fuelAssem15	0.4096
+clad	0.476
+water
+
+pin BLNKAssem16
+fuelAssem16	0.4096
+clad	0.476
+water
+
+pin BLNKAssem17
+fuelAssem17	0.4096
+clad	0.476
+water
+
+pin BLNKAssem18
+fuelAssem18	0.4096
+clad	0.476
+water
+
+pin BLNKAssem19
+fuelAssem19	0.4096
+clad	0.476
+water
+
+pin BLNKAssem20
+fuelAssem20	0.4096
+clad	0.476
+water
+
+pin BLNKAssem21
+fuelAssem21	0.4096
+clad	0.476
+water
+
+pin BLNKAssem22
+fuelAssem22	0.4096
+clad	0.476
+water
+
+pin BLNKAssem23
+fuelAssem23	0.4096
+clad	0.476
+water
+
+pin BLNKAssem24
+fuelAssem24	0.4096
+clad	0.476
+water
+
+pin BLNKAssem25
+fuelAssem25	0.4096
+clad	0.476
+water
+
+pin BLNKAssem26
+fuelAssem26	0.4096
+clad	0.476
+water
+
+pin BLNKAssem27
+fuelAssem27	0.4096
+clad	0.476
+water
+
+pin BLNKAssem28
+fuelAssem28	0.4096
+clad	0.476
+water
+
+pin BLNKAssem29
+fuelAssem29	0.4096
+clad	0.476
+water
+
+pin BLNKAssem30
+fuelAssem30	0.4096
+clad	0.476
+water
+
+pin BLNKAssem31
+fuelAssem31	0.4096
+clad	0.476
+water
+
+pin BLNKAssem32
+fuelAssem32	0.4096
+clad	0.476
+water
+
+pin BLNKAssem33
+fuelAssem33	0.4096
+clad	0.476
+water
+
+pin BLNKAssem34
+fuelAssem34	0.4096
+clad	0.476
+water
+
+pin BLNKAssem35
+fuelAssem35	0.4096
+clad	0.476
+water
+
+pin BLNKAssem36
+fuelAssem36	0.4096
+clad	0.476
+water
+
+pin BLNKAssem37
+fuelAssem37	0.4096
+clad	0.476
+water
+
+pin F1
+fuel1	0.4096
+clad	0.476
+water
+
+pin F2
+fuel2	0.4096
+clad	0.476
+water
+
+pin F3
+fuel3	0.4096
+clad	0.476
+water
+
+pin F4
+fuel4	0.4096
+clad	0.476
+water
+
+pin W1
+water
+
+pin RT
+reflector
+
+pin RB
+reflector
+
+pin G1
+water	0.5531
+clad	0.6133
+water
+
+lat FCAssem1 9 0 0 5
+0.0	RB
+20.0	BLNKAssem1
+25.0	FPAssem1
+210.0	BLNKAssem1
+220.0	RT
+
+lat FCAssem2 9 0 0 5
+0.0	RB
+20.0	BLNKAssem2
+25.0	FPAssem2
+210.0	BLNKAssem2
+220.0	RT
+
+lat FCAssem3 9 0 0 5
+0.0	RB
+20.0	BLNKAssem3
+25.0	FPAssem3
+210.0	BLNKAssem3
+220.0	RT
+
+lat FCAssem4 9 0 0 5
+0.0	RB
+20.0	BLNKAssem4
+25.0	FPAssem4
+210.0	BLNKAssem4
+220.0	RT
+
+lat FCAssem5 9 0 0 5
+0.0	RB
+20.0	BLNKAssem5
+25.0	FPAssem5
+210.0	BLNKAssem5
+220.0	RT
+
+lat FCAssem6 9 0 0 5
+0.0	RB
+20.0	BLNKAssem6
+25.0	FPAssem6
+210.0	BLNKAssem6
+220.0	RT
+
+lat FCAssem7 9 0 0 5
+0.0	RB
+20.0	BLNKAssem7
+25.0	FPAssem7
+210.0	BLNKAssem7
+220.0	RT
+
+lat FCAssem8 9 0 0 5
+0.0	RB
+20.0	BLNKAssem8
+25.0	FPAssem8
+210.0	BLNKAssem8
+220.0	RT
+
+lat FCAssem9 9 0 0 5
+0.0	RB
+20.0	BLNKAssem9
+25.0	FPAssem9
+210.0	BLNKAssem9
+220.0	RT
+
+lat FCAssem10 9 0 0 5
+0.0	RB
+20.0	BLNKAssem10
+25.0	FPAssem10
+210.0	BLNKAssem10
+220.0	RT
+
+lat FCAssem11 9 0 0 5
+0.0	RB
+20.0	BLNKAssem11
+25.0	FPAssem11
+210.0	BLNKAssem11
+220.0	RT
+
+lat FCAssem12 9 0 0 5
+0.0	RB
+20.0	BLNKAssem12
+25.0	FPAssem12
+210.0	BLNKAssem12
+220.0	RT
+
+lat FCAssem13 9 0 0 5
+0.0	RB
+20.0	BLNKAssem13
+25.0	FPAssem13
+210.0	BLNKAssem13
+220.0	RT
+
+lat FCAssem14 9 0 0 5
+0.0	RB
+20.0	BLNKAssem14
+25.0	FPAssem14
+210.0	BLNKAssem14
+220.0	RT
+
+lat FCAssem15 9 0 0 5
+0.0	RB
+20.0	BLNKAssem15
+25.0	FPAssem15
+210.0	BLNKAssem15
+220.0	RT
+
+lat FCAssem16 9 0 0 5
+0.0	RB
+20.0	BLNKAssem16
+25.0	FPAssem16
+210.0	BLNKAssem16
+220.0	RT
+
+lat FCAssem17 9 0 0 5
+0.0	RB
+20.0	BLNKAssem17
+25.0	FPAssem17
+210.0	BLNKAssem17
+220.0	RT
+
+lat FCAssem18 9 0 0 5
+0.0	RB
+20.0	BLNKAssem18
+25.0	FPAssem18
+210.0	BLNKAssem18
+220.0	RT
+
+lat FCAssem19 9 0 0 5
+0.0	RB
+20.0	BLNKAssem19
+25.0	FPAssem19
+210.0	BLNKAssem19
+220.0	RT
+
+lat FCAssem20 9 0 0 5
+0.0	RB
+20.0	BLNKAssem20
+25.0	FPAssem20
+210.0	BLNKAssem20
+220.0	RT
+
+lat FCAssem21 9 0 0 5
+0.0	RB
+20.0	BLNKAssem21
+25.0	FPAssem21
+210.0	BLNKAssem21
+220.0	RT
+
+lat FCAssem22 9 0 0 5
+0.0	RB
+20.0	BLNKAssem22
+25.0	FPAssem22
+210.0	BLNKAssem22
+220.0	RT
+
+lat FCAssem23 9 0 0 5
+0.0	RB
+20.0	BLNKAssem23
+25.0	FPAssem23
+210.0	BLNKAssem23
+220.0	RT
+
+lat FCAssem24 9 0 0 5
+0.0	RB
+20.0	BLNKAssem24
+25.0	FPAssem24
+210.0	BLNKAssem24
+220.0	RT
+
+lat FCAssem25 9 0 0 5
+0.0	RB
+20.0	BLNKAssem25
+25.0	FPAssem25
+210.0	BLNKAssem25
+220.0	RT
+
+lat FCAssem26 9 0 0 5
+0.0	RB
+20.0	BLNKAssem26
+25.0	FPAssem26
+210.0	BLNKAssem26
+220.0	RT
+
+lat FCAssem27 9 0 0 5
+0.0	RB
+20.0	BLNKAssem27
+25.0	FPAssem27
+210.0	BLNKAssem27
+220.0	RT
+
+lat FCAssem28 9 0 0 5
+0.0	RB
+20.0	BLNKAssem28
+25.0	FPAssem28
+210.0	BLNKAssem28
+220.0	RT
+
+lat FCAssem29 9 0 0 5
+0.0	RB
+20.0	BLNKAssem29
+25.0	FPAssem29
+210.0	BLNKAssem29
+220.0	RT
+
+lat FCAssem30 9 0 0 5
+0.0	RB
+20.0	BLNKAssem30
+25.0	FPAssem30
+210.0	BLNKAssem30
+220.0	RT
+
+lat FCAssem31 9 0 0 5
+0.0	RB
+20.0	BLNKAssem31
+25.0	FPAssem31
+210.0	BLNKAssem31
+220.0	RT
+
+lat FCAssem32 9 0 0 5
+0.0	RB
+20.0	BLNKAssem32
+25.0	FPAssem32
+210.0	BLNKAssem32
+220.0	RT
+
+lat FCAssem33 9 0 0 5
+0.0	RB
+20.0	BLNKAssem33
+25.0	FPAssem33
+210.0	BLNKAssem33
+220.0	RT
+
+lat FCAssem34 9 0 0 5
+0.0	RB
+20.0	BLNKAssem34
+25.0	FPAssem34
+210.0	BLNKAssem34
+220.0	RT
+
+lat FCAssem35 9 0 0 5
+0.0	RB
+20.0	BLNKAssem35
+25.0	FPAssem35
+210.0	BLNKAssem35
+220.0	RT
+
+lat FCAssem36 9 0 0 5
+0.0	RB
+20.0	BLNKAssem36
+25.0	FPAssem36
+210.0	BLNKAssem36
+220.0	RT
+
+lat FCAssem37 9 0 0 5
+0.0	RB
+20.0	BLNKAssem37
+25.0	FPAssem37
+210.0	BLNKAssem37
+220.0	RT
+
+lat T1CAssem1 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T11
+210.0	G1
+220.0	RT
+
+surf crt111 cyl 0.0 0.0 0.5531 
+surf crt121 cyl 0.0 0.0 0.5787 
+surf crt131 cyl 0.0 0.0 0.5877 
+surf crt141 cyl 0.0 0.0 0.6133 
+surf bat111 pad 0.0 0.0 0.5787 0.5877 10.0 80.0 
+surf bat121 pad 0.0 0.0 0.5787 0.5877 100.0 170.0 
+surf bat131 pad 0.0 0.0 0.5787 0.5877 190.0 260.0 
+surf bat141 pad 0.0 0.0 0.5787 0.5877 280.0 350.0 
+surf clt111 pad 0.0 0.0 0.5787 0.5877 350.0 10.0 
+surf clt121 pad 0.0 0.0 0.5787 0.5877 80.0 100.0 
+surf clt131 pad 0.0 0.0 0.5787 0.5877 170.0 190.0 
+surf clt141 pad 0.0 0.0 0.5787 0.5877 260.0 280.0 
+
+cell bapadt111 T11  burnAbsAssem1 -bat111 
+cell bapadt121 T11  burnAbsAssem1 -bat121 
+cell bapadt131 T11  burnAbsAssem1 -bat131 
+cell bapadt141 T11  burnAbsAssem1 -bat141 
+cell clpadt111 T11  clad -clt111 
+cell clpadt121 T11  clad -clt121 
+cell clpadt131 T11  clad -clt131 
+cell clpadt141 T11  clad -clt141 
+cell cc111 T11  water -crt111 
+cell cc121 T11  clad crt111 -crt121 
+cell cc131 T11  clad crt131 -crt141 
+cell cc141 T11  water crt141 
+
+lat T1CAssem2 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T12
+210.0	G1
+220.0	RT
+
+surf crt112 cyl 0.0 0.0 0.5531 
+surf crt122 cyl 0.0 0.0 0.5787 
+surf crt132 cyl 0.0 0.0 0.5877 
+surf crt142 cyl 0.0 0.0 0.6133 
+surf bat112 pad 0.0 0.0 0.5787 0.5877 10.0 80.0 
+surf bat122 pad 0.0 0.0 0.5787 0.5877 100.0 170.0 
+surf bat132 pad 0.0 0.0 0.5787 0.5877 190.0 260.0 
+surf bat142 pad 0.0 0.0 0.5787 0.5877 280.0 350.0 
+surf clt112 pad 0.0 0.0 0.5787 0.5877 350.0 10.0 
+surf clt122 pad 0.0 0.0 0.5787 0.5877 80.0 100.0 
+surf clt132 pad 0.0 0.0 0.5787 0.5877 170.0 190.0 
+surf clt142 pad 0.0 0.0 0.5787 0.5877 260.0 280.0 
+
+cell bapadt112 T12  burnAbsAssem2 -bat112 
+cell bapadt122 T12  burnAbsAssem2 -bat122 
+cell bapadt132 T12  burnAbsAssem2 -bat132 
+cell bapadt142 T12  burnAbsAssem2 -bat142 
+cell clpadt112 T12  clad -clt112 
+cell clpadt122 T12  clad -clt122 
+cell clpadt132 T12  clad -clt132 
+cell clpadt142 T12  clad -clt142 
+cell cc112 T12  water -crt112 
+cell cc122 T12  clad crt112 -crt122 
+cell cc132 T12  clad crt132 -crt142 
+cell cc142 T12  water crt142 
+
+lat T1CAssem3 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T13
+210.0	G1
+220.0	RT
+
+surf crt113 cyl 0.0 0.0 0.5531 
+surf crt123 cyl 0.0 0.0 0.5787 
+surf crt133 cyl 0.0 0.0 0.5877 
+surf crt143 cyl 0.0 0.0 0.6133 
+surf bat113 pad 0.0 0.0 0.5787 0.5877 10.0 80.0 
+surf bat123 pad 0.0 0.0 0.5787 0.5877 100.0 170.0 
+surf bat133 pad 0.0 0.0 0.5787 0.5877 190.0 260.0 
+surf bat143 pad 0.0 0.0 0.5787 0.5877 280.0 350.0 
+surf clt113 pad 0.0 0.0 0.5787 0.5877 350.0 10.0 
+surf clt123 pad 0.0 0.0 0.5787 0.5877 80.0 100.0 
+surf clt133 pad 0.0 0.0 0.5787 0.5877 170.0 190.0 
+surf clt143 pad 0.0 0.0 0.5787 0.5877 260.0 280.0 
+
+cell bapadt113 T13  burnAbsAssem3 -bat113 
+cell bapadt123 T13  burnAbsAssem3 -bat123 
+cell bapadt133 T13  burnAbsAssem3 -bat133 
+cell bapadt143 T13  burnAbsAssem3 -bat143 
+cell clpadt113 T13  clad -clt113 
+cell clpadt123 T13  clad -clt123 
+cell clpadt133 T13  clad -clt133 
+cell clpadt143 T13  clad -clt143 
+cell cc113 T13  water -crt113 
+cell cc123 T13  clad crt113 -crt123 
+cell cc133 T13  clad crt133 -crt143 
+cell cc143 T13  water crt143 
+
+lat T1CAssem4 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T14
+210.0	G1
+220.0	RT
+
+surf crt114 cyl 0.0 0.0 0.5531 
+surf crt124 cyl 0.0 0.0 0.5787 
+surf crt134 cyl 0.0 0.0 0.5877 
+surf crt144 cyl 0.0 0.0 0.6133 
+surf bat114 pad 0.0 0.0 0.5787 0.5877 10.0 80.0 
+surf bat124 pad 0.0 0.0 0.5787 0.5877 100.0 170.0 
+surf bat134 pad 0.0 0.0 0.5787 0.5877 190.0 260.0 
+surf bat144 pad 0.0 0.0 0.5787 0.5877 280.0 350.0 
+surf clt114 pad 0.0 0.0 0.5787 0.5877 350.0 10.0 
+surf clt124 pad 0.0 0.0 0.5787 0.5877 80.0 100.0 
+surf clt134 pad 0.0 0.0 0.5787 0.5877 170.0 190.0 
+surf clt144 pad 0.0 0.0 0.5787 0.5877 260.0 280.0 
+
+cell bapadt114 T14  burnAbsAssem4 -bat114 
+cell bapadt124 T14  burnAbsAssem4 -bat124 
+cell bapadt134 T14  burnAbsAssem4 -bat134 
+cell bapadt144 T14  burnAbsAssem4 -bat144 
+cell clpadt114 T14  clad -clt114 
+cell clpadt124 T14  clad -clt124 
+cell clpadt134 T14  clad -clt134 
+cell clpadt144 T14  clad -clt144 
+cell cc114 T14  water -crt114 
+cell cc124 T14  clad crt114 -crt124 
+cell cc134 T14  clad crt134 -crt144 
+cell cc144 T14  water crt144 
+
+lat T1CAssem5 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T15
+210.0	G1
+220.0	RT
+
+surf crt115 cyl 0.0 0.0 0.5531 
+surf crt125 cyl 0.0 0.0 0.5787 
+surf crt135 cyl 0.0 0.0 0.5877 
+surf crt145 cyl 0.0 0.0 0.6133 
+surf bat115 pad 0.0 0.0 0.5787 0.5877 10.0 80.0 
+surf bat125 pad 0.0 0.0 0.5787 0.5877 100.0 170.0 
+surf bat135 pad 0.0 0.0 0.5787 0.5877 190.0 260.0 
+surf bat145 pad 0.0 0.0 0.5787 0.5877 280.0 350.0 
+surf clt115 pad 0.0 0.0 0.5787 0.5877 350.0 10.0 
+surf clt125 pad 0.0 0.0 0.5787 0.5877 80.0 100.0 
+surf clt135 pad 0.0 0.0 0.5787 0.5877 170.0 190.0 
+surf clt145 pad 0.0 0.0 0.5787 0.5877 260.0 280.0 
+
+cell bapadt115 T15  burnAbsAssem5 -bat115 
+cell bapadt125 T15  burnAbsAssem5 -bat125 
+cell bapadt135 T15  burnAbsAssem5 -bat135 
+cell bapadt145 T15  burnAbsAssem5 -bat145 
+cell clpadt115 T15  clad -clt115 
+cell clpadt125 T15  clad -clt125 
+cell clpadt135 T15  clad -clt135 
+cell clpadt145 T15  clad -clt145 
+cell cc115 T15  water -crt115 
+cell cc125 T15  clad crt115 -crt125 
+cell cc135 T15  clad crt135 -crt145 
+cell cc145 T15  water crt145 
+
+lat T1CAssem6 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T16
+210.0	G1
+220.0	RT
+
+surf crt116 cyl 0.0 0.0 0.5531 
+surf crt126 cyl 0.0 0.0 0.5787 
+surf crt136 cyl 0.0 0.0 0.5877 
+surf crt146 cyl 0.0 0.0 0.6133 
+surf bat116 pad 0.0 0.0 0.5787 0.5877 10.0 80.0 
+surf bat126 pad 0.0 0.0 0.5787 0.5877 100.0 170.0 
+surf bat136 pad 0.0 0.0 0.5787 0.5877 190.0 260.0 
+surf bat146 pad 0.0 0.0 0.5787 0.5877 280.0 350.0 
+surf clt116 pad 0.0 0.0 0.5787 0.5877 350.0 10.0 
+surf clt126 pad 0.0 0.0 0.5787 0.5877 80.0 100.0 
+surf clt136 pad 0.0 0.0 0.5787 0.5877 170.0 190.0 
+surf clt146 pad 0.0 0.0 0.5787 0.5877 260.0 280.0 
+
+cell bapadt116 T16  burnAbsAssem6 -bat116 
+cell bapadt126 T16  burnAbsAssem6 -bat126 
+cell bapadt136 T16  burnAbsAssem6 -bat136 
+cell bapadt146 T16  burnAbsAssem6 -bat146 
+cell clpadt116 T16  clad -clt116 
+cell clpadt126 T16  clad -clt126 
+cell clpadt136 T16  clad -clt136 
+cell clpadt146 T16  clad -clt146 
+cell cc116 T16  water -crt116 
+cell cc126 T16  clad crt116 -crt126 
+cell cc136 T16  clad crt136 -crt146 
+cell cc146 T16  water crt146 
+
+lat T1CAssem7 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T17
+210.0	G1
+220.0	RT
+
+surf crt117 cyl 0.0 0.0 0.5531 
+surf crt127 cyl 0.0 0.0 0.5787 
+surf crt137 cyl 0.0 0.0 0.5877 
+surf crt147 cyl 0.0 0.0 0.6133 
+surf bat117 pad 0.0 0.0 0.5787 0.5877 10.0 80.0 
+surf bat127 pad 0.0 0.0 0.5787 0.5877 100.0 170.0 
+surf bat137 pad 0.0 0.0 0.5787 0.5877 190.0 260.0 
+surf bat147 pad 0.0 0.0 0.5787 0.5877 280.0 350.0 
+surf clt117 pad 0.0 0.0 0.5787 0.5877 350.0 10.0 
+surf clt127 pad 0.0 0.0 0.5787 0.5877 80.0 100.0 
+surf clt137 pad 0.0 0.0 0.5787 0.5877 170.0 190.0 
+surf clt147 pad 0.0 0.0 0.5787 0.5877 260.0 280.0 
+
+cell bapadt117 T17  burnAbsAssem7 -bat117 
+cell bapadt127 T17  burnAbsAssem7 -bat127 
+cell bapadt137 T17  burnAbsAssem7 -bat137 
+cell bapadt147 T17  burnAbsAssem7 -bat147 
+cell clpadt117 T17  clad -clt117 
+cell clpadt127 T17  clad -clt127 
+cell clpadt137 T17  clad -clt137 
+cell clpadt147 T17  clad -clt147 
+cell cc117 T17  water -crt117 
+cell cc127 T17  clad crt117 -crt127 
+cell cc137 T17  clad crt137 -crt147 
+cell cc147 T17  water crt147 
+
+lat T1CAssem8 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T18
+210.0	G1
+220.0	RT
+
+surf crt118 cyl 0.0 0.0 0.5531 
+surf crt128 cyl 0.0 0.0 0.5787 
+surf crt138 cyl 0.0 0.0 0.5877 
+surf crt148 cyl 0.0 0.0 0.6133 
+surf bat118 pad 0.0 0.0 0.5787 0.5877 10.0 80.0 
+surf bat128 pad 0.0 0.0 0.5787 0.5877 100.0 170.0 
+surf bat138 pad 0.0 0.0 0.5787 0.5877 190.0 260.0 
+surf bat148 pad 0.0 0.0 0.5787 0.5877 280.0 350.0 
+surf clt118 pad 0.0 0.0 0.5787 0.5877 350.0 10.0 
+surf clt128 pad 0.0 0.0 0.5787 0.5877 80.0 100.0 
+surf clt138 pad 0.0 0.0 0.5787 0.5877 170.0 190.0 
+surf clt148 pad 0.0 0.0 0.5787 0.5877 260.0 280.0 
+
+cell bapadt118 T18  burnAbsAssem8 -bat118 
+cell bapadt128 T18  burnAbsAssem8 -bat128 
+cell bapadt138 T18  burnAbsAssem8 -bat138 
+cell bapadt148 T18  burnAbsAssem8 -bat148 
+cell clpadt118 T18  clad -clt118 
+cell clpadt128 T18  clad -clt128 
+cell clpadt138 T18  clad -clt138 
+cell clpadt148 T18  clad -clt148 
+cell cc118 T18  water -crt118 
+cell cc128 T18  clad crt118 -crt128 
+cell cc138 T18  clad crt138 -crt148 
+cell cc148 T18  water crt148 
+
+lat T1CAssem9 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T19
+210.0	G1
+220.0	RT
+
+surf crt119 cyl 0.0 0.0 0.5531 
+surf crt129 cyl 0.0 0.0 0.5787 
+surf crt139 cyl 0.0 0.0 0.5877 
+surf crt149 cyl 0.0 0.0 0.6133 
+surf bat119 pad 0.0 0.0 0.5787 0.5877 10.0 80.0 
+surf bat129 pad 0.0 0.0 0.5787 0.5877 100.0 170.0 
+surf bat139 pad 0.0 0.0 0.5787 0.5877 190.0 260.0 
+surf bat149 pad 0.0 0.0 0.5787 0.5877 280.0 350.0 
+surf clt119 pad 0.0 0.0 0.5787 0.5877 350.0 10.0 
+surf clt129 pad 0.0 0.0 0.5787 0.5877 80.0 100.0 
+surf clt139 pad 0.0 0.0 0.5787 0.5877 170.0 190.0 
+surf clt149 pad 0.0 0.0 0.5787 0.5877 260.0 280.0 
+
+cell bapadt119 T19  burnAbsAssem9 -bat119 
+cell bapadt129 T19  burnAbsAssem9 -bat129 
+cell bapadt139 T19  burnAbsAssem9 -bat139 
+cell bapadt149 T19  burnAbsAssem9 -bat149 
+cell clpadt119 T19  clad -clt119 
+cell clpadt129 T19  clad -clt129 
+cell clpadt139 T19  clad -clt139 
+cell clpadt149 T19  clad -clt149 
+cell cc119 T19  water -crt119 
+cell cc129 T19  clad crt119 -crt129 
+cell cc139 T19  clad crt139 -crt149 
+cell cc149 T19  water crt149 
+
+lat T2CAssem1 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T21
+210.0	G1
+220.0	RT
+
+surf crt211 cyl 0.0 0.0 0.5531 
+surf crt221 cyl 0.0 0.0 0.57875 
+surf crt231 cyl 0.0 0.0 0.58765 
+surf crt241 cyl 0.0 0.0 0.6133 
+surf bat211 pad 0.0 0.0 0.57875 0.58765 17.5 72.5 
+surf bat221 pad 0.0 0.0 0.57875 0.58765 107.5 162.5 
+surf bat231 pad 0.0 0.0 0.57875 0.58765 197.5 252.5 
+surf bat241 pad 0.0 0.0 0.57875 0.58765 287.5 342.5 
+surf clt211 pad 0.0 0.0 0.57875 0.58765 342.5 17.5 
+surf clt221 pad 0.0 0.0 0.57875 0.58765 72.5 107.5 
+surf clt231 pad 0.0 0.0 0.57875 0.58765 162.5 197.5 
+surf clt241 pad 0.0 0.0 0.57875 0.58765 252.5 287.5 
+
+cell bapadt211 T21  burnAbsAssem10 -bat211 
+cell bapadt221 T21  burnAbsAssem10 -bat221 
+cell bapadt231 T21  burnAbsAssem10 -bat231 
+cell bapadt241 T21  burnAbsAssem10 -bat241 
+cell clpadt211 T21  clad -clt211 
+cell clpadt221 T21  clad -clt221 
+cell clpadt231 T21  clad -clt231 
+cell clpadt241 T21  clad -clt241 
+cell cc211 T21  water -crt211 
+cell cc221 T21  clad crt211 -crt221 
+cell cc231 T21  clad crt231 -crt241 
+cell cc241 T21  water crt241 
+
+lat T2CAssem2 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T22
+210.0	G1
+220.0	RT
+
+surf crt212 cyl 0.0 0.0 0.5531 
+surf crt222 cyl 0.0 0.0 0.57875 
+surf crt232 cyl 0.0 0.0 0.58765 
+surf crt242 cyl 0.0 0.0 0.6133 
+surf bat212 pad 0.0 0.0 0.57875 0.58765 17.5 72.5 
+surf bat222 pad 0.0 0.0 0.57875 0.58765 107.5 162.5 
+surf bat232 pad 0.0 0.0 0.57875 0.58765 197.5 252.5 
+surf bat242 pad 0.0 0.0 0.57875 0.58765 287.5 342.5 
+surf clt212 pad 0.0 0.0 0.57875 0.58765 342.5 17.5 
+surf clt222 pad 0.0 0.0 0.57875 0.58765 72.5 107.5 
+surf clt232 pad 0.0 0.0 0.57875 0.58765 162.5 197.5 
+surf clt242 pad 0.0 0.0 0.57875 0.58765 252.5 287.5 
+
+cell bapadt212 T22  burnAbsAssem11 -bat212 
+cell bapadt222 T22  burnAbsAssem11 -bat222 
+cell bapadt232 T22  burnAbsAssem11 -bat232 
+cell bapadt242 T22  burnAbsAssem11 -bat242 
+cell clpadt212 T22  clad -clt212 
+cell clpadt222 T22  clad -clt222 
+cell clpadt232 T22  clad -clt232 
+cell clpadt242 T22  clad -clt242 
+cell cc212 T22  water -crt212 
+cell cc222 T22  clad crt212 -crt222 
+cell cc232 T22  clad crt232 -crt242 
+cell cc242 T22  water crt242 
+
+lat T2CAssem3 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T23
+210.0	G1
+220.0	RT
+
+surf crt213 cyl 0.0 0.0 0.5531 
+surf crt223 cyl 0.0 0.0 0.57875 
+surf crt233 cyl 0.0 0.0 0.58765 
+surf crt243 cyl 0.0 0.0 0.6133 
+surf bat213 pad 0.0 0.0 0.57875 0.58765 17.5 72.5 
+surf bat223 pad 0.0 0.0 0.57875 0.58765 107.5 162.5 
+surf bat233 pad 0.0 0.0 0.57875 0.58765 197.5 252.5 
+surf bat243 pad 0.0 0.0 0.57875 0.58765 287.5 342.5 
+surf clt213 pad 0.0 0.0 0.57875 0.58765 342.5 17.5 
+surf clt223 pad 0.0 0.0 0.57875 0.58765 72.5 107.5 
+surf clt233 pad 0.0 0.0 0.57875 0.58765 162.5 197.5 
+surf clt243 pad 0.0 0.0 0.57875 0.58765 252.5 287.5 
+
+cell bapadt213 T23  burnAbsAssem12 -bat213 
+cell bapadt223 T23  burnAbsAssem12 -bat223 
+cell bapadt233 T23  burnAbsAssem12 -bat233 
+cell bapadt243 T23  burnAbsAssem12 -bat243 
+cell clpadt213 T23  clad -clt213 
+cell clpadt223 T23  clad -clt223 
+cell clpadt233 T23  clad -clt233 
+cell clpadt243 T23  clad -clt243 
+cell cc213 T23  water -crt213 
+cell cc223 T23  clad crt213 -crt223 
+cell cc233 T23  clad crt233 -crt243 
+cell cc243 T23  water crt243 
+
+lat T2CAssem4 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T24
+210.0	G1
+220.0	RT
+
+surf crt214 cyl 0.0 0.0 0.5531 
+surf crt224 cyl 0.0 0.0 0.57875 
+surf crt234 cyl 0.0 0.0 0.58765 
+surf crt244 cyl 0.0 0.0 0.6133 
+surf bat214 pad 0.0 0.0 0.57875 0.58765 17.5 72.5 
+surf bat224 pad 0.0 0.0 0.57875 0.58765 107.5 162.5 
+surf bat234 pad 0.0 0.0 0.57875 0.58765 197.5 252.5 
+surf bat244 pad 0.0 0.0 0.57875 0.58765 287.5 342.5 
+surf clt214 pad 0.0 0.0 0.57875 0.58765 342.5 17.5 
+surf clt224 pad 0.0 0.0 0.57875 0.58765 72.5 107.5 
+surf clt234 pad 0.0 0.0 0.57875 0.58765 162.5 197.5 
+surf clt244 pad 0.0 0.0 0.57875 0.58765 252.5 287.5 
+
+cell bapadt214 T24  burnAbsAssem13 -bat214 
+cell bapadt224 T24  burnAbsAssem13 -bat224 
+cell bapadt234 T24  burnAbsAssem13 -bat234 
+cell bapadt244 T24  burnAbsAssem13 -bat244 
+cell clpadt214 T24  clad -clt214 
+cell clpadt224 T24  clad -clt224 
+cell clpadt234 T24  clad -clt234 
+cell clpadt244 T24  clad -clt244 
+cell cc214 T24  water -crt214 
+cell cc224 T24  clad crt214 -crt224 
+cell cc234 T24  clad crt234 -crt244 
+cell cc244 T24  water crt244 
+
+lat T2CAssem5 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T25
+210.0	G1
+220.0	RT
+
+surf crt215 cyl 0.0 0.0 0.5531 
+surf crt225 cyl 0.0 0.0 0.57875 
+surf crt235 cyl 0.0 0.0 0.58765 
+surf crt245 cyl 0.0 0.0 0.6133 
+surf bat215 pad 0.0 0.0 0.57875 0.58765 17.5 72.5 
+surf bat225 pad 0.0 0.0 0.57875 0.58765 107.5 162.5 
+surf bat235 pad 0.0 0.0 0.57875 0.58765 197.5 252.5 
+surf bat245 pad 0.0 0.0 0.57875 0.58765 287.5 342.5 
+surf clt215 pad 0.0 0.0 0.57875 0.58765 342.5 17.5 
+surf clt225 pad 0.0 0.0 0.57875 0.58765 72.5 107.5 
+surf clt235 pad 0.0 0.0 0.57875 0.58765 162.5 197.5 
+surf clt245 pad 0.0 0.0 0.57875 0.58765 252.5 287.5 
+
+cell bapadt215 T25  burnAbsAssem14 -bat215 
+cell bapadt225 T25  burnAbsAssem14 -bat225 
+cell bapadt235 T25  burnAbsAssem14 -bat235 
+cell bapadt245 T25  burnAbsAssem14 -bat245 
+cell clpadt215 T25  clad -clt215 
+cell clpadt225 T25  clad -clt225 
+cell clpadt235 T25  clad -clt235 
+cell clpadt245 T25  clad -clt245 
+cell cc215 T25  water -crt215 
+cell cc225 T25  clad crt215 -crt225 
+cell cc235 T25  clad crt235 -crt245 
+cell cc245 T25  water crt245 
+
+lat T2CAssem6 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T26
+210.0	G1
+220.0	RT
+
+surf crt216 cyl 0.0 0.0 0.5531 
+surf crt226 cyl 0.0 0.0 0.57875 
+surf crt236 cyl 0.0 0.0 0.58765 
+surf crt246 cyl 0.0 0.0 0.6133 
+surf bat216 pad 0.0 0.0 0.57875 0.58765 17.5 72.5 
+surf bat226 pad 0.0 0.0 0.57875 0.58765 107.5 162.5 
+surf bat236 pad 0.0 0.0 0.57875 0.58765 197.5 252.5 
+surf bat246 pad 0.0 0.0 0.57875 0.58765 287.5 342.5 
+surf clt216 pad 0.0 0.0 0.57875 0.58765 342.5 17.5 
+surf clt226 pad 0.0 0.0 0.57875 0.58765 72.5 107.5 
+surf clt236 pad 0.0 0.0 0.57875 0.58765 162.5 197.5 
+surf clt246 pad 0.0 0.0 0.57875 0.58765 252.5 287.5 
+
+cell bapadt216 T26  burnAbsAssem15 -bat216 
+cell bapadt226 T26  burnAbsAssem15 -bat226 
+cell bapadt236 T26  burnAbsAssem15 -bat236 
+cell bapadt246 T26  burnAbsAssem15 -bat246 
+cell clpadt216 T26  clad -clt216 
+cell clpadt226 T26  clad -clt226 
+cell clpadt236 T26  clad -clt236 
+cell clpadt246 T26  clad -clt246 
+cell cc216 T26  water -crt216 
+cell cc226 T26  clad crt216 -crt226 
+cell cc236 T26  clad crt236 -crt246 
+cell cc246 T26  water crt246 
+
+lat T2CAssem7 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T27
+210.0	G1
+220.0	RT
+
+surf crt217 cyl 0.0 0.0 0.5531 
+surf crt227 cyl 0.0 0.0 0.57875 
+surf crt237 cyl 0.0 0.0 0.58765 
+surf crt247 cyl 0.0 0.0 0.6133 
+surf bat217 pad 0.0 0.0 0.57875 0.58765 17.5 72.5 
+surf bat227 pad 0.0 0.0 0.57875 0.58765 107.5 162.5 
+surf bat237 pad 0.0 0.0 0.57875 0.58765 197.5 252.5 
+surf bat247 pad 0.0 0.0 0.57875 0.58765 287.5 342.5 
+surf clt217 pad 0.0 0.0 0.57875 0.58765 342.5 17.5 
+surf clt227 pad 0.0 0.0 0.57875 0.58765 72.5 107.5 
+surf clt237 pad 0.0 0.0 0.57875 0.58765 162.5 197.5 
+surf clt247 pad 0.0 0.0 0.57875 0.58765 252.5 287.5 
+
+cell bapadt217 T27  burnAbsAssem16 -bat217 
+cell bapadt227 T27  burnAbsAssem16 -bat227 
+cell bapadt237 T27  burnAbsAssem16 -bat237 
+cell bapadt247 T27  burnAbsAssem16 -bat247 
+cell clpadt217 T27  clad -clt217 
+cell clpadt227 T27  clad -clt227 
+cell clpadt237 T27  clad -clt237 
+cell clpadt247 T27  clad -clt247 
+cell cc217 T27  water -crt217 
+cell cc227 T27  clad crt217 -crt227 
+cell cc237 T27  clad crt237 -crt247 
+cell cc247 T27  water crt247 
+
+lat T2CAssem8 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T28
+210.0	G1
+220.0	RT
+
+surf crt218 cyl 0.0 0.0 0.5531 
+surf crt228 cyl 0.0 0.0 0.57875 
+surf crt238 cyl 0.0 0.0 0.58765 
+surf crt248 cyl 0.0 0.0 0.6133 
+surf bat218 pad 0.0 0.0 0.57875 0.58765 17.5 72.5 
+surf bat228 pad 0.0 0.0 0.57875 0.58765 107.5 162.5 
+surf bat238 pad 0.0 0.0 0.57875 0.58765 197.5 252.5 
+surf bat248 pad 0.0 0.0 0.57875 0.58765 287.5 342.5 
+surf clt218 pad 0.0 0.0 0.57875 0.58765 342.5 17.5 
+surf clt228 pad 0.0 0.0 0.57875 0.58765 72.5 107.5 
+surf clt238 pad 0.0 0.0 0.57875 0.58765 162.5 197.5 
+surf clt248 pad 0.0 0.0 0.57875 0.58765 252.5 287.5 
+
+cell bapadt218 T28  burnAbsAssem17 -bat218 
+cell bapadt228 T28  burnAbsAssem17 -bat228 
+cell bapadt238 T28  burnAbsAssem17 -bat238 
+cell bapadt248 T28  burnAbsAssem17 -bat248 
+cell clpadt218 T28  clad -clt218 
+cell clpadt228 T28  clad -clt228 
+cell clpadt238 T28  clad -clt238 
+cell clpadt248 T28  clad -clt248 
+cell cc218 T28  water -crt218 
+cell cc228 T28  clad crt218 -crt228 
+cell cc238 T28  clad crt238 -crt248 
+cell cc248 T28  water crt248 
+
+lat T2CAssem9 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T29
+210.0	G1
+220.0	RT
+
+surf crt219 cyl 0.0 0.0 0.5531 
+surf crt229 cyl 0.0 0.0 0.57875 
+surf crt239 cyl 0.0 0.0 0.58765 
+surf crt249 cyl 0.0 0.0 0.6133 
+surf bat219 pad 0.0 0.0 0.57875 0.58765 17.5 72.5 
+surf bat229 pad 0.0 0.0 0.57875 0.58765 107.5 162.5 
+surf bat239 pad 0.0 0.0 0.57875 0.58765 197.5 252.5 
+surf bat249 pad 0.0 0.0 0.57875 0.58765 287.5 342.5 
+surf clt219 pad 0.0 0.0 0.57875 0.58765 342.5 17.5 
+surf clt229 pad 0.0 0.0 0.57875 0.58765 72.5 107.5 
+surf clt239 pad 0.0 0.0 0.57875 0.58765 162.5 197.5 
+surf clt249 pad 0.0 0.0 0.57875 0.58765 252.5 287.5 
+
+cell bapadt219 T29  burnAbsAssem18 -bat219 
+cell bapadt229 T29  burnAbsAssem18 -bat229 
+cell bapadt239 T29  burnAbsAssem18 -bat239 
+cell bapadt249 T29  burnAbsAssem18 -bat249 
+cell clpadt219 T29  clad -clt219 
+cell clpadt229 T29  clad -clt229 
+cell clpadt239 T29  clad -clt239 
+cell clpadt249 T29  clad -clt249 
+cell cc219 T29  water -crt219 
+cell cc229 T29  clad crt219 -crt229 
+cell cc239 T29  clad crt239 -crt249 
+cell cc249 T29  water crt249 
+
+lat T2CAssem10 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T210
+210.0	G1
+220.0	RT
+
+surf crt2110 cyl 0.0 0.0 0.5531 
+surf crt2210 cyl 0.0 0.0 0.57875 
+surf crt2310 cyl 0.0 0.0 0.58765 
+surf crt2410 cyl 0.0 0.0 0.6133 
+surf bat2110 pad 0.0 0.0 0.57875 0.58765 17.5 72.5 
+surf bat2210 pad 0.0 0.0 0.57875 0.58765 107.5 162.5 
+surf bat2310 pad 0.0 0.0 0.57875 0.58765 197.5 252.5 
+surf bat2410 pad 0.0 0.0 0.57875 0.58765 287.5 342.5 
+surf clt2110 pad 0.0 0.0 0.57875 0.58765 342.5 17.5 
+surf clt2210 pad 0.0 0.0 0.57875 0.58765 72.5 107.5 
+surf clt2310 pad 0.0 0.0 0.57875 0.58765 162.5 197.5 
+surf clt2410 pad 0.0 0.0 0.57875 0.58765 252.5 287.5 
+
+cell bapadt2110 T210  burnAbsAssem19 -bat2110 
+cell bapadt2210 T210  burnAbsAssem19 -bat2210 
+cell bapadt2310 T210  burnAbsAssem19 -bat2310 
+cell bapadt2410 T210  burnAbsAssem19 -bat2410 
+cell clpadt2110 T210  clad -clt2110 
+cell clpadt2210 T210  clad -clt2210 
+cell clpadt2310 T210  clad -clt2310 
+cell clpadt2410 T210  clad -clt2410 
+cell cc2110 T210  water -crt2110 
+cell cc2210 T210  clad crt2110 -crt2210 
+cell cc2310 T210  clad crt2310 -crt2410 
+cell cc2410 T210  water crt2410 
+
+lat T2CAssem11 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T211
+210.0	G1
+220.0	RT
+
+surf crt2111 cyl 0.0 0.0 0.5531 
+surf crt2211 cyl 0.0 0.0 0.57875 
+surf crt2311 cyl 0.0 0.0 0.58765 
+surf crt2411 cyl 0.0 0.0 0.6133 
+surf bat2111 pad 0.0 0.0 0.57875 0.58765 17.5 72.5 
+surf bat2211 pad 0.0 0.0 0.57875 0.58765 107.5 162.5 
+surf bat2311 pad 0.0 0.0 0.57875 0.58765 197.5 252.5 
+surf bat2411 pad 0.0 0.0 0.57875 0.58765 287.5 342.5 
+surf clt2111 pad 0.0 0.0 0.57875 0.58765 342.5 17.5 
+surf clt2211 pad 0.0 0.0 0.57875 0.58765 72.5 107.5 
+surf clt2311 pad 0.0 0.0 0.57875 0.58765 162.5 197.5 
+surf clt2411 pad 0.0 0.0 0.57875 0.58765 252.5 287.5 
+
+cell bapadt2111 T211  burnAbsAssem20 -bat2111 
+cell bapadt2211 T211  burnAbsAssem20 -bat2211 
+cell bapadt2311 T211  burnAbsAssem20 -bat2311 
+cell bapadt2411 T211  burnAbsAssem20 -bat2411 
+cell clpadt2111 T211  clad -clt2111 
+cell clpadt2211 T211  clad -clt2211 
+cell clpadt2311 T211  clad -clt2311 
+cell clpadt2411 T211  clad -clt2411 
+cell cc2111 T211  water -crt2111 
+cell cc2211 T211  clad crt2111 -crt2211 
+cell cc2311 T211  clad crt2311 -crt2411 
+cell cc2411 T211  water crt2411 
+
+lat T2CAssem12 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T212
+210.0	G1
+220.0	RT
+
+surf crt2112 cyl 0.0 0.0 0.5531 
+surf crt2212 cyl 0.0 0.0 0.57875 
+surf crt2312 cyl 0.0 0.0 0.58765 
+surf crt2412 cyl 0.0 0.0 0.6133 
+surf bat2112 pad 0.0 0.0 0.57875 0.58765 17.5 72.5 
+surf bat2212 pad 0.0 0.0 0.57875 0.58765 107.5 162.5 
+surf bat2312 pad 0.0 0.0 0.57875 0.58765 197.5 252.5 
+surf bat2412 pad 0.0 0.0 0.57875 0.58765 287.5 342.5 
+surf clt2112 pad 0.0 0.0 0.57875 0.58765 342.5 17.5 
+surf clt2212 pad 0.0 0.0 0.57875 0.58765 72.5 107.5 
+surf clt2312 pad 0.0 0.0 0.57875 0.58765 162.5 197.5 
+surf clt2412 pad 0.0 0.0 0.57875 0.58765 252.5 287.5 
+
+cell bapadt2112 T212  burnAbsAssem21 -bat2112 
+cell bapadt2212 T212  burnAbsAssem21 -bat2212 
+cell bapadt2312 T212  burnAbsAssem21 -bat2312 
+cell bapadt2412 T212  burnAbsAssem21 -bat2412 
+cell clpadt2112 T212  clad -clt2112 
+cell clpadt2212 T212  clad -clt2212 
+cell clpadt2312 T212  clad -clt2312 
+cell clpadt2412 T212  clad -clt2412 
+cell cc2112 T212  water -crt2112 
+cell cc2212 T212  clad crt2112 -crt2212 
+cell cc2312 T212  clad crt2312 -crt2412 
+cell cc2412 T212  water crt2412 
+
+lat T3CAssem1 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T31
+210.0	G1
+220.0	RT
+
+surf crt311 cyl 0.0 0.0 0.5531 
+surf crt321 cyl 0.0 0.0 0.58225 
+surf crt331 cyl 0.0 0.0 0.5841500000000001 
+surf crt341 cyl 0.0 0.0 0.6133 
+surf bat311 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat321 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat331 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat341 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt311 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt321 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt331 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt341 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt311 T31  burnAbsAssem22 -bat311 
+cell bapadt321 T31  burnAbsAssem22 -bat321 
+cell bapadt331 T31  burnAbsAssem22 -bat331 
+cell bapadt341 T31  burnAbsAssem22 -bat341 
+cell clpadt311 T31  clad -clt311 
+cell clpadt321 T31  clad -clt321 
+cell clpadt331 T31  clad -clt331 
+cell clpadt341 T31  clad -clt341 
+cell cc311 T31  water -crt311 
+cell cc321 T31  clad crt311 -crt321 
+cell cc331 T31  clad crt331 -crt341 
+cell cc341 T31  water crt341 
+
+lat T3CAssem2 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T32
+210.0	G1
+220.0	RT
+
+surf crt312 cyl 0.0 0.0 0.5531 
+surf crt322 cyl 0.0 0.0 0.58225 
+surf crt332 cyl 0.0 0.0 0.5841500000000001 
+surf crt342 cyl 0.0 0.0 0.6133 
+surf bat312 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat322 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat332 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat342 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt312 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt322 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt332 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt342 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt312 T32  burnAbsAssem23 -bat312 
+cell bapadt322 T32  burnAbsAssem23 -bat322 
+cell bapadt332 T32  burnAbsAssem23 -bat332 
+cell bapadt342 T32  burnAbsAssem23 -bat342 
+cell clpadt312 T32  clad -clt312 
+cell clpadt322 T32  clad -clt322 
+cell clpadt332 T32  clad -clt332 
+cell clpadt342 T32  clad -clt342 
+cell cc312 T32  water -crt312 
+cell cc322 T32  clad crt312 -crt322 
+cell cc332 T32  clad crt332 -crt342 
+cell cc342 T32  water crt342 
+
+lat T3CAssem3 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T33
+210.0	G1
+220.0	RT
+
+surf crt313 cyl 0.0 0.0 0.5531 
+surf crt323 cyl 0.0 0.0 0.58225 
+surf crt333 cyl 0.0 0.0 0.5841500000000001 
+surf crt343 cyl 0.0 0.0 0.6133 
+surf bat313 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat323 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat333 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat343 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt313 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt323 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt333 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt343 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt313 T33  burnAbsAssem24 -bat313 
+cell bapadt323 T33  burnAbsAssem24 -bat323 
+cell bapadt333 T33  burnAbsAssem24 -bat333 
+cell bapadt343 T33  burnAbsAssem24 -bat343 
+cell clpadt313 T33  clad -clt313 
+cell clpadt323 T33  clad -clt323 
+cell clpadt333 T33  clad -clt333 
+cell clpadt343 T33  clad -clt343 
+cell cc313 T33  water -crt313 
+cell cc323 T33  clad crt313 -crt323 
+cell cc333 T33  clad crt333 -crt343 
+cell cc343 T33  water crt343 
+
+lat T3CAssem4 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T34
+210.0	G1
+220.0	RT
+
+surf crt314 cyl 0.0 0.0 0.5531 
+surf crt324 cyl 0.0 0.0 0.58225 
+surf crt334 cyl 0.0 0.0 0.5841500000000001 
+surf crt344 cyl 0.0 0.0 0.6133 
+surf bat314 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat324 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat334 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat344 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt314 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt324 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt334 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt344 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt314 T34  burnAbsAssem25 -bat314 
+cell bapadt324 T34  burnAbsAssem25 -bat324 
+cell bapadt334 T34  burnAbsAssem25 -bat334 
+cell bapadt344 T34  burnAbsAssem25 -bat344 
+cell clpadt314 T34  clad -clt314 
+cell clpadt324 T34  clad -clt324 
+cell clpadt334 T34  clad -clt334 
+cell clpadt344 T34  clad -clt344 
+cell cc314 T34  water -crt314 
+cell cc324 T34  clad crt314 -crt324 
+cell cc334 T34  clad crt334 -crt344 
+cell cc344 T34  water crt344 
+
+lat T3CAssem5 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T35
+210.0	G1
+220.0	RT
+
+surf crt315 cyl 0.0 0.0 0.5531 
+surf crt325 cyl 0.0 0.0 0.58225 
+surf crt335 cyl 0.0 0.0 0.5841500000000001 
+surf crt345 cyl 0.0 0.0 0.6133 
+surf bat315 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat325 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat335 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat345 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt315 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt325 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt335 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt345 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt315 T35  burnAbsAssem26 -bat315 
+cell bapadt325 T35  burnAbsAssem26 -bat325 
+cell bapadt335 T35  burnAbsAssem26 -bat335 
+cell bapadt345 T35  burnAbsAssem26 -bat345 
+cell clpadt315 T35  clad -clt315 
+cell clpadt325 T35  clad -clt325 
+cell clpadt335 T35  clad -clt335 
+cell clpadt345 T35  clad -clt345 
+cell cc315 T35  water -crt315 
+cell cc325 T35  clad crt315 -crt325 
+cell cc335 T35  clad crt335 -crt345 
+cell cc345 T35  water crt345 
+
+lat T3CAssem6 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T36
+210.0	G1
+220.0	RT
+
+surf crt316 cyl 0.0 0.0 0.5531 
+surf crt326 cyl 0.0 0.0 0.58225 
+surf crt336 cyl 0.0 0.0 0.5841500000000001 
+surf crt346 cyl 0.0 0.0 0.6133 
+surf bat316 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat326 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat336 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat346 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt316 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt326 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt336 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt346 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt316 T36  burnAbsAssem27 -bat316 
+cell bapadt326 T36  burnAbsAssem27 -bat326 
+cell bapadt336 T36  burnAbsAssem27 -bat336 
+cell bapadt346 T36  burnAbsAssem27 -bat346 
+cell clpadt316 T36  clad -clt316 
+cell clpadt326 T36  clad -clt326 
+cell clpadt336 T36  clad -clt336 
+cell clpadt346 T36  clad -clt346 
+cell cc316 T36  water -crt316 
+cell cc326 T36  clad crt316 -crt326 
+cell cc336 T36  clad crt336 -crt346 
+cell cc346 T36  water crt346 
+
+lat T3CAssem7 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T37
+210.0	G1
+220.0	RT
+
+surf crt317 cyl 0.0 0.0 0.5531 
+surf crt327 cyl 0.0 0.0 0.58225 
+surf crt337 cyl 0.0 0.0 0.5841500000000001 
+surf crt347 cyl 0.0 0.0 0.6133 
+surf bat317 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat327 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat337 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat347 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt317 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt327 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt337 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt347 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt317 T37  burnAbsAssem28 -bat317 
+cell bapadt327 T37  burnAbsAssem28 -bat327 
+cell bapadt337 T37  burnAbsAssem28 -bat337 
+cell bapadt347 T37  burnAbsAssem28 -bat347 
+cell clpadt317 T37  clad -clt317 
+cell clpadt327 T37  clad -clt327 
+cell clpadt337 T37  clad -clt337 
+cell clpadt347 T37  clad -clt347 
+cell cc317 T37  water -crt317 
+cell cc327 T37  clad crt317 -crt327 
+cell cc337 T37  clad crt337 -crt347 
+cell cc347 T37  water crt347 
+
+lat T3CAssem8 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T38
+210.0	G1
+220.0	RT
+
+surf crt318 cyl 0.0 0.0 0.5531 
+surf crt328 cyl 0.0 0.0 0.58225 
+surf crt338 cyl 0.0 0.0 0.5841500000000001 
+surf crt348 cyl 0.0 0.0 0.6133 
+surf bat318 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat328 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat338 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat348 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt318 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt328 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt338 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt348 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt318 T38  burnAbsAssem29 -bat318 
+cell bapadt328 T38  burnAbsAssem29 -bat328 
+cell bapadt338 T38  burnAbsAssem29 -bat338 
+cell bapadt348 T38  burnAbsAssem29 -bat348 
+cell clpadt318 T38  clad -clt318 
+cell clpadt328 T38  clad -clt328 
+cell clpadt338 T38  clad -clt338 
+cell clpadt348 T38  clad -clt348 
+cell cc318 T38  water -crt318 
+cell cc328 T38  clad crt318 -crt328 
+cell cc338 T38  clad crt338 -crt348 
+cell cc348 T38  water crt348 
+
+lat T3CAssem9 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T39
+210.0	G1
+220.0	RT
+
+surf crt319 cyl 0.0 0.0 0.5531 
+surf crt329 cyl 0.0 0.0 0.58225 
+surf crt339 cyl 0.0 0.0 0.5841500000000001 
+surf crt349 cyl 0.0 0.0 0.6133 
+surf bat319 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat329 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat339 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat349 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt319 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt329 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt339 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt349 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt319 T39  burnAbsAssem30 -bat319 
+cell bapadt329 T39  burnAbsAssem30 -bat329 
+cell bapadt339 T39  burnAbsAssem30 -bat339 
+cell bapadt349 T39  burnAbsAssem30 -bat349 
+cell clpadt319 T39  clad -clt319 
+cell clpadt329 T39  clad -clt329 
+cell clpadt339 T39  clad -clt339 
+cell clpadt349 T39  clad -clt349 
+cell cc319 T39  water -crt319 
+cell cc329 T39  clad crt319 -crt329 
+cell cc339 T39  clad crt339 -crt349 
+cell cc349 T39  water crt349 
+
+lat T3CAssem10 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T310
+210.0	G1
+220.0	RT
+
+surf crt3110 cyl 0.0 0.0 0.5531 
+surf crt3210 cyl 0.0 0.0 0.58225 
+surf crt3310 cyl 0.0 0.0 0.5841500000000001 
+surf crt3410 cyl 0.0 0.0 0.6133 
+surf bat3110 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat3210 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat3310 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat3410 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt3110 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt3210 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt3310 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt3410 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt3110 T310  burnAbsAssem31 -bat3110 
+cell bapadt3210 T310  burnAbsAssem31 -bat3210 
+cell bapadt3310 T310  burnAbsAssem31 -bat3310 
+cell bapadt3410 T310  burnAbsAssem31 -bat3410 
+cell clpadt3110 T310  clad -clt3110 
+cell clpadt3210 T310  clad -clt3210 
+cell clpadt3310 T310  clad -clt3310 
+cell clpadt3410 T310  clad -clt3410 
+cell cc3110 T310  water -crt3110 
+cell cc3210 T310  clad crt3110 -crt3210 
+cell cc3310 T310  clad crt3310 -crt3410 
+cell cc3410 T310  water crt3410 
+
+lat T3CAssem11 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T311
+210.0	G1
+220.0	RT
+
+surf crt3111 cyl 0.0 0.0 0.5531 
+surf crt3211 cyl 0.0 0.0 0.58225 
+surf crt3311 cyl 0.0 0.0 0.5841500000000001 
+surf crt3411 cyl 0.0 0.0 0.6133 
+surf bat3111 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat3211 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat3311 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat3411 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt3111 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt3211 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt3311 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt3411 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt3111 T311  burnAbsAssem32 -bat3111 
+cell bapadt3211 T311  burnAbsAssem32 -bat3211 
+cell bapadt3311 T311  burnAbsAssem32 -bat3311 
+cell bapadt3411 T311  burnAbsAssem32 -bat3411 
+cell clpadt3111 T311  clad -clt3111 
+cell clpadt3211 T311  clad -clt3211 
+cell clpadt3311 T311  clad -clt3311 
+cell clpadt3411 T311  clad -clt3411 
+cell cc3111 T311  water -crt3111 
+cell cc3211 T311  clad crt3111 -crt3211 
+cell cc3311 T311  clad crt3311 -crt3411 
+cell cc3411 T311  water crt3411 
+
+lat T3CAssem12 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T312
+210.0	G1
+220.0	RT
+
+surf crt3112 cyl 0.0 0.0 0.5531 
+surf crt3212 cyl 0.0 0.0 0.58225 
+surf crt3312 cyl 0.0 0.0 0.5841500000000001 
+surf crt3412 cyl 0.0 0.0 0.6133 
+surf bat3112 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat3212 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat3312 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat3412 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt3112 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt3212 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt3312 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt3412 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt3112 T312  burnAbsAssem33 -bat3112 
+cell bapadt3212 T312  burnAbsAssem33 -bat3212 
+cell bapadt3312 T312  burnAbsAssem33 -bat3312 
+cell bapadt3412 T312  burnAbsAssem33 -bat3412 
+cell clpadt3112 T312  clad -clt3112 
+cell clpadt3212 T312  clad -clt3212 
+cell clpadt3312 T312  clad -clt3312 
+cell clpadt3412 T312  clad -clt3412 
+cell cc3112 T312  water -crt3112 
+cell cc3212 T312  clad crt3112 -crt3212 
+cell cc3312 T312  clad crt3312 -crt3412 
+cell cc3412 T312  water crt3412 
+
+lat T3CAssem13 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T313
+210.0	G1
+220.0	RT
+
+surf crt3113 cyl 0.0 0.0 0.5531 
+surf crt3213 cyl 0.0 0.0 0.58225 
+surf crt3313 cyl 0.0 0.0 0.5841500000000001 
+surf crt3413 cyl 0.0 0.0 0.6133 
+surf bat3113 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat3213 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat3313 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat3413 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt3113 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt3213 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt3313 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt3413 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt3113 T313  burnAbsAssem34 -bat3113 
+cell bapadt3213 T313  burnAbsAssem34 -bat3213 
+cell bapadt3313 T313  burnAbsAssem34 -bat3313 
+cell bapadt3413 T313  burnAbsAssem34 -bat3413 
+cell clpadt3113 T313  clad -clt3113 
+cell clpadt3213 T313  clad -clt3213 
+cell clpadt3313 T313  clad -clt3313 
+cell clpadt3413 T313  clad -clt3413 
+cell cc3113 T313  water -crt3113 
+cell cc3213 T313  clad crt3113 -crt3213 
+cell cc3313 T313  clad crt3313 -crt3413 
+cell cc3413 T313  water crt3413 
+
+lat T3CAssem14 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T314
+210.0	G1
+220.0	RT
+
+surf crt3114 cyl 0.0 0.0 0.5531 
+surf crt3214 cyl 0.0 0.0 0.58225 
+surf crt3314 cyl 0.0 0.0 0.5841500000000001 
+surf crt3414 cyl 0.0 0.0 0.6133 
+surf bat3114 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat3214 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat3314 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat3414 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt3114 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt3214 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt3314 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt3414 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt3114 T314  burnAbsAssem35 -bat3114 
+cell bapadt3214 T314  burnAbsAssem35 -bat3214 
+cell bapadt3314 T314  burnAbsAssem35 -bat3314 
+cell bapadt3414 T314  burnAbsAssem35 -bat3414 
+cell clpadt3114 T314  clad -clt3114 
+cell clpadt3214 T314  clad -clt3214 
+cell clpadt3314 T314  clad -clt3314 
+cell clpadt3414 T314  clad -clt3414 
+cell cc3114 T314  water -crt3114 
+cell cc3214 T314  clad crt3114 -crt3214 
+cell cc3314 T314  clad crt3314 -crt3414 
+cell cc3414 T314  water crt3414 
+
+lat T3CAssem15 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T315
+210.0	G1
+220.0	RT
+
+surf crt3115 cyl 0.0 0.0 0.5531 
+surf crt3215 cyl 0.0 0.0 0.58225 
+surf crt3315 cyl 0.0 0.0 0.5841500000000001 
+surf crt3415 cyl 0.0 0.0 0.6133 
+surf bat3115 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat3215 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat3315 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat3415 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt3115 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt3215 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt3315 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt3415 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt3115 T315  burnAbsAssem36 -bat3115 
+cell bapadt3215 T315  burnAbsAssem36 -bat3215 
+cell bapadt3315 T315  burnAbsAssem36 -bat3315 
+cell bapadt3415 T315  burnAbsAssem36 -bat3415 
+cell clpadt3115 T315  clad -clt3115 
+cell clpadt3215 T315  clad -clt3215 
+cell clpadt3315 T315  clad -clt3315 
+cell clpadt3415 T315  clad -clt3415 
+cell cc3115 T315  water -crt3115 
+cell cc3215 T315  clad crt3115 -crt3215 
+cell cc3315 T315  clad crt3315 -crt3415 
+cell cc3415 T315  water crt3415 
+
+lat T3CAssem16 9 0 0 5
+0.0	RB
+20.0	G1
+25.0	T316
+210.0	G1
+220.0	RT
+
+surf crt3116 cyl 0.0 0.0 0.5531 
+surf crt3216 cyl 0.0 0.0 0.58225 
+surf crt3316 cyl 0.0 0.0 0.5841500000000001 
+surf crt3416 cyl 0.0 0.0 0.6133 
+surf bat3116 pad 0.0 0.0 0.58225 0.5841500000000001 15.0 75.0 
+surf bat3216 pad 0.0 0.0 0.58225 0.5841500000000001 105.0 165.0 
+surf bat3316 pad 0.0 0.0 0.58225 0.5841500000000001 195.0 255.0 
+surf bat3416 pad 0.0 0.0 0.58225 0.5841500000000001 285.0 345.0 
+surf clt3116 pad 0.0 0.0 0.58225 0.5841500000000001 345.0 15.0 
+surf clt3216 pad 0.0 0.0 0.58225 0.5841500000000001 75.0 105.0 
+surf clt3316 pad 0.0 0.0 0.58225 0.5841500000000001 165.0 195.0 
+surf clt3416 pad 0.0 0.0 0.58225 0.5841500000000001 255.0 285.0 
+
+cell bapadt3116 T316  burnAbsAssem37 -bat3116 
+cell bapadt3216 T316  burnAbsAssem37 -bat3216 
+cell bapadt3316 T316  burnAbsAssem37 -bat3316 
+cell bapadt3416 T316  burnAbsAssem37 -bat3416 
+cell clpadt3116 T316  clad -clt3116 
+cell clpadt3216 T316  clad -clt3216 
+cell clpadt3316 T316  clad -clt3316 
+cell clpadt3416 T316  clad -clt3416 
+cell cc3116 T316  water -crt3116 
+cell cc3216 T316  clad crt3116 -crt3216 
+cell cc3316 T316  clad crt3316 -crt3416 
+cell cc3416 T316  water crt3416 
+
+lat CT1 9 0 0 3
+0.0	RB
+20.0	G1
+220.0	RT
+
+lat WG1 9 0 0 3
+0.0	RB
+20.0	W1
+220.0	RT
+
+lat FA1Assem1 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 CT1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 T1CAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 WG1 
+WG1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 FCAssem1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA1Assem2 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 CT1 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 T1CAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 WG1 
+WG1 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 FCAssem2 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA1Assem3 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 CT1 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 T1CAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 WG1 
+WG1 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 FCAssem3 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA1Assem4 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 CT1 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 T1CAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 WG1 
+WG1 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 FCAssem4 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA1Assem5 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 CT1 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 T1CAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 WG1 
+WG1 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 FCAssem5 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA1Assem6 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 CT1 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 T1CAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 WG1 
+WG1 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 FCAssem6 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA1Assem7 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 CT1 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 T1CAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 WG1 
+WG1 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 FCAssem7 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA1Assem8 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 CT1 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 T1CAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 WG1 
+WG1 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 FCAssem8 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA1Assem9 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 CT1 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 T1CAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 WG1 
+WG1 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 FCAssem9 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA2Assem1 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 CT1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 T2CAssem1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 WG1 
+WG1 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 FCAssem10 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA2Assem2 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 CT1 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 T2CAssem2 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 WG1 
+WG1 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 FCAssem11 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA2Assem3 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 CT1 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 T2CAssem3 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 WG1 
+WG1 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 FCAssem12 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA2Assem4 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 CT1 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 T2CAssem4 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 WG1 
+WG1 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 FCAssem13 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA2Assem5 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 CT1 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 T2CAssem5 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 WG1 
+WG1 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 FCAssem14 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA2Assem6 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 CT1 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 T2CAssem6 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 WG1 
+WG1 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 FCAssem15 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA2Assem7 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 CT1 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 T2CAssem7 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 WG1 
+WG1 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 FCAssem16 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA2Assem8 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 CT1 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 T2CAssem8 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 WG1 
+WG1 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 FCAssem17 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA2Assem9 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 CT1 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 T2CAssem9 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 WG1 
+WG1 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 FCAssem18 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA2Assem10 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 CT1 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 T2CAssem10 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 WG1 
+WG1 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 FCAssem19 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA2Assem11 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 CT1 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 T2CAssem11 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 WG1 
+WG1 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 FCAssem20 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA2Assem12 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 CT1 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 T2CAssem12 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 WG1 
+WG1 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 FCAssem21 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem1 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 CT1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 T3CAssem1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 WG1 
+WG1 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 FCAssem22 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem2 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 CT1 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 T3CAssem2 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 WG1 
+WG1 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 FCAssem23 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem3 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 CT1 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 T3CAssem3 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 WG1 
+WG1 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 FCAssem24 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem4 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 CT1 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 T3CAssem4 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 WG1 
+WG1 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 FCAssem25 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem5 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 CT1 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 T3CAssem5 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 WG1 
+WG1 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 FCAssem26 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem6 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 CT1 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 T3CAssem6 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 WG1 
+WG1 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 FCAssem27 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem7 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 CT1 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 T3CAssem7 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 WG1 
+WG1 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 FCAssem28 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem8 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 CT1 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 T3CAssem8 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 WG1 
+WG1 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 FCAssem29 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem9 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 CT1 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 T3CAssem9 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 WG1 
+WG1 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 FCAssem30 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem10 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 CT1 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 T3CAssem10 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 WG1 
+WG1 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 FCAssem31 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem11 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 CT1 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 T3CAssem11 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 WG1 
+WG1 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 FCAssem32 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem12 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 CT1 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 T3CAssem12 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 WG1 
+WG1 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 FCAssem33 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem13 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 CT1 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 T3CAssem13 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 WG1 
+WG1 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 FCAssem34 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem14 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 CT1 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 T3CAssem14 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 WG1 
+WG1 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 FCAssem35 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem15 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 CT1 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 T3CAssem15 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 WG1 
+WG1 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 FCAssem36 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3Assem16 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 CT1 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 T3CAssem16 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 WG1 
+WG1 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 FCAssem37 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA1 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 WG1 
+WG1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 WG1 
+WG1 FC1 FC1 FC1 FC1 FC1 GT1 FC1 FC1 GT1 FC1 FC1 GT1 FC1 FC1 FC1 FC1 FC1 WG1 
+WG1 FC1 FC1 FC1 GT1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 GT1 FC1 FC1 FC1 WG1 
+WG1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 WG1 
+WG1 FC1 FC1 GT1 FC1 FC1 GT1 FC1 FC1 GT1 FC1 FC1 GT1 FC1 FC1 GT1 FC1 FC1 WG1 
+WG1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 WG1 
+WG1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 WG1 
+WG1 FC1 FC1 GT1 FC1 FC1 GT1 FC1 FC1 CT1 FC1 FC1 GT1 FC1 FC1 GT1 FC1 FC1 WG1 
+WG1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 WG1 
+WG1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 WG1 
+WG1 FC1 FC1 GT1 FC1 FC1 GT1 FC1 FC1 GT1 FC1 FC1 GT1 FC1 FC1 GT1 FC1 FC1 WG1 
+WG1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 WG1 
+WG1 FC1 FC1 FC1 GT1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 GT1 FC1 FC1 FC1 WG1 
+WG1 FC1 FC1 FC1 FC1 FC1 GT1 FC1 FC1 GT1 FC1 FC1 GT1 FC1 FC1 FC1 FC1 FC1 WG1 
+WG1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 WG1 
+WG1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 FC1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA2 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 WG1 
+WG1 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 WG1 
+WG1 FC2 FC2 FC2 FC2 FC2 GT2 FC2 FC2 GT2 FC2 FC2 GT2 FC2 FC2 FC2 FC2 FC2 WG1 
+WG1 FC2 FC2 FC2 GT2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 GT2 FC2 FC2 FC2 WG1 
+WG1 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 WG1 
+WG1 FC2 FC2 GT2 FC2 FC2 GT2 FC2 FC2 GT2 FC2 FC2 GT2 FC2 FC2 GT2 FC2 FC2 WG1 
+WG1 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 WG1 
+WG1 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 WG1 
+WG1 FC2 FC2 GT2 FC2 FC2 GT2 FC2 FC2 CT1 FC2 FC2 GT2 FC2 FC2 GT2 FC2 FC2 WG1 
+WG1 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 WG1 
+WG1 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 WG1 
+WG1 FC2 FC2 GT2 FC2 FC2 GT2 FC2 FC2 GT2 FC2 FC2 GT2 FC2 FC2 GT2 FC2 FC2 WG1 
+WG1 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 WG1 
+WG1 FC2 FC2 FC2 GT2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 GT2 FC2 FC2 FC2 WG1 
+WG1 FC2 FC2 FC2 FC2 FC2 GT2 FC2 FC2 GT2 FC2 FC2 GT2 FC2 FC2 FC2 FC2 FC2 WG1 
+WG1 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 WG1 
+WG1 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 FC2 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat FA3 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 WG1 
+WG1 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 WG1 
+WG1 FC3 FC3 FC3 FC3 FC3 GT3 FC3 FC3 GT3 FC3 FC3 GT3 FC3 FC3 FC3 FC3 FC3 WG1 
+WG1 FC3 FC3 FC3 GT3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 GT3 FC3 FC3 FC3 WG1 
+WG1 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 WG1 
+WG1 FC3 FC3 GT3 FC3 FC3 GT3 FC3 FC3 GT3 FC3 FC3 GT3 FC3 FC3 GT3 FC3 FC3 WG1 
+WG1 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 WG1 
+WG1 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 WG1 
+WG1 FC3 FC3 GT3 FC3 FC3 GT3 FC3 FC3 CT1 FC3 FC3 GT3 FC3 FC3 GT3 FC3 FC3 WG1 
+WG1 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 WG1 
+WG1 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 WG1 
+WG1 FC3 FC3 GT3 FC3 FC3 GT3 FC3 FC3 GT3 FC3 FC3 GT3 FC3 FC3 GT3 FC3 FC3 WG1 
+WG1 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 WG1 
+WG1 FC3 FC3 FC3 GT3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 GT3 FC3 FC3 FC3 WG1 
+WG1 FC3 FC3 FC3 FC3 FC3 GT3 FC3 FC3 GT3 FC3 FC3 GT3 FC3 FC3 FC3 FC3 FC3 WG1 
+WG1 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 WG1 
+WG1 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 FC3 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat WA1 1 0 0  19 19 1.2623
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 WG1 
+
+lat BURNCORE 1 0 0  11 11 21.6038
+WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 
+WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 
+WA1 WA1 WA1 WA1 FA3Assem1 FA3Assem2 FA3Assem3 WA1 WA1 WA1 WA1 
+WA1 WA1 WA1 FA3Assem4 FA2Assem1 FA2Assem2 FA2Assem3 FA3Assem5 WA1 WA1 WA1 
+WA1 WA1 FA3Assem6 FA2Assem4 FA1Assem1 FA1Assem2 FA1Assem3 FA2Assem5 FA3Assem7 WA1 WA1 
+WA1 WA1 FA3Assem8 FA2Assem6 FA1Assem4 FA1Assem5 FA1Assem6 FA2Assem7 FA3Assem9 WA1 WA1 
+WA1 WA1 FA3Assem10 FA2Assem8 FA1Assem7 FA1Assem8 FA1Assem9 FA2Assem9 FA3Assem11 WA1 WA1 
+WA1 WA1 WA1 FA3Assem12 FA2Assem10 FA2Assem11 FA2Assem12 FA3Assem13 WA1 WA1 WA1 
+WA1 WA1 WA1 WA1 FA3Assem14 FA3Assem15 FA3Assem16 WA1 WA1 WA1 WA1 
+WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 
+WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 WA1 
+
+surf cr1 cyl 0.0 0.0 86.4152 
+surf cr2 cyl 0.0 0.0 106.4152 
+surf cr3 cyl 0.0 0.0 126.4152 
+surf cr4 cyl 0.0 0.0 146.4152 
+
+cell cc1 housing  clad cr1 -cr2 
+cell cc2 housing  water cr2 -cr3 
+cell cc3 housing  clad cr3 -cr4 
+cell core housing  fill BURNCORE -cr1 
+cell voidBuffer housing  void cr4 -voidBorder 
+
+surf voidBorder cuboid -146.4152 146.4152 -146.4152 146.4152 0.0 240.0 
+
+cell coreFill 0  fill housing -voidBorder 
+cell voidRegion 0  outside voidBorder 
+
+set inventory 
+ 541350
+ 922340
+ 922350
+ 942390
+ 
+dep butot 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0 21.0 22.0 23.0 24.0 25.0 26.0 27.0 28.0 29.0 30.0 31.0 32.0 
+set power 200000000.0
+set bc 1 1 1 
+set sym 0
+set pop 50000 80 20
+set pcc 0
+set egrid 5e-05 1e-09 15.0 
+ene 1 1 1E-11 0.625E-6 15
+%include bigT_BURN_3D.txt.mvol
+set acelib "/mnt/c/Users/iaguirre6/Documents/xsdata/endfb7/sss_endfb7u.xsdata"
+set declib "/mnt/c/Users/iaguirre6/Documents/xsdata/endfb7/sss_endfb7.dec"
+set nfylib "/mnt/c/Users/iaguirre6/Documents/xsdata/endfb7/sss_endfb7.nfy"
+therm lwtr lwj3.11t
+

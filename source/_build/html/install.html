@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; (SIMBA) Serpent Interface for Multiphysics Based Applications 1.0.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License" href="license.html" />
+    <link rel="prev" title="Manual Template" href="develop/templates/manualTemplate.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> (SIMBA) Serpent Interface for Multiphysics Based Applications
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">Developer Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Manual/index.html">User’s Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop/index.html">Developer’s Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#terminal-terminology">Terminal terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-from-a-release">Installing from a Release</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">(SIMBA) Serpent Interface for Multiphysics Based Applications</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/install.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="installation">
+<span id="install"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>In order to properly install this package, you need a version of
+python that plays well with libraries like <a class="reference internal" href="glossary.html#term-numpy"><span class="xref std std-term">numpy</span></a> and <a class="reference internal" href="glossary.html#term-matplotlib"><span class="xref std std-term">matplotlib</span></a>.
+This is easy or less easy depending on your operating system.</p>
+<div class="section" id="terminal-terminology">
+<span id="install-terminals"></span><h2>Terminal terminology<a class="headerlink" href="#terminal-terminology" title="Permalink to this headline">¶</a></h2>
+<p>Commands below that begin with <code class="docutils literal notranslate"><span class="pre">$</span></code> must be run from the
+terminal containing your preferred python distribution, neglecting
+the <code class="docutils literal notranslate"><span class="pre">$</span></code>.
+Depending on operating system, this could be the normal
+terminal, or a modified prompt.
+for more information if you are not sure.</p>
+<p>Commands that begin with <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> should be run inside of a python
+environment.
+The following would be a valid set of instructions to pass to your terminal,
+printing a very basic python command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m &quot;print(&#39;hello world&#39;)&quot;
+hello world
+$ python
+&gt;&gt;&gt; print(&#39;hello world&#39;)
+hello world
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-from-a-release">
+<span id="install-pip"></span><h2>Installing from a Release<a class="headerlink" href="#installing-from-a-release" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="glossary.html#term-pip"><span class="xref std std-term">pip</span></a> is the easiest way to install the latest version of
+<code class="docutils literal notranslate"><span class="pre">snapReactors</span></code>. First, ensure that you have <a class="reference internal" href="glossary.html#term-numpy"><span class="xref std std-term">numpy</span></a> installed,
+as this is one of the required packages that is tricky to install. You can
+check by opening up a your preferred terminal and executing</p>
+<p>After downloading  the package navigate to the root directory.
+The <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> defines how to install the code.
+Execute the following line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python setup.py sdist bdist_wheel
+</pre></div>
+</div>
+<p>The command should create a <code class="docutils literal notranslate"><span class="pre">dist</span></code> directory where you should find the <code class="docutils literal notranslate"><span class="pre">tar.gz</span></code>
+and <code class="docutils literal notranslate"><span class="pre">.whl</span></code> files. The <code class="docutils literal notranslate"><span class="pre">tar.gz</span></code> file is a source archive and <code class="docutils literal notranslate"><span class="pre">.whl</span></code> is a built distribution.
+Before installing you may need to make sure that you have the latest pip, setuptools, and wheel on your system.
+Follow the next execution line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -c &quot;import numpy&quot;
+</pre></div>
+</div>
+<p>Next, installation with pip can be completed with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m pip install -upgrade pip setuptools wheel
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="develop/templates/manualTemplate.html" class="btn btn-neutral float-left" title="Manual Template" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="license.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Isaac Naupa &amp; Dan Kotlyar.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

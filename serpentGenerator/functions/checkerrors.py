@@ -13,6 +13,7 @@ email: dan.kotlyar@me.gatech.edu
 
 import numbers
 import numpy as np
+from itertools import chain
 
 
 def _isnumber(var, description):
@@ -20,6 +21,13 @@ def _isnumber(var, description):
     if not isinstance(var, numbers.Real):
         raise TypeError("{} must be a scalar and not {}".
                         format(description, var))
+
+def _isnumberArray(var, description):
+    """checks if the array consist of scalars"""
+    _isndarray(var, description)
+    if not all(isinstance(i, numbers.Real) for i in var):
+        raise ValueError("{} must be an array of scalars and not {}".
+                format(description, var))
 
 
 def _isint(var, description):
@@ -97,6 +105,20 @@ def _ispositive(var, description):
         raise ValueError("{} must be positive and not {}"
                          .format(description, var))
 
+def _ispositiveWZero(var, description):
+    """checks if the variable is positive"""
+    _isnumber(var, description)
+    if not var >= 0:
+        raise ValueError("{} must be positive and not {}"
+                         .format(description, var))
+
+
+def _isSorted(var, reverse, description):
+    """checks if the variable is sorted on ascending or descending order"""
+    order = "ascending" if reverse == False else "descending"
+    if not all(sorted(var, reverse = reverse) == var):
+        raise ValueError("{} must be sorted in {} order and not {}"
+                         .format(description, order, var))
 
 def _ispositiveArray(var, description):
     """checks if the variable is positive"""
@@ -125,7 +147,7 @@ def _is2darray(var, description):
     """checks if the array is 2D"""
     _isndarray(var, description)
     if np.array(var).ndim != 2:
-        raise TypeError("{} must be 1D array and not {}"
+        raise TypeError("{} must be 2D array and not {}"
                         .format(description, var))
 
 
@@ -151,4 +173,38 @@ def _anynegative(var, description):
     if (var < 0.0).any():
         raise ValueError("{} cannot have any negative values {}"
                          .format(description, var))
+
+def _isinstance(var, instance, description):
+    """checks if the variable of an ndarray of instance type"""
+    if not isinstance(var, instance):
+        raise TypeError("{} must be of {} type and not {}"
+                        .format(description, instance, var))
+
+def _isinstanceList(var, instance, description):
+    """checks if the variable of an ndarray of instance type"""
+    _islist(var, description)
+    if not all(isinstance(i, instance) for i in var):
+        raise TypeError("{} must be a list of {} type and not {}"
+                        .format(description, instance, var))
+
+def _isinstanceNDList(var, instance, description):
+    """checks if the variable of an ndarray of instance type"""
+    _islist(var, description)
+    if not all(isinstance(i, instance) for i in chain.from_iterable(var)):
+        raise TypeError("{} must be a list of {} type and not {}"
+                        .format(description, instance, var))
+
+def _isinstanceArray(var, instance, description):
+    """checks if the variable of an ndarray of instance type"""
+    _isndarray(var, description)
+    if not all(isinstance(i, instance) for i in var):
+        raise TypeError("{} must be a ndarray of {} type and not {}"
+                        .format(description, instance, var))
+
+def _isinstanceNDArray(var, instance, description):
+    """checks if the variable of an ndarray of instance type"""
+    _isndarray(var, description)
+    if not all(isinstance(i, instance) for i in chain.from_iterable(var)):
+        raise TypeError("{} must be a ndarray of {} type and not {}"
+                        .format(description, instance, var))
 

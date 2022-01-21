@@ -1,0 +1,146 @@
+mat fuel1    -10.5216  burn 1  rgb 238 59 49
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuel2    -10.5216  burn 1  rgb 255 165 0
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuel3    -10.5216  burn 1  rgb 255 255 0
+92235.09c	-0.04319337211
+92238.09c	-0.83830401789
+8016.09c	-0.11850261
+
+mat fuel4    -10.5216  burn 1  rgb 255 255 255
+92235.09c	-0.017629948
+92238.09c	-0.863867442
+8016.09c	-0.11850261
+
+mat water    -0.7 moder lwtr 1001   rgb 198 226 255
+1001.06c	0.66667
+8016.06c	0.33333
+
+mat clad    -6.55    rgb 183 183 183
+40090.06c	0.5145
+40091.06c	0.1122
+40092.06c	0.1715
+40094.06c	0.1738
+40096.06c	0.028
+
+mat reflector    0.070462    rgb 204 153 255
+40090.06c	0.0059311
+40091.06c	0.0012934
+40092.06c	0.001977
+40094.06c	0.0020035
+40096.06c	0.00032278
+26054.06c	0.011217
+26056.06c	0.17738
+26057.06c	0.0042545
+26058.06c	0.00054149
+24050.06c	0.0024673
+24052.06c	0.04758
+24053.06c	0.0053951
+24054.06c	0.001343
+28058.06c	0.017122
+28060.06c	0.0065978
+28061.06c	0.00028421
+28062.06c	0.00091398
+28064.06c	0.0002329
+25055.06c	0.0056687
+1001.06c	0.47165
+8016.06c	0.23583
+
+mat B4C    -2.52  burn 1  rgb 255 255 0
+5010.06c	0.024742565217391304
+5011.06c	0.002749173913043478
+6012.06c	0.027491739130434782
+
+pin F1
+fuel1	0.4096
+clad	0.476
+water
+
+pin G1
+water	0.5531
+clad	0.6133
+water
+
+pin W1
+water
+
+lat FA 1 0 0  19 19 1.2623
+W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 
+W1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 W1 
+W1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 W1 
+W1 F1 F1 F1 F1 F1 T1 F1 F1 T1 F1 F1 T1 F1 F1 F1 F1 F1 W1 
+W1 F1 F1 F1 T1 F1 F1 F1 F1 F1 F1 F1 F1 F1 T1 F1 F1 F1 W1 
+W1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 W1 
+W1 F1 F1 T1 F1 F1 T1 F1 F1 T1 F1 F1 T1 F1 F1 T1 F1 F1 W1 
+W1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 W1 
+W1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 W1 
+W1 F1 F1 T1 F1 F1 T1 F1 F1 G1 F1 F1 T1 F1 F1 T1 F1 F1 W1 
+W1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 W1 
+W1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 W1 
+W1 F1 F1 T1 F1 F1 T1 F1 F1 T1 F1 F1 T1 F1 F1 T1 F1 F1 W1 
+W1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 W1 
+W1 F1 F1 F1 T1 F1 F1 F1 F1 F1 F1 F1 F1 F1 T1 F1 F1 F1 W1 
+W1 F1 F1 F1 F1 F1 T1 F1 F1 T1 F1 F1 T1 F1 F1 F1 F1 F1 W1 
+W1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 W1 
+W1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 W1 
+W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 W1 
+
+surf crt11 cyl 0.0 0.0 0.5531 
+surf crt12 cyl 0.0 0.0 0.5787 
+surf crt13 cyl 0.0 0.0 0.5877 
+surf crt14 cyl 0.0 0.0 0.6133 
+surf bat11 pad 0.0 0.0 0.5787 0.5877 10.0 80.0 
+surf bat12 pad 0.0 0.0 0.5787 0.5877 100.0 170.0 
+surf bat13 pad 0.0 0.0 0.5787 0.5877 190.0 260.0 
+surf bat14 pad 0.0 0.0 0.5787 0.5877 280.0 350.0 
+surf clt11 pad 0.0 0.0 0.5787 0.5877 350.0 10.0 
+surf clt12 pad 0.0 0.0 0.5787 0.5877 80.0 100.0 
+surf clt13 pad 0.0 0.0 0.5787 0.5877 170.0 190.0 
+surf clt14 pad 0.0 0.0 0.5787 0.5877 260.0 280.0 
+
+cell bapadt11 T1  B4C -bat11 
+cell bapadt12 T1  B4C -bat12 
+cell bapadt13 T1  B4C -bat13 
+cell bapadt14 T1  B4C -bat14 
+cell clpadt11 T1  clad -clt11 
+cell clpadt12 T1  clad -clt12 
+cell clpadt13 T1  clad -clt13 
+cell clpadt14 T1  clad -clt14 
+cell cc11 T1  water -crt11 
+cell cc12 T1  clad crt11 -crt12 
+cell cc13 T1  clad crt13 -crt14 
+cell cc14 T1  water crt14 
+
+surf border sqc 0.0 0.0 10.8019 
+
+
+
+cell in 0  fill FA -border 
+cell out 0  outside border 
+
+set inventory 
+ 541350
+ 922340
+ 922350
+ 942390
+ 
+dep butot 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 1.0 2.0 4.5 6.0 8.5 10.0 12.5 14.0 16.5 18.0 20.0 22.0 24.0 26.0 28.0 30.0 32.0 36.0 40.0 44.0 50.0 
+set power 27027.027027027027
+set bc 2 
+set sym 0
+set pop 20000 40 20
+set pcc 0
+set egrid 5e-05 1e-09 15.0 
+ene 1 1 1E-11 0.625E-6 15
+include bigT_FA1_2D.txt.mvol
+set acelib "/mnt/c/Users/iaguirre6/Documents/xsdata/endfb7/sss_endfb7u.xsdata"
+set declib "/mnt/c/Users/iaguirre6/Documents/xsdata/endfb7/sss_endfb7.dec"
+set nfylib "/mnt/c/Users/iaguirre6/Documents/xsdata/endfb7/sss_endfb7.nfy"
+therm lwtr lwj3.11t
+
