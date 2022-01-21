@@ -68,7 +68,8 @@ class material:
         self.color = ""
         self.rgb = ""
 
-    def __matCheck(self):
+    def __matCheck(id, nuclides, fractions, dens, temp, xsLib, modLib, color, 
+        isBurn, isModer):
         """Runs through the material object values and performs several error checks.
 
         The purpose of the ``matCheck`` function is to pefrom a validation check on
@@ -76,26 +77,26 @@ class material:
         and are in the correct format.
         
         """
-        _isstr(self.id, "material id")
-        _isndarray(self.nuclides, "material nuclides")
-        _isndarray(self.fractions, "material nuclide fractions")
-        if self.dens == 0.00:
+        _isstr(id, "material id")
+        _isndarray(nuclides, "material nuclides")
+        _isndarray(fractions, "material nuclide fractions")
+        if dens == 0.00:
             warnings.warn("material density is not set")
         else:
-            _isnumber(self.dens, "material density")
-        if self.temp != 0.00:
-            _isnumber(self.temp, "material density")
-            _ispositive(self.temp, "material density")
-        _isstr(self.xsLib, "xs library suffix for material nuclides")
-        _isstr(self.modLib, "moderator library for moderating material")
-        _isstr(self.color, "material color for plotting")
-        _isbool(self.isBurn, "True/False is material burnable")
-        _isbool(self.isModer, "True/False is material moderating")
+            _isnumber(dens, "material density")
+        if temp != 0.00:
+            _isnumber(temp, "material density")
+            _ispositive(temp, "material density")
+        _isstr(xsLib, "xs library suffix for material nuclides")
+        _isstr(modLib, "moderator library for moderating material")
+        _isstr(color, "material color for plotting")
+        _isbool(isBurn, "True/False is material burnable")
+        _isbool(isModer, "True/False is material moderating")
 
-        if self.isModer == True:
-            if self.modLib == "":
+        if isModer == True:
+            if modLib == "":
                 warnings.warn("thermal scattering library not set for material")
-        if self.xsLib == "":
+        if xsLib == "":
                 warnings.warn("material xs library suffix not set for nuclides")
 
     def toString(self):
@@ -110,7 +111,9 @@ class material:
             material obj in str format representing the typical input methodology for
             the serpent input file.
         """
-        self.__matCheck()
+        material.__matCheck(self.id,  self.nuclides, self.fractions, self.dens, 
+                    self.temp, self.xsLib, self.modLib, self.color, self.isBurn, 
+                                                                     self.isModer) 
 
         matString = ""
 
@@ -178,12 +181,14 @@ class material:
             raise AttributeError("{} has no attribute {}"
                                  .format(self, attr))
 
-        if not (type(getattr(self, attr)) == type(val)):
-            raise TypeError("{} must be of type {} not type {}"
-                            .format(attr, type(getattr(self, attr)), type(val)))  
+        # if not (type(getattr(self, attr)) == type(val)):
+        #     raise TypeError("{} must be of type {} not type {}"
+        #                     .format(attr, type(getattr(self, attr)), type(val)))  
         
         setattr(self, attr, val)
-        self.__matCheck()   
+        material.__matCheck(self.id,  self.nuclides, self.fractions, self.dens, 
+                    self.temp, self.xsLib, self.modLib, self.color, self.isBurn, 
+                                                                     self.isModer) 
 
     def get(self, attr):
         """Obtain the value for a certain property. Raises a attribute error if the 

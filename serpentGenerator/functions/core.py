@@ -429,8 +429,8 @@ class core:
             unit = -1 if (burnup['unit'] == 'dayTot') else 1
                 
             for i in range(0, len(burnup['burnPoints'])):
-                timeString = timeString
-                + str(unit*round(burnup['burnPoints'][i], 7))+ " "
+                timeString = timeString + str(unit*burnup['burnPoints'][i])
+                timeString = timeString + " "
 
             burnupString = str(len(burnup['burnPoints'])) + " " + timeString+ "\n"
 
@@ -519,9 +519,9 @@ class core:
         >>>     misc = ["ene 1 1 1E-11 0.625E-6 15", "include bigT_FA3_2D.txt.mvol"])
         """
         _ispositive(power, "power")
-        _isinstanceList(bc, numbers.Integral)
-        _isinstanceList(sym, numbers.Integral)
-        _isinstanceList(egrid, numbers.Number)
+        _isinstanceList(bc, numbers.Integral, "boundary conditions")
+        _isinstanceList(sym, numbers.Integral, "symetry conditions")
+        _isinstanceList(egrid, numbers.Number, "energy grid")
         _ispositive(nps, "number of particles per cycle")
         _ispositive(nact, "number of active cycles")
         _ispositive(nskip, "number of skipped cycles")
@@ -601,5 +601,5 @@ class core:
             self._setCoef()
             inputString = inputString + self.coef['toString']
 
-        inputString = inputString + self.xsLibs
+        inputString = inputString + self.xsLibs['toString']
         return inputString
