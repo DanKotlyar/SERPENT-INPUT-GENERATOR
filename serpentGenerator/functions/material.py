@@ -59,7 +59,7 @@ class material:
         self.id = id
         self.isBurn = isBurn
         self.isModer = isModer
-        self.dens = float
+        self.dens = 0.00
         self.nuclides = np.array([])
         self.fractions = np.array([])
         self.temp = 0.00

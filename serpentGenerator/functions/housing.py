@@ -19,7 +19,7 @@ import numpy as np
 import numbers
 
 class housing(universe):
-    """Basic data definition for a housing bject. Has an option to set concentric
+    """ Basic data definition for a housing object. Has an option to set concentric
     rings surrounding the reactor core, with specified materials and thicknesses.
     This can be done by setting the ``defaultCRFlag`` to true.
 
@@ -53,8 +53,8 @@ class housing(universe):
     TypeError
         If ``width``, ``height`` is not a number.
         If ``defaultCRFlag`` is not a True/False.
-        If ``radiiCR``is not a list of numbers.
-        If ``matsCR``is not a list of material objects.
+        If ``radiiCR`` is not a list of numbers.
+        If ``matsCR`` is not a list of material objects.
     ValueError
         If ``defaultCRFlag`` is set True, but ``radiiCR``, ``matsCR`` are None.
 

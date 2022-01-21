@@ -28,19 +28,19 @@ def __readMats():
         __mat = hdf.get('materials')
 
         def __isBurnH5(mat):
-            return __mat.get(mat).get("isBurn").value
+            return __mat.get(mat).get("isBurn")[()]
         def __isModerH5(mat):
-            return __mat.get(mat).get("isModer").value
+            return __mat.get(mat).get("isModer")[()]
         def __densityH5(mat):
-            return __mat.get(mat).get("density").value
+            return __mat.get(mat).get("density")[()]
         def __xsLibH5(mat):
-            return __mat.get(mat).get("xsLib").value
+            return __mat.get(mat).get("xsLib")[()]
         def __nuclidesH5(mat):
-            return __mat.get(mat).get("nuclides").value
+            return __mat.get(mat).get("nuclides")[()]
         def __fractionsH5(mat):
-            return __mat.get(mat).get("fractions").value
+            return __mat.get(mat).get("fractions")[()]
         def __thermScattH5(mat):
-            return __mat.get(mat).get("thermScatt").value
+            return __mat.get(mat).get("thermScatt")[()]
 
         def __isBurn(mat):
             isBurn = __isBurnH5(mat)
