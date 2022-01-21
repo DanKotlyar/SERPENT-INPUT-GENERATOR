@@ -19,13 +19,13 @@ def test_setExceptions():
     with pt.raises(AttributeError):
         pin1 = pin("1", 3) 
         materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-            MATLIB['lightWater']], dtype = material )
+            MATLIB['H2O']], dtype = material )
         pin1.set('material', materials1) #attribute not listed
 
     with pt.raises(TypeError):
         pin1 = pin("1", 3) 
         materials1 = [MATLIB['UO2'], MATLIB['Zr'], 
-            MATLIB['lightWater']]
+            MATLIB['H2O']]
         pin1.set('materials', materials1) #materials must be a np array
 
     with pt.raises(ValueError):
@@ -44,7 +44,7 @@ def test_duplicatePinExceptions():
     with pt.raises(TypeError):
         pin1 = pin("1", 3) 
         materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-            MATLIB['lightWater']], dtype = material )
+            MATLIB['H2O']], dtype = material )
         radii1 = np.array([.45, .47])
         pin1.set('materials', materials1)
         pin1.set('radii', radii1)
@@ -56,7 +56,7 @@ def test_getExceptions():
     with pt.raises(AttributeError):
         pin1 = pin("1", 3) 
         materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-            MATLIB['lightWater']], dtype = material )
+            MATLIB['H2O']], dtype = material )
         radii1 = np.array([.45, .47])
         pin1.set('materials', materials1)
         pin1.set('radii', radii1)
@@ -66,7 +66,7 @@ def test_getExceptions():
     with pt.raises(TypeError):
         pin1 = pin("1", 3) 
         materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-            MATLIB['lightWater']], dtype = material )
+            MATLIB['H2O']], dtype = material )
         radii1 = np.array([.45, .47])
         pin1.set('materials', materials1)
         pin1.set('radii', radii1)

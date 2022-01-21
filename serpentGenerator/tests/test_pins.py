@@ -20,7 +20,7 @@ def test_addPinExceptions():
         pinLib = pins()
         pin1 = pin("1", 3) 
         materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-            MATLIB['lightWater']], dtype = material )
+            MATLIB['H2O']], dtype = material )
         radii1 = np.array([.45, .47])
         pin1.set('materials', materials1)
         pin1.set('radii', radii1)
@@ -51,7 +51,7 @@ def test_removePinExceptions():
         pinLib = pins()
         pin1 = pin("1", 3) 
         materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-            MATLIB['lightWater']], dtype = material )
+            MATLIB['H2O']], dtype = material )
         radii1 = np.array([.45, .47])
         pin1.set('materials', materials1)
         pin1.set('radii', radii1)
@@ -68,7 +68,7 @@ def test_removePinExceptions():
         pinLib = pins()
         pin1 = pin("1", 3) 
         materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-            MATLIB['lightWater']], dtype = material )
+            MATLIB['H2O']], dtype = material )
         radii1 = np.array([.45, .47])
         pin1.set('materials', materials1)
         pin1.set('radii', radii1)
@@ -88,7 +88,7 @@ def test_addPinsExceptions():
         pinLib = pins()
         pin1 = pin("1", 3) 
         materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-            MATLIB['lightWater']], dtype = material )
+            MATLIB['H2O']], dtype = material )
         radii1 = np.array([.45, .47])
         pin1.set('materials', materials1)
         pin1.set('radii', radii1)
@@ -103,7 +103,7 @@ def test_addPinsExceptions():
         pinLib = pins()
         pin1 = pin("1", 3) 
         materials1 = np.array([MATLIB['UO2'], MATLIB['Zr'], 
-            MATLIB['lightWater']], dtype = material )
+            MATLIB['H2O']], dtype = material )
         radii1 = np.array([.45, .47])
         pin1.set('materials', materials1)
         pin1.set('radii', radii1)

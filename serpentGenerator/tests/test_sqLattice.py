@@ -12,8 +12,6 @@ import numpy as np
 from serpentGenerator.functions.pin import pin
 from serpentGenerator.functions.sqLattice import sqLat
 
-coreParams = np.array(1, 2)
-
 def test_init():
     """ test sqLat object initialization"""
     with pt.raises(TypeError):
