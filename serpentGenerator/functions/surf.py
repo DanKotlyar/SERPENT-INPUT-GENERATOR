@@ -9,6 +9,7 @@ email: iaguirre6@gatech.edu
 """
 
 import numpy as np
+import copy
 from serpentGenerator.functions.checkerrors import (
     _isstr, _isnumberArray
 )
@@ -53,5 +54,12 @@ class surf:
         for i in range(0, len(self.params)):
             paramString = paramString + str(self.params[i]) + " "
         return "surf " + self.id + " " + self.type + " " + paramString+ "\n"
+
+    def duplicateSurf(self, newSurfId):
+        newSurf = copy.deepcopy(self)
+        newSurf.id = newSurfId
+
+        return newSurf
+
 
  

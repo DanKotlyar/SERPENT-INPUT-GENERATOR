@@ -6,10 +6,10 @@ email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 
-from serpentGenerator.functions.pinStack import pinStack
-from serpentGenerator.functions.pin import pin
+
 from serpentGenerator.functions.universe import universe
 import copy
+
 import numpy as np
 from serpentGenerator.functions.checkerrors import (
     _is2darray, _isstr, _isinstance, _isnumber, _ispositive, _isinstanceNDArray
@@ -54,6 +54,11 @@ class sqLat(universe):
         self.nelements = nelements
         self.pitch = pitch
         self.map = np.array([[]])
+
+
+    def __str__(self):
+        """" Overwrites print method, prints all objects variables. """
+        return str(vars(self))
 
     def setMap(self, map):
         """Assign a map layout for the sqaure lattice
@@ -100,6 +105,18 @@ class sqLat(universe):
             raise ValueError("lattice map must be {} by {} elements not {} "
                                 .format(self.nelements, self.nelements,  map.shape))        
         self.map = map
+        self.elements = list(map.flatten())
+        self.layout = map
+
+        mats = np.array([])
+
+        for i in range(0, len(self.elements)):
+            for k in range(0, len(self.elements[i].univMats)):
+                mats.insert(self.elements[i].univMats[k])
+
+        self.univMats = list(mats)
+
+        
 
     def replacePin(self, oldPin, newPin):
         """replaces desired pin object with a new pin object from lattice map layout.
@@ -189,7 +206,7 @@ class sqLat(universe):
                     self.map[i][j] = newPin
                     return
 
-    def duplicateLat(self, newLatId):
+    def duplicate(self, newLatId):
         """returns a deep copy of the sqLat object must set a new lat id for the new
          duplicated lattice.
 
@@ -224,6 +241,8 @@ class sqLat(universe):
         _isstr(newLatId, "new lattice universe id")
         newLat = copy.deepcopy(self)
         newLat.id = newLatId
+        newLat.setMap(self.map)
+        newLat.univMats = self.univMats
         return newLat
             
     def toString(self):
@@ -253,6 +272,10 @@ class sqLat(universe):
         >>> lat1.setMap(latMap1)
         >>> print(lat1.toString()) 
         """
+
+
+
+
         if self.map.size == 0:
             raise ValueError("lattice map cannot be empty")
         
@@ -276,19 +299,8 @@ class sqLat(universe):
                     unique[self.map[i][j].id] = self.map[i][j]
 
         for key in unique:
-            if (unique[key].cells.ncells != 0):
+            # if (len(unique[key].cells) != 0):
                 geomString = geomString + unique[key].toString()
 
         latString = latString + geomString
         return latString
-
-
-
-
-
-
-
-        
-
-
-

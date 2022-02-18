@@ -15,6 +15,7 @@ from serpentGenerator.functions.checkerrors import (
 )
 from serpentGenerator.functions.universe import universe
 from serpentGenerator.functions.material import material
+from serpentGenerator.functions.mats import mats
 
 class pin(universe):
     """Basic data definition for a pin element
@@ -47,8 +48,12 @@ class pin(universe):
         super().__init__(id)
         self.id = id # pin universe id
         self.nregions = nregions # number of pin regions
-        self.materials = np.array([],dtype = material) # pin materials 
-        self.radii = np.array([]) # pin radii // Order dependent 
+        self.materials =[] # pin materials 
+        self.radii = [] # pin radii // Order dependent 
+
+    def __str__(self):
+        """" Overwrites print method, prints all objects variables. """
+        return str(vars(self))
 
 
     def __pinCheck(self):
@@ -59,13 +64,13 @@ class pin(universe):
         are in the correct format.
         
         """
-        _isstr(self.id, "pin id")
-        _isint(self.nregions, "number of regions in pin")
-        _ispositive(self.nregions, "number of regions in pin")
-        _isinstanceArray(self.materials, material, "pin materials array")
-        _ispositiveArray(self.radii, "pin radii array")
-        if self.radii.size != 0:
-            _isSorted(self.radii, False, "pin radii array") #asceding order
+        # _isstr(self.id, "pin id")
+        # _isint(self.nregions, "number of regions in pin")
+        # _ispositive(self.nregions, "number of regions in pin")
+        # _isinstanceArray(self.materials, material, "pin materials array")
+        # _ispositiveArray(self.radii, "pin radii array")
+        # if self.radii.size != 0:
+        #     _isSorted(self.radii, False, "pin radii array") #asceding order
 
     def toString(self):
         """display properties of pin element in string form
@@ -86,15 +91,23 @@ class pin(universe):
         pinHeader = "pin " + self.id +"\n"
         pinString = pinHeader 
 
-        for i in range(0,len(self.materials)):
+        for i in range(0,len(self.univMats)):
 
-            if (i != (len(self.materials)-1)):
-                pinString = pinString + self.materials[i].id +"\t" \
+            if (i != (len(self.univMats)-1)):
+                pinString = pinString + self.univMats[i].id +"\t" \
                   + str(self.radii[i]) +"\n"
             else:
-                pinString = pinString + self.materials[i].id +"\n"
+                pinString = pinString + self.univMats[i].id +"\n"
 
-        return pinString + "\n"
+        pinString = pinString + "\n"
+
+        pinMats = mats()
+
+        pinMats.addMats(self.univMats)
+
+        pinString = pinString + pinMats.toString()
+
+        return pinString
 
     def set(self, attr, val):
         """Assign value/s to a certain property
@@ -143,9 +156,11 @@ class pin(universe):
 
         if not (type(getattr(self, attr)) == type(val)):
             raise TypeError("{} must be of type {} not type {}"
-                            .format(attr, type(getattr(self, attr)), type(val)))  
+                            .format(attr, type(getattr(self, attr)), type(val))) 
+
         
         setattr(self, attr, val)
+        self.univMats = self.materials
         self.__pinCheck()   
 
     def get(self, attr):
@@ -183,7 +198,7 @@ class pin(universe):
                                  .format(self, attr))
         return getattr(self, attr)
 
-    def duplicatePin(self, newPinId):
+    def duplicate(self, newPinId):
         """returns a deep copy of the pin object, must set a new pin id for the new
          duplicated pin.
 
@@ -217,6 +232,6 @@ class pin(universe):
         """
         _isstr(newPinId, "newPinId")
         newPin = pin(newPinId, self.nregions)
-        newPin.materials = self.materials
-        newPin.radii = self.radii
+        newPin.set('materials', self.materials)
+        newPin.set('radii',  self.radii)
         return newPin

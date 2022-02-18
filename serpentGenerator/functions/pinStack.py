@@ -121,7 +121,7 @@ class pinStack(universe):
         self.pins = univs
         self.heights = heights
 
-    def duplicateLat(self, newLatId):
+    def duplicate(self, newLatId):
         """returns a deep copy of the pinStack object must set a new lat id for the
          new duplicated lattice.
 

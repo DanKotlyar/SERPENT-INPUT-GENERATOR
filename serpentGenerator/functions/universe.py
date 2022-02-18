@@ -4,11 +4,12 @@ This class represents a universe, following from the tradtional serpent universe
 based geometry.
 """
 
-from serpentGenerator.functions.cell import cell
-from serpentGenerator.functions.surf import surf
-from serpentGenerator.functions.surfs import surfs as sdict
+# from serpentGenerator.functions.cell import cell
+from serpentGenerator.functions.mats import mats
 from serpentGenerator.functions.cells import cells as cdict
+from serpentGenerator.functions.cell import cell
 
+import numpy as np
 import copy 
 
 from serpentGenerator.functions.checkerrors import (
@@ -30,10 +31,12 @@ class universe:
     def __init__(self, id):
         _isstr(id, "universe id")
         self.id = id
-        self.cells = cdict()
-        self.surfs = sdict()
+        self.layout = None
+        self.cells = []
+        self.elements = []
+        self.univMats = []
 
-    def setGeom(self, surfs, cells):
+    def setGeom(self, cells):
         """Assign surfaces and cells to a universe object.
 
         The purpose of the ``setGeom`` function is to set the geometry for the 
@@ -59,11 +62,10 @@ class universe:
         >>> surfs1 = [surfs]
         >>> universe1.setGeom(surfs1, cells1)
         """
-        _isinstanceList(surfs, surf, "list of surface obj")
-        _isinstanceList(cells, cell, "list of cell obj")
-
-        self.surfs.addSurfs(surfs)
-        self.cells.addCells(cells)
+        _isinstanceList(cells, cell, "list of cell objs")
+        # for i in range(0, len(cells)):
+        #     self.cells.append(cells[i])
+        self.cells = cells
 
     def toString(self):
         """display properties of a universe in string form
@@ -78,13 +80,24 @@ class universe:
             universe in str format representing the typical input methodology for
             input in serpent input file.
         """
-        for key in self.cells.cells:
-            self.cells.cells[key].universe = self.id
+        for i in range(0, len(self.cells)):
+            self.cells[i].universe = self.id
 
-        univString = self.surfs.toString() + self.cells.toString()
+        univCells = cdict()
+        univCells.addCells(self.cells)
+
+        
+        univMats = mats()
+        univMats.addMats(self.univMats)
+
+        univString = univCells.toString() +univMats.toString()
+
+        for i in range(0, len(self.elements)):
+            univString = univString + self.elements[i].toString()
+
         return univString
     
-    def duplicateUniv(self, newId):
+    def duplicate(self, newId):
         """returns a deep copy of the universe object must set a new universe id for
          the new duplicated universe.
 
@@ -118,4 +131,58 @@ class universe:
         _isstr(newId, "new universe id")
         newUniv = copy.deepcopy(self)
         newUniv.id = newId
+        newUniv.setGeom(self.cells)
+        newUniv.univMats = self.univMats
         return newUniv
+
+
+    def _highres(self, nzones):
+        # print(self.id, self.elements, len(self.elements), self.cells, self.univMats)
+
+        if nzones == 0:
+            return
+
+        name =self.id 
+        for k in range(0, len(self.univMats)):
+            print("here")
+            self.univMats[k] = self.univMats[k].duplicateMat(self.univMats[k].id +"_"+ name)
+
+
+        for i in range(0, len(self.elements)):
+            name =self.id + "_"+ self.elements[i].id 
+            self.elements[i] = self.elements[i].duplicate(name)
+            cells = self.elements[i].cells
+
+            # for k in range(0, len(cells)):
+            #     cells[k] = cells[k].duplicateCell(cells[k].id +"_"+ name)
+            #     # cells[k].setFill(name+"_"+cells[k].fill)
+            #     surfs = cells[k].surfs 
+            #     for j in range(0, len(surfs)):
+            #         surfs[j] = surfs[j].duplicateSurf(surfs[j].id +"_"+ name)
+
+        if not isinstance(self.layout, type(None)):
+            map = np.array(self.elements)
+            self.setMap(map.reshape(self.layout.shape))
+
+        for k in range(0, len(self.univMats)):
+            print("here")
+            self.univMats[k] = self.univMats[k].duplicateMat(self.univMats[k].id +"_"+ name)
+
+            # name = self.id +"_"+ elements[i].id +"_"+ str(i+1)
+            # mats = elements[i].materials
+            # cells = elements[i].cells
+
+
+            # for k in range(0, len(cells)):
+            #     cells[k] = cells[k].duplicateCell(cells[k].id +"_"+ name)
+            #     surfs = cells[k].surfs 
+            #     for j in range(0, len(surfs)):
+            #         surfs[j] = surfs[j].duplicateSurf(surfs[j].id +"_"+ name)
+
+            # for k in range(0, len(mats)):
+            #     mats[k] = mats[k].duplicateMat(mats[k].id +"_"+ name)
+
+            # elements[i] = elements[i].duplicateUniv(name)
+
+        for i in range(0, len(self.elements)):
+            self.elements[i]._highres(nzones - 1)
