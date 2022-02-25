@@ -37,7 +37,7 @@ class cell:
         optional fill parameter for cell filling universes
     """
 
-    def __init__(self, id,  mat = None):
+    def __init__(self, id,  mat = None, isVoid = True):
         _isstr(id, "cell id")
         if mat != None:
             _isinstance(mat, material, "cell material")
@@ -48,6 +48,12 @@ class cell:
         self.material = mat
         self.fill = ""
         self.universe = None
+        if not isinstance(mat, type(None)):
+            isVoid = False
+        self.isVoid = isVoid
+        self.isFilled = False
+
+        
 
     def setSurfs(self, surfs, dirs):
         _isinstanceList(surfs, surf, "list of surf objs for cell")
@@ -87,6 +93,8 @@ class cell:
             raise ValueError("Fill cannot be set if material for the cell is set")
         _isstr(fill, "filling universe name")
         self.fill = fill
+        self.isVoid = False
+        self.isFilled = True
 
     def toString(self):
         """display properties of cell object in string form
@@ -100,7 +108,7 @@ class cell:
             cell element in str format representing the typical input methodology for
             input in serpent input file.
         """
-        if((self.material == "")&(self.fill == "")):
+        if((self.material == "")&(self.fill == "")&(self.isVoid == False)):
             raise ValueError("Cell material or filling universe must be set."
                     " Both cannot be empty.")
 
@@ -118,7 +126,10 @@ class cell:
             surfString = surfString + sign(self.dirs[i]) + self.surfs[i].id + " "
         
         fillString = "" if self.fill == "" else " fill " + self.fill + " "
-        matString = "" if self.material == None else " " +self.material.id + " "
+        if not self.isVoid:
+            matString = "" if self.material == None else " " +self.material.id + " "
+        else:
+            matString = " " + "outside" + " "
 
         cellStr = "cell "+self.id+" "+uniString+ matString +fillString+ surfString
         cellStr = cellStr +"\n"
@@ -128,10 +139,10 @@ class cell:
 
         cellStr = cellStr + cellSurfs.toString()
 
-        if self.material != None:
-            cellStr = cellStr + self.material.toString()
+        # if self.material != None:
+        #     cellStr = cellStr + self.material.toString()
 
-        return  cellStr
+        return cellStr
 
         
     def duplicateCell(self, newCellId):

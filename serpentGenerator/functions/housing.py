@@ -99,19 +99,34 @@ class housing(universe):
             self._border(width)
 
     def _concRings(self, radii, mats):
+
         for i in range(0, len(radii)):
             radii[i] = radii[i] + self.width/2
 
+        surfs = []
+
         for i in range(0, len(radii)):
-            self.surfs.addSurf(surf("cr"+str(i+1), "cyl",
+            surfs.append(surf("cr"+str(i+1), "cyl",
             np.array([0.0000, 0.0000, radii[i]])))
 
+        cells = []
         for i in range(0, len(mats)):
-            self.cells.addCell(cell("cc"+str(i+1), 
-            np.array([self.surfs.getSurf("cr"+str(i+1)), 
-            self.surfs.getSurf("cr"+str(i+2))]), np.array([0, 1]), mats[i].id))
+            cells.append(cell("cc"+str(i+1),mats[i]))
+            cells[i].setSurfs([surfs[i], surfs[i+1]], [0, 1])
+
+        core = cell("core")
+        core.setSurfs([surfs[0]], [1])
+
+        cells.append(core)
+
+        self.setGeom(cells)
+        self.border = surfs[len(surfs)-1]
 
     def _border(self, width):      
         borderSurf = surf("border", "sqc", np.array([0.0, 0.0, width/2]))
         self.border = borderSurf
-        self.surfs.addSurf(borderSurf)
+
+        # core = cell("in")
+        # core.setSurfs([borderSurf], [1])
+        # voidRegion = cell("out", isVoid=True)
+        # voidRegion.setSurfs([borderSurf], [0])

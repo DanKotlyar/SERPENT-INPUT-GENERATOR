@@ -119,6 +119,14 @@ class pinStack(universe):
 
         # self._createPinDict(univs)
         self.pins = univs
+
+        for i in range(0, len(self.pins)):
+            if self.pins[i].id not in self.elements:
+                self.elements[self.pins[i].id] = self.pins[i]
+
+        for key in self.elements:
+            self.univMats[key] = self.elements[key].univMats
+
         self.heights = heights
 
     def duplicate(self, newLatId):
@@ -202,6 +210,11 @@ class pinStack(universe):
         for i in range(0, self.nelements):
             if (self.pins[i].id == oldPin.id):
                 self.pins[i] = newPin
+
+        self.elements[newPin.id] = newPin
+        self.elements.pop(oldPin.id)
+        self.univMats.pop(oldPin.id)
+        self.univMats[newPin.id] = newPin.univMats
             
     def toString(self):
         """display properties of pinstack lattice in string form
@@ -247,10 +260,61 @@ class pinStack(universe):
 
         geomString = ""
         for i in range(0, self.nelements):
-            if (self.pins[i].cells.ncells != 0):
-                geomString = geomString + self.pins[i].toString()
+            geomString = geomString + self.pins[i]._geoString()
 
         latString = latString + geomString
 
         return latString
+
+    def _geoString(self):
+        """display properties of pinstack lattice in string form
+
+        The purpose of the ``toString`` function is to directly convert the lattice
+        object into a string format for the purpose of convinince when working with 
+        textfiles.
+
+        Returns
+        -------
+        str
+            lattice obj in str format representing the typical input methodology for
+            the serpent input file.
+            
+        Raises
+        ------
+        ValueError
+            If the lattice map is empty.
+        
+        Examples
+        --------
+        >>> lat1 = pinStack("101", 0, 0, 4)
+        >>> p1 = pin('1', 3)
+        >>> p2 = pin('2', 3)
+        >>> pins1 = np.array([p1, p2, p2, p1])
+        >>> heights1 = np.array([-20, 0, 20.2, 40.1])
+        >>> lat1.setStack(pins1, heights1)
+        >>> print(lat1.toString())
+        """
+
+        if ((len(self.pins) == 0) | (len(self.heights) == 0)):
+            raise ValueError("pinstack pins and heights cannot be empty")
+        
+        latHeader = "lat "+ self.id +" "+ "9"+ " "+str(self.xo) + " "+ str(self.yo)\
+             + " " + str(self.nelements) + "\n"
+
+        mapString = ""
+        for i in range(0, self.nelements):
+            mapString = mapString + str(self.heights[i]) + "\t"\
+                + self.pins[i].id +"\n"
+
+        latString = latHeader + mapString + "\n"
+
+        # geomString = ""
+        # for i in range(0, self.nelements):
+        #     geomString = geomString + self.pins[i]._geoString()
+
+        # latString = latString + geomString
+
+        return latString
+
+
 

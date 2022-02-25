@@ -48,29 +48,12 @@ class pin(universe):
         super().__init__(id)
         self.id = id # pin universe id
         self.nregions = nregions # number of pin regions
-        self.materials =[] # pin materials 
+        self.materials = [] # pin materials 
         self.radii = [] # pin radii // Order dependent 
 
     def __str__(self):
         """" Overwrites print method, prints all objects variables. """
         return str(vars(self))
-
-
-    def __pinCheck(self):
-        """Runs through the pin element values and performs several error checks.
-
-        The purpose of the ``pinCheck`` function is to pefrom a validation check on
-        each of the pins attributes to make sure they are of the correct type, and
-        are in the correct format.
-        
-        """
-        # _isstr(self.id, "pin id")
-        # _isint(self.nregions, "number of regions in pin")
-        # _ispositive(self.nregions, "number of regions in pin")
-        # _isinstanceArray(self.materials, material, "pin materials array")
-        # _ispositiveArray(self.radii, "pin radii array")
-        # if self.radii.size != 0:
-        #     _isSorted(self.radii, False, "pin radii array") #asceding order
 
     def toString(self):
         """display properties of pin element in string form
@@ -85,27 +68,31 @@ class pin(universe):
             pin element in str format representing the typical input methodology for
             input in serpent input file.
         """
-        self.__pinCheck()
-
         pinString = ""
         pinHeader = "pin " + self.id +"\n"
         pinString = pinHeader 
 
-        for i in range(0,len(self.univMats)):
 
-            if (i != (len(self.univMats)-1)):
-                pinString = pinString + self.univMats[i].id +"\t" \
+        univMatsList = self.materials
+
+        for i in range(0,len(univMatsList)):
+
+            if (i != (len(univMatsList)-1)):
+                pinString = pinString + univMatsList[i].id +"\t" \
                   + str(self.radii[i]) +"\n"
             else:
-                pinString = pinString + self.univMats[i].id +"\n"
+                pinString = pinString + univMatsList[i].id +"\n"
 
         pinString = pinString + "\n"
 
-        pinMats = mats()
+        # unique = {}
+        # for i in range(0, len(self.materials)):
+        #     if (self.materials[i].id not in unique):
+        #         unique[self.materials[i].id] = self.materials[i]
 
-        pinMats.addMats(self.univMats)
-
-        pinString = pinString + pinMats.toString()
+        # pinMats = mats()
+        # pinMats.addMats(list(unique.values()))
+        # pinString = pinString + pinMats.toString()
 
         return pinString
 
@@ -154,14 +141,16 @@ class pin(universe):
             raise AttributeError("{} has no attribute {}"
                                  .format(self, attr))
 
-        if not (type(getattr(self, attr)) == type(val)):
-            raise TypeError("{} must be of type {} not type {}"
-                            .format(attr, type(getattr(self, attr)), type(val))) 
+        if attr == "radii" or  attr == "materials":
+            if not isinstance(val, type([])):
+                raise TypeError("{} must be of type {} not type {}"
+                                .format(attr, type([]), type(val)))
 
-        
+        self.univMats = {}
+
         setattr(self, attr, val)
-        self.univMats = self.materials
-        self.__pinCheck()   
+        for i in range(0, len(self.materials)):
+                self.univMats[self.materials[i].id] = self.materials[i]
 
     def get(self, attr):
         """Obtain the value for a certain property. Raises a attribute error if the 
@@ -235,3 +224,44 @@ class pin(universe):
         newPin.set('materials', self.materials)
         newPin.set('radii',  self.radii)
         return newPin
+
+    def _geoString(self):
+        """display properties of pin element in string form
+
+        The purpose of the ``toString`` function is to directly convert a pin element 
+        into a string format for the purpose of convinince when working with 
+        textfiles.
+
+        Returns
+        -------
+        str
+            pin element in str format representing the typical input methodology for
+            input in serpent input file.
+        """
+        pinString = ""
+        pinHeader = "pin " + self.id +"\n"
+        pinString = pinHeader 
+
+
+        univMatsList = self.materials
+
+        for i in range(0,len(univMatsList)):
+
+            if (i != (len(univMatsList)-1)):
+                pinString = pinString + univMatsList[i].id +"\t" \
+                  + str(self.radii[i]) +"\n"
+            else:
+                pinString = pinString + univMatsList[i].id +"\n"
+
+        pinString = pinString + "\n"
+
+        # unique = {}
+        # for i in range(0, len(self.materials)):
+        #     if (self.materials[i].id not in unique):
+        #         unique[self.materials[i].id] = self.materials[i]
+
+        # pinMats = mats()
+        # pinMats.addMats(list(unique.values()))
+        # pinString = pinString + pinMats.toString()
+
+        return pinString

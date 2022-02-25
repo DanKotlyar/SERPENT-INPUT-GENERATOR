@@ -32,9 +32,9 @@ class universe:
         _isstr(id, "universe id")
         self.id = id
         self.layout = None
-        self.cells = []
-        self.elements = []
-        self.univMats = []
+        self.cells = {}
+        self.elements = {}
+        self.univMats = {}
 
     def setGeom(self, cells):
         """Assign surfaces and cells to a universe object.
@@ -65,7 +65,14 @@ class universe:
         _isinstanceList(cells, cell, "list of cell objs")
         # for i in range(0, len(cells)):
         #     self.cells.append(cells[i])
-        self.cells = cells
+
+
+        for i in range(0, len(cells)):
+            self.cells[cells[i].id] = cells[i]
+            if not cells[i].isVoid:
+                if not cells[i].isFilled:
+                    if cells[i].material.id not in self.univMats:
+                        self.univMats[cells[i].material.id] = cells[i].material
 
     def toString(self):
         """display properties of a universe in string form
@@ -80,20 +87,50 @@ class universe:
             universe in str format representing the typical input methodology for
             input in serpent input file.
         """
-        for i in range(0, len(self.cells)):
-            self.cells[i].universe = self.id
+        # print(self.cells)
+        for key in self.cells:
+            self.cells[key].universe = self.id 
 
         univCells = cdict()
-        univCells.addCells(self.cells)
+        univCells.addCells(list(self.cells.values()))
 
-        
         univMats = mats()
-        univMats.addMats(self.univMats)
+        univMats.addMats(list(self.univMats.values()))
 
         univString = univCells.toString() +univMats.toString()
 
-        for i in range(0, len(self.elements)):
-            univString = univString + self.elements[i].toString()
+        for key in self.elements:
+            univString = univString + self.elements[key].toString()
+
+        return univString
+
+    def _geoString(self):
+        """display properties of a universe in string form
+
+        The purpose of the ``toString`` function is to directly convert a universe
+        element into a string format for convinince when working with 
+        textfiles.
+
+        Returns
+        -------
+        str
+            universe in str format representing the typical input methodology for
+            input in serpent input file.
+        """
+        # print(self.cells)
+        for key in self.cells:
+            self.cells[key].universe = self.id 
+
+        univCells = cdict()
+        univCells.addCells(list(self.cells.values()))
+
+        # univMats = mats()
+        # univMats.addMats(list(self.univMats.values()))
+
+        univString = univCells.toString() 
+
+        # for key in self.elements:
+        #     univString = univString + self.elements[key].toString()
 
         return univString
     
@@ -131,58 +168,65 @@ class universe:
         _isstr(newId, "new universe id")
         newUniv = copy.deepcopy(self)
         newUniv.id = newId
-        newUniv.setGeom(self.cells)
-        newUniv.univMats = self.univMats
         return newUniv
 
 
-    def _highres(self, nzones):
-        # print(self.id, self.elements, len(self.elements), self.cells, self.univMats)
-
-        if nzones == 0:
-            return
-
-        name =self.id 
-        for k in range(0, len(self.univMats)):
-            print("here")
-            self.univMats[k] = self.univMats[k].duplicateMat(self.univMats[k].id +"_"+ name)
+    def replaceElement(self, oldElement, newElement):
+        for key in self.elements:
+            if key == oldElement.id:
+                self.elements[newElement.id] = newElement
+                self.elements.pop(oldElement.id)
 
 
-        for i in range(0, len(self.elements)):
-            name =self.id + "_"+ self.elements[i].id 
-            self.elements[i] = self.elements[i].duplicate(name)
-            cells = self.elements[i].cells
-
-            # for k in range(0, len(cells)):
-            #     cells[k] = cells[k].duplicateCell(cells[k].id +"_"+ name)
-            #     # cells[k].setFill(name+"_"+cells[k].fill)
-            #     surfs = cells[k].surfs 
-            #     for j in range(0, len(surfs)):
-            #         surfs[j] = surfs[j].duplicateSurf(surfs[j].id +"_"+ name)
-
-        if not isinstance(self.layout, type(None)):
-            map = np.array(self.elements)
-            self.setMap(map.reshape(self.layout.shape))
-
-        for k in range(0, len(self.univMats)):
-            print("here")
-            self.univMats[k] = self.univMats[k].duplicateMat(self.univMats[k].id +"_"+ name)
-
-            # name = self.id +"_"+ elements[i].id +"_"+ str(i+1)
-            # mats = elements[i].materials
-            # cells = elements[i].cells
 
 
-            # for k in range(0, len(cells)):
-            #     cells[k] = cells[k].duplicateCell(cells[k].id +"_"+ name)
-            #     surfs = cells[k].surfs 
-            #     for j in range(0, len(surfs)):
-            #         surfs[j] = surfs[j].duplicateSurf(surfs[j].id +"_"+ name)
+    # def _highres(self, nzones):
+    #     # print(self.id, self.elements, len(self.elements), self.cells, self.univMats)
 
-            # for k in range(0, len(mats)):
-            #     mats[k] = mats[k].duplicateMat(mats[k].id +"_"+ name)
+    #     if nzones == 0:
+    #         return
 
-            # elements[i] = elements[i].duplicateUniv(name)
+    #     name =self.id 
+    #     for k in range(0, len(self.univMats)):
+    #         print("here")
+    #         self.univMats[k] = self.univMats[k].duplicateMat(self.univMats[k].id +"_"+ name)
 
-        for i in range(0, len(self.elements)):
-            self.elements[i]._highres(nzones - 1)
+
+    #     for i in range(0, len(self.elements)):
+    #         name =self.id + "_"+ self.elements[i].id 
+    #         self.elements[i] = self.elements[i].duplicate(name)
+    #         cells = self.elements[i].cells
+
+    #         # for k in range(0, len(cells)):
+    #         #     cells[k] = cells[k].duplicateCell(cells[k].id +"_"+ name)
+    #         #     # cells[k].setFill(name+"_"+cells[k].fill)
+    #         #     surfs = cells[k].surfs 
+    #         #     for j in range(0, len(surfs)):
+    #         #         surfs[j] = surfs[j].duplicateSurf(surfs[j].id +"_"+ name)
+
+    #     if not isinstance(self.layout, type(None)):
+    #         map = np.array(self.elements)
+    #         self.setMap(map.reshape(self.layout.shape))
+
+    #     for k in range(0, len(self.univMats)):
+    #         print("here")
+    #         self.univMats[k] = self.univMats[k].duplicateMat(self.univMats[k].id +"_"+ name)
+
+    #         # name = self.id +"_"+ elements[i].id +"_"+ str(i+1)
+    #         # mats = elements[i].materials
+    #         # cells = elements[i].cells
+
+
+    #         # for k in range(0, len(cells)):
+    #         #     cells[k] = cells[k].duplicateCell(cells[k].id +"_"+ name)
+    #         #     surfs = cells[k].surfs 
+    #         #     for j in range(0, len(surfs)):
+    #         #         surfs[j] = surfs[j].duplicateSurf(surfs[j].id +"_"+ name)
+
+    #         # for k in range(0, len(mats)):
+    #         #     mats[k] = mats[k].duplicateMat(mats[k].id +"_"+ name)
+
+    #         # elements[i] = elements[i].duplicateUniv(name)
+
+    #     for i in range(0, len(self.elements)):
+    #         self.elements[i]._highres(nzones - 1)

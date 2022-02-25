@@ -68,6 +68,10 @@ class material:
         self.color = ""
         self.rgb = ""
 
+    def __str__(self):
+        """" Overwrites print method, prints all objects variables. """
+        return str(vars(self))
+        
     def __matCheck(id, nuclides, fractions, dens, temp, xsLib, modLib, color, 
         isBurn, isModer):
         """Runs through the material object values and performs several error checks.

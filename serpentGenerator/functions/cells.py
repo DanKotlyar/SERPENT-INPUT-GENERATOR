@@ -35,6 +35,10 @@ class cells:
         self.ncells = 0
         self.cells = {}
 
+    def __str__(self):
+        """" Overwrites print method, prints all objects variables. """
+        return str(vars(self))
+
     def toString(self):
         """display properties of cells array in string form
 

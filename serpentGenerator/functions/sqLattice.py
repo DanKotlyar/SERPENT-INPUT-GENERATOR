@@ -7,6 +7,7 @@ email: iaguirre6@gatech.edu
 """
 
 
+from serpentGenerator.functions.cell import cell
 from serpentGenerator.functions.universe import universe
 import copy
 
@@ -105,16 +106,31 @@ class sqLat(universe):
             raise ValueError("lattice map must be {} by {} elements not {} "
                                 .format(self.nelements, self.nelements,  map.shape))        
         self.map = map
-        self.elements = list(map.flatten())
-        self.layout = map
+        mapList = list(map.flatten())
+        for i in range(0, len(mapList)):
+            if mapList[i].id not in self.elements:
+                self.elements[mapList[i].id] = mapList[i]
 
-        mats = np.array([])
 
-        for i in range(0, len(self.elements)):
-            for k in range(0, len(self.elements[i].univMats)):
-                mats.insert(self.elements[i].univMats[k])
+        for key in self.elements:
+            self.univMats[key] = self.elements[key].univMats
 
-        self.univMats = list(mats)
+
+    
+
+
+        # for key in self.elements:
+        #     self.univMats[key] = self.elements[key].univMats
+
+        
+
+        # mats = []
+
+        # for i in range(0, len(self.elements)):
+        #     for k in range(0, len(self.elements[i].univMats)):
+        #         mats.append(self.elements[i].univMats[k])
+
+        # self.univMats = mats
 
         
 
@@ -161,6 +177,10 @@ class sqLat(universe):
                 if (self.map[i][j].id == oldPin.id):
                     self.map[i][j] = newPin
 
+        self.elements[newPin.id] = newPin
+        self.elements.pop(oldPin.id)
+        self.univMats.pop(oldPin.id)
+        self.univMats[newPin.id] = newPin.univMats
 
     def replaceFirstInst(self, oldPin, newPin):
         """replaces desired pin object with a new pin object from lattice map layout.
@@ -241,8 +261,6 @@ class sqLat(universe):
         _isstr(newLatId, "new lattice universe id")
         newLat = copy.deepcopy(self)
         newLat.id = newLatId
-        newLat.setMap(self.map)
-        newLat.univMats = self.univMats
         return newLat
             
     def toString(self):
@@ -272,10 +290,6 @@ class sqLat(universe):
         >>> lat1.setMap(latMap1)
         >>> print(lat1.toString()) 
         """
-
-
-
-
         if self.map.size == 0:
             raise ValueError("lattice map cannot be empty")
         
@@ -291,16 +305,159 @@ class sqLat(universe):
 
         latString = latHeader + mapString + "\n"
 
+        def dictLevel(dict1, mats):
+            for key in dict1: 
+                if isinstance(dict1[key], dict):
+                    dictLevel(dict1[key], mats)
+                else:
+                    mats[key] = dict1[key]
+        #             print(key, dict1[key])
+            return mats
         geomString = ""
+        # # unique = {}
+        # for i in range(0, self.nelements):
+        #     for j in range(0, self.nelements):
+        #         if (self.map[i][j].id not in unique):
+        #             unique[self.map[i][j].id] = self.map[i][j]
+
+
+        elements= {}
+        def dictLevelGen(dict1, mats):
+            for key in dict1: 
+                if isinstance(dict1[key], dict):
+                    dictLevel(dict1[key], mats)
+                else:
+                    mats[key] = dict1[key].elements
+        #             print(key, dict1[key])
+            return mats
+
+        elementsParsed = {}
+        elementsUnParsed = dictLevelGen(self.elements, elements)
+        unique = dictLevel(elementsUnParsed, elementsParsed)
+
         unique = {}
-        for i in range(0, self.nelements):
-            for j in range(0, self.nelements):
-                if (self.map[i][j].id not in unique):
-                    unique[self.map[i][j].id] = self.map[i][j]
+        def searchElements(elems, uniqueElems):
+            for key in elems:
+                searchElements(elems[key].elements, uniqueElems)
+                uniqueElems[key] = elems[key]
+            return uniqueElems
+
+        unique = searchElements(self.elements, unique)
+
+        for key in unique:
+            geomString = geomString + unique[key]._geoString()
+        latString = latString + geomString
+
+
+        unique = {}
+        mats = {}
+        matString = ""
+
+
+        # for key in self.elements:
+        #     for matKey in self.univMats[key]:
+        #         print(matKey + "\n")
+        #         if matKey not in unique:
+        #             unique[matKey] = self.univMats[key][matKey]
+
+
+
+
+        unique = dictLevel(self.univMats, mats)
+
+        # for i in range(0, len(self.univMats)):
+        #     if (self.univMats[i] not in unique):
+        #         unique[self.univMats[i].id] = self.univMats[i]
 
         for key in unique:
             # if (len(unique[key].cells) != 0):
-                geomString = geomString + unique[key].toString()
+            matString = matString + unique[key].toString()
+    
 
-        latString = latString + geomString
+        latString = latString + matString
+        return latString
+
+    def _geoString(self):
+        """display properties of lattice in string form
+
+        The purpose of the ``toString`` function is to directly convert the lattice
+        object into a string format for the purpose of convinince when working with 
+        textfiles.
+
+        Returns
+        -------
+        str
+            lattice obj in str format representing the typical input methodology for
+            input in serpent input file.
+            
+        Raises
+        ------
+        ValueError
+            If the lattice map is empty.
+        
+        Examples
+        --------
+        >>> lat1 = sqLat("101", 0, 0, 3, 1.260)
+        >>> p1 = pin('1', 3)
+        >>> p2 = pin('2', 3)
+        >>> latMap1 = np.array([[p1, p2, p1], [p2, p1, p2], [p1, p2, p1]])
+        >>> lat1.setMap(latMap1)
+        >>> print(lat1.toString()) 
+        """
+        if self.map.size == 0:
+            raise ValueError("lattice map cannot be empty")
+        
+        latHeader = "lat "+ self.id +" 1 "+ str(self.xo) +" "+ str(self.yo) + " "\
+            + " "+ str(self.nelements) + " " + str(self.nelements) + " "\
+            +str(self.pitch) + "\n"
+
+        mapString = ""
+        for i in range(0, self.nelements):
+            for j in range(0, self.nelements):
+                mapString = mapString + self.map[i][j].id + " "
+            mapString = mapString + "\n"
+
+        latString = latHeader + mapString + "\n"
+
+        # def dictLevel(dict1, mats):
+        #     for key in dict1: 
+        #         if isinstance(dict1[key], dict):
+        #             dictLevel(dict1[key], mats)
+        #         else:
+        #             mats[key] = dict1[key]
+        # #             print(key, dict1[key])
+        #     return mats
+        # geomString = ""
+        # # # unique = {}
+        # # for i in range(0, self.nelements):
+        # #     for j in range(0, self.nelements):
+        # #         if (self.map[i][j].id not in unique):
+        # #             unique[self.map[i][j].id] = self.map[i][j]
+
+
+        # elements= {}
+        # def dictLevelGen(dict1, mats):
+        #     for key in dict1: 
+        #         if isinstance(dict1[key], dict):
+        #             dictLevel(dict1[key], mats)
+        #         else:
+        #             mats[key] = dict1[key].elements
+        # #             print(key, dict1[key])
+        #     return mats
+
+        # elementsParsed = {}
+        # elementsUnParsed = dictLevelGen(self.elements, elements)
+        # unique = dictLevel(elementsUnParsed, elementsParsed)
+
+        # elementStr = ""
+
+        # for key in self.elements:
+        #     elementStr = elementStr + self.elements[key]._geoString()
+
+        # latString = latString + elementStr
+ 
+        # for key in unique:
+        #     geomString = geomString + unique[key]._geoString()
+        # latString = latString + geomString
+
         return latString

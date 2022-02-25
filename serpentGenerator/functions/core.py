@@ -79,14 +79,17 @@ class core:
         If ``materials`` is not a mats obj
         If ``flagXS``, ``flagBurn``, ``flagBranch``, ``flagSettings`` are not bool.
     """
-    def __init__(self, mainUniv, housing, lats, pins, materials,
-        flagXS = True, flagBurn = True, flagBranch = True, flagSettings = True):
+    def __init__(self, mainUniv, housing, lats = None, pins = None, materials = None,
+        flagXS = False, flagBurn = False, flagBranch = False, flagSettings = False):
 
         _isinstance(mainUniv, universe, "main universe")
-        _isinstance(lats, ldict, "channels")
-        _isinstance(pins, pdict, "channel axial layers")
+        if lats != None:
+            _isinstance(lats, ldict, "channels")
+        if pins != None:
+            _isinstance(pins, pdict, "channel axial layers")
         _isinstance(housing, hous, 'core housing')
-        _isinstance(materials, mats, "materials")
+        if materials != None:
+            _isinstance(materials, mats, "materials")
 
         _isbool(flagXS, "XS gen Flag")
         _isbool(flagBurn, "Burnup Flag")
@@ -113,64 +116,47 @@ class core:
         self.coef = {}
         self.xsLibs = {}
         
-        self.input['mats'] = self.materials
-        self.input['pins'] = self.pins
-        self.input['lats'] = self.lats      
+        # self.input['mats'] = self.materials
+        # self.input['pins'] = self.pins
+        # self.input['lats'] = self.lats      
         self.input['mainLat'] = self.mainLat
         self.input['housing'] = self.housing
         self.input['main'] = self.mainUniv
     
 
     def _setCoreGeom(self, mainUniv, housing):
-
         main = universe("0")
-
-        csurfs = sdict()
-        ccells = cdict()
-
         if housing.defaultCRFlag:
-            core = cell("core", np.array([housing.surfs.getSurf("cr1")]), 
-                np.array([1]))
-            core.setFill(mainUniv.id)
-
-            housing.cells.addCell(core)
-
+            housing.cells["core"].setFill(mainUniv.id)
             voidSurf = surf("voidBorder", "cuboid", 
                 np.array([-1*housing.radiiCR[len(housing.radiiCR)-1], 
                 housing.radiiCR[len(housing.radiiCR)-1],
                 -1*housing.radiiCR[len(housing.radiiCR)-1], 
                 housing.radiiCR[len(housing.radiiCR)-1], 0, housing.height]))
 
-            csurfs.addSurf(voidSurf)
+            voidBuffer = cell("voidBuffer")
+            voidBuffer.setSurfs([housing.border, voidSurf], [0, 1]) 
 
-            voidBuffer = cell("voidBuffer", 
-                np.array([housing.surfs.getSurf("cr"+str(len(housing.radiiCR))), 
-                voidSurf]), np.array([0, 1]), "void")
 
-            housing.cells.addCell(voidBuffer)
+            housing.cells["voidBuffer"] = voidBuffer
 
-            fillRegion = cell("coreFill", np.array([voidSurf]), np.array([1]))
+            fillRegion = cell("coreFill")
+            fillRegion.setSurfs([voidSurf], [1])
             fillRegion.setFill(housing.id)
-
-            voidRegion = cell("voidRegion", np.array([voidSurf]),
-                np.array([0]), "outside")
-
-            ccells.addCells([fillRegion, voidRegion])
-
+            voidRegion = cell("voidRegion")
+            voidRegion.setSurfs([voidSurf], [0])
+            main.setGeom([fillRegion, voidRegion])
+            borderSurf = voidSurf
         else:
-            core = cell("in", np.array([housing.border]), np.array([1]))
+            borderSurf = housing.border
+            core = cell("in")
+            core.setSurfs([borderSurf], [1])
             core.setFill(mainUniv.id)
+            voidRegion = cell("out", isVoid=True)
+            voidRegion.setSurfs([borderSurf], [0])
+            main.setGeom([core, voidRegion])
 
-            voidRegion = cell("out", np.array([housing.border]), np.array([0]),
-                "outside")
-            ccells.addCells([core, voidRegion])
-
-            voidSurf = housing.border
-
-        main.surfs = csurfs
-        main.cells = ccells
-
-        return main, voidSurf
+        return main, borderSurf
 
 
     def writeFile(self, filename):
@@ -376,14 +362,14 @@ class core:
             nfgString = nfgString + str(round(ebounds[i], 9)) + " "
         nfgString = "set nfg " + str(ngroups) + " " + nfgString + "\n"
 
-        adfString = "" if not setADF else self.voidSurf.toString() \
-             + "set adf 0 " + self.voidSurf.id + " full \n"
+        adfString = "" if not setADF else "set adf 0 " + self.voidSurf.id + " full\n"
 
         FPPString = "" if not setFPPXS else "set poi 1 \n"
 
         xsString = gcuString + nfgString + FPPString + adfString + "\n"
 
         self.xs['toString'] = xsString
+        self.flagXS = True
         #set gcu -1 if xsflag false
 
     def setBranching(self, branches):
@@ -468,7 +454,7 @@ class core:
 
         self.coef['toString'] = coefString
 
-    def setSettings(self, power, bc, sym, egrid, nps, nact, nskip, setPCC = False,
+    def setSettings(self, power, bc, egrid, nps, nact, nskip, setPCC = False,
         misc = []):
         """
         The ``setSettings`` method serves to set general settings in the inputfile.
@@ -520,16 +506,15 @@ class core:
         """
         _ispositive(power, "power")
         _isinstanceList(bc, numbers.Integral, "boundary conditions")
-        _isinstanceList(sym, numbers.Integral, "symetry conditions")
         _isinstanceList(egrid, numbers.Number, "energy grid")
         _ispositive(nps, "number of particles per cycle")
         _ispositive(nact, "number of active cycles")
         _ispositive(nskip, "number of skipped cycles")
         _isbool(setPCC, "predictor corrector option on or off")
 
+
         self.settings['power'] = power
         self.settings['bc'] = bc
-        self.settings['sym'] = sym
         self.settings['egrid'] = egrid
         self.settings['nps'] = nps
         self.settings['nact'] = nact
@@ -547,7 +532,6 @@ class core:
 
         setString = setString + bcString
 
-        setString = setString + "set sym "+str(sym) + "\n"
         setString = setString + "set pop "+str(nps)+" "+ str(nact)+" "\
             +str(nskip)+ "\n"
         
@@ -588,7 +572,7 @@ class core:
 
         if ((self.flagBurn) & ('toString' in self.burnup)):
             inputString = inputString + self.burnup['toString']
-        if ((self.flagXS) & ('toString' in self.xs)):
+        if self.flagXS:
             inputString = inputString + self.xs['toString']
         if ((self.flagSettings) & ('toString' in self.settings)):
             inputString = inputString + self.settings['toString']
@@ -596,10 +580,10 @@ class core:
             inputString = inputString + self.branch['toString']
         if ('toString' in self.plot):
             inputString = inputString + self.plot['toString']
-        if ((self.flagXS) & ('toString' in self.xs)):
-            inputString = inputString + self.xs['toString']
-            self._setCoef()
-            inputString = inputString + self.coef['toString']
+        # if ((self.flagXS) & ('toString' in self.xs)):
+        #     inputString = inputString + self.xs['toString']
+        #     self._setCoef()
+        #     inputString = inputString + self.coef['toString']
 
         inputString = inputString + self.xsLibs['toString']
         return inputString
