@@ -7,6 +7,7 @@ based geometry.
 # from serpentGenerator.functions.cell import cell
 from serpentGenerator.functions.mats import mats
 from serpentGenerator.functions.cells import cells as cdict
+from serpentGenerator.functions.surfs import surfs as sdict
 from serpentGenerator.functions.cell import cell
 
 import numpy as np
@@ -35,6 +36,7 @@ class universe:
         self.cells = {}
         self.elements = {}
         self.univMats = {}
+        self.univSurfs = {}
 
     def setGeom(self, cells):
         """Assign surfaces and cells to a universe object.
@@ -66,13 +68,16 @@ class universe:
         # for i in range(0, len(cells)):
         #     self.cells.append(cells[i])
 
-
         for i in range(0, len(cells)):
             self.cells[cells[i].id] = cells[i]
             if not cells[i].isVoid:
                 if not cells[i].isFilled:
                     if cells[i].material.id not in self.univMats:
                         self.univMats[cells[i].material.id] = cells[i].material
+
+        for i in range(0, len(cells)):
+            for j in range(0, len(cells[i].surfs)):
+                self.univSurfs[cells[i].surfs[j].id] = cells[i].surfs[j]
 
     def toString(self):
         """display properties of a universe in string form
@@ -97,7 +102,11 @@ class universe:
         univMats = mats()
         univMats.addMats(list(self.univMats.values()))
 
-        univString = univCells.toString() +univMats.toString()
+        univSurfs = sdict()
+        univSurfs.addSurfs(list(self.univSurfs.values()))
+
+        univString = univCells._geoString() +  univSurfs.toString()
+        univString = univString + univMats.toString()
 
         for key in self.elements:
             univString = univString + self.elements[key].toString()
@@ -127,7 +136,7 @@ class universe:
         # univMats = mats()
         # univMats.addMats(list(self.univMats.values()))
 
-        univString = univCells.toString() 
+        univString = univCells._geoString()
 
         # for key in self.elements:
         #     univString = univString + self.elements[key].toString()
@@ -176,9 +185,6 @@ class universe:
             if key == oldElement.id:
                 self.elements[newElement.id] = newElement
                 self.elements.pop(oldElement.id)
-
-
-
 
     # def _highres(self, nzones):
     #     # print(self.id, self.elements, len(self.elements), self.cells, self.univMats)

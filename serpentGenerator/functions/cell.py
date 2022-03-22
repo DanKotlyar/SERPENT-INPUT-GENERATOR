@@ -19,6 +19,7 @@ from serpentGenerator.functions.checkerrors import (
 from serpentGenerator.functions.surf import surf
 from serpentGenerator.functions.surfs import surfs
 from serpentGenerator.functions.material import material
+from serpentGenerator.functions.utilities import createDictFromConatinerList
 
 class cell:
     """Basic data definition for a surface object
@@ -52,8 +53,11 @@ class cell:
             isVoid = False
         self.isVoid = isVoid
         self.isFilled = False
+        self.surfDict = {}
 
-        
+    def __str__(self):
+        """" Overwrites print method, prints all objects variables. """
+        return str(vars(self))
 
     def setSurfs(self, surfs, dirs):
         _isinstanceList(surfs, surf, "list of surf objs for cell")
@@ -61,6 +65,7 @@ class cell:
                                                       " 1 = inside , 0 = outside")
         self.surfs = surfs
         self.dirs = dirs
+        self.surfDict = createDictFromConatinerList(self.surfs)
 
     def setFill(self, fill):
         """Assigns the filling lattice for the cell.
@@ -144,6 +149,29 @@ class cell:
 
         return cellStr
 
+    def _geoString(self):
+        def sign(orientation):
+            if(orientation == 1):
+                sign = "-"
+            else:
+                sign = ""
+                
+            return sign
+        if((self.material == "")&(self.fill == "")&(self.isVoid == False)):
+            raise ValueError("Cell material or filling universe must be set."
+                " Both cannot be empty.")
+        uniString = "" if self.universe == None else self.universe + " "
+        fillString = "" if self.fill == "" else " fill " + self.fill + " "
+        if not self.isVoid:
+            matString = "" if self.material == None else " " +self.material.id + " "
+        else:
+            matString = " " + "outside" + " "
+        surfString = ""
+        for i in range(0,len(self.surfs)):
+            surfString = surfString + sign(self.dirs[i]) + self.surfs[i].id + " "
+        cellStr = "cell "+self.id+" "+uniString+ matString +fillString + surfString
+        cellStr = cellStr +"\n"
+        return cellStr
         
     def duplicateCell(self, newCellId):
         newCell = copy.deepcopy(self)

@@ -59,6 +59,13 @@ class cells:
             
         return cellsString + "\n"
 
+    def _geoString(self):
+        cellsString = ""
+        for key in self.cells:
+            cellsString = cellsString + self.cells[key]._geoString()
+            
+        return cellsString + "\n"
+
     def addCell(self, newCell):
         """Assign individual cell to the cells object.
 

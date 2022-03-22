@@ -7,6 +7,7 @@ email: iaguirre6@gatech.edu
 """
 
 
+from msilib.schema import Error
 from serpentGenerator.functions.cell import cell
 from serpentGenerator.functions.universe import universe
 import copy
@@ -114,6 +115,8 @@ class sqLat(universe):
 
         for key in self.elements:
             self.univMats[key] = self.elements[key].univMats
+            self.cells[key] = self.elements[key].cells
+            self.univSurfs[key] = self.elements[key].univSurfs
 
 
     
@@ -370,11 +373,48 @@ class sqLat(universe):
         #         unique[self.univMats[i].id] = self.univMats[i]
 
         for key in unique:
-            # if (len(unique[key].cells) != 0):
             matString = matString + unique[key].toString()
-    
 
         latString = latString + matString
+
+        uniqueCells = {}
+        unParsedCells = {}
+        unParsedSurfs = {}
+        uniqueSurfs = {}
+
+        def dictLevelGenCells(dict1, mats):
+            for key in dict1: 
+                if isinstance(dict1[key], dict):
+                    dictLevelCells(dict1[key], mats)
+            return mats
+
+        def dictLevelCells(dict1, mats):
+            for key in dict1: 
+                if isinstance(dict1[key], dict):
+                    dictLevelCells(dict1[key], mats)
+                else:
+                    if key not in mats:
+                        mats[key] = dict1[key]
+                    else:
+                        if (mats[key].universe != dict1[key].universe):
+                            raise ValueError("Duplicate Cell id: {} in different"
+                                " universes: {}, {} ".format(key, mats[key].universe,
+                                                                dict1[key].universe))
+
+        dictLevelGenCells(self.cells, uniqueCells)
+        dictLevelGen(self.univSurfs, uniqueSurfs)
+
+        # cellStr = ""
+        surfStr = ""
+        # for key in uniqueCells:
+        #     cellStr = cellStr + uniqueCells[key]._geoString()
+
+        for key in uniqueSurfs:
+            surfStr = surfStr + uniqueSurfs[key].toString()
+
+        # latString = latString + cellStr
+        latString = latString + surfStr
+
         return latString
 
     def _geoString(self):
@@ -406,7 +446,7 @@ class sqLat(universe):
         """
         if self.map.size == 0:
             raise ValueError("lattice map cannot be empty")
-        
+
         latHeader = "lat "+ self.id +" 1 "+ str(self.xo) +" "+ str(self.yo) + " "\
             + " "+ str(self.nelements) + " " + str(self.nelements) + " "\
             +str(self.pitch) + "\n"
