@@ -107,7 +107,9 @@ class hexpin(universe):
         hexCell.setSurfs([hexSurf], [1])
         hexCell.setFill(innerPin.id)
 
-        self.elements = [innerPin]
+        self.elements[innerPin.id] = innerPin
+
+        self.univMats = innerPin.univMats
 
         super().setGeom([hexCell])
         
@@ -197,6 +199,6 @@ class hexpin(universe):
         _isstr(newPinId, "newPinId")
         newPin = copy.deepcopy(self)
         newPin.id = newPinId
-        newPin.setHexpin(self.materials, self.radii, self._xo, self._yo)
+        # newPin.setHexpin(self.materials, self.radii, self._xo, self._yo)
         # print(newPin.cells[0].toString(), self.id)
         return newPin
