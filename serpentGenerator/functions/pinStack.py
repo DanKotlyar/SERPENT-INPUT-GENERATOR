@@ -264,6 +264,8 @@ class pinStack(universe):
 
         latString = latString + geomString
 
+        # latString = latString + matsSring
+
         return latString
 
     def _geoString(self):

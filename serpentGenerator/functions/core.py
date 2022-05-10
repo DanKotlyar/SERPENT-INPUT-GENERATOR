@@ -134,7 +134,7 @@ class core:
                 -1*housing.radiiCR[len(housing.radiiCR)-1], 
                 housing.radiiCR[len(housing.radiiCR)-1], 0, housing.height]))
 
-            voidBuffer = cell("voidBuffer")
+            voidBuffer = cell("voidBuffer", isVoid=True)
             voidBuffer.setSurfs([housing.border, voidSurf], [0, 1]) 
 
 
@@ -143,7 +143,7 @@ class core:
             fillRegion = cell("coreFill")
             fillRegion.setSurfs([voidSurf], [1])
             fillRegion.setFill(housing.id)
-            voidRegion = cell("voidRegion")
+            voidRegion = cell("voidRegion", isVoid=False)
             voidRegion.setSurfs([voidSurf], [0])
             main.setGeom([fillRegion, voidRegion])
             borderSurf = voidSurf
@@ -574,7 +574,7 @@ class core:
             inputString = inputString + self.burnup['toString']
         if self.flagXS:
             inputString = inputString + self.xs['toString']
-        if ((self.flagSettings) & ('toString' in self.settings)):
+        if ('toString' in self.settings):
             inputString = inputString + self.settings['toString']
         if ((self.flagBranch) & ('toString' in self.branch)):
             inputString = inputString + self.branch['toString']

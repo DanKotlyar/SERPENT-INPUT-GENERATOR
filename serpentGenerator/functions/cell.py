@@ -162,14 +162,18 @@ class cell:
                 " Both cannot be empty.")
         uniString = "" if self.universe == None else self.universe + " "
         fillString = "" if self.fill == "" else " fill " + self.fill + " "
-        if not self.isVoid:
-            matString = "" if self.material == None else " " +self.material.id + " "
-        else:
-            matString = " " + "outside" + " "
+        matString = "" if self.material == None else " " +self.material.id + " "
+
+        voidString = ""
+        if ((not self.isVoid) & (not self.isFilled) & (self.material == None)):
+            voidString = " " + "outside" + " "
+        if ((self.isVoid) & (not self.isFilled) & (self.material == None)):
+            voidString = " " + "void" + " "
         surfString = ""
         for i in range(0,len(self.surfs)):
             surfString = surfString + sign(self.dirs[i]) + self.surfs[i].id + " "
-        cellStr = "cell "+self.id+" "+uniString+ matString +fillString + surfString
+        cellStr = "cell "+self.id+" "+uniString+ matString + voidString + \
+                                                            fillString + surfString
         cellStr = cellStr +"\n"
         return cellStr
         

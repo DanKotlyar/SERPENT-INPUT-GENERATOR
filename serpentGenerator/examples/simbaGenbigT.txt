@@ -20689,54 +20689,54 @@ mat upperfuelBlanketFA3_Assem16Z20    -10.5216  burn 1 tmp 900.0 rgb 255 255 255
 92238.09c	-0.863867442
 8016.09c	-0.11850261
 
-cell cc1 housing  clad cr1 -cr2 
-surf cr1 cyl 0.0 0.0 86.4152 
-surf cr2 cyl 0.0 0.0 106.4152 
-
-cell cc2 housing  modFA1 cr2 -cr3 
-surf cr2 cyl 0.0 0.0 106.4152 
-surf cr3 cyl 0.0 0.0 126.4152 
-
-cell cc3 housing  clad cr3 -cr4 
-surf cr3 cyl 0.0 0.0 126.4152 
-surf cr4 cyl 0.0 0.0 146.4152 
-
+cell cc1 housing  barrel_ss cr1 -cr2 
+cell cc2 housing  thermalShield_water cr2 -cr3 
+cell cc3 housing  vessel_ss cr3 -cr4 
 cell core housing  fill CORE -cr1 
+cell voidBuffer housing  void cr4 -voidBorder 
+
 surf cr1 cyl 0.0 0.0 86.4152 
-
-cell voidBuffer housing  outside cr4 -voidBorder 
+surf cr2 cyl 0.0 0.0 106.4152 
+surf cr3 cyl 0.0 0.0 126.4152 
 surf cr4 cyl 0.0 0.0 146.4152 
-surf voidBorder cuboid -146.4152 146.4152 -146.4152 146.4152 0.0 240.0 
 
-
-mat clad    -6.55    rgb 183 183 183
+mat barrel_ss    -6.55    rgb 183 183 183
 40090.06c	0.5145
 40091.06c	0.1122
 40092.06c	0.1715
 40094.06c	0.1738
 40096.06c	0.028
 
-mat modFA1    -0.7 moder H2O 1001   rgb 198 226 255
+mat thermalShield_water    -0.7 moder H2O 1001   rgb 198 226 255
 1001.06c	0.66667
 8016.06c	0.33333
 
+mat vessel_ss    -6.55    rgb 183 183 183
+40090.06c	0.5145
+40091.06c	0.1122
+40092.06c	0.1715
+40094.06c	0.1738
+40096.06c	0.028
+
 cell coreFill 0  fill housing -voidBorder 
-surf voidBorder cuboid -146.4152 146.4152 -146.4152 146.4152 0.0 240.0 
-
 cell voidRegion 0  outside voidBorder 
-surf voidBorder cuboid -146.4152 146.4152 -146.4152 146.4152 0.0 240.0 
 
+surf voidBorder cuboid -146.4152 146.4152 -146.4152 146.4152 0.0 240.0 
 
 set gcu RT  RB  
 set nfg 2 6.25e-07 
 set poi 1 
 set adf 0 voidBorder full
 
+set power 200000000.0
+set bc 1 1 1 
+set pop 10000 40 20
+set pcc 0
+set egrid 5e-05 1e-09 15.0 
+plot 1 500 500
+plot 3 500 500
 set acelib "/mnt/c/Users/iaguirre6/Documents/xsdata/endfb7/sss_endfb7u.xsdata"
 set declib "/mnt/c/Users/iaguirre6/Documents/xsdata/endfb7/sss_endfb7.dec"
 set nfylib "/mnt/c/Users/iaguirre6/Documents/xsdata/endfb7/sss_endfb7.nfy"
 therm lwtr lwj3.11t
-
-plot 1 500 500 
-plot 3 500 500
 

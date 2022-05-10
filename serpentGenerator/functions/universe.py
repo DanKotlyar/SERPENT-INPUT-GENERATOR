@@ -72,8 +72,9 @@ class universe:
             self.cells[cells[i].id] = cells[i]
             if not cells[i].isVoid:
                 if not cells[i].isFilled:
-                    if cells[i].material.id not in self.univMats:
-                        self.univMats[cells[i].material.id] = cells[i].material
+                    if cells[i].material != None:
+                        if cells[i].material.id not in self.univMats:
+                            self.univMats[cells[i].material.id] = cells[i].material
 
         for i in range(0, len(cells)):
             for j in range(0, len(cells[i].surfs)):
