@@ -80,7 +80,7 @@ def __readMats():
             MATLIB[key].xsLib = __xsLib(key)
             MATLIB[key].modLib = __thermScatt(key)
 
-        print(MATLIB)
+        #print(MATLIB)
 
 def __writeMats():
     with h.File(setDataPath(__matLibFile),"w") as hdf:

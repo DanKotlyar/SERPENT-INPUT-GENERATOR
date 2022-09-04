@@ -7,6 +7,7 @@ email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 import numpy as np
+import math
 from serpentGenerator.functions.universe import universe
 from serpentGenerator.functions.hexLattice import hexLat
 from serpentGenerator.functions.sqLattice import sqLat
@@ -21,6 +22,7 @@ from serpentGenerator.functions.cells import cells as cdict
 from serpentGenerator.functions.housing import housing as hous
 from serpentGenerator.functions.branches import branches as bdict
 from serpentGenerator.functions.core import core
+from serpentGenerator.functions.templates import SNAP
 from serpentGenerator.functions.checkerrors import (
     _isinstance, _is1darray, _isbool, _isint, _ispositive, _ispositiveArray,
     _isstr, _isinstanceList
@@ -30,47 +32,70 @@ def __buildSqaureLattice(map):
     return
 def __buildSqaureLatticeHomog(element, size):
     return
-
-def __buildHexLattice(mapStr, univMap, nOuter):
-    map = __latticeStrParser(mapStr)
-    if not __isHexagonal(map):
-        raise ValueError("hexagonal lattice map must have hexagonal shape not {}"
-                                                                        .format(map))
-
-    return
     
-def __buildSquareFromHex(mapStr, univMap, nOuter):
-    map = []
-    rowStr = mapStr.split(';')
-    latList = []
-    for row in rowStr:
-        elemStr = row.split()
-        print(elemStr)
-        rowList = []
-        for elem in elemStr:
-           print("elem:", elem)
-           rowList.append(int(elem)) 
-        latList.append(rowList)
-    map = np.array(latList)
-    return map 
+def __buildFullFromHex(map, hexSize, nOuter):
+    midRowIdx = math.floor(len(map)/2) +1
+    for rdx, row in enumerate(map):
+        lenDiff = (hexSize - len(row))
+        if lenDiff == 0:
+            pass
+            #print("row"+str(rdx+1)+":  max" )
+        elif lenDiff == 1:
+            if rdx < midRowIdx:
+                row.insert(0, '0')
+                #print("row"+str(rdx+1)+":  left" )
+            else:
+                row.append('0')
+                #print("row"+str(rdx+1)+":  right" )
+        else: 
+            for idx in range(0, lenDiff):
+                if rdx < midRowIdx:
+                    row.insert(idx, '0')
+                else:
+                    row.append('0')
+        for i in range(0, nOuter):
+            row.insert(i, '0')
+            row.append('0')
+    fullSize = hexSize + nOuter*2
+    outerRow = []
+    for i in range(0, fullSize):
+        outerRow.append('0')
+    for i in range(0, nOuter):
+        map.insert(0,outerRow)
+        map.append(outerRow)
+    return map
+
+def __mapElements(map, univMap):
+    npMap = np.empty(shape= (len(map), len(map)), dtype=universe)
+    for i in range(0, len(map)):
+        for j in range(0, len(map)):
+            npMap[i][j] = univMap[map[i][j]]
+    return npMap
+
+def __buildLatticeObject(map, univMap, pitch):
+    latMap = __mapElements(map, univMap)
+
+    hexLatObj = hexLat("mapNameTBD", "X", 0, 0, len(map), len(map), pitch)
+    hexLatObj.setMap(latMap)
+    print(hexLatObj.toString())
+    return hexLatObj
 
 def __latticeStrParser(mapStr):
-    map = []
     rowStr = mapStr.split(';')
     latList = []
+    hexSize = len(rowStr)
     for row in rowStr:
         elemStr = row.split()
-        print(elemStr)
         rowList = []
+        if len(elemStr) > hexSize:
+            hexSize = len(elemStr)
         for elem in elemStr:
-           print("elem:", elem)
-           rowList.append(int(elem)) 
+           rowList.append(elem) 
         latList.append(rowList)
-    map = np.array(latList)
-    return map 
+    return latList, hexSize
 
 def __isHexagonal(map):
-    nrows = map.shape[0]
+    nrows = len(map)
     isHex = False
     hasChangedDir = False
     hasChangedCount = 0
@@ -102,12 +127,29 @@ def __isHexagonal(map):
         isHex = False
     return isHex
 
-univ1 = universe("bingo")
-univ2 = universe("cosby")
-univMap = {'1': univ1, '2': univ2, 'Outer':univ2}
-layout = "2 2;\
-          2 1 2;\
-           2 2"
+def __buildHexLattice(mapStr, univMap, nOuter, pitch):
+    map, hexSize = __latticeStrParser(mapStr)
+    if not __isHexagonal(map):
+        raise ValueError("hexagonal lattice map must have hexagonal shape not {}"
+                                                                        .format(map))
+    fullMap = __buildFullFromHex(map, hexSize, nOuter)
+    hexLatObj = __buildLatticeObject(fullMap, univMap, pitch)
+    return hexLatObj
 
+def buildActiveCore(coreMap):
+    return
 
-__buildHexLattice(layout, univMap, nOuter)
+univ1 = universe("A")
+univ2 = universe("B")
+univ3 = universe("C")
+
+univMap = {'1': univ1, '2': univ2, '0':univ3}
+layout = " 2 2 2;\
+          2 1 1 2;\
+         2 1 1 1 2;\
+          2 1 1 2;\
+           2 2 2"
+nOuter = 2
+pitch = 1.260
+
+__buildHexLattice(layout, univMap, nOuter, pitch)
