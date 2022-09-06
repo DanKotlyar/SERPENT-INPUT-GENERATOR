@@ -8,14 +8,13 @@ email: iaguirre6@gatech.edu
 """
 
 class Template:
-    def __init__(self, id):
+    def __init__(self, systemId):
         self.id = id
         self.map = {}
 
 class SNAP(Template):
-    def __init__(self):
-        id = "SNAP"
-        Template.__int__(self, id)
-        map = {}
-        self.map = map
+    def __init__(self, systemId):
+        Template.__init__(self, systemId)
+
+    
 

@@ -5,6 +5,7 @@ based geometry.
 """
 
 # from serpentGenerator.functions.cell import cell
+from gc import collect
 from serpentGenerator.functions.mats import mats
 from serpentGenerator.functions.cells import cells as cdict
 from serpentGenerator.functions.surfs import surfs as sdict
@@ -35,6 +36,10 @@ class universe:
         self.layout = None
         self.cells = {}
         self.elements = {}
+        self.__allElements = {}
+        self.__allMats = {}
+        self.__allSurfs = {}
+        self.__allCells = {}
         self.univMats = {}
         self.univSurfs = {}
 
@@ -75,11 +80,31 @@ class universe:
                     if cells[i].material != None:
                         if cells[i].material.id not in self.univMats:
                             self.univMats[cells[i].material.id] = cells[i].material
+                else: 
+                    self.elements[cells[i].fill.id] = cells[i].fill
 
         for i in range(0, len(cells)):
             for j in range(0, len(cells[i].surfs)):
                 self.univSurfs[cells[i].surfs[j].id] = cells[i].surfs[j]
+    
+    def collectAllElements(self, allElements):
+        for element in self.elements:
+            allElements[self.elements[element].id] = self.elements[element]
+            self.elements[element].collectAllElements(allElements)
+        return allElements
 
+    def collectAllElementsAndMats(self, allMats):
+        allElements = {}
+        self.collectAllElements(allElements)
+        self.__allElements = allElements
+
+        print(self.__allElements)
+        print(self.__allElements['A'].univMats)
+        # for elementId in self.__allElements:
+        #     for matId in self.__allElements[elementId].univMats:
+        #         print(elementId, matId)
+        return
+    
     def toString(self):
         """display properties of a universe in string form
 
@@ -186,54 +211,3 @@ class universe:
             if key == oldElement.id:
                 self.elements[newElement.id] = newElement
                 self.elements.pop(oldElement.id)
-
-    # def _highres(self, nzones):
-    #     # print(self.id, self.elements, len(self.elements), self.cells, self.univMats)
-
-    #     if nzones == 0:
-    #         return
-
-    #     name =self.id 
-    #     for k in range(0, len(self.univMats)):
-    #         print("here")
-    #         self.univMats[k] = self.univMats[k].duplicateMat(self.univMats[k].id +"_"+ name)
-
-
-    #     for i in range(0, len(self.elements)):
-    #         name =self.id + "_"+ self.elements[i].id 
-    #         self.elements[i] = self.elements[i].duplicate(name)
-    #         cells = self.elements[i].cells
-
-    #         # for k in range(0, len(cells)):
-    #         #     cells[k] = cells[k].duplicateCell(cells[k].id +"_"+ name)
-    #         #     # cells[k].setFill(name+"_"+cells[k].fill)
-    #         #     surfs = cells[k].surfs 
-    #         #     for j in range(0, len(surfs)):
-    #         #         surfs[j] = surfs[j].duplicateSurf(surfs[j].id +"_"+ name)
-
-    #     if not isinstance(self.layout, type(None)):
-    #         map = np.array(self.elements)
-    #         self.setMap(map.reshape(self.layout.shape))
-
-    #     for k in range(0, len(self.univMats)):
-    #         print("here")
-    #         self.univMats[k] = self.univMats[k].duplicateMat(self.univMats[k].id +"_"+ name)
-
-    #         # name = self.id +"_"+ elements[i].id +"_"+ str(i+1)
-    #         # mats = elements[i].materials
-    #         # cells = elements[i].cells
-
-
-    #         # for k in range(0, len(cells)):
-    #         #     cells[k] = cells[k].duplicateCell(cells[k].id +"_"+ name)
-    #         #     surfs = cells[k].surfs 
-    #         #     for j in range(0, len(surfs)):
-    #         #         surfs[j] = surfs[j].duplicateSurf(surfs[j].id +"_"+ name)
-
-    #         # for k in range(0, len(mats)):
-    #         #     mats[k] = mats[k].duplicateMat(mats[k].id +"_"+ name)
-
-    #         # elements[i] = elements[i].duplicateUniv(name)
-
-    #     for i in range(0, len(self.elements)):
-    #         self.elements[i]._highres(nzones - 1)

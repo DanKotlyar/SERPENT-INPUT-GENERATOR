@@ -19,6 +19,7 @@ from serpentGenerator.functions.checkerrors import (
 from serpentGenerator.functions.surf import surf
 from serpentGenerator.functions.surfs import surfs
 from serpentGenerator.functions.material import material
+# from serpentGenerator.functions.universe import universe
 from serpentGenerator.functions.utilities import createDictFromConatinerList
 
 class cell:
@@ -38,7 +39,7 @@ class cell:
         optional fill parameter for cell filling universes
     """
 
-    def __init__(self, id,  mat = None, isVoid = True):
+    def __init__(self, id,  mat = None, isVoid = False):
         _isstr(id, "cell id")
         if mat != None:
             _isinstance(mat, material, "cell material")
@@ -47,7 +48,7 @@ class cell:
         self.surfs = []
         self.dirs = []
         self.material = mat
-        self.fill = ""
+        self.fill = None
         self.universe = None
         if not isinstance(mat, type(None)):
             isVoid = False
@@ -96,10 +97,13 @@ class cell:
         """
         if (self.material != None):
             raise ValueError("Fill cannot be set if material for the cell is set")
-        _isstr(fill, "filling universe name")
+        #_isinstance(fill, universe, "filling universe")
         self.fill = fill
         self.isVoid = False
         self.isFilled = True
+
+    def __addFilltoUniv(self, fill):
+        return
 
     def toString(self):
         """display properties of cell object in string form
@@ -144,9 +148,9 @@ class cell:
 
         cellStr = cellStr + cellSurfs.toString()
 
+        #cellStr = cellStr + self.fill.toString()
         # if self.material != None:
         #     cellStr = cellStr + self.material.toString()
-
         return cellStr
 
     def _geoString(self):
@@ -161,7 +165,7 @@ class cell:
             raise ValueError("Cell material or filling universe must be set."
                 " Both cannot be empty.")
         uniString = "" if self.universe == None else self.universe + " "
-        fillString = "" if self.fill == "" else " fill " + self.fill + " "
+        fillString = "" if self.fill.id == "" else " fill " + self.fill.id + " "
         matString = "" if self.material == None else " " +self.material.id + " "
 
         voidString = ""

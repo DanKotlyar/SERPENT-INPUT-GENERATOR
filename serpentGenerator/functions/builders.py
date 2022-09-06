@@ -8,7 +8,7 @@ email: iaguirre6@gatech.edu
 """
 import numpy as np
 import math
-from serpentGenerator.functions.universe import universe
+from serpentGenerator.functions.universe import (universe)
 from serpentGenerator.functions.hexLattice import hexLat
 from serpentGenerator.functions.sqLattice import sqLat
 from serpentGenerator.functions.pinStack import pinStack
@@ -77,7 +77,7 @@ def __buildLatticeObject(map, univMap, pitch):
 
     hexLatObj = hexLat("mapNameTBD", "X", 0, 0, len(map), len(map), pitch)
     hexLatObj.setMap(latMap)
-    print(hexLatObj.toString())
+    #print(hexLatObj.toString())
     return hexLatObj
 
 def __latticeStrParser(mapStr):
@@ -127,23 +127,49 @@ def __isHexagonal(map):
         isHex = False
     return isHex
 
-def __buildHexLattice(mapStr, univMap, nOuter, pitch):
+def buildHexLatticeWithHexBorder(hexLat, hexApothem):
+    acUniv = universe("active_core_univ")
+    acCell = cell("active_core_cell", isVoid=False)
+    acCell.setFill(hexLat)
+    acSurf1 = surf("hexBorder", "hexyc", np.array([0.0, 0.0, hexApothem]))
+    acDirs = [-1]
+    acSurfs = [acSurf1]
+    acCell.setSurfs(acSurfs, acDirs)
+    acUniv.setGeom([acCell])
+
+    allMats = {}
+
+    acUniv.collectAllElementsAndMats(allMats)
+    # print(vars(acUniv))
+    return acUniv
+
+def buildPeripheralRings(universe, radii, ringIds = None):
+    
+    return
+
+def buildHexLattice(mapStr, univMap, nOuter, pitch, boundaryType = None,
+                                             hexApothem = None, outerRadius = None):
     map, hexSize = __latticeStrParser(mapStr)
     if not __isHexagonal(map):
         raise ValueError("hexagonal lattice map must have hexagonal shape not {}"
                                                                         .format(map))
     fullMap = __buildFullFromHex(map, hexSize, nOuter)
     hexLatObj = __buildLatticeObject(fullMap, univMap, pitch)
+    
+    if hexApothem != None:
+        hexLatObj = buildHexLatticeWithHexBorder(hexLatObj, hexApothem)
+    #print(vars(hexLatObj))
     return hexLatObj
 
 def buildActiveCore(coreMap):
+
     return
 
 univ1 = universe("A")
 univ2 = universe("B")
 univ3 = universe("C")
 
-univMap = {'1': univ1, '2': univ2, '0':univ3}
+latticeMap = {'1': univ1, '2': univ2, '0':univ3}
 layout = " 2 2 2;\
           2 1 1 2;\
          2 1 1 1 2;\
@@ -151,5 +177,9 @@ layout = " 2 2 2;\
            2 2 2"
 nOuter = 2
 pitch = 1.260
+hexApothem = 11.414
 
-__buildHexLattice(layout, univMap, nOuter, pitch)
+hexLat1 = buildHexLattice(layout, latticeMap, nOuter, pitch, hexApothem=hexApothem)
+
+#coreMap = {'lattice':hexLat1, 'intRef': intRef, 'barrel':barrel}
+
