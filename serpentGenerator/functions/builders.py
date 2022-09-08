@@ -8,6 +8,8 @@ email: iaguirre6@gatech.edu
 """
 import numpy as np
 import math
+from serpentGenerator.data.materialLibrary import MATLIB
+from serpentGenerator.functions.pin import pin
 from serpentGenerator.functions.universe import (universe)
 from serpentGenerator.functions.hexLattice import hexLat
 from serpentGenerator.functions.sqLattice import sqLat
@@ -136,11 +138,8 @@ def buildHexLatticeWithHexBorder(hexLat, hexApothem):
     acSurfs = [acSurf1]
     acCell.setSurfs(acSurfs, acDirs)
     acUniv.setGeom([acCell])
-
-    allMats = {}
-
-    acUniv.collectAllElementsAndMats(allMats)
-    # print(vars(acUniv))
+    acUniv.collectAll()
+    print(vars(acUniv))
     return acUniv
 
 def buildPeripheralRings(universe, radii, ringIds = None):
@@ -165,9 +164,19 @@ def buildActiveCore(coreMap):
 
     return
 
-univ1 = universe("A")
-univ2 = universe("B")
-univ3 = universe("C")
+univ1 = pin("A", 3)
+radii = [1, 2, 3]
+maties = [MATLIB['Zr'], MATLIB['H2O'], MATLIB['UO2']]
+univ1.set('radii', radii)
+univ1.set('materials', maties)
+
+univ2 = pin("B", 3)
+univ2.set('radii', radii)
+univ2.set('materials', maties)
+
+univ3 = pin("C", 3)
+univ3.set('radii', radii)
+univ3.set('materials', maties)
 
 latticeMap = {'1': univ1, '2': univ2, '0':univ3}
 layout = " 2 2 2;\
@@ -181,5 +190,6 @@ hexApothem = 11.414
 
 hexLat1 = buildHexLattice(layout, latticeMap, nOuter, pitch, hexApothem=hexApothem)
 
+print(hexLat1._geoString())
 #coreMap = {'lattice':hexLat1, 'intRef': intRef, 'barrel':barrel}
 

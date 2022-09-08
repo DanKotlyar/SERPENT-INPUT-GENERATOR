@@ -42,6 +42,7 @@ class universe:
         self.__allCells = {}
         self.univMats = {}
         self.univSurfs = {}
+        self.geoLevel = 1
 
     def setGeom(self, cells):
         """Assign surfaces and cells to a universe object.
@@ -86,6 +87,8 @@ class universe:
         for i in range(0, len(cells)):
             for j in range(0, len(cells[i].surfs)):
                 self.univSurfs[cells[i].surfs[j].id] = cells[i].surfs[j]
+
+        self.__setGeoLevel()
     
     def collectAllElements(self, allElements):
         for element in self.elements:
@@ -98,11 +101,43 @@ class universe:
         self.collectAllElements(allElements)
         self.__allElements = allElements
 
-        print(self.__allElements)
-        print(self.__allElements['A'].univMats)
-        # for elementId in self.__allElements:
-        #     for matId in self.__allElements[elementId].univMats:
-        #         print(elementId, matId)
+        for elementId in self.__allElements:
+            for matId in self.__allElements[elementId].univMats:
+                allMats[matId] = self.__allElements[elementId].univMats[matId]
+                
+        return allMats
+
+    def collectAllElementsAndMatsAndCells(self, allCells):
+        allMats = {}
+        self.collectAllElementsAndMats(allMats)
+        self.__allMats = allMats
+
+        for elementId in self.__allElements:
+            for cellId in self.__allElements[elementId].cells:
+                allCells[cellId] = self.__allElements[elementId].cells[cellId]
+        for cellId in self.cells:
+            allCells[cellId] = self.cells[cellId]
+
+        return allCells
+
+    def collectAllElementsAndMatsAndCellsAndSurfs(self, allSurfs):
+        allCells = {}
+        self.collectAllElementsAndMatsAndCells(allCells)
+        self.__allCells = allCells
+
+        for elementId in self.__allElements:
+            for surfId in self.__allElements[elementId].univSurfs:
+                allSurfs[surfId] = self.__allElements[elementId].univSurfs[surfId]
+
+        for surfId in self.univSurfs:
+            allSurfs[surfId] = self.univSurfs[surfId]
+
+        return allSurfs
+
+    def collectAll(self):
+        allSurfs = {}
+        self.collectAllElementsAndMatsAndCellsAndSurfs(allSurfs)
+        self.__allSurfs = allSurfs
         return
     
     def toString(self):
@@ -153,21 +188,36 @@ class universe:
             input in serpent input file.
         """
         # print(self.cells)
-        for key in self.cells:
-            self.cells[key].universe = self.id 
+        # for key in self.cells:
+        #     self.cells[key].universe = self.id 
 
-        univCells = cdict()
-        univCells.addCells(list(self.cells.values()))
+        # univCells = cdict()
+        # univCells.addCells(list(self.cells.values()))
 
-        # univMats = mats()
-        # univMats.addMats(list(self.univMats.values()))
+        # # univMats = mats()
+        # # univMats.addMats(list(self.univMats.values()))
 
-        univString = univCells._geoString()
+        # univString = univCells._geoString()
 
-        # for key in self.elements:
-        #     univString = univString + self.elements[key].toString()
+        # # for key in self.elements:
+        # #     univString = univString + self.elements[key].toString()
 
-        return univString
+        # return univString
+
+        geoString = ""
+        for elementId in self.__allElements:
+            geoString = geoString + self.__allElements[elementId]._geoString()
+        
+        cellStr = ""
+        for cellId in self.__allCells:
+            cellStr = cellStr + self.__allCells[cellId]._geoString()
+
+        surfStr = ""
+        for surfId in self.__allSurfs:
+            surfStr = surfStr + self.__allSurfs[surfId].toString()
+
+
+        return cellStr+ surfStr + geoString
     
     def duplicate(self, newId):
         """returns a deep copy of the universe object must set a new universe id for
@@ -211,3 +261,10 @@ class universe:
             if key == oldElement.id:
                 self.elements[newElement.id] = newElement
                 self.elements.pop(oldElement.id)
+
+    def __setGeoLevel(self):
+        for elementId in self.elements:
+            self.geoLevel = self.elements[elementId].geoLevel + 1
+            break
+            
+            

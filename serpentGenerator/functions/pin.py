@@ -49,7 +49,8 @@ class pin(universe):
         self.id = id # pin universe id
         self.nregions = nregions # number of pin regions
         self.materials = [] # pin materials 
-        self.radii = [] # pin radii // Order dependent 
+        self.radii = [] # pin radii // Order dependent
+        
 
     def __str__(self):
         """" Overwrites print method, prints all objects variables. """

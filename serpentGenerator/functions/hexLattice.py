@@ -132,10 +132,8 @@ class hexLat(universe):
             if mapList[i].id not in self.elements:
                 self.elements[mapList[i].id] = mapList[i]
 
-        for key in self.elements:
-            self.univMats[key] = self.elements[key].univMats
-    
-
+        # for key in self.elements:
+        #     self.univMats[key] = self.elements[key].univMats
     
     def replacePin(self, oldPin, newPin):
         """replaces desired pin object with a new pin object from lattice map layout.
@@ -182,8 +180,8 @@ class hexLat(universe):
 
         self.elements[newPin.id] = newPin
         self.elements.pop(oldPin.id)
-        self.univMats.pop(oldPin.id)
-        self.univMats[newPin.id] = newPin.univMats
+        # self.univMats.pop(oldPin.id)
+        # self.univMats[newPin.id] = newPin.univMats
 
     def duplicateLat(self, newLatId):
         """returns a deep copy of the hexLat object must set a new lat id for the new
@@ -328,15 +326,15 @@ class hexLat(universe):
 
 
 
-        unique = dictLevel(self.univMats, mats)
+        #unique = dictLevel(self.univMats, mats)
 
         # for i in range(0, len(self.univMats)):
         #     if (self.univMats[i] not in unique):
         #         unique[self.univMats[i].id] = self.univMats[i]
 
-        for key in unique:
-            # if (len(unique[key].cells) != 0):
-            matString = matString + unique[key].toString()
+        # for key in unique:
+        #     # if (len(unique[key].cells) != 0):
+        #     matString = matString + unique[key].toString()
     
 
         latString = latString + matString
