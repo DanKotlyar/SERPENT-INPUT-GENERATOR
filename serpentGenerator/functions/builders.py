@@ -6,6 +6,7 @@ of constructing specific type of reactors such as PWRs, BWRs, NTPs, MSRs, etc.
 email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
+from os import access
 import numpy as np
 import math
 from serpentGenerator.data.materialLibrary import MATLIB
@@ -134,17 +135,26 @@ def buildHexLatticeWithHexBorder(hexLat, hexApothem):
     acCell = cell("active_core_cell", isVoid=False)
     acCell.setFill(hexLat)
     acSurf1 = surf("hexBorder", "hexyc", np.array([0.0, 0.0, hexApothem]))
-    acDirs = [-1]
+    acDirs = [1]
     acSurfs = [acSurf1]
     acCell.setSurfs(acSurfs, acDirs)
     acUniv.setGeom([acCell])
     acUniv.collectAll()
-    print(vars(acUniv))
+    #print(vars(acUniv))
     return acUniv
 
-def buildPeripheralRings(universe, radii, ringIds = None):
-    
-    return
+def buildPeripheralRings(innerUniv, materials, radii, ringIds = None):
+    prUniv = universe("pr1_univ")
+    prCell = cell("pr1_cell", isVoid=False)
+    prCell.setFill(innerUniv)
+    prSurf1 = surf("cc1", "cyl", np.array([0.0, 0.0, radii]))
+    prDirs = [1]
+    prSurfs = [prSurf1]
+    prCell.setSurfs(prSurfs, prDirs)
+    prUniv.setGeom([prCell])
+    prUniv.collectAll()
+
+    return prUniv
 
 def buildHexLattice(mapStr, univMap, nOuter, pitch, boundaryType = None,
                                              hexApothem = None, outerRadius = None):
@@ -190,6 +200,6 @@ hexApothem = 11.414
 
 hexLat1 = buildHexLattice(layout, latticeMap, nOuter, pitch, hexApothem=hexApothem)
 
-print(hexLat1._geoString())
+#print(hexLat1._geoString())
 #coreMap = {'lattice':hexLat1, 'intRef': intRef, 'barrel':barrel}
 

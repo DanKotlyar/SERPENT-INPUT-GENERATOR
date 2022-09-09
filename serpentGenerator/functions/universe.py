@@ -43,7 +43,12 @@ class universe:
         self.univMats = {}
         self.univSurfs = {}
         self.geoLevel = 1
+        self.boundary = None
 
+    def setBoundary(self, boundary):
+        self.boundary = boundary
+        return
+        
     def setGeom(self, cells):
         """Assign surfaces and cells to a universe object.
 
