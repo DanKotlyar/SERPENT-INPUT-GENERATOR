@@ -134,7 +134,7 @@ class cell:
         for i in range(0,len(self.surfs)):
             surfString = surfString + sign(self.dirs[i]) + self.surfs[i].id + " "
         
-        fillString = "" if self.fill == "" else " fill " + self.fill + " "
+        fillString = "" if self.fill == None else " fill " + self.fill + " "
         if not self.isVoid:
             matString = "" if self.material == None else " " +self.material.id + " "
         else:
@@ -153,6 +153,34 @@ class cell:
         #     cellStr = cellStr + self.material.toString()
         return cellStr
 
+    def _geoHeader(self):
+        if((self.material == "")&(self.fill == "")&(self.isVoid == False)):
+            raise ValueError("Cell material or filling universe must be set."
+                    " Both cannot be empty.")
+
+        def sign(orientation):
+            if(orientation == 1):
+                sign = "-"
+            else:
+                sign = ""
+                
+            return sign
+        
+        uniString = "" if self.universe == None else self.universe + " "
+        surfString = ""
+        for i in range(0,len(self.surfs)):
+            surfString = surfString + sign(self.dirs[i]) + self.surfs[i].id + " "
+        
+        fillString = "" if self.fill == None else " fill " + self.fill.id + " "
+        if not self.isVoid:
+            matString = "" if self.material == None else " " +self.material.id + " "
+        else:
+            matString = " " + "outside" + " "
+
+        cellStr = "cell "+self.id+" "+uniString+ matString +fillString+ surfString
+        cellStr = cellStr +"\n"
+        return cellStr
+
     def _geoString(self):
         def sign(orientation):
             if(orientation == 1):
@@ -165,7 +193,7 @@ class cell:
             raise ValueError("Cell material or filling universe must be set."
                 " Both cannot be empty.")
         uniString = "" if self.universe == None else self.universe + " "
-        fillString = "" if self.fill.id == "" else " fill " + self.fill.id + " "
+        fillString = "" if self.fill == None else " fill " + self.fill.id + " "
         matString = "" if self.material == None else " " +self.material.id + " "
 
         voidString = ""

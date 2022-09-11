@@ -139,22 +139,38 @@ def buildHexLatticeWithHexBorder(hexLat, hexApothem):
     acSurfs = [acSurf1]
     acCell.setSurfs(acSurfs, acDirs)
     acUniv.setGeom([acCell])
+    acUniv.setBoundary(acSurf1)
     acUniv.collectAll()
     #print(vars(acUniv))
     return acUniv
 
 def buildPeripheralRings(innerUniv, materials, radii, ringIds = None):
-    prUniv = universe("pr1_univ")
-    prCell = cell("pr1_cell", isVoid=False)
-    prCell.setFill(innerUniv)
-    prSurf1 = surf("cc1", "cyl", np.array([0.0, 0.0, radii]))
-    prDirs = [1]
-    prSurfs = [prSurf1]
+    prUniv = universe(ringIds+"_univ")
+    prCell = cell(ringIds+"_cell", mat=materials, isVoid=False)
+    #prCell.setFill(innerUniv)
+    prSurf1 = surf(ringIds+"cc1", "cyl", np.array([0.0, 0.0, radii]))
+    innerSurf = innerUniv.boundary
+    prDirs = [0, 1]
+    prSurfs = [innerSurf, prSurf1]
     prCell.setSurfs(prSurfs, prDirs)
     prUniv.setGeom([prCell])
+    prUniv.setBoundary(prSurf1)
     prUniv.collectAll()
 
-    return prUniv
+    totUniv = universe(innerUniv.id + ringIds+"_univ")
+    totCell1 = cell(innerUniv.id +ringIds+"_cell1", isVoid=False)
+    totCell1.setFill(innerUniv)
+    totCell1.setSurfs([innerSurf], [1])
+
+    totCell2 = cell(innerUniv.id +ringIds+"_cell2", isVoid=False)
+    totCell2.setFill(prUniv)
+    totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
+
+    totUniv.setGeom([totCell1, totCell2])
+    totUniv.setBoundary(prSurf1)
+    totUniv.collectAll()
+
+    return totUniv
 
 def buildHexLattice(mapStr, univMap, nOuter, pitch, boundaryType = None,
                                              hexApothem = None, outerRadius = None):
@@ -168,10 +184,16 @@ def buildHexLattice(mapStr, univMap, nOuter, pitch, boundaryType = None,
     if hexApothem != None:
         hexLatObj = buildHexLatticeWithHexBorder(hexLatObj, hexApothem)
     #print(vars(hexLatObj))
+
+    #print(hexLatObj.toString())
     return hexLatObj
 
-def buildActiveCore(coreMap):
-
+def buildActiveCore(hexLat, ):
+    pr1 = buildPeripheralRings(hexLat,  MATLIB['Reflector'], 11.6926, "pr1")
+    #print(pr1.toString())
+    pr2 = buildPeripheralRings(pr1,  MATLIB['Zr'], 11.87704, "pr2")
+    print(vars(pr2))
+    print(pr2._geoString())
     return
 
 univ1 = pin("A", 3)
@@ -199,6 +221,7 @@ pitch = 1.260
 hexApothem = 11.414
 
 hexLat1 = buildHexLattice(layout, latticeMap, nOuter, pitch, hexApothem=hexApothem)
+activeCore = buildActiveCore(hexLat1)
 
 #print(hexLat1._geoString())
 #coreMap = {'lattice':hexLat1, 'intRef': intRef, 'barrel':barrel}

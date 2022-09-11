@@ -211,18 +211,64 @@ class universe:
 
         geoString = ""
         for elementId in self.__allElements:
-            geoString = geoString + self.__allElements[elementId]._geoString()
+            geoString = geoString + self.__allElements[elementId]._geoHeader()
         
         cellStr = ""
         for cellId in self.__allCells:
-            cellStr = cellStr + self.__allCells[cellId]._geoString()
+            cellStr = cellStr + self.__allCells[cellId]._geoHeader()
 
         surfStr = ""
         for surfId in self.__allSurfs:
             surfStr = surfStr + self.__allSurfs[surfId].toString()
 
+        return  surfStr + cellStr + geoString 
 
-        return cellStr+ surfStr + geoString
+    def _geoHeader(self):
+        """display properties of a universe in string form
+
+        The purpose of the ``toString`` function is to directly convert a universe
+        element into a string format for convinince when working with 
+        textfiles.
+
+        Returns
+        -------
+        str
+            universe in str format representing the typical input methodology for
+            input in serpent input file.
+        """
+        # print(self.cells)
+        # for key in self.cells:
+        #     self.cells[key].universe = self.id 
+
+        # univCells = cdict()
+        # univCells.addCells(list(self.cells.values()))
+
+        # # univMats = mats()
+        # # univMats.addMats(list(self.univMats.values()))
+
+        # univString = univCells._geoString()
+
+        # # for key in self.elements:
+        # #     univString = univString + self.elements[key].toString()
+
+        # return univString
+
+        geoString = ""
+        # for elementId in self.__allElements:
+        #     geoString = geoString + self.__allElements[elementId]._geoString()
+        
+        # cellStr = ""
+        # for cellId in self.__allCells:
+        #     cellStr = cellStr + self.__allCells[cellId]._geoString()
+
+        # surfStr = ""
+        # for surfId in self.__allSurfs:
+        #     surfStr = surfStr + self.__allSurfs[surfId].toString()
+
+
+        return geoString
+
+    
     
     def duplicate(self, newId):
         """returns a deep copy of the universe object must set a new universe id for
