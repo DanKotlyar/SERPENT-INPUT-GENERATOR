@@ -59,7 +59,7 @@ class material:
         self.id = id
         self.isBurn = isBurn
         self.isModer = isModer
-        self.dens = 0.00
+        self.dens = None
         self.nuclides = np.array([])
         self.fractions = np.array([])
         self.temp = 0.00
@@ -84,7 +84,7 @@ class material:
         _isstr(id, "material id")
         _isndarray(nuclides, "material nuclides")
         _isndarray(fractions, "material nuclide fractions")
-        if dens == 0.00:
+        if dens == None:
             warnings.warn("material density is not set")
         else:
             _isnumber(dens, "material density")
@@ -127,7 +127,9 @@ class material:
         moderString = "" if ((self.isModer == False)|(self.modLib == "None")) \
             else "moder " + self.modLib
 
-        matHeader = "mat " + self.id +"    "+str(self.dens)+ " "+moderString +" "\
+        densString = str(self.dens) if self.dens != None else "sum"
+
+        matHeader = "mat " + self.id +"    "+densString+ " "+moderString +" "\
             +burnString +" "+ tempString+" "+ rgbString +"\n"
 
         matString = matString + matHeader

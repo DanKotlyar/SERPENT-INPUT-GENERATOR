@@ -209,6 +209,9 @@ class universe:
 
         # return univString
 
+        for key in self.cells:
+            self.cells[key].universe = self.id 
+
         geoString = ""
         for elementId in self.__allElements:
             geoString = geoString + self.__allElements[elementId]._geoHeader()
@@ -252,6 +255,9 @@ class universe:
         # #     univString = univString + self.elements[key].toString()
 
         # return univString
+
+        for key in self.cells:
+            self.cells[key].universe = self.id 
 
         geoString = ""
         # for elementId in self.__allElements:

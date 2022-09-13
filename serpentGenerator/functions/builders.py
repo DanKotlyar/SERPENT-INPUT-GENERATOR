@@ -172,6 +172,33 @@ def buildPeripheralRings(innerUniv, materials, radii, ringIds = None):
 
     return totUniv
 
+def buildBoundingBox(innerUniv, width = None, length = None, height =None):
+    # %%% --- External  --- %%%
+    # cell c3 0 fill active_core_univintref_univbarrel_univ  -barrelcc1
+    # cell c4 0 void barrelcc1  -outBorder
+    # cell c5 0 outside outBorder
+    zUniv = universe("0")
+    zCell1 = cell("fillRegion", isVoid=False)
+    zCell1.setFill(innerUniv)
+    zCell1.setSurfs([innerUniv.boundary], [1])
+
+    if width == None:
+        if innerUniv.boundary.type == "cyl":
+            params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2] ])
+        else:
+            print("not yet supported")
+        bSurf = surf("putBorder", "rect", params)
+    zUniv.setBoundary(bSurf)
+    # surf outBorder rect -11.87704 11.87704 -11.87704 11.87704
+    zCell2 = cell("voidRegion", isVoid=True)
+    zCell2.setSurfs([innerUniv.boundary, bSurf], [0, 1])
+
+    zCell3 = cell("outRegion", isVoid=False)
+    zCell3.setSurfs([bSurf], [0])
+    zUniv.setGeom([zCell1, zCell2, zCell3])
+    zUniv.collectAll()
+    return zUniv
+
 def buildHexLattice(mapStr, univMap, nOuter, pitch, boundaryType = None,
                                              hexApothem = None, outerRadius = None):
     map, hexSize = __latticeStrParser(mapStr)
@@ -188,41 +215,41 @@ def buildHexLattice(mapStr, univMap, nOuter, pitch, boundaryType = None,
     #print(hexLatObj.toString())
     return hexLatObj
 
-def buildActiveCore(hexLat, ):
-    pr1 = buildPeripheralRings(hexLat,  MATLIB['Reflector'], 11.6926, "pr1")
-    #print(pr1.toString())
-    pr2 = buildPeripheralRings(pr1,  MATLIB['Zr'], 11.87704, "pr2")
-    print(vars(pr2))
-    print(pr2._geoString())
-    return
+# def buildActiveCore(hexLat, ):
+#     pr1 = buildPeripheralRings(hexLat,  MATLIB['Reflector'], 11.6926, "pr1")
+#     #print(pr1.toString())
+#     pr2 = buildPeripheralRings(pr1,  MATLIB['Zr'], 11.87704, "pr2")
+#     print(vars(pr2))
+#     print(pr2._geoString())
+#     return
 
-univ1 = pin("A", 3)
-radii = [1, 2, 3]
-maties = [MATLIB['Zr'], MATLIB['H2O'], MATLIB['UO2']]
-univ1.set('radii', radii)
-univ1.set('materials', maties)
+# univ1 = pin("A", 3)
+# radii = [1, 2, 3]
+# maties = [MATLIB['Zr'], MATLIB['H2O'], MATLIB['UO2']]
+# univ1.set('radii', radii)
+# univ1.set('materials', maties)
 
-univ2 = pin("B", 3)
-univ2.set('radii', radii)
-univ2.set('materials', maties)
+# univ2 = pin("B", 3)
+# univ2.set('radii', radii)
+# univ2.set('materials', maties)
 
-univ3 = pin("C", 3)
-univ3.set('radii', radii)
-univ3.set('materials', maties)
+# univ3 = pin("C", 3)
+# univ3.set('radii', radii)
+# univ3.set('materials', maties)
 
-latticeMap = {'1': univ1, '2': univ2, '0':univ3}
-layout = " 2 2 2;\
-          2 1 1 2;\
-         2 1 1 1 2;\
-          2 1 1 2;\
-           2 2 2"
-nOuter = 2
-pitch = 1.260
-hexApothem = 11.414
+# latticeMap = {'1': univ1, '2': univ2, '0':univ3}
+# layout = " 2 2 2;\
+#           2 1 1 2;\
+#          2 1 1 1 2;\
+#           2 1 1 2;\
+#            2 2 2"
+# nOuter = 2
+# pitch = 1.260
+# hexApothem = 11.414
 
-hexLat1 = buildHexLattice(layout, latticeMap, nOuter, pitch, hexApothem=hexApothem)
-activeCore = buildActiveCore(hexLat1)
+# hexLat1 = buildHexLattice(layout, latticeMap, nOuter, pitch, hexApothem=hexApothem)
+# activeCore = buildActiveCore(hexLat1)
 
-#print(hexLat1._geoString())
+# #print(hexLat1._geoString())
 #coreMap = {'lattice':hexLat1, 'intRef': intRef, 'barrel':barrel}
 

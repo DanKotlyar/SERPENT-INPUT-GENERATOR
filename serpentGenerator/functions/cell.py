@@ -154,10 +154,6 @@ class cell:
         return cellStr
 
     def _geoHeader(self):
-        if((self.material == "")&(self.fill == "")&(self.isVoid == False)):
-            raise ValueError("Cell material or filling universe must be set."
-                    " Both cannot be empty.")
-
         def sign(orientation):
             if(orientation == 1):
                 sign = "-"
@@ -165,19 +161,23 @@ class cell:
                 sign = ""
                 
             return sign
-        
+        if((self.material == "")&(self.fill == "")&(self.isVoid == False)):
+            raise ValueError("Cell material or filling universe must be set."
+                " Both cannot be empty.")
         uniString = "" if self.universe == None else self.universe + " "
+        fillString = "" if self.fill == None else " fill " + self.fill.id + " "
+        matString = "" if self.material == None else " " +self.material.id + " "
+
+        voidString = ""
+        if ((not self.isVoid) & (not self.isFilled) & (self.material == None)):
+            voidString = " " + "outside" + " "
+        if ((self.isVoid) & (not self.isFilled) & (self.material == None)):
+            voidString = " " + "void" + " "
         surfString = ""
         for i in range(0,len(self.surfs)):
             surfString = surfString + sign(self.dirs[i]) + self.surfs[i].id + " "
-        
-        fillString = "" if self.fill == None else " fill " + self.fill.id + " "
-        if not self.isVoid:
-            matString = "" if self.material == None else " " +self.material.id + " "
-        else:
-            matString = " " + "outside" + " "
-
-        cellStr = "cell "+self.id+" "+uniString+ matString +fillString+ surfString
+        cellStr = "cell "+self.id+" "+uniString+ matString + voidString + \
+                                                            fillString + surfString
         cellStr = cellStr +"\n"
         return cellStr
 
