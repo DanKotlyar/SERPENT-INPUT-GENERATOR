@@ -323,5 +323,24 @@ class universe:
         for elementId in self.elements:
             self.geoLevel = self.elements[elementId].geoLevel + 1
             break
+
+    def _matString(self):
+        """display properties of a universe in string form
+
+        The purpose of the ``toString`` function is to directly convert a universe
+        element into a string format for convinince when working with 
+        textfiles.
+
+        Returns
+        -------
+        str
+            universe in str format representing the typical input methodology for
+            input in serpent input file.
+        """
+        matStr = ""
+        for matId in self.__allMats:
+            matStr = matStr + self.__allMats[matId].toString()
+
+        return  matStr
             
             
