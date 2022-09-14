@@ -212,9 +212,11 @@ class universe:
         for key in self.cells:
             self.cells[key].universe = self.id 
 
-        geoString = ""
+        geoString = self._geoHeader()
         for elementId in self.__allElements:
             geoString = geoString + self.__allElements[elementId]._geoHeader()
+
+        
         
         cellStr = ""
         for cellId in self.__allCells:

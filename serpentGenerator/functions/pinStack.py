@@ -268,7 +268,7 @@ class pinStack(universe):
 
         return latString
 
-    def _geoString(self):
+    def _geoHeader(self):
         """display properties of pinstack lattice in string form
 
         The purpose of the ``toString`` function is to directly convert the lattice
