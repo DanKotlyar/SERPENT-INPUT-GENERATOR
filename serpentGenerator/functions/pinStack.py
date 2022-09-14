@@ -124,8 +124,8 @@ class pinStack(universe):
             if self.pins[i].id not in self.elements:
                 self.elements[self.pins[i].id] = self.pins[i]
 
-        for key in self.elements:
-            self.univMats[key] = self.elements[key].univMats
+        # for key in self.elements:
+        #     self.univMats[key] = self.elements[key].univMats
 
         self.heights = heights
 
@@ -213,8 +213,8 @@ class pinStack(universe):
 
         self.elements[newPin.id] = newPin
         self.elements.pop(oldPin.id)
-        self.univMats.pop(oldPin.id)
-        self.univMats[newPin.id] = newPin.univMats
+        # self.univMats.pop(oldPin.id)
+        # self.univMats[newPin.id] = newPin.univMats
             
     def toString(self):
         """display properties of pinstack lattice in string form

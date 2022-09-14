@@ -188,6 +188,13 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None):
         else:
             print("not yet supported")
         bSurf = surf("putBorder", "rect", params)
+    else:
+        if innerUniv.boundary.type == "cyl":
+            params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2], 0, height])
+        else:
+            print("not yet supported")
+        bSurf = surf("putBorder", "cuboid", params)
+        
     zUniv.setBoundary(bSurf)
     # surf outBorder rect -11.87704 11.87704 -11.87704 11.87704
     zCell2 = cell("voidRegion", isVoid=True)
@@ -199,12 +206,12 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None):
     zUniv.collectAll()
     return zUniv
     
-def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = None, hasUniqueMatlayers = False, topRefMat = None, topRefdz = None, botRefMat = None, botRefdz = None):
+def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = None, hasUniqueMatlayers = False, topUniv = None, topUnivdz = None, botUniv = None, botUnivdz = None):
     base = pinStack(baseId, 0, 0, nLayers)
     pins = [0]*nLayers
     heights = [0]*nLayers
 
-    if type(topRefMat) == type(None):
+    if type(topUniv) == type(None):
         if hasUniqueMatlayers:
             def __dupMats(mats, index):
                 dupMats = [0]*len(mats)
@@ -225,11 +232,6 @@ def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = Non
                 pins[i] = basePin.duplicate(baseId+"z"+str(i+1))
                 heights[i] = i*dz
     else:
-        topRef = pin(baseId+"topRef", 1)
-        topRef.set('materials', [topRefMat])
-        botRef = pin(baseId+"botRef", 1)
-        botRef.set('materials', [botRefMat])
-
         if hasUniqueMatlayers:
             def __dupMats(mats, index):
                 dupMats = [0]*len(mats)
@@ -238,37 +240,35 @@ def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = Non
                 return dupMats
             for i in range(0, nLayers):
                 if i == 0:
-                    pins[i] = botRef
+                    pins[i] = botUniv
                     heights[i] = 0.00
 
                 elif i == (nLayers -1):
-                    pins[i] = topRef
-                    heights[i] = botRefdz + (i-1)*dz
+                    pins[i] = topUniv
+                    heights[i] = botUnivdz + (i-1)*dz
                 else:
                     pins[i] = pin(baseId+"z"+str(i), len(pinMaterials))
                     uniqMats = __dupMats(pinMaterials, i)
                     pins[i].set('materials', uniqMats)
                     pins[i].set('radii', pinRadii)
-                    heights[i] = botRefdz + (i-1)*dz
+                    heights[i] = botUnivdz + (i-1)*dz
         else:
             basePin = pin(baseId, len(pinMaterials))
             basePin.set('materials', pinMaterials)
             basePin.set('radii', pinRadii)
             for i in range(0, nLayers):
                 if i == 0:
-                    pins[i] = botRef
+                    pins[i] = botUniv
                     heights[i] = 0.00
                 elif i == (nLayers -1):
-                    pins[i] = topRef
-                    heights[i] = botRefdz + (i-1)*dz
+                    pins[i] = topUniv
+                    heights[i] = botUnivdz + (i-1)*dz
                 else:
                     pins[i] = basePin.duplicate(baseId+"z"+str(i))
-                    heights[i] = botRefdz + (i-1)*dz
+                    heights[i] = botUnivdz + (i-1)*dz
 
         base.setStack(np.array(pins), np.array(heights))
         base.collectAll()
-        # print(base._geoString())
-        # print(base._matString())
     return base
 
 def buildHexLattice(mapStr, univMap, nOuter, pitch, boundaryType = None,
@@ -282,9 +282,6 @@ def buildHexLattice(mapStr, univMap, nOuter, pitch, boundaryType = None,
     
     if hexApothem != None:
         hexLatObj = buildHexLatticeWithHexBorder(hexLatObj, hexApothem)
-    #print(vars(hexLatObj))
-
-    #print(hexLatObj.toString())
     return hexLatObj
 
 # def buildActiveCore(hexLat, ):
@@ -325,12 +322,18 @@ def buildHexLattice(mapStr, univMap, nOuter, pitch, boundaryType = None,
 # #print(hexLat1._geoString())
 #coreMap = {'lattice':hexLat1, 'intRef': intRef, 'barrel':barrel}
 
-mats1 = [MATLIB['UO2'], MATLIB['Zr'], MATLIB['H2O']]
-radii = [1, 2, 3]
-topRefMat = MATLIB['Reflector'].duplicateMat("topRefMat")
-botRefMat = MATLIB['Reflector'].duplicateMat("botRefMat")
-topRefdz = 5
-botRefdz = 10
+# mats1 = [MATLIB['UO2'], MATLIB['Zr'], MATLIB['H2O']]
+# radii = [1, 2]
+# topRefMats = [MATLIB['Reflector'].duplicateMat("topRefMat"), MATLIB['UO2']]
+# botRefMats = [MATLIB['Reflector'].duplicateMat("botRefMat"), MATLIB['UO2']]
+# topRef = pin("topRef", 2)
+# topRef.set('materials', topRefMats)
+# topRef.set('radii', [2])
+# botRef = pin("botRef", 2)
+# botRef.set('materials', botRefMats)
+# botRef.set('radii', [2])
+# topRefdz = 5
+# botRefdz = 10
 
-build3Dpin("3Dpin", mats1, radii, 20, dz = 1, topRefMat=topRefMat, topRefdz=topRefdz, botRefMat = botRefMat, botRefdz=botRefdz)
+# build3Dpin("3Dpin", mats1, radii, 20, dz = 1, topUniv=topRef, topUnivdz=topRefdz, botUniv = botRef, botUnivdz=botRefdz)
 
