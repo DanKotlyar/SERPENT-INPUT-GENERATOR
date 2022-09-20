@@ -75,10 +75,10 @@ def __mapElements(map, univMap):
             npMap[i][j] = univMap[map[i][j]]
     return npMap
 
-def __buildLatticeObject(map, univMap, pitch):
+def __buildLatticeObject(id, map, univMap, pitch):
     latMap = __mapElements(map, univMap)
 
-    hexLatObj = hexLat("mapNameTBD", "X", 0, 0, len(map), len(map), pitch)
+    hexLatObj = hexLat(id, "X", 0, 0, len(map), len(map), pitch)
     hexLatObj.setMap(latMap)
     #print(hexLatObj.toString())
     return hexLatObj
@@ -144,32 +144,76 @@ def buildHexLatticeWithHexBorder(hexLat, hexApothem):
     #print(vars(acUniv))
     return acUniv
 
-def buildPeripheralRings(innerUniv, materials, radii, ringIds = None):
-    prUniv = universe(ringIds+"_univ")
-    prCell = cell(ringIds+"_cell", mat=materials, isVoid=False)
-    #prCell.setFill(innerUniv)
-    prSurf1 = surf(ringIds+"cc1", "cyl", np.array([0.0, 0.0, radii]))
-    innerSurf = innerUniv.boundary
-    prDirs = [0, 1]
-    prSurfs = [innerSurf, prSurf1]
-    prCell.setSurfs(prSurfs, prDirs)
-    prUniv.setGeom([prCell])
-    prUniv.setBoundary(prSurf1)
-    prUniv.collectAll()
+def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoid = False):
+    prSurf1 = surf(ringId+"cc1", "cyl", np.array([0.0, 0.0, radius]))
+    if innerUniv.boundary != None:
+        if not isVoid:
+            prUniv = universe(ringId+"_univ")
+            prCell = cell(ringId+"_cell", mat=material, isVoid=False)
+            #prCell.setFill(innerUniv)
+            innerSurf = innerUniv.boundary
+            prDirs = [0, 1]
+            prSurfs = [innerSurf, prSurf1]
+            prCell.setSurfs(prSurfs, prDirs)
+            prUniv.setGeom([prCell])
+            prUniv.setBoundary(prSurf1)
+            prUniv.collectAll()
 
-    totUniv = universe(innerUniv.id + ringIds+"_univ")
-    totCell1 = cell(innerUniv.id +ringIds+"_cell1", isVoid=False)
-    totCell1.setFill(innerUniv)
-    totCell1.setSurfs([innerSurf], [1])
+            totUniv = universe(innerUniv.id + ringId+"_univ")
+            totCell1 = cell(innerUniv.id +ringId+"_cell1", isVoid=False)
+            totCell1.setFill(innerUniv)
+            totCell1.setSurfs([innerSurf], [1])
 
-    totCell2 = cell(innerUniv.id +ringIds+"_cell2", isVoid=False)
-    totCell2.setFill(prUniv)
-    totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
+            totCell2 = cell(innerUniv.id +ringId+"_cell2", isVoid=False)
+            totCell2.setFill(prUniv)
+            totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
 
-    totUniv.setGeom([totCell1, totCell2])
+            totUniv.setGeom([totCell1, totCell2])
+        else:
+            prUniv = universe(ringId+"_univ")
+            prCell = cell(ringId+"_cell", isVoid=True)
+            #prCell.setFill(innerUniv)
+            innerSurf = innerUniv.boundary
+            prDirs = [0, 1]
+            prSurfs = [innerSurf, prSurf1]
+            prCell.setSurfs(prSurfs, prDirs)
+            prUniv.setGeom([prCell])
+            prUniv.setBoundary(prSurf1)
+            prUniv.collectAll()
+
+            totUniv = universe(innerUniv.id + ringId+"_univ")
+            totCell1 = cell(innerUniv.id +ringId+"_cell1", isVoid=False)
+            totCell1.setFill(innerUniv)
+            totCell1.setSurfs([innerSurf], [1])
+
+            totCell2 = cell(innerUniv.id +ringId+"_cell2", isVoid=True)
+            totCell2.setFill(prUniv)
+            totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
+
+            totUniv.setGeom([totCell1, totCell2])
+    else:
+        totUniv = universe(ringId+"_univ")
+        totCell = cell(ringId+"_cell", isVoid=False)
+        totCell.setFill(innerUniv)
+        totCell.setSurfs([prSurf1], [1])
+        totUniv.setGeom([totCell])
+
     totUniv.setBoundary(prSurf1)
     totUniv.collectAll()
 
+    return totUniv
+
+def buildPeripheralObject(innerUniv, outerUniv):
+    totUniv = universe(innerUniv.id + outerUniv.id+"_univ")
+    totCell1 = cell(innerUniv.id +outerUniv.id+"_cell1", isVoid=False)
+    totCell1.setFill(innerUniv)
+    totCell1.setSurfs([innerUniv.boundary], [1])
+
+    totCell2 = cell(innerUniv.id +outerUniv.id+"_cell2", isVoid=False)
+    totCell2.setFill(outerUniv)
+    totCell2.setSurfs([innerUniv.boundary, outerUniv.boundary], [0, 1])
+
+    totUniv.setGeom([totCell1, totCell2])
     return totUniv
 
 def buildBoundingBox(innerUniv, width = None, length = None, height =None):
@@ -186,13 +230,17 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None):
         if innerUniv.boundary.type == "cyl":
             params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2] ])
         else:
-            print("not yet supported")
+            print("not yet supported 1")
         bSurf = surf("putBorder", "rect", params)
     else:
         if innerUniv.boundary.type == "cyl":
             params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2], 0, height])
+        elif innerUniv.boundary.type == "hexyc":
+            #print("here, 3")
+            params = np.array([-width, width, -length, length, 0, height])
         else:
-            print("not yet supported")
+            print('surf', innerUniv.id, innerUniv.boundary.type)
+            #print("not yet supported 2")
         bSurf = surf("putBorder", "cuboid", params)
         
     zUniv.setBoundary(bSurf)
@@ -271,14 +319,14 @@ def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = Non
         base.collectAll()
     return base
 
-def buildHexLattice(mapStr, univMap, nOuter, pitch, boundaryType = None,
+def buildHexLattice(id, mapStr, univMap, nOuter, pitch, boundaryType = None,
                                              hexApothem = None, outerRadius = None):
     map, hexSize = __latticeStrParser(mapStr)
     if not __isHexagonal(map):
         raise ValueError("hexagonal lattice map must have hexagonal shape not {}"
                                                                         .format(map))
     fullMap = __buildFullFromHex(map, hexSize, nOuter)
-    hexLatObj = __buildLatticeObject(fullMap, univMap, pitch)
+    hexLatObj = __buildLatticeObject(id, fullMap, univMap, pitch)
     
     if hexApothem != None:
         hexLatObj = buildHexLatticeWithHexBorder(hexLatObj, hexApothem)

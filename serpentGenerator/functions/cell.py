@@ -55,18 +55,21 @@ class cell:
         self.isVoid = isVoid
         self.isFilled = False
         self.surfDict = {}
+        self.hasUnion = False
 
     def __str__(self):
         """" Overwrites print method, prints all objects variables. """
         return str(vars(self))
 
-    def setSurfs(self, surfs, dirs):
+    def setSurfs(self, surfs, dirs, hasUnion=False):
         _isinstanceList(surfs, surf, "list of surf objs for cell")
         _isinstanceList(dirs, numbers.Integral, "list of orientations for surfaces"
                                                       " 1 = inside , 0 = outside")
         self.surfs = surfs
         self.dirs = dirs
         self.surfDict = createDictFromConatinerList(self.surfs)
+        if hasUnion:
+            self.hasUnion = True
 
     def setFill(self, fill):
         """Assigns the filling lattice for the cell.
@@ -131,9 +134,17 @@ class cell:
         
         uniString = "" if self.universe == None else self.universe + " "
         surfString = ""
-        for i in range(0,len(self.surfs)):
-            surfString = surfString + sign(self.dirs[i]) + self.surfs[i].id + " "
-        
+        if not self.hasUnion:
+            for i in range(0,len(self.surfs)):
+                surfString = surfString + sign(self.dirs[i]) + self.surfs[i].id + " "
+        else:
+            lenSurf = len(self.surfs)
+            commonSurf = self.surfs[-1].id
+            commonSurfDir = sign(self.dirs[-1])
+            for i in range(0, lenSurf-1):
+                surfString = surfString+"("+sign(self.dirs[i]) + self.surfs[i].id +" "+ commonSurfDir+commonSurf+ ")"
+                if i < (lenSurf -2):
+                    surfString = surfString + ":"
         fillString = "" if self.fill == None else " fill " + self.fill + " "
         if not self.isVoid:
             matString = "" if self.material == None else " " +self.material.id + " "
@@ -174,8 +185,17 @@ class cell:
         if ((self.isVoid) & (not self.isFilled) & (self.material == None)):
             voidString = " " + "void" + " "
         surfString = ""
-        for i in range(0,len(self.surfs)):
-            surfString = surfString + sign(self.dirs[i]) + self.surfs[i].id + " "
+        if not self.hasUnion:
+            for i in range(0,len(self.surfs)):
+                surfString = surfString + sign(self.dirs[i]) + self.surfs[i].id + " "
+        else:
+            lenSurf = len(self.surfs)
+            commonSurf = self.surfs[-1].id
+            commonSurfDir = sign(self.dirs[-1])
+            for i in range(0, lenSurf-1):
+                surfString = surfString+"("+sign(self.dirs[i]) + self.surfs[i].id +" "+ commonSurfDir+commonSurf+ ")"
+                if i < (lenSurf -2):
+                    surfString = surfString + ":"
         cellStr = "cell "+self.id+" "+uniString+ matString + voidString + \
                                                             fillString + surfString
         cellStr = cellStr +"\n"
