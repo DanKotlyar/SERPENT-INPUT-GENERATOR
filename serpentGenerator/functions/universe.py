@@ -6,7 +6,7 @@ based geometry.
 
 # from serpentGenerator.functions.cell import cell
 from gc import collect
-from serpentGenerator.functions.mats import mats
+from serpentGenerator.functions.mix import mix
 from serpentGenerator.functions.cells import cells as cdict
 from serpentGenerator.functions.surfs import surfs as sdict
 from serpentGenerator.functions.cell import cell
@@ -108,6 +108,9 @@ class universe:
 
         for elementId in self.__allElements:
             for matId in self.__allElements[elementId].univMats:
+                if type(self.__allElements[elementId].univMats[matId]) == mix:
+                    for subMat in self.__allElements[elementId].univMats[matId].mats:
+                        allMats[subMat.id] = subMat
                 allMats[matId] = self.__allElements[elementId].univMats[matId]
                 
         return allMats

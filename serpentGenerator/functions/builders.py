@@ -214,6 +214,8 @@ def buildPeripheralObject(innerUniv, outerUniv):
     totCell2.setSurfs([innerUniv.boundary, outerUniv.boundary], [0, 1])
 
     totUniv.setGeom([totCell1, totCell2])
+    totUniv.setBoundary(outerUniv.boundary)
+    totUniv.collectAll()
     return totUniv
 
 def buildBoundingBox(innerUniv, width = None, length = None, height =None):
@@ -221,7 +223,7 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None):
     # cell c3 0 fill active_core_univintref_univbarrel_univ  -barrelcc1
     # cell c4 0 void barrelcc1  -outBorder
     # cell c5 0 outside outBorder
-    zUniv = universe("0")
+    zUniv = universe("1")
     zCell1 = cell("fillRegion", isVoid=False)
     zCell1.setFill(innerUniv)
     zCell1.setSurfs([innerUniv.boundary], [1])
@@ -242,17 +244,30 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None):
             print('surf', innerUniv.id, innerUniv.boundary.type)
             #print("not yet supported 2")
         bSurf = surf("putBorder", "cuboid", params)
+
+    # cell fillRegion 1  fill flclose_univ -flclosecc1 
+    # cell voidRegion 1  void flclosecc1 -putBorder 
+    # cell outRegionIn  0 fill 1 -putBorder
+    # cell outRegionOut 0  outside putBorder
         
     zUniv.setBoundary(bSurf)
     # surf outBorder rect -11.87704 11.87704 -11.87704 11.87704
     zCell2 = cell("voidRegion", isVoid=True)
     zCell2.setSurfs([innerUniv.boundary, bSurf], [0, 1])
-
-    zCell3 = cell("outRegion", isVoid=False)
-    zCell3.setSurfs([bSurf], [0])
-    zUniv.setGeom([zCell1, zCell2, zCell3])
+    zUniv.setGeom([zCell1, zCell2])
     zUniv.collectAll()
-    return zUniv
+
+    z0Univ = universe("0")
+    zCell3 = cell("outRegionIn", isVoid=False)
+    zCell3.setSurfs([bSurf], [1])
+    zCell3.setFill(zUniv)
+
+    zCell4 = cell("outRegionOut", isVoid=False)
+    zCell4.setSurfs([bSurf], [0])
+
+    z0Univ.setGeom([zCell3, zCell4])
+    z0Univ.collectAll()
+    return z0Univ
     
 def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = None, hasUniqueMatlayers = False, topUniv = None, topUnivdz = None, botUniv = None, botUnivdz = None):
     base = pinStack(baseId, 0, 0, nLayers)
@@ -273,6 +288,7 @@ def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = Non
                 pins[i].set('radii', pinRadii)
                 heights[i] = i*dz
         else:
+            print("here 1")
             basePin = pin(baseId, len(pinMaterials))
             basePin.set('materials', pinMaterials)
             basePin.set('radii', pinRadii)
@@ -315,8 +331,8 @@ def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = Non
                     pins[i] = basePin.duplicate(baseId+"z"+str(i))
                     heights[i] = botUnivdz + (i-1)*dz
 
-        base.setStack(np.array(pins), np.array(heights))
-        base.collectAll()
+    base.setStack(np.array(pins), np.array(heights))
+    base.collectAll()
     return base
 
 def buildHexLattice(id, mapStr, univMap, nOuter, pitch, boundaryType = None,
