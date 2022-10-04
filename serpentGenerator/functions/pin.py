@@ -36,7 +36,7 @@ class pin(universe):
         pin radii ndarray, order dependent from innner to outer (cm)
     """
 
-    def __init__(self, id, nregions):
+    def __init__(self, id, nregions, isVoid = False):
         """Define the basic data to be collected
         Examples
         --------
@@ -50,6 +50,7 @@ class pin(universe):
         self.nregions = nregions # number of pin regions
         self.materials = [] # pin materials 
         self.radii = [] # pin radii // Order dependent
+        self.isVoid = isVoid
         
 
     def __str__(self):
@@ -246,13 +247,16 @@ class pin(universe):
 
         univMatsList = self.materials
 
-        for i in range(0,len(univMatsList)):
+        if not self.isVoid:
+            for i in range(0,len(univMatsList)):
 
-            if (i != (len(univMatsList)-1)):
-                pinString = pinString + univMatsList[i].id +"\t" \
-                  + str(self.radii[i]) +"\n"
-            else:
-                pinString = pinString + univMatsList[i].id +"\n"
+                if (i != (len(univMatsList)-1)):
+                    pinString = pinString + univMatsList[i].id +"\t" \
+                    + str(self.radii[i]) +"\n"
+                else:
+                    pinString = pinString + univMatsList[i].id +"\n"
+        else:
+            pinString = pinString + "void\n"
 
         pinString = pinString + "\n"
 
@@ -286,17 +290,18 @@ class pin(universe):
 
 
         univMatsList = self.materials
+        if not self.isVoid:
+            for i in range(0,len(univMatsList)):
 
-        for i in range(0,len(univMatsList)):
-
-            if (i != (len(univMatsList)-1)):
-                pinString = pinString + univMatsList[i].id +"\t" \
-                  + str(self.radii[i]) +"\n"
-            else:
-                pinString = pinString + univMatsList[i].id +"\n"
+                if (i != (len(univMatsList)-1)):
+                    pinString = pinString + univMatsList[i].id +"\t" \
+                    + str(self.radii[i]) +"\n"
+                else:
+                    pinString = pinString + univMatsList[i].id +"\n"
+        else:
+            pinString = pinString + "void\n"
 
         pinString = pinString + "\n"
-
         # unique = {}
         # for i in range(0, len(self.materials)):
         #     if (self.materials[i].id not in unique):

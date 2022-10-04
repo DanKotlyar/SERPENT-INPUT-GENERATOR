@@ -64,7 +64,7 @@ class mix(material):
             mix in str format representing the typical input methodology for
             input in serpent input file.
         """
-        mixStr = "mix "+self.id+ "\n"
+        mixStr = "mix "+self.id+ " rgb "+self.rgb+"\n"
 
         for i in range(0, len(self.mats)):
             mixStr = mixStr + self.mats[i].id +"\t" + str(self.massfracs[i]) + "\n"

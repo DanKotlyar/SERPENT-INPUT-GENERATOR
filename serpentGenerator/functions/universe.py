@@ -168,14 +168,14 @@ class universe:
         univCells = cdict()
         univCells.addCells(list(self.cells.values()))
 
-        univMats = mats()
-        univMats.addMats(list(self.univMats.values()))
+        # univMats = mats()
+        # univMats.addMats(list(self.univMats.values()))
 
-        univSurfs = sdict()
-        univSurfs.addSurfs(list(self.univSurfs.values()))
+        # univSurfs = sdict()
+        # univSurfs.addSurfs(list(self.univSurfs.values()))
 
-        univString = univCells._geoString() +  univSurfs.toString()
-        univString = univString + univMats.toString()
+        # univString = univCells._geoString() +  univSurfs.toString()
+        # univString = univString + univMats.toString()
 
         for key in self.elements:
             univString = univString + self.elements[key].toString()

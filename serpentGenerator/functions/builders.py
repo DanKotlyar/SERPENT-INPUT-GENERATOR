@@ -75,10 +75,13 @@ def __mapElements(map, univMap):
             npMap[i][j] = univMap[map[i][j]]
     return npMap
 
-def __buildLatticeObject(id, map, univMap, pitch):
+def __buildLatticeObject(id, map, univMap, pitch, latType = "FLAT"):
     latMap = __mapElements(map, univMap)
 
-    hexLatObj = hexLat(id, "X", 0, 0, len(map), len(map), pitch)
+    if latType == "FLAT":
+        hexLatObj = hexLat(id, "X", 0, 0, len(map), len(map), pitch)
+    else:
+        hexLatObj = hexLat(id, "Y", 0, 0, len(map), len(map), pitch)
     hexLatObj.setMap(latMap)
     #print(hexLatObj.toString())
     return hexLatObj
@@ -130,11 +133,14 @@ def __isHexagonal(map):
         isHex = False
     return isHex
 
-def buildHexLatticeWithHexBorder(hexLat, hexApothem):
+def buildHexLatticeWithHexBorder(hexLat, hexApothem, latType = "FLAT"):
     acUniv = universe("active_core_univ")
     acCell = cell("active_core_cell", isVoid=False)
     acCell.setFill(hexLat)
-    acSurf1 = surf("hexBorder", "hexyc", np.array([0.0, 0.0, hexApothem]))
+    if latType == "FLAT":
+        acSurf1 = surf("hexBorder", "hexyc", np.array([0.0, 0.0, hexApothem]))
+    else:
+        acSurf1 = surf("hexBorder", "hexxc", np.array([0.0, 0.0, hexApothem]))
     acDirs = [1]
     acSurfs = [acSurf1]
     acCell.setSurfs(acSurfs, acDirs)
@@ -335,17 +341,17 @@ def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = Non
     base.collectAll()
     return base
 
-def buildHexLattice(id, mapStr, univMap, nOuter, pitch, boundaryType = None,
+def buildHexLattice(id, mapStr, univMap, nOuter, pitch, latType = "FLAT", boundaryType = None,
                                              hexApothem = None, outerRadius = None):
     map, hexSize = __latticeStrParser(mapStr)
     if not __isHexagonal(map):
         raise ValueError("hexagonal lattice map must have hexagonal shape not {}"
                                                                         .format(map))
     fullMap = __buildFullFromHex(map, hexSize, nOuter)
-    hexLatObj = __buildLatticeObject(id, fullMap, univMap, pitch)
+    hexLatObj = __buildLatticeObject(id, fullMap, univMap, pitch, latType=latType)
     
     if hexApothem != None:
-        hexLatObj = buildHexLatticeWithHexBorder(hexLatObj, hexApothem)
+        hexLatObj = buildHexLatticeWithHexBorder(hexLatObj, hexApothem, latType = latType)
     return hexLatObj
 
 # def buildActiveCore(hexLat, ):
