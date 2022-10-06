@@ -242,10 +242,10 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None):
         bSurf = surf("putBorder", "rect", params)
     else:
         if innerUniv.boundary.type == "cyl":
-            params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2], 0, height])
+            params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2], -height, height])
         elif innerUniv.boundary.type == "hexyc":
             #print("here, 3")
-            params = np.array([-width, width, -length, length, 0, height])
+            params = np.array([-width, width, -length, length, -height, height])
         else:
             print('surf', innerUniv.id, innerUniv.boundary.type)
             #print("not yet supported 2")
@@ -341,6 +341,29 @@ def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = Non
     base.collectAll()
     return base
 
+def build3DPinPlanes(baseId, pinMaterials, pinRadii, nactiveLayers, activedz, h0, topUniv = None, topUnivdz = None, botUniv = None, botUnivdz = None):
+    univDzs = [activedz]*(nactiveLayers)
+    univDzs.insert(0, botUnivdz)
+    univDzs.append(topUnivdz)
+
+    #print("univDzs", univDzs)
+
+    basePin = pin(baseId, len(pinMaterials))
+    basePin.set('materials', pinMaterials)
+    basePin.set('radii', pinRadii)
+
+    pins = [0]*(nactiveLayers)
+    for i in range(0, nactiveLayers):
+        pins[i] = basePin.duplicate(baseId+"z"+str(i))
+
+    pins.insert(0, botUniv)
+    pins.append(topUniv)
+
+    #print("pins last", pins[-1].id)
+
+    stack = buildStackPlanes(baseId, pins, univDzs, h0)
+    return stack
+
 def buildHexLattice(id, mapStr, univMap, nOuter, pitch, latType = "FLAT", boundaryType = None,
                                              hexApothem = None, outerRadius = None):
     map, hexSize = __latticeStrParser(mapStr)
@@ -353,6 +376,54 @@ def buildHexLattice(id, mapStr, univMap, nOuter, pitch, latType = "FLAT", bounda
     if hexApothem != None:
         hexLatObj = buildHexLatticeWithHexBorder(hexLatObj, hexApothem, latType = latType)
     return hexLatObj
+
+def buildStack(id, univs, dzs, boundary = None):
+    nlayers = len(univs)
+    heights = [0]*nlayers
+    thickness = np.sum(np.array(dzs))
+    #h0 = thickness/2
+    heights[0] = 0
+    for i in range(1, nlayers):
+        heights[i] = heights[i-1]+dzs[i-1]
+
+    stack = pinStack(id, 0, 0, nlayers)
+    stack.setStack(univs=np.array(univs), heights= np.array(heights))
+    stack.collectAll()
+    if boundary != None:
+        stack.setBoundary(boundary)
+    return stack 
+
+def buildStackPlanes(id, univs, dzs, h0, boundary = None):
+    stack = universe(id)
+    nlayers = len(univs)
+    heights = [0]*nlayers
+    surfs = [0]*nlayers
+    cells = [0]*nlayers
+    thickness = np.sum(np.array(dzs))
+    #h0 = thickness/2
+    heights[0] = h0
+    surfs[0] = surf(id+"spz0", "pz", np.array([h0]))
+    # cells[0] = cell(id+"cpz0")
+    # cells[0].setFill(univs[0])
+    # cells[0].setSurfs([surfs[0]], [1])
+    for i in range(1, nlayers):
+        heights[i] = heights[i-1]+dzs[i-1]
+        surfs[i] = surf(id+"spz"+str(i), "pz", np.array([heights[i]]))
+        cells[i-1] = cell(id+"cpz"+str(i-1))
+        cells[i-1].setFill(univs[i-1])
+        cells[i-1].setSurfs([surfs[i-1], surfs[i]], [0, 1])
+
+    cells[-1] = cell(id+"cpz"+str(nlayers-1))
+    cells[-1].setFill(univs[-1])
+    cells[-1].setSurfs([surfs[-1]], [0])
+    
+    stack.setGeom(cells)
+    stack.collectAll()
+    if boundary != None:
+        stack.setBoundary(boundary)
+
+    #print(stack._geoString())
+    return stack 
 
 # def buildActiveCore(hexLat, ):
 #     pr1 = buildPeripheralRings(hexLat,  MATLIB['Reflector'], 11.6926, "pr1")

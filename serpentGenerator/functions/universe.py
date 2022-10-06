@@ -315,6 +315,13 @@ class universe:
         _isstr(newId, "new universe id")
         newUniv = copy.deepcopy(self)
         newUniv.id = newId
+
+        newCells = {}
+        for cellId in self.cells:
+            newCells[cellId+newId] =  self.cells[cellId].duplicateCell(cellId+newId)
+            # self.cells.pop(cellId)
+        self.cells = newCells
+
         return newUniv
 
 
