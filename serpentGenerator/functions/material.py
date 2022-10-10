@@ -186,11 +186,7 @@ class material:
         if not hasattr(self, attr):
             raise AttributeError("{} has no attribute {}"
                                  .format(self, attr))
-
-        # if not (type(getattr(self, attr)) == type(val)):
-        #     raise TypeError("{} must be of type {} not type {}"
-        #                     .format(attr, type(getattr(self, attr)), type(val)))  
-        
+       
         setattr(self, attr, val)
         material.__matCheck(self.id,  self.nuclides, self.fractions, self.dens, 
                     self.temp, self.xsLib, self.modLib, self.color, self.isBurn, 

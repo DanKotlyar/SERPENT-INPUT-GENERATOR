@@ -8,7 +8,7 @@ email: iaguirre6@gatech.edu
 """
 from serpentGenerator.functions.hexLattice import hexLat
 from serpentGenerator.functions.sqLattice import sqLat
-from serpentGenerator.functions.pinStack import pinStack
+from serpentGenerator.functions.stack import stack
 
 from serpentGenerator.functions.checkerrors import (
     _isstr, _isinstance, _isinstanceList
@@ -70,7 +70,7 @@ class lats:
         Raises
         ------
         TypeError
-            If ``newLat`` is not a hexlat, sqLat, or pinStack obj.
+            If ``newLat`` is not a hexlat, sqLat, or stack obj.
         keyError
             If ``newLat`` has a duplicate latId with an existing lat in the lats 
             array.
@@ -81,9 +81,9 @@ class lats:
         >>> l1 = hexLat("101", "X", 0, 0, 17, 17, 1.260)
         >>> latLib.addLat(l1)
         """
-        if not (isinstance(newLat, (hexLat, sqLat, pinStack))):
+        if not (isinstance(newLat, (hexLat, sqLat, stack))):
             raise TypeError("{} must be of type: {}, {},"
-                " or {}".format(newLat, hexLat, sqLat, pinStack))
+                " or {}".format(newLat, hexLat, sqLat, stack))
 
         if newLat.id in self.lats:
             raise KeyError("{} has a duplicate latId: {} with an existing lat in"
@@ -151,10 +151,10 @@ class lats:
         >>> latLib.addLats(lats1)
         """
         for i in range(0, len(newLats)):
-            if not (isinstance(newLats[i], (hexLat, sqLat, pinStack))):
+            if not (isinstance(newLats[i], (hexLat, sqLat, stack))):
                 raise TypeError("{} must be of type a list of: {}, {},"
                     " or {} objects "
-                    "not {}".format("newLats", hexLat, sqLat, pinStack, newLats))
+                    "not {}".format("newLats", hexLat, sqLat, stack, newLats))
 
         for i in range(0, len(newLats)):
             if newLats[i].id in self.lats:

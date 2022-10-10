@@ -12,7 +12,7 @@ import numbers
 from serpentGenerator.functions.universe import universe
 from serpentGenerator.functions.hexLattice import hexLat
 from serpentGenerator.functions.sqLattice import sqLat
-from serpentGenerator.functions.pinStack import pinStack
+from serpentGenerator.functions.stack import stack
 from serpentGenerator.functions.lats import lats as ldict
 from serpentGenerator.functions.cell import cell 
 from serpentGenerator.functions.pins import pins as pdict
@@ -22,6 +22,11 @@ from serpentGenerator.functions.surfs import surfs as sdict
 from serpentGenerator.functions.cells import cells as cdict
 from serpentGenerator.functions.housing import housing as hous
 from serpentGenerator.functions.branches import branches as bdict
+from matplotlib import pyplot as plt
+import serpentTools
+
+import pandas as pd
+from tabulate import tabulate
 
 from serpentGenerator.functions.checkerrors import (
     _isinstance, _is1darray, _isbool, _isint, _ispositive, _ispositiveArray,
@@ -79,35 +84,17 @@ class core:
         If ``materials`` is not a mats obj
         If ``flagXS``, ``flagBurn``, ``flagBranch``, ``flagSettings`` are not bool.
     """
-    def __init__(self, mainUniv, housing, lats = None, pins = None, materials = None,
-        flagXS = False, flagBurn = False, flagBranch = False, flagSettings = False):
+    def __init__(self, mainUniv, baseFileName):
 
-        _isinstance(mainUniv, universe, "main universe")
-        if lats != None:
-            _isinstance(lats, ldict, "channels")
-        if pins != None:
-            _isinstance(pins, pdict, "channel axial layers")
-        _isinstance(housing, hous, 'core housing')
-        if materials != None:
-            _isinstance(materials, mats, "materials")
+        self.mainUniv = mainUniv
+        self.baseFileName = baseFileName
 
-        _isbool(flagXS, "XS gen Flag")
-        _isbool(flagBurn, "Burnup Flag")
-        _isbool(flagBranch, "Branch Flag")
-        _isbool(flagSettings, "Settings Flag")
-
-        self.flagXS = flagXS
-        self.flagBurn = flagBurn
-        self.flagBranch = flagBranch
-        self.flagSettings = flagSettings
+        self.flagXS = False
+        self.flagBurn = False
+        self.flagBranch = False
+        self.flagSettings = False
 
         self.input = {}
-        self.materials = materials
-        self.pins = pins
-        self.lats = lats
-        self.mainLat = mainUniv
-        self.housing = housing
-        self.mainUniv, self.voidSurf = self._setCoreGeom(mainUniv, housing)
         self.burnup = {}
         self.xs = {}
         self.branch = {}
@@ -115,49 +102,6 @@ class core:
         self.plot = {}
         self.coef = {}
         self.xsLibs = {}
-        
-        # self.input['mats'] = self.materials
-        # self.input['pins'] = self.pins
-        # self.input['lats'] = self.lats      
-        self.input['mainLat'] = self.mainLat
-        self.input['housing'] = self.housing
-        self.input['main'] = self.mainUniv
-    
-
-    def _setCoreGeom(self, mainUniv, housing):
-        main = universe("0")
-        if housing.defaultCRFlag:
-            housing.cells["core"].setFill(mainUniv.id)
-            voidSurf = surf("voidBorder", "cuboid", 
-                np.array([-1*housing.radiiCR[len(housing.radiiCR)-1], 
-                housing.radiiCR[len(housing.radiiCR)-1],
-                -1*housing.radiiCR[len(housing.radiiCR)-1], 
-                housing.radiiCR[len(housing.radiiCR)-1], 0, housing.height]))
-
-            voidBuffer = cell("voidBuffer", isVoid=True)
-            voidBuffer.setSurfs([housing.border, voidSurf], [0, 1]) 
-
-
-            housing.cells["voidBuffer"] = voidBuffer
-
-            fillRegion = cell("coreFill")
-            fillRegion.setSurfs([voidSurf], [1])
-            fillRegion.setFill(housing.id)
-            voidRegion = cell("voidRegion", isVoid=False)
-            voidRegion.setSurfs([voidSurf], [0])
-            main.setGeom([fillRegion, voidRegion])
-            borderSurf = voidSurf
-        else:
-            borderSurf = housing.border
-            core = cell("in")
-            core.setSurfs([borderSurf], [1])
-            core.setFill(mainUniv.id)
-            voidRegion = cell("out", isVoid=True)
-            voidRegion.setSurfs([borderSurf], [0])
-            main.setGeom([core, voidRegion])
-
-        return main, borderSurf
-
 
     def writeFile(self, filename):
         """
@@ -454,102 +398,140 @@ class core:
 
         self.coef['toString'] = coefString
 
-    def setSettings(self, power, bc, egrid, nps, nact, nskip, setPCC = False,
-        misc = []):
-        """
-        The ``setSettings`` method serves to set general settings in the inputfile.
 
-        Parameters
-        ----------
-        power : number
-            thermal power [watts]
-        bc : list of integers
-            boundary condtions for system,
-            follows serpent convention i.e. 2 = reflective
-        sym : int
-            symmetry options for system, follows serpent convention
-        egrid : list of numbers
-            unionized energy grid reconstruction parameters.
-            [TOL, EMIN, EMAX]
-            TOL	 : fractional reconstruction tolerance
-            EMIN	 : minimum energy in the grid (MeV)
-            EMAX	 : maximum energy in the grid (MeV)
-        nps : int
-            number of particles per cycle.
-        nact : int
-            number of active cycles
-        nskip : int
-            number of skipped cycles
-        setPCC : bool
-            True/False use predictor corrector scheme
-        misc : str
-            string containing miscallaneous lines desired in inputfile.
+    def setSettings(self, geoType, nps, nact, nskip, xsAbsPath, plotOptions = None):
+        setDict = {}
+        incStr = "include "+self.baseFileName+".mat\ninclude "+self.baseFileName+".geo\n"
+        setDict["include"] = incStr
+        if geoType == '2D':
+            bcStr = "set bc 1 1 2\n"
+            setDict['bc'] = bcStr
+        elif(geoType == '3D'):
+            bcStr = "set bc 1 1 1\n"
+            setDict['bc'] = bcStr
 
-        Raises
-        ------
-        TypeError
-            If ``power``, ``nps``, ``nact``, ``nskip``, ``sym`` is not a number.
-            If ``bc``, is not a list of integers.
-            If ``egrid``is not a list of numbers.
-            If ``setPCC``is not a bool.
-            If ``misc`` is not a str.
-        ValueError
-            If ``power``, ``nps``, ``nact``, ``nskip`` is not positive.
-
-        Examples
-        --------
-        >>> input1 = core()
-        >>> input1.setSettings(power=powAssem2D, bc=[2], sym=0, 
-        >>>     egrid = [5e-5, 1e-9, 15.0],  nps=20000, nact=40, nskip=20, 
-        >>>     setPCC = False, 
-        >>>     misc = ["ene 1 1 1E-11 0.625E-6 15", "include bigT_FA3_2D.txt.mvol"])
-        """
-        _ispositive(power, "power")
-        _isinstanceList(bc, numbers.Integral, "boundary conditions")
-        _isinstanceList(egrid, numbers.Number, "energy grid")
-        _ispositive(nps, "number of particles per cycle")
-        _ispositive(nact, "number of active cycles")
-        _ispositive(nskip, "number of skipped cycles")
-        _isbool(setPCC, "predictor corrector option on or off")
-
-
-        self.settings['power'] = power
-        self.settings['bc'] = bc
-        self.settings['egrid'] = egrid
-        self.settings['nps'] = nps
-        self.settings['nact'] = nact
-        self.settings['nskip'] = nskip
-        self.settings['setPCC'] = setPCC
-
-        setString = ""
-
-        setString = setString + "set power "+str(power) + "\n"
-
-        bcString = ""
-        for i in range(0, len(bc)):
-            bcString = bcString + str(bc[i]) + " "
-        bcString = "set bc " + bcString + "\n"
-
-        setString = setString + bcString
-
-        setString = setString + "set pop "+str(nps)+" "+ str(nact)+" "\
-            +str(nskip)+ "\n"
+        popStr = "set pop "+str(int(nps))+" "+str(int(nact))+" " + str(int(nskip))+"\n"
+        setDict['pop'] = popStr
         
-        pccString = "set pcc 0" if not setPCC else "set pcc 1"
-        setString = setString + pccString +"\n"
-        egString = ""
-        for i in range(0, len(egrid)):
-            egString = egString + str(egrid[i]) + " "
-        egString = "set egrid "+ egString + "\n"
+        xsStr = 'set acelib "'+xsAbsPath+'"\n'
+        setDict['xsLib'] = popStr
 
-        setString = setString + egString
-        miscString = ""
-        for i in range(0, len(misc)):
-            miscString = miscString + misc[i] + "\n"
+        plotStr = ""
+        if type(plotOptions) != type(None):
+            plotTypes = plotOptions[0]
+            borderType = plotOptions[3]
+            plotRes = plotOptions[1]
+            plotPos = plotOptions[2]
+            nPlots = len(plotTypes)
+            for i in range(0, nPlots):
+                plotStr = plotStr + "plot "+str(int(plotTypes[i]))+str(int(borderType))+" "+ str(int(plotRes))+" "+ str(int(plotRes))+" "+ str(float(plotPos[i])) +"\n"
+            setDict['plot'] = plotStr
 
-        setString = setString + miscString
+        hisStr = "set his 1\n"
+        setDict['history'] = hisStr
+        
+        setDict['settings'] = incStr + bcStr + popStr + xsStr + plotStr + hisStr
 
-        self.settings['toString'] = setString
+    
+        self.settings = setDict
+        return 
+
+    # def setSettings(self, power, bc, egrid, nps, nact, nskip, setPCC = False,
+    #     misc = []):
+    #     """
+    #     The ``setSettings`` method serves to set general settings in the inputfile.
+
+    #     Parameters
+    #     ----------
+    #     power : number
+    #         thermal power [watts]
+    #     bc : list of integers
+    #         boundary condtions for system,
+    #         follows serpent convention i.e. 2 = reflective
+    #     sym : int
+    #         symmetry options for system, follows serpent convention
+    #     egrid : list of numbers
+    #         unionized energy grid reconstruction parameters.
+    #         [TOL, EMIN, EMAX]
+    #         TOL	 : fractional reconstruction tolerance
+    #         EMIN	 : minimum energy in the grid (MeV)
+    #         EMAX	 : maximum energy in the grid (MeV)
+    #     nps : int
+    #         number of particles per cycle.
+    #     nact : int
+    #         number of active cycles
+    #     nskip : int
+    #         number of skipped cycles
+    #     setPCC : bool
+    #         True/False use predictor corrector scheme
+    #     misc : str
+    #         string containing miscallaneous lines desired in inputfile.
+
+    #     Raises
+    #     ------
+    #     TypeError
+    #         If ``power``, ``nps``, ``nact``, ``nskip``, ``sym`` is not a number.
+    #         If ``bc``, is not a list of integers.
+    #         If ``egrid``is not a list of numbers.
+    #         If ``setPCC``is not a bool.
+    #         If ``misc`` is not a str.
+    #     ValueError
+    #         If ``power``, ``nps``, ``nact``, ``nskip`` is not positive.
+
+    #     Examples
+    #     --------
+    #     >>> input1 = core()
+    #     >>> input1.setSettings(power=powAssem2D, bc=[2], sym=0, 
+    #     >>>     egrid = [5e-5, 1e-9, 15.0],  nps=20000, nact=40, nskip=20, 
+    #     >>>     setPCC = False, 
+    #     >>>     misc = ["ene 1 1 1E-11 0.625E-6 15", "include bigT_FA3_2D.txt.mvol"])
+    #     """
+    #     _ispositive(power, "power")
+    #     _isinstanceList(bc, numbers.Integral, "boundary conditions")
+    #     _isinstanceList(egrid, numbers.Number, "energy grid")
+    #     _ispositive(nps, "number of particles per cycle")
+    #     _ispositive(nact, "number of active cycles")
+    #     _ispositive(nskip, "number of skipped cycles")
+    #     _isbool(setPCC, "predictor corrector option on or off")
+
+
+    #     self.settings['power'] = power
+    #     self.settings['bc'] = bc
+    #     self.settings['egrid'] = egrid
+    #     self.settings['nps'] = nps
+    #     self.settings['nact'] = nact
+    #     self.settings['nskip'] = nskip
+    #     self.settings['setPCC'] = setPCC
+
+    #     setString = ""
+
+    #     setString = setString + "set power "+str(power) + "\n"
+
+    #     bcString = ""
+    #     for i in range(0, len(bc)):
+    #         bcString = bcString + str(bc[i]) + " "
+    #     bcString = "set bc " + bcString + "\n"
+
+    #     setString = setString + bcString
+
+    #     setString = setString + "set pop "+str(nps)+" "+ str(nact)+" "\
+    #         +str(nskip)+ "\n"
+        
+    #     pccString = "set pcc 0" if not setPCC else "set pcc 1"
+    #     setString = setString + pccString +"\n"
+    #     egString = ""
+    #     for i in range(0, len(egrid)):
+    #         egString = egString + str(egrid[i]) + " "
+    #     egString = "set egrid "+ egString + "\n"
+
+    #     setString = setString + egString
+    #     miscString = ""
+    #     for i in range(0, len(misc)):
+    #         miscString = miscString + misc[i] + "\n"
+
+    #     setString = setString + miscString
+
+    #     self.settings['toString'] = setString
 
     def toString(self):
         """display input in stringForm.
@@ -580,10 +562,98 @@ class core:
             inputString = inputString + self.branch['toString']
         if ('toString' in self.plot):
             inputString = inputString + self.plot['toString']
-        # if ((self.flagXS) & ('toString' in self.xs)):
-        #     inputString = inputString + self.xs['toString']
-        #     self._setCoef()
-        #     inputString = inputString + self.coef['toString']
 
         inputString = inputString + self.xsLibs['toString']
         return inputString
+
+    def __buildSerpentMaterialFile(self):
+        matsFile = open(self.baseFileName+".mat", "w")
+        matSerp = self.mainUniv._matString()
+        matsFile.write(matSerp)
+        matsFile.close()
+        return
+
+    def __buildSerpentGeometryFile(self):
+        dimsFile = open(self.baseFileName+".geo", "w")
+        geom = self.mainUniv._geoString()
+        dimsFile.write(geom)
+        dimsFile.close()
+        return
+
+    def __buildSerpentMainFile(self):
+        mainFile = open(self.baseFileName+".main", "w")
+        if 'settings' in self.settings:
+            mainStr = self.settings['settings']
+        mainFile.write(mainStr)
+        mainFile.close()
+        return
+
+    def toSerpent(self):
+            self.__buildSerpentMaterialFile()
+            self.__buildSerpentGeometryFile()
+            self.__buildSerpentMainFile()
+            return  
+
+    def plotHistoryData(self, hisFile):
+        his = serpentTools.read(hisFile)
+        hKeff = his['anaKeff']
+        hKu = hKeff[:, 2] * 3 * hKeff[:, 1]
+        cyc = np.arange(hKu.shape[0])
+        plt.plot(cyc, hKeff[:, 0], label="Cycle")
+        plt.title("Effective Multiplication Factor vs. Number of Cycles")
+        plt.xlabel("Number of Cycles")
+        plt.ylabel("Effective Multiplication Factor")
+        plt.errorbar(cyc, hKeff[:, 1], yerr=hKu, label="Cumulative")
+        plt.legend()
+        plt.savefig(self.baseFileName+"_hisKeff.png")
+        return
+
+    def outputMaterialData(self, outFile, mvolFile):
+        word = 'set mvol'
+        words = []
+        vols = []
+        with open(mvolFile, 'r') as fp:
+            # read all lines in a list
+            lines = fp.readlines()
+            for ldx, line in enumerate(lines):
+                # check if string present on a current line
+                if line.find(word) != -1:
+                    #print("Line 2 after:", lines[ldx+2])
+                    bidx = ldx+2
+                    fidx = len(lines)
+                    for i in range(bidx, fidx):
+                        matVals = lines[i].split("0", 1)
+                        matName = matVals[0].strip()
+                        matVolParams = matVals[1].split("%")
+                        matVol = matVolParams[0].strip()
+                        #matVolUnc = matVolParams[1].replace("(", "").replace(")", "").strip()
+                        words.append(matName)
+                        #rint("matName "+matName)
+                        #print("matVol "+matVol)
+                        vols.append(float(matVol))
+                        #print("matVolUnc "+matVolUnc+"\n")
+                    break
+        mdens = []
+        with open(outFile, 'r') as fp:
+            # read all lines in a list
+            lines = fp.readlines()
+            for ldx, line in enumerate(lines):
+                # check if string present on a current line
+                for word in words:
+                    if line.find('Material "'+word+'":') != -1:
+                        massDens = lines[ldx+5].split("-", 1)[1].replace("Mass density", "").replace("g/cm3", "").strip()
+                        mdens.append(float(massDens))
+        mass = [0]*len(mdens)
+        for i in range(0, len(words)):
+            mass[i] = mdens[i]*vols[i]
+
+        df = pd.DataFrame({'Material' : words,
+                   'Density (g/cm^3)' : mdens, 
+                   'Volume (cm^3)' : vols,
+                   'Mass (g)' : mass,})
+
+        mdata = tabulate(df, headers='keys', tablefmt='pretty', showindex=False, numalign="right")
+        mdataFile = open(self.baseFileName+".mdata", "w")
+        mdataFile.write(mdata)
+        mdataFile.close()
+        return

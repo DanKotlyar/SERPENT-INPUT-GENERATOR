@@ -36,14 +36,14 @@ class universe:
         self.layout = None
         self.cells = {}
         self.elements = {}
-        self.__allElements = {}
-        self.__allMats = {}
-        self.__allSurfs = {}
-        self.__allCells = {}
         self.univMats = {}
         self.univSurfs = {}
         self.geoLevel = 1
         self.boundary = None
+        self.__allElements = {}
+        self.__allMats = {}
+        self.__allSurfs = {}
+        self.__allCells = {}
 
     def setBoundary(self, boundary):
         self.boundary = boundary
@@ -76,8 +76,6 @@ class universe:
         >>> universe1.setGeom(surfs1, cells1)
         """
         _isinstanceList(cells, cell, "list of cell objs")
-        # for i in range(0, len(cells)):
-        #     self.cells.append(cells[i])
 
         for i in range(0, len(cells)):
             self.cells[cells[i].id] = cells[i]
@@ -95,15 +93,15 @@ class universe:
 
         self.__setGeoLevel()
     
-    def collectAllElements(self, allElements):
+    def __collectAllElements(self, allElements):
         for element in self.elements:
             allElements[self.elements[element].id] = self.elements[element]
-            self.elements[element].collectAllElements(allElements)
+            self.elements[element].__collectAllElements(allElements)
         return allElements
 
-    def collectAllElementsAndMats(self, allMats):
+    def __collectAllElementsAndMats(self, allMats):
         allElements = {}
-        self.collectAllElements(allElements)
+        self.__collectAllElements(allElements)
         self.__allElements = allElements
 
         for elementId in self.__allElements:
@@ -115,9 +113,9 @@ class universe:
                 
         return allMats
 
-    def collectAllElementsAndMatsAndCells(self, allCells):
+    def __collectAllElementsAndMatsAndCells(self, allCells):
         allMats = {}
-        self.collectAllElementsAndMats(allMats)
+        self.__collectAllElementsAndMats(allMats)
         self.__allMats = allMats
 
         for elementId in self.__allElements:
@@ -128,9 +126,9 @@ class universe:
 
         return allCells
 
-    def collectAllElementsAndMatsAndCellsAndSurfs(self, allSurfs):
+    def __collectAllElementsAndMatsAndCellsAndSurfs(self, allSurfs):
         allCells = {}
-        self.collectAllElementsAndMatsAndCells(allCells)
+        self.__collectAllElementsAndMatsAndCells(allCells)
         self.__allCells = allCells
 
         for elementId in self.__allElements:
@@ -143,8 +141,14 @@ class universe:
         return allSurfs
 
     def collectAll(self):
+        """Collects all nested objects within a universe
+
+        The purpose of the ``collectAll`` function is to collect all nested universe
+        objects within a universe object. This should be used after nesting multiple
+        objects when working with custom objects/workflows.
+        """
         allSurfs = {}
-        self.collectAllElementsAndMatsAndCellsAndSurfs(allSurfs)
+        self.__collectAllElementsAndMatsAndCellsAndSurfs(allSurfs)
         self.__allSurfs = allSurfs
         return
     
@@ -161,24 +165,7 @@ class universe:
             universe in str format representing the typical input methodology for
             input in serpent input file.
         """
-        # print(self.cells)
-        for key in self.cells:
-            self.cells[key].universe = self.id 
-
-        univCells = cdict()
-        univCells.addCells(list(self.cells.values()))
-
-        # univMats = mats()
-        # univMats.addMats(list(self.univMats.values()))
-
-        # univSurfs = sdict()
-        # univSurfs.addSurfs(list(self.univSurfs.values()))
-
-        # univString = univCells._geoString() +  univSurfs.toString()
-        # univString = univString + univMats.toString()
-
-        for key in self.elements:
-            univString = univString + self.elements[key].toString()
+        univString = self._geoString() + self._matString()
 
         return univString
 
@@ -195,23 +182,6 @@ class universe:
             universe in str format representing the typical input methodology for
             input in serpent input file.
         """
-        # print(self.cells)
-        # for key in self.cells:
-        #     self.cells[key].universe = self.id 
-
-        # univCells = cdict()
-        # univCells.addCells(list(self.cells.values()))
-
-        # # univMats = mats()
-        # # univMats.addMats(list(self.univMats.values()))
-
-        # univString = univCells._geoString()
-
-        # # for key in self.elements:
-        # #     univString = univString + self.elements[key].toString()
-
-        # return univString
-
         for key in self.cells:
             self.cells[key].universe = self.id 
 
@@ -219,8 +189,6 @@ class universe:
         for elementId in self.__allElements:
             geoString = geoString + self.__allElements[elementId]._geoHeader()
 
-        
-        
         cellStr = ""
         for cellId in self.__allCells:
             cellStr = cellStr + self.__allCells[cellId]._geoHeader()
@@ -244,38 +212,11 @@ class universe:
             universe in str format representing the typical input methodology for
             input in serpent input file.
         """
-        # print(self.cells)
-        # for key in self.cells:
-        #     self.cells[key].universe = self.id 
-
-        # univCells = cdict()
-        # univCells.addCells(list(self.cells.values()))
-
-        # # univMats = mats()
-        # # univMats.addMats(list(self.univMats.values()))
-
-        # univString = univCells._geoString()
-
-        # # for key in self.elements:
-        # #     univString = univString + self.elements[key].toString()
-
-        # return univString
 
         for key in self.cells:
             self.cells[key].universe = self.id 
 
         geoString = ""
-        # for elementId in self.__allElements:
-        #     geoString = geoString + self.__allElements[elementId]._geoString()
-        
-        # cellStr = ""
-        # for cellId in self.__allCells:
-        #     cellStr = cellStr + self.__allCells[cellId]._geoString()
-
-        # surfStr = ""
-        # for surfId in self.__allSurfs:
-        #     surfStr = surfStr + self.__allSurfs[surfId].toString()
-
 
         return geoString
 
@@ -307,10 +248,9 @@ class universe:
         Examples
         --------
         >>> universe1 = universe("u1")
-        >>> cells1 = [cells]
-        >>> surfs1 = [surfs]
-        >>> universe1.setGeom(surfs1, cells1)
-        >>> universe2 = universe1.duplicateUniv("u2)
+        >>> cells1 = [cell1]
+        >>> universe1.setGeom(cells1)
+        >>> universe2 = universe1.duplicateUniv("u2")
         """
         _isstr(newId, "new universe id")
         newUniv = copy.deepcopy(self)
@@ -319,11 +259,9 @@ class universe:
         newCells = {}
         for cellId in self.cells:
             newCells[cellId+newId] =  self.cells[cellId].duplicateCell(cellId+newId)
-            # self.cells.pop(cellId)
         self.cells = newCells
 
         return newUniv
-
 
     def replaceElement(self, oldElement, newElement):
         for key in self.elements:
@@ -332,9 +270,14 @@ class universe:
                 self.elements.pop(oldElement.id)
 
     def __setGeoLevel(self):
+        innerMax = 0
         for elementId in self.elements:
-            self.geoLevel = self.elements[elementId].geoLevel + 1
-            break
+            if (self.elements[elementId].geoLevel > innerMax):
+                innerMax = self.elements[elementId].geoLevel 
+
+        self.geoLevel = innerMax + 1
+        return
+            
 
     def _matString(self):
         """display properties of a universe in string form

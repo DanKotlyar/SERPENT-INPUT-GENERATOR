@@ -125,8 +125,3 @@ class housing(universe):
     def _border(self, width):      
         borderSurf = surf("border", "sqc", np.array([0.0, 0.0, width/2]))
         self.border = borderSurf
-
-        # core = cell("in")
-        # core.setSurfs([borderSurf], [1])
-        # voidRegion = cell("out", isVoid=True)
-        # voidRegion.setSurfs([borderSurf], [0])

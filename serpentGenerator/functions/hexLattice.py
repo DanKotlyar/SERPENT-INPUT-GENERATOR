@@ -114,8 +114,6 @@ class hexLat(universe):
 
         if(isinstance(map[0][0], universe)):
             _isinstanceNDArray(map, universe, "map: 2d array of pin objects")         
-        # elif(isinstance(map[0][0], pinStack)):
-        #     _isinstanceNDArray(map, pinStack, "map: 2d array of pinStack objects")     
         else:
             raise ValueError("lattice map must consist of pin or pinstack objects"
                 "not {}".format(map))
@@ -132,8 +130,6 @@ class hexLat(universe):
             if mapList[i].id not in self.elements:
                 self.elements[mapList[i].id] = mapList[i]
 
-        # for key in self.elements:
-        #     self.univMats[key] = self.elements[key].univMats
     
     def replacePin(self, oldPin, newPin):
         """replaces desired pin object with a new pin object from lattice map layout.
@@ -180,8 +176,6 @@ class hexLat(universe):
 
         self.elements[newPin.id] = newPin
         self.elements.pop(oldPin.id)
-        # self.univMats.pop(oldPin.id)
-        # self.univMats[newPin.id] = newPin.univMats
 
     def duplicateLat(self, newLatId):
         """returns a deep copy of the hexLat object must set a new lat id for the new
@@ -219,216 +213,6 @@ class hexLat(universe):
         newLat = copy.deepcopy(self)
         newLat.id = newLatId
         return newLat
-            
-    def toString(self):
-        """display properties of lattice in string form
-
-        The purpose of the ``toString`` function is to directly convert the lattice
-        object into a string format for the purpose of convinince when working with 
-        textfiles.
-
-        Returns
-        -------
-        str
-            lattice obj in str format representing the typical input methodology for
-            input in serpent input file.
-            
-        Raises
-        ------
-        ValueError
-            If the lattice map is empty.
-        
-        Examples
-        --------
-        >>> lat1 = hexLat("101", "X", 0, 0, 3, 3, 1.260)
-        >>> p1 = pin('1', 3)
-        >>> p2 = pin('2', 3)
-        >>> latMap1 = np.array([[p1, p2, p1], [p2, p1, p2], [p1, p2, p1]])
-        >>> lat1.setMap(latMap1)
-        >>> print(lat1.toString()) 
-        """
-        def spaceCount(count):
-            spaceString = " "
-            for i in range (0, count):
-                spaceString = spaceString + " "
-            return spaceString
-
-        if self.map.size == 0:
-            raise ValueError("lattice map cannot be empty")
-        
-        typeString =  str(2) if self.type == "X" else str(3)
-
-        latHeader = "lat "+ self.id +" "+ typeString+" "+str(self.xo) + " "\
-            + str(self.yo) + " " + str(self.nxelements) + " " \
-            + str(self.nyelements) + " " +str(self.pitch) + "\n"
-
-        mapString = ""
-        for i in range(0, self.nxelements):
-            for j in range(0, self.nyelements):
-                mapString = mapString + self.map[i][j].id + " "
-            mapString = mapString +"\n" + str(spaceCount(i)) 
-
-        latString = latHeader + mapString + "\n"
-
-        def dictLevel(dict1, mats):
-            for key in dict1: 
-                if isinstance(dict1[key], dict):
-                    dictLevel(dict1[key], mats)
-                else:
-                    mats[key] = dict1[key]
-        #             print(key, dict1[key])
-            return mats
-        geomString = ""
-        # # unique = {}
-        # for i in range(0, self.nelements):
-        #     for j in range(0, self.nelements):
-        #         if (self.map[i][j].id not in unique):
-        #             unique[self.map[i][j].id] = self.map[i][j]
-
-        elements= {}
-        def dictLevelGen(dict1, mats):
-            for key in dict1: 
-                if isinstance(dict1[key], dict):
-                    dictLevel(dict1[key], mats)
-                else:
-                    mats[key] = dict1[key].elements
-        #             print(key, dict1[key])
-            return mats
-
-        elementsParsed = {}
-        elementsUnParsed = dictLevelGen(self.elements, elements)
-        unique = dictLevel(elementsUnParsed, elementsParsed)
-
-        unique = {}
-        def searchElements(elems, uniqueElems):
-            for key in elems:
-                searchElements(elems[key].elements, uniqueElems)
-                uniqueElems[key] = elems[key]
-            return uniqueElems
-
-        unique = searchElements(self.elements, unique)
-
-        for key in unique:
-            geomString = geomString + unique[key]._geoString()
-        latString = latString + geomString
-
-        unique = {}
-        mats = {}
-        matString = ""
-
-
-        # for key in self.elements:
-        #     for matKey in self.univMats[key]:
-        #         print(matKey + "\n")
-        #         if matKey not in unique:
-        #             unique[matKey] = self.univMats[key][matKey]
-
-
-
-
-        #unique = dictLevel(self.univMats, mats)
-
-        # for i in range(0, len(self.univMats)):
-        #     if (self.univMats[i] not in unique):
-        #         unique[self.univMats[i].id] = self.univMats[i]
-
-        # for key in unique:
-        #     # if (len(unique[key].cells) != 0):
-        #     matString = matString + unique[key].toString()
-    
-
-        latString = latString + matString
-        return latString
-
-    def _geoString(self):
-        """display properties of lattice in string form
-
-        The purpose of the ``toString`` function is to directly convert the lattice
-        object into a string format for the purpose of convinince when working with 
-        textfiles.
-
-        Returns
-        -------
-        str
-            lattice obj in str format representing the typical input methodology for
-            input in serpent input file.
-            
-        Raises
-        ------
-        ValueError
-            If the lattice map is empty.
-        
-        Examples
-        --------
-        >>> lat1 = sqLat("101", 0, 0, 3, 1.260)
-        >>> p1 = pin('1', 3)
-        >>> p2 = pin('2', 3)
-        >>> latMap1 = np.array([[p1, p2, p1], [p2, p1, p2], [p1, p2, p1]])
-        >>> lat1.setMap(latMap1)
-        >>> print(lat1.toString()) 
-        """
-        def spaceCount(count):
-            spaceString = " "
-            for i in range (0, count):
-                spaceString = spaceString + " "
-            return spaceString
-
-        typeString =  str(2) if self.type == "X" else str(3)
-
-        latHeader = "lat "+ self.id +" "+ typeString+" "+str(self.xo) + " "\
-            + str(self.yo) + " " + str(self.nxelements) + " " \
-            + str(self.nyelements) + " " +str(self.pitch) + "\n"
-
-        mapString = "" 
-        for i in range(0, self.nxelements):
-            for j in range(0, self.nyelements):
-                mapString = mapString + self.map[i][j].id + " "
-            mapString = mapString +"\n" + str(spaceCount(i)) 
-
-        latString = latHeader + mapString + "\n"
-
-        # def dictLevel(dict1, mats):
-        #     for key in dict1: 
-        #         if isinstance(dict1[key], dict):
-        #             dictLevel(dict1[key], mats)
-        #         else:
-        #             mats[key] = dict1[key]
-        # #             print(key, dict1[key])
-        #     return mats
-        # geomString = ""
-        # # # unique = {}
-        # # for i in range(0, self.nelements):
-        # #     for j in range(0, self.nelements):
-        # #         if (self.map[i][j].id not in unique):
-        # #             unique[self.map[i][j].id] = self.map[i][j]
-
-
-        # elements= {}
-        # def dictLevelGen(dict1, mats):
-        #     for key in dict1: 
-        #         if isinstance(dict1[key], dict):
-        #             dictLevel(dict1[key], mats)
-        #         else:
-        #             mats[key] = dict1[key].elements
-        # #             print(key, dict1[key])
-        #     return mats
-
-        # elementsParsed = {}
-        # elementsUnParsed = dictLevelGen(self.elements, elements)
-        # unique = dictLevel(elementsUnParsed, elementsParsed)
-
-        # elementStr = ""
-
-        # for key in self.elements:
-        #     elementStr = elementStr + self.elements[key]._geoString()
-
-        # latString = latString + elementStr
- 
-        # for key in unique:
-        #     geomString = geomString + unique[key]._geoString()
-        # latString = latString + geomString
-
-        return latString
 
     def _geoHeader(self):
         """display properties of lattice in string form
@@ -476,48 +260,6 @@ class hexLat(universe):
             mapString = mapString +"\n" + str(spaceCount(i)) 
 
         latString = latHeader + mapString + "\n"
-
-        # def dictLevel(dict1, mats):
-        #     for key in dict1: 
-        #         if isinstance(dict1[key], dict):
-        #             dictLevel(dict1[key], mats)
-        #         else:
-        #             mats[key] = dict1[key]
-        # #             print(key, dict1[key])
-        #     return mats
-        # geomString = ""
-        # # # unique = {}
-        # # for i in range(0, self.nelements):
-        # #     for j in range(0, self.nelements):
-        # #         if (self.map[i][j].id not in unique):
-        # #             unique[self.map[i][j].id] = self.map[i][j]
-
-
-        # elements= {}
-        # def dictLevelGen(dict1, mats):
-        #     for key in dict1: 
-        #         if isinstance(dict1[key], dict):
-        #             dictLevel(dict1[key], mats)
-        #         else:
-        #             mats[key] = dict1[key].elements
-        # #             print(key, dict1[key])
-        #     return mats
-
-        # elementsParsed = {}
-        # elementsUnParsed = dictLevelGen(self.elements, elements)
-        # unique = dictLevel(elementsUnParsed, elementsParsed)
-
-        # elementStr = ""
-
-        # for key in self.elements:
-        #     elementStr = elementStr + self.elements[key]._geoString()
-
-        # latString = latString + elementStr
- 
-        # for key in unique:
-        #     geomString = geomString + unique[key]._geoString()
-        # latString = latString + geomString
-
         return latString
 
 

@@ -14,7 +14,7 @@ from serpentGenerator.functions.pin import pin
 from serpentGenerator.functions.universe import (universe)
 from serpentGenerator.functions.hexLattice import hexLat
 from serpentGenerator.functions.sqLattice import sqLat
-from serpentGenerator.functions.pinStack import pinStack
+from serpentGenerator.functions.stack import stack
 from serpentGenerator.functions.lats import lats as ldict
 from serpentGenerator.functions.cell import cell 
 from serpentGenerator.functions.pins import pins as pdict
@@ -42,20 +42,31 @@ def __buildFullFromHex(map, hexSize, nOuter):
         lenDiff = (hexSize - len(row))
         if lenDiff == 0:
             pass
-            #print("row"+str(rdx+1)+":  max" )
         elif lenDiff == 1:
             if rdx < midRowIdx:
                 row.insert(0, '0')
-                #print("row"+str(rdx+1)+":  left" )
             else:
                 row.append('0')
-                #print("row"+str(rdx+1)+":  right" )
         else: 
             for idx in range(0, lenDiff):
                 if rdx < midRowIdx:
                     row.insert(idx, '0')
                 else:
                     row.append('0')
+        for i in range(0, nOuter):
+            row.insert(i, '0')
+            row.append('0')
+    fullSize = hexSize + nOuter*2
+    outerRow = []
+    for i in range(0, fullSize):
+        outerRow.append('0')
+    for i in range(0, nOuter):
+        map.insert(0,outerRow)
+        map.append(outerRow)
+    return map
+
+def __buildFullFromSquare(map, hexSize, nOuter):
+    for rdx, row in enumerate(map):
         for i in range(0, nOuter):
             row.insert(i, '0')
             row.append('0')
@@ -75,7 +86,7 @@ def __mapElements(map, univMap):
             npMap[i][j] = univMap[map[i][j]]
     return npMap
 
-def __buildLatticeObject(id, map, univMap, pitch, latType = "FLAT"):
+def __buildHexLatticeObject(id, map, univMap, pitch, latType = "FLAT"):
     latMap = __mapElements(map, univMap)
 
     if latType == "FLAT":
@@ -83,8 +94,13 @@ def __buildLatticeObject(id, map, univMap, pitch, latType = "FLAT"):
     else:
         hexLatObj = hexLat(id, "Y", 0, 0, len(map), len(map), pitch)
     hexLatObj.setMap(latMap)
-    #print(hexLatObj.toString())
     return hexLatObj
+
+def __buildSquareLatticeObject(id, map, univMap, pitch):
+    latMap = __mapElements(map, univMap)
+    latObj = sqLat(id, 0, 0, len(map), pitch)
+    latObj.setMap(latMap)
+    return latObj
 
 def __latticeStrParser(mapStr):
     rowStr = mapStr.split(';')
@@ -114,14 +130,11 @@ def __isHexagonal(map):
         nextCurDiff = nextLen - curLen
         if (hasChangedDir & (nextCurDiff > 0)):
             hasChangedCount = hasChangedCount + 1
-            #print("dir has changed again",nextCurDiff )
         if ((not hasChangedDir) & (nextCurDiff < 0)):
             hasChangedDir = True
-            #print("dir has changed",nextCurDiff)
         if (hasChangedCount > 1):
             isHex = False
             return isHex
-
         if ((not hasChangedDir) & (nextCurDiff == 1)):
             isHex = True
         elif (hasChangedDir & (nextCurDiff == -1)):
@@ -147,7 +160,6 @@ def buildHexLatticeWithHexBorder(hexLat, hexApothem, latType = "FLAT"):
     acUniv.setGeom([acCell])
     acUniv.setBoundary(acSurf1)
     acUniv.collectAll()
-    #print(vars(acUniv))
     return acUniv
 
 def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoid = False):
@@ -156,7 +168,6 @@ def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoi
         if not isVoid:
             prUniv = universe(ringId+"_univ")
             prCell = cell(ringId+"_cell", mat=material, isVoid=False)
-            #prCell.setFill(innerUniv)
             innerSurf = innerUniv.boundary
             prDirs = [0, 1]
             prSurfs = [innerSurf, prSurf1]
@@ -178,7 +189,6 @@ def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoi
         else:
             prUniv = universe(ringId+"_univ")
             prCell = cell(ringId+"_cell", isVoid=True)
-            #prCell.setFill(innerUniv)
             innerSurf = innerUniv.boundary
             prDirs = [0, 1]
             prSurfs = [innerSurf, prSurf1]
@@ -225,10 +235,6 @@ def buildPeripheralObject(innerUniv, outerUniv):
     return totUniv
 
 def buildBoundingBox(innerUniv, width = None, length = None, height =None):
-    # %%% --- External  --- %%%
-    # cell c3 0 fill active_core_univintref_univbarrel_univ  -barrelcc1
-    # cell c4 0 void barrelcc1  -outBorder
-    # cell c5 0 outside outBorder
     zUniv = universe("1")
     zCell1 = cell("fillRegion", isVoid=False)
     zCell1.setFill(innerUniv)
@@ -244,20 +250,12 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None):
         if innerUniv.boundary.type == "cyl":
             params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2], -height, height])
         elif innerUniv.boundary.type == "hexyc":
-            #print("here, 3")
             params = np.array([-width, width, -length, length, -height, height])
         else:
             print('surf', innerUniv.id, innerUniv.boundary.type)
-            #print("not yet supported 2")
         bSurf = surf("putBorder", "cuboid", params)
-
-    # cell fillRegion 1  fill flclose_univ -flclosecc1 
-    # cell voidRegion 1  void flclosecc1 -putBorder 
-    # cell outRegionIn  0 fill 1 -putBorder
-    # cell outRegionOut 0  outside putBorder
         
     zUniv.setBoundary(bSurf)
-    # surf outBorder rect -11.87704 11.87704 -11.87704 11.87704
     zCell2 = cell("voidRegion", isVoid=True)
     zCell2.setSurfs([innerUniv.boundary, bSurf], [0, 1])
     zUniv.setGeom([zCell1, zCell2])
@@ -276,7 +274,7 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None):
     return z0Univ
     
 def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = None, hasUniqueMatlayers = False, topUniv = None, topUnivdz = None, botUniv = None, botUnivdz = None):
-    base = pinStack(baseId, 0, 0, nLayers)
+    base = stack(baseId, 0, 0, nLayers)
     pins = [0]*nLayers
     heights = [0]*nLayers
 
@@ -346,8 +344,6 @@ def build3DPinPlanes(baseId, pinMaterials, pinRadii, nactiveLayers, activedz, h0
     univDzs.insert(0, botUnivdz)
     univDzs.append(topUnivdz)
 
-    #print("univDzs", univDzs)
-
     basePin = pin(baseId, len(pinMaterials))
     basePin.set('materials', pinMaterials)
     basePin.set('radii', pinRadii)
@@ -359,8 +355,6 @@ def build3DPinPlanes(baseId, pinMaterials, pinRadii, nactiveLayers, activedz, h0
     pins.insert(0, botUniv)
     pins.append(topUniv)
 
-    #print("pins last", pins[-1].id)
-
     stack = buildStackPlanes(baseId, pins, univDzs, h0)
     return stack
 
@@ -371,10 +365,19 @@ def buildHexLattice(id, mapStr, univMap, nOuter, pitch, latType = "FLAT", bounda
         raise ValueError("hexagonal lattice map must have hexagonal shape not {}"
                                                                         .format(map))
     fullMap = __buildFullFromHex(map, hexSize, nOuter)
-    hexLatObj = __buildLatticeObject(id, fullMap, univMap, pitch, latType=latType)
+    hexLatObj = __buildHexLatticeObject(id, fullMap, univMap, pitch, latType=latType)
     
     if hexApothem != None:
         hexLatObj = buildHexLatticeWithHexBorder(hexLatObj, hexApothem, latType = latType)
+    return hexLatObj
+
+def buildSquareLattice(id, mapStr, univMap, nOuter, pitch):
+    map, hexSize = __latticeStrParser(mapStr)
+    # if not __isHexagonal(map):
+    #     raise ValueError("hexagonal lattice map must have hexagonal shape not {}"
+    #                                                                     .format(map))
+    fullMap = __buildFullFromSquare(map, hexSize, nOuter)
+    hexLatObj = __buildSquareLatticeObject(id, fullMap, univMap, pitch)
     return hexLatObj
 
 def buildStack(id, univs, dzs, boundary = None):
@@ -386,7 +389,7 @@ def buildStack(id, univs, dzs, boundary = None):
     for i in range(1, nlayers):
         heights[i] = heights[i-1]+dzs[i-1]
 
-    stack = pinStack(id, 0, 0, nlayers)
+    stack = stack(id, 0, 0, nlayers)
     stack.setStack(univs=np.array(univs), heights= np.array(heights))
     stack.collectAll()
     if boundary != None:
@@ -403,9 +406,6 @@ def buildStackPlanes(id, univs, dzs, h0, boundary = None):
     #h0 = thickness/2
     heights[0] = h0
     surfs[0] = surf(id+"spz0", "pz", np.array([h0]))
-    # cells[0] = cell(id+"cpz0")
-    # cells[0].setFill(univs[0])
-    # cells[0].setSurfs([surfs[0]], [1])
     for i in range(1, nlayers):
         heights[i] = heights[i-1]+dzs[i-1]
         surfs[i] = surf(id+"spz"+str(i), "pz", np.array([heights[i]]))
@@ -422,7 +422,6 @@ def buildStackPlanes(id, univs, dzs, h0, boundary = None):
     if boundary != None:
         stack.setBoundary(boundary)
 
-    #print(stack._geoString())
     return stack 
 
 # def buildActiveCore(hexLat, ):

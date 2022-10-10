@@ -87,15 +87,6 @@ class pin(universe):
 
         pinString = pinString + "\n"
 
-        # unique = {}
-        # for i in range(0, len(self.materials)):
-        #     if (self.materials[i].id not in unique):
-        #         unique[self.materials[i].id] = self.materials[i]
-
-        # pinMats = mats()
-        # pinMats.addMats(list(unique.values()))
-        # pinString = pinString + pinMats.toString()
-
         return pinString
 
     def set(self, attr, val):
@@ -227,50 +218,6 @@ class pin(universe):
         newPin.set('radii',  self.radii)
         return newPin
 
-    def _geoString(self):
-        """display properties of pin element in string form
-
-        The purpose of the ``toString`` function is to directly convert a pin element 
-        into a string format for the purpose of convinince when working with 
-        textfiles.
-
-        Returns
-        -------
-        str
-            pin element in str format representing the typical input methodology for
-            input in serpent input file.
-        """
-        pinString = ""
-        pinHeader = "pin " + self.id +"\n"
-        pinString = pinHeader 
-
-
-        univMatsList = self.materials
-
-        if not self.isVoid:
-            for i in range(0,len(univMatsList)):
-
-                if (i != (len(univMatsList)-1)):
-                    pinString = pinString + univMatsList[i].id +"\t" \
-                    + str(self.radii[i]) +"\n"
-                else:
-                    pinString = pinString + univMatsList[i].id +"\n"
-        else:
-            pinString = pinString + "void\n"
-
-        pinString = pinString + "\n"
-
-        # unique = {}
-        # for i in range(0, len(self.materials)):
-        #     if (self.materials[i].id not in unique):
-        #         unique[self.materials[i].id] = self.materials[i]
-
-        # pinMats = mats()
-        # pinMats.addMats(list(unique.values()))
-        # pinString = pinString + pinMats.toString()
-
-        return pinString
-
     def _geoHeader(self):
         """display properties of pin element in string form
 
@@ -302,13 +249,4 @@ class pin(universe):
             pinString = pinString + "void\n"
 
         pinString = pinString + "\n"
-        # unique = {}
-        # for i in range(0, len(self.materials)):
-        #     if (self.materials[i].id not in unique):
-        #         unique[self.materials[i].id] = self.materials[i]
-
-        # pinMats = mats()
-        # pinMats.addMats(list(unique.values()))
-        # pinString = pinString + pinMats.toString()
-
         return pinString

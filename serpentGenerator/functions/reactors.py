@@ -12,7 +12,7 @@ import numbers
 from serpentGenerator.functions.universe import universe
 from serpentGenerator.functions.hexLattice import hexLat
 from serpentGenerator.functions.sqLattice import sqLat
-from serpentGenerator.functions.pinStack import pinStack
+from serpentGenerator.functions.stack import pinStack
 from serpentGenerator.functions.lats import lats as ldict
 from serpentGenerator.functions.cell import cell 
 from serpentGenerator.functions.pins import pins as pdict

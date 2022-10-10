@@ -11,7 +11,7 @@ import pytest as pt
 import numpy as np
 from serpentGenerator.functions.sqLattice import sqLat
 from serpentGenerator.functions.hexLattice import hexLat
-from serpentGenerator.functions.pinStack import pinStack 
+from serpentGenerator.functions.stack import stack 
 from serpentGenerator.functions.pin import pin
 from serpentGenerator.functions.lats import lats
 

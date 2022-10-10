@@ -159,9 +159,6 @@ class cell:
 
         cellStr = cellStr + cellSurfs.toString()
 
-        #cellStr = cellStr + self.fill.toString()
-        # if self.material != None:
-        #     cellStr = cellStr + self.material.toString()
         return cellStr
 
     def _geoHeader(self):
