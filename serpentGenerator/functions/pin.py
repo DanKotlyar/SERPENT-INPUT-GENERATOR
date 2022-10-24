@@ -11,11 +11,12 @@ email: iaguirre6@gatech.edu
 import numpy as np
 from serpentGenerator.functions.checkerrors import (
     _isstr, _isint, _isinstanceArray, _ispositive,
-    _ispositiveArray, _isSorted
+    _ispositiveArray, _isSorted, _isinstanceList
 )
 from serpentGenerator.functions.universe import universe
 from serpentGenerator.functions.material import material
 from serpentGenerator.functions.mats import mats
+from numbers import Number
 
 class pin(universe):
     """Basic data definition for a pin element
@@ -179,6 +180,46 @@ class pin(universe):
             raise AttributeError("{} has no attribute {}"
                                  .format(self, attr))
         return getattr(self, attr)
+
+    def setPin(self, materials, radii):
+        """Assign values to pin
+
+        The purpose of the ``setPin`` function is to set materials and radii for a
+        pin object.
+
+        Parameters
+        ----------
+        materials : list
+            list of material objects
+        radii : list
+            list of radii (float)
+
+        Raises
+        ------
+        TypeError
+            If ``radii`` is not a list of numbers.
+            If ``materials`` is not a list of material objects.
+        ValueError
+            If ``radii`` is not a list of positive numbers.
+
+        Examples
+        --------
+        >>> pin1 = pin("1", 3) 
+        >>> materials1 = ['UO2', 'Zr', 'Water']
+        >>> radii1 = [.45, .47]
+        >>> pin1.setPin(materials1, radii1)
+        """
+        _isinstanceList(materials, material, "list of pin materials")
+        _isinstanceList(radii, Number, "list of pin materials")
+
+        self.univMats = {}
+        self.materials = materials
+        self.radii = radii
+
+        for i in range(0, len(self.materials)):
+                self.univMats[self.materials[i].id] = self.materials[i]
+
+        return
 
     def duplicate(self, newPinId):
         """returns a deep copy of the pin object, must set a new pin id for the new
