@@ -36,9 +36,9 @@ def __readMats():
         def __xsLibH5(mat):
             return __mat.get(mat).get("xsLib")[()]
         def __nuclidesH5(mat):
-            return __mat.get(mat).get("nuclides")[()]
+            return list(__mat.get(mat).get("nuclides")[()])
         def __fractionsH5(mat):
-            return __mat.get(mat).get("fractions")[()]
+            return list(__mat.get(mat).get("fractions")[()])
         def __thermScattH5(mat):
             return __mat.get(mat).get("thermScatt")[()]
 
@@ -62,10 +62,12 @@ def __readMats():
             return density
 
         def __nuclides(mat):
-            return np.array(__nuclidesH5(mat))
+            return list(__nuclidesH5(mat))
+            #return np.array(__nuclidesH5(mat))
 
         def __fractions(mat):
-            return np.array(__fractionsH5(mat))
+            return list(__fractionsH5(mat))
+            #return np.array(__fractionsH5(mat))
 
         def __thermScatt(mat):
             thermScatt = __thermScattH5(mat)

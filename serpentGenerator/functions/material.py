@@ -140,7 +140,7 @@ class material:
         rgbString = "" if(self.rgb == None) else "rgb "+self.rgb
         tempString = "" if self.temp == None else "tmp "+ str(self.temp)
         burnString = "" if self.isBurn == False else "burn 1"
-        moderString = "" if ((self.isModer == False)|(self.thermLib == "None")) \
+        moderString = "" if ((self.isModer == False)|(self.thermLib == None)) \
             else "moder " + self.thermLib
 
         densString = str(self.dens) if self.dens != None else "sum"
