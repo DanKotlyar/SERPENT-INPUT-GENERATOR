@@ -43,48 +43,17 @@ class core:
     ----------
     mainUniv : universe obj
         reactor core layout (main universe)
-    housing : housing obj
-        reactor core housing
-    lats : lats obj 
-        lats obj containing lats desired in input file.
-    pins : pins obj
-        pins obj containing pins desired in input file.
-    materials : mats obj
-        mats obj containing mats desired in input file.
-    flagXS : bool
-        does inputfile have XS generation
-    flagBurn : bool
-        does inputfile have depletion True/False
-    flagBurn : bool
-        does inputfile have branches True/False
-    flagSettings : bool
-        does inputfile have settings True/False
-    xs : dict
-        dictionary containing xs generation info.
-    burnup : dict
-        dictionary containing depletion info.
-    branch : dict 
-        dictionary containing branching info.
-    plot : dict
-        dictionary containing plotting info.
     settings : dict
         dictionary containing input file settings info.
-    coef : dict
-        dictionary containing coef card info.
-    xsLib : dict
-        dictionary containing xsLib datapath info.
 
     Raises
     ------
     TypeError
         If ``mainUniv`` is not a universe obj
-        If ``housing`` is not a housing obj
-        If ``lats`` is not a lats obj
-        If ``pins`` is not a pins obj
-        If ``materials`` is not a mats obj
-        If ``flagXS``, ``flagBurn``, ``flagBranch``, ``flagSettings`` are not bool.
     """
     def __init__(self, mainUniv, baseFileName):
+        _isinstance(mainUniv, universe, "main universe for inputfile")
+        _isstr(baseFileName, "name of baseFile for input")
 
         self.mainUniv = mainUniv
         self.baseFileName = baseFileName
@@ -103,303 +72,337 @@ class core:
         self.coef = {}
         self.xsLibs = {}
 
-    def writeFile(self, filename):
-        """
-        The ``writeFile`` method serves to write the contents of the core object to 
-        a textfile. 
+    # def writeFile(self, filename):
+    #     """
+    #     The ``writeFile`` method serves to write the contents of the core object to 
+    #     a textfile. 
 
-        Parameters
-        ----------
-        filename: str
-            filename core object contents being written to.
+    #     Parameters
+    #     ----------
+    #     filename: str
+    #         filename core object contents being written to.
 
-        Raises
-        ------
-        TypeError
-            If ``filename`` is not a str.
+    #     Raises
+    #     ------
+    #     TypeError
+    #         If ``filename`` is not a str.
 
-        Examples
-        --------
-        >>> input1 = core()
-        >>> input1.writeFile("inputfile.txt")
-        """
-        _isstr(filename, "input text file name")
-        file = open(filename, "w+")
-        file.truncate(0)
-        file.close()
-        file = open(filename,"a") 
-        file.write(self.toString() + "\n")
-        file.close()
+    #     Examples
+    #     --------
+    #     >>> input1 = core()
+    #     >>> input1.writeFile("inputfile.txt")
+    #     """
+    #     _isstr(filename, "input text file name")
+    #     file = open(filename, "w+")
+    #     file.truncate(0)
+    #     file.close()
+    #     file = open(filename,"a") 
+    #     file.write(self.toString() + "\n")
+    #     file.close()
 
 
-    def setXSLib(self, absolutePath, thermScattLibs):
-        """
-        The ``setXSLib`` method serves to set the dat paths for xs libraries and 
-        include the thermal scattering libraries for the inputfile.
+    # def setXSLib(self, absolutePath, thermScattLibs):
+    #     """
+    #     The ``setXSLib`` method serves to set the dat paths for xs libraries and 
+    #     include the thermal scattering libraries for the inputfile.
 
-        Parameters
-        ----------
-        absolutePath: str
-            asbolutePath for the acedata libraries
-        thermScattLibs: str
-            thermal scattering libraries
+    #     Parameters
+    #     ----------
+    #     absolutePath: str
+    #         asbolutePath for the acedata libraries
+    #     thermScattLibs: str
+    #         thermal scattering libraries
 
-        Raises
-        ------
-        TypeError
-            If ``absolutePath``, ``thermScattLibs`` is not a str.
+    #     Raises
+    #     ------
+    #     TypeError
+    #         If ``absolutePath``, ``thermScattLibs`` is not a str.
 
-        Examples
-        --------
-        >>> input1 = core()
-        >>> input1.setXSLib("/user/xs", "therm lwtr lwj3.11t")
-        """
-        _isstr(absolutePath, "i.e. 'user/xsdata/endfb7'")
-        _isstr(thermScattLibs, "i.e. 'therm lwtr lwj.11t'")
-        path = 'set acelib "'+ absolutePath + '/sss_endfb7u.xsdata"' +"\n"
-        path = path + 'set declib "'+ absolutePath + '/sss_endfb7.dec"' +"\n"
-        path = path + 'set nfylib "'+ absolutePath + '/sss_endfb7.nfy"' +"\n"
-        self.xsLibs['path'] = path
-        self.xsLibs['thermxs'] = thermScattLibs
-        self.xsLibs['toString'] = path + thermScattLibs +"\n"
+    #     Examples
+    #     --------
+    #     >>> input1 = core()
+    #     >>> input1.setXSLib("/user/xs", "therm lwtr lwj3.11t")
+    #     """
+    #     _isstr(absolutePath, "i.e. 'user/xsdata/endfb7'")
+    #     _isstr(thermScattLibs, "i.e. 'therm lwtr lwj.11t'")
+    #     path = 'set acelib "'+ absolutePath + '/sss_endfb7u.xsdata"' +"\n"
+    #     path = path + 'set declib "'+ absolutePath + '/sss_endfb7.dec"' +"\n"
+    #     path = path + 'set nfylib "'+ absolutePath + '/sss_endfb7.nfy"' +"\n"
+    #     self.xsLibs['path'] = path
+    #     self.xsLibs['thermxs'] = thermScattLibs
+    #     self.xsLibs['toString'] = path + thermScattLibs +"\n"
 
-    def setPlot(self, types, res = 5000):
-        """
-        The ``setPlot`` method serves to set the plotting options for the inputfile.
+    # def setPlot(self, types, res = 5000):
+    #     """
+    #     The ``setPlot`` method serves to set the plotting options for the inputfile.
 
-        Parameters
-        ----------
-        types : list of ints
-            different plot types following serpent conventions i.e 1 = XY plot
-        res : int
-            resolution of plot i.e 500 x 500
+    #     Parameters
+    #     ----------
+    #     types : list of ints
+    #         different plot types following serpent conventions i.e 1 = XY plot
+    #     res : int
+    #         resolution of plot i.e 500 x 500
 
-        Raises
-        ------
-        TypeError
-            If ``types``, is not a list of postive integers.
-        ValueError
-            If ``res`` is not positive.
+    #     Raises
+    #     ------
+    #     TypeError
+    #         If ``types``, is not a list of postive integers.
+    #     ValueError
+    #         If ``res`` is not positive.
 
-        Examples
-        --------
-        >>> input1 = core()
-        >>> input1.plot(types=[1, 3], res = 5000)
-        """
-        _isinstanceList(types, numbers.Integral, "plot types i.e [1, 2, 3]")
-        _ispositive(res, "plot resolution i.e res = 500  plot 1 500 500]")
-        self.plot['types'] = types
-        self.plot['res'] = res
+    #     Examples
+    #     --------
+    #     >>> input1 = core()
+    #     >>> input1.plot(types=[1, 3], res = 5000)
+    #     """
+    #     _isinstanceList(types, numbers.Integral, "plot types i.e [1, 2, 3]")
+    #     _ispositive(res, "plot resolution i.e res = 500  plot 1 500 500]")
+    #     self.plot['types'] = types
+    #     self.plot['res'] = res
 
-        plotString = ""
-        for i in range(0, len(types)):
-            plotString = plotString+"plot "+str(types[i])+" "+str(res)+" "\
-                +str(res)+"\n"
+    #     plotString = ""
+    #     for i in range(0, len(types)):
+    #         plotString = plotString+"plot "+str(types[i])+" "+str(res)+" "\
+    #             +str(res)+"\n"
         
-        self.plot['toString'] = plotString
+    #     self.plot['toString'] = plotString
 
-    def setBurnup(self, inventory, burnPoints, isDayTot = False):
-        """
-        The ``setBurnup`` method serves to set the depletion options inputfile.
+    # def setBurnup(self, inventory, burnPoints, isDayTot = False):
+    #     """
+    #     The ``setBurnup`` method serves to set the depletion options inputfile.
 
-        Parameters
-        ----------
-        inventory : 1darray
-            list of isotopes being tracked in dep file, follows serpent convention.
-        burnpoints : 1darray
-            burnup time points for depletion runs
-        isDayTot : bool
-            True/False units of burnup are in daytot or MWd/kgU
+    #     Parameters
+    #     ----------
+    #     inventory : 1darray
+    #         list of isotopes being tracked in dep file, follows serpent convention.
+    #     burnpoints : 1darray
+    #         burnup time points for depletion runs
+    #     isDayTot : bool
+    #         True/False units of burnup are in daytot or MWd/kgU
 
-        Raises
-        ------
-        TypeError
-            If ``inventory``, ``burnPoints`` is not a 1darray.
-            If ``isDayTot`` is not a bool.
+    #     Raises
+    #     ------
+    #     TypeError
+    #         If ``inventory``, ``burnPoints`` is not a 1darray.
+    #         If ``isDayTot`` is not a bool.
 
-        Examples
-        --------
-        >>> input1 = core()
-        >>> inventory = np.array([50100, 50110, 541350, 922340, 922350, 942390])
-        >>> burnPoints = np.array([0.1,0.2,0.3])
-        >>> input1.setBurnup(inventory, burnPoints, isDayTot = False)
-        """
-        _is1darray(inventory, "nuclide inventory for burnup")
-        _is1darray(burnPoints, "burnup points/steps, units: MWd/KgU, Daytot")
-        _isbool(isDayTot, "unit for burnup points, True: Daytot, False: MWd/KgU")
+    #     Examples
+    #     --------
+    #     >>> input1 = core()
+    #     >>> inventory = np.array([50100, 50110, 541350, 922340, 922350, 942390])
+    #     >>> burnPoints = np.array([0.1,0.2,0.3])
+    #     >>> input1.setBurnup(inventory, burnPoints, isDayTot = False)
+    #     """
+    #     _is1darray(inventory, "nuclide inventory for burnup")
+    #     _is1darray(burnPoints, "burnup points/steps, units: MWd/KgU, Daytot")
+    #     _isbool(isDayTot, "unit for burnup points, True: Daytot, False: MWd/KgU")
 
-        timeString = ""
-        unit = "dayTot" if isDayTot else "butot"
+    #     timeString = ""
+    #     unit = "dayTot" if isDayTot else "butot"
             
-        for i in range(0, len(burnPoints)):
-            timeString = timeString + str(round(burnPoints[i], 4)) + " "
+    #     for i in range(0, len(burnPoints)):
+    #         timeString = timeString + str(round(burnPoints[i], 4)) + " "
 
-        burnupString = "dep "+unit+" "+ timeString+ "\n"
+    #     burnupString = "dep "+unit+" "+ timeString+ "\n"
 
-        invString = ""
-        for i in range(0, len(inventory)):
-            invString = invString + str(inventory[i]) + "\n "
+    #     invString = ""
+    #     for i in range(0, len(inventory)):
+    #         invString = invString + str(inventory[i]) + "\n "
 
-        invString = "set inventory \n " + invString + "\n"
+    #     invString = "set inventory \n " + invString + "\n"
 
-        burnupString = invString + burnupString
+    #     burnupString = invString + burnupString
 
-        self.burnup['inventory'] = inventory
-        self.burnup['unit'] = unit
-        self.burnup['burnPoints'] = burnPoints
-        self.burnup['toString'] = burnupString
+    #     self.burnup['inventory'] = inventory
+    #     self.burnup['unit'] = unit
+    #     self.burnup['burnPoints'] = burnPoints
+    #     self.burnup['toString'] = burnupString
 
-    def setXS(self, ngroups, ebounds, universes, setFPPXS=False, setADF=False):
-        """
-        The ``setXS`` method serves to set the xs generatopm options in inputfile.
+    # def setXS(self, ngroups, ebounds, universes, setFPPXS=False, setADF=False):
+    #     """
+    #     The ``setXS`` method serves to set the xs generatopm options in inputfile.
 
-        Parameters
-        ----------
-        ngroups : int
-            number of energy groups for xs gen
-        ebounds : 1darray
-            energy bounds for xs generation
-        universes : list of universe objects
-            list of universe to generate xs for
-        setFPPXS : bool
-            True/False generate fission product poison xs
-        setADF: bool
-            True/False generate axial discontunuity factors
+    #     Parameters
+    #     ----------
+    #     ngroups : int
+    #         number of energy groups for xs gen
+    #     ebounds : 1darray
+    #         energy bounds for xs generation
+    #     universes : list of universe objects
+    #         list of universe to generate xs for
+    #     setFPPXS : bool
+    #         True/False generate fission product poison xs
+    #     setADF: bool
+    #         True/False generate axial discontunuity factors
 
-        Raises
-        ------
-        TypeError
-            If ``ngroups`` is not an integer.
-            If ``ebounds`` is not a 1darray.
-            If ``universe`` is not a list of universe objects.
-        ValueError
-            If ``ngroups``, ``ebounds`` is not positive.
+    #     Raises
+    #     ------
+    #     TypeError
+    #         If ``ngroups`` is not an integer.
+    #         If ``ebounds`` is not a 1darray.
+    #         If ``universe`` is not a list of universe objects.
+    #     ValueError
+    #         If ``ngroups``, ``ebounds`` is not positive.
 
-        Examples
-        --------
-        >>> input1 = core()
-        >>> ngroups = 2
-        >>> ebounds = np.array([.625E-6])
-        >>> universes = [topRef, botRef, Fuel]
-        >>> input1.setXS(ngroups, ebounds, universes, setFPPXS = True, setADF = True)
-        """
-        _isint(ngroups, "num of energy groups used in xs gen")
-        _ispositive(ngroups, "num of energy groups used in xs gen")
-        _is1darray(ebounds, "energy group boundaries used for xs gen")
-        _ispositiveArray(ebounds, "energy group boundaries used for xs gen")
-        _isinstanceList(universes,universe, "universes used for xs gen")
+    #     Examples
+    #     --------
+    #     >>> input1 = core()
+    #     >>> ngroups = 2
+    #     >>> ebounds = np.array([.625E-6])
+    #     >>> universes = [topRef, botRef, Fuel]
+    #     >>> input1.setXS(ngroups, ebounds, universes, setFPPXS = True, setADF = True)
+    #     """
+    #     _isint(ngroups, "num of energy groups used in xs gen")
+    #     _ispositive(ngroups, "num of energy groups used in xs gen")
+    #     _is1darray(ebounds, "energy group boundaries used for xs gen")
+    #     _ispositiveArray(ebounds, "energy group boundaries used for xs gen")
+    #     _isinstanceList(universes,universe, "universes used for xs gen")
         
-        self.xs['ngroups'] = ngroups
-        self.xs['ebounds'] = ebounds
-        self.xs['universes'] = universes
-        self.xs['setFPPXS'] = setFPPXS
-        self.xs['setADF'] = setADF
+    #     self.xs['ngroups'] = ngroups
+    #     self.xs['ebounds'] = ebounds
+    #     self.xs['universes'] = universes
+    #     self.xs['setFPPXS'] = setFPPXS
+    #     self.xs['setADF'] = setADF
 
-        xsString = ""
-        gcuString = ""
-        for i in range(0, len(universes)):
-            gcuString = gcuString + universes[i].id + "  "
-        gcuString = "set gcu " + gcuString + "\n"
+    #     xsString = ""
+    #     gcuString = ""
+    #     for i in range(0, len(universes)):
+    #         gcuString = gcuString + universes[i].id + "  "
+    #     gcuString = "set gcu " + gcuString + "\n"
 
-        nfgString = ""
-        for i in range(0, len(ebounds)):
-            nfgString = nfgString + str(round(ebounds[i], 9)) + " "
-        nfgString = "set nfg " + str(ngroups) + " " + nfgString + "\n"
+    #     nfgString = ""
+    #     for i in range(0, len(ebounds)):
+    #         nfgString = nfgString + str(round(ebounds[i], 9)) + " "
+    #     nfgString = "set nfg " + str(ngroups) + " " + nfgString + "\n"
 
-        adfString = "" if not setADF else "set adf 0 " + self.voidSurf.id + " full\n"
+    #     adfString = "" if not setADF else "set adf 0 " + self.voidSurf.id + " full\n"
 
-        FPPString = "" if not setFPPXS else "set poi 1 \n"
+    #     FPPString = "" if not setFPPXS else "set poi 1 \n"
 
-        xsString = gcuString + nfgString + FPPString + adfString + "\n"
+    #     xsString = gcuString + nfgString + FPPString + adfString + "\n"
 
-        self.xs['toString'] = xsString
-        self.flagXS = True
-        #set gcu -1 if xsflag false
+    #     self.xs['toString'] = xsString
+    #     self.flagXS = True
+    #     #set gcu -1 if xsflag false
 
-    def setBranching(self, branches):
-        """
-        The ``setBranching`` method serves to set the branches in the inputfile.
+    # def setBranching(self, branches):
+    #     """
+    #     The ``setBranching`` method serves to set the branches in the inputfile.
 
-        Parameters
-        ----------
-        branches : branches obj
-            branches obj that has all branch conditions.
+    #     Parameters
+    #     ----------
+    #     branches : branches obj
+    #         branches obj that has all branch conditions.
 
-        Raises
-        ------
-        TypeError
-            If ``branches`` is not a branches obj
+    #     Raises
+    #     ------
+    #     TypeError
+    #         If ``branches`` is not a branches obj
 
-        Examples
-        --------
-        >>> input1 = core()
-        >>> fuelTemps = [600, 900, 1200]
-        >>> branches = branches.branchBuilderPWR(fuelTemps)
-        >>> input1.setBranching(branches)
-        """
-        _isinstance(branches, bdict, "branches")
-        self.materials.addMats(branches.mats)
-        self.branch['branches'] = branches
-        self.branch['nbranch'] = branches.nbranches
-        self.branch['isPertFT'] = branches.isPertFT
-        self.branch['isPertMT'] = branches.isPertMT
-        self.branch['isPertMD'] = branches.isPertMD
-        self.branch['isPertBPPM'] = branches.isPertBPPM
+    #     Examples
+    #     --------
+    #     >>> input1 = core()
+    #     >>> fuelTemps = [600, 900, 1200]
+    #     >>> branches = branches.branchBuilderPWR(fuelTemps)
+    #     >>> input1.setBranching(branches)
+    #     """
+    #     _isinstance(branches, bdict, "branches")
+    #     self.materials.addMats(branches.mats)
+    #     self.branch['branches'] = branches
+    #     self.branch['nbranch'] = branches.nbranches
+    #     self.branch['isPertFT'] = branches.isPertFT
+    #     self.branch['isPertMT'] = branches.isPertMT
+    #     self.branch['isPertMD'] = branches.isPertMD
+    #     self.branch['isPertBPPM'] = branches.isPertBPPM
 
-        self.branch['fuelTemps'] = branches.pertFT
-        self.branch['modTemps'] = branches.pertMT
-        self.branch['modDens'] = branches.pertMD
-        self.branch['bppms'] = branches.pertBPPM
+    #     self.branch['fuelTemps'] = branches.pertFT
+    #     self.branch['modTemps'] = branches.pertMT
+    #     self.branch['modDens'] = branches.pertMD
+    #     self.branch['bppms'] = branches.pertBPPM
 
-        self.branch['toString'] = branches.toString()
+    #     self.branch['toString'] = branches.toString()
 
-    def _setCoef(self):
-        def burnupOutput(burnup):
-            timeString = ""
-            unit = -1 if (burnup['unit'] == 'dayTot') else 1
+    # def _setCoef(self):
+    #     def burnupOutput(burnup):
+    #         timeString = ""
+    #         unit = -1 if (burnup['unit'] == 'dayTot') else 1
                 
-            for i in range(0, len(burnup['burnPoints'])):
-                timeString = timeString + str(unit*burnup['burnPoints'][i])
-                timeString = timeString + " "
+    #         for i in range(0, len(burnup['burnPoints'])):
+    #             timeString = timeString + str(unit*burnup['burnPoints'][i])
+    #             timeString = timeString + " "
 
-            burnupString = str(len(burnup['burnPoints'])) + " " + timeString+ "\n"
+    #         burnupString = str(len(burnup['burnPoints'])) + " " + timeString+ "\n"
 
-            return burnupString
+    #         return burnupString
 
-        coefString = ""
-        if (self.flagBranch & self.flagBurn & ('toString' in self.burnup)
-            & ('toString' in self.branch)):
+    #     coefString = ""
+    #     if (self.flagBranch & self.flagBurn & ('toString' in self.burnup)
+    #         & ('toString' in self.branch)):
 
-            coefString = "coef "+ burnupOutput(self.burnup)
-            branchnames = ""
-            for key in self.branch['branches'].branches:
-                branchnames = branchnames
-                + self.branch['branches'].branches[key].id + " "
+    #         coefString = "coef "+ burnupOutput(self.burnup)
+    #         branchnames = ""
+    #         for key in self.branch['branches'].branches:
+    #             branchnames = branchnames
+    #             + self.branch['branches'].branches[key].id + " "
 
-            branchnames = branchnames + "\n"
-            coefString = coefString + str(self.branch['nbranch'])
-            +" "+ branchnames + "\n"
+    #         branchnames = branchnames + "\n"
+    #         coefString = coefString + str(self.branch['nbranch'])
+    #         +" "+ branchnames + "\n"
 
-        elif (self.flagBranch & ('toString' in self.branch)):
-            coefString = "coef 1 0 \n"
-            branchnames =""
-            for key in self.branch['branches'].branches:
-                branchnames = branchnames + self.branch['branches'].branches[key].id
-                + " "
+    #     elif (self.flagBranch & ('toString' in self.branch)):
+    #         coefString = "coef 1 0 \n"
+    #         branchnames =""
+    #         for key in self.branch['branches'].branches:
+    #             branchnames = branchnames + self.branch['branches'].branches[key].id
+    #             + " "
 
-            branchnames = branchnames + "\n"
-            coefString = coefString + str(self.branch['nbranch'])
-            +" "+ branchnames + "\n"
+    #         branchnames = branchnames + "\n"
+    #         coefString = coefString + str(self.branch['nbranch'])
+    #         +" "+ branchnames + "\n"
 
-        elif (self.flagBurn & ('toString' in self.burnup)):
-            coefString = "coef "+ burnupOutput(self.burnup)
-        else:
-            pass
+    #     elif (self.flagBurn & ('toString' in self.burnup)):
+    #         coefString = "coef "+ burnupOutput(self.burnup)
+    #     else:
+    #         pass
 
-        self.coef['toString'] = coefString
+    #     self.coef['toString'] = coefString
 
 
     def setSettings(self, geoType, nps, nact, nskip, xsAbsPath, plotOptions = None):
+        """
+        The ``setSettings`` method serves to set general settings in the inputfile.
+
+        Parameters
+        ----------
+        geoType : str
+            can be either "2D" or "3D"
+        nps : int
+            number of particles per cycle.
+        nact : int
+            number of active cycles
+        nskip : int
+            number of skipped cycles
+        xsAbsPath : str
+            absolute path for xs data
+        plotOPtions : tuple
+            tuple containing plot options, 1st index is a list of plot type,
+            2nd index is the resolution, 3rd index is a list of plot position, 4th 
+            index is plot outline type. syntax corresponds to serpent manual.
+
+        Raises
+        ------
+        TypeError
+            If ``nps``, ``nact``, ``nskip`` is not a number.
+        ValueError
+            If ``nps``, ``nact``, ``nskip`` is not positive.
+
+        Examples
+        --------
+        >>> pwr1 = core(box, "./serpent/pwr_test")
+        >>> xsPath = r"/mnt/c/Users/user/Documents/endfb7/sss_endfb7u.xsdata"
+        >>> pwr1.setSettings(geoType='2D', nps = 1E+05, nact = 100, nskip=100, xsAbsPath=xsPath, plotOptions=([3], 5000, [0], 1))
+        >>> pwr1.toSerpent()
+        """
         setDict = {}
         incStr = "include "+self.baseFileName+".mat\ninclude "+self.baseFileName+".geo\n"
         setDict["include"] = incStr
@@ -533,38 +536,38 @@ class core:
 
     #     self.settings['toString'] = setString
 
-    def toString(self):
-        """display input in stringForm.
+    # def toString(self):
+    #     """display input in stringForm.
 
-        The purpose of the ``toString`` function is to directly convert the input
-        into a string format for convinince when working with 
-        textfiles. Converts it to serpent format.
+    #     The purpose of the ``toString`` function is to directly convert the input
+    #     into a string format for convinince when working with 
+    #     textfiles. Converts it to serpent format.
 
-        Returns
-        -------
-        str
-            input in str format representing the typical input methodology for
-            input in serpent input file.
-        """
+    #     Returns
+    #     -------
+    #     str
+    #         input in str format representing the typical input methodology for
+    #         input in serpent input file.
+    #     """
 
-        inputString = ""
-        for key in self.input:
-            if self.input[key] != None:
-                inputString = inputString + self.input[key].toString()
+    #     inputString = ""
+    #     for key in self.input:
+    #         if self.input[key] != None:
+    #             inputString = inputString + self.input[key].toString()
 
-        if ((self.flagBurn) & ('toString' in self.burnup)):
-            inputString = inputString + self.burnup['toString']
-        if self.flagXS:
-            inputString = inputString + self.xs['toString']
-        if ('toString' in self.settings):
-            inputString = inputString + self.settings['toString']
-        if ((self.flagBranch) & ('toString' in self.branch)):
-            inputString = inputString + self.branch['toString']
-        if ('toString' in self.plot):
-            inputString = inputString + self.plot['toString']
+    #     if ((self.flagBurn) & ('toString' in self.burnup)):
+    #         inputString = inputString + self.burnup['toString']
+    #     if self.flagXS:
+    #         inputString = inputString + self.xs['toString']
+    #     if ('toString' in self.settings):
+    #         inputString = inputString + self.settings['toString']
+    #     if ((self.flagBranch) & ('toString' in self.branch)):
+    #         inputString = inputString + self.branch['toString']
+    #     if ('toString' in self.plot):
+    #         inputString = inputString + self.plot['toString']
 
-        inputString = inputString + self.xsLibs['toString']
-        return inputString
+    #     inputString = inputString + self.xsLibs['toString']
+    #     return inputString
 
     def __buildSerpentMaterialFile(self):
         matsFile = open(self.baseFileName+".mat", "w")

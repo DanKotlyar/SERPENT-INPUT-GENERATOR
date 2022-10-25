@@ -6,6 +6,7 @@ of constructing specific type of reactors such as PWRs, BWRs, NTPs, MSRs, etc.
 email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
+import numbers
 from os import access
 import numpy as np
 import math
@@ -146,7 +147,7 @@ def __isHexagonal(map):
         isHex = False
     return isHex
 
-def buildHexLatticeWithHexBorder(hexLat, hexApothem, latType = "FLAT"):
+def __buildHexLatticeWithHexBorder(hexLat, hexApothem, latType = "FLAT"):
     acUniv = universe("active_core_univ")
     acCell = cell("active_core_cell", isVoid=False)
     acCell.setFill(hexLat)
@@ -163,6 +164,50 @@ def buildHexLatticeWithHexBorder(hexLat, hexApothem, latType = "FLAT"):
     return acUniv
 
 def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoid = False):
+    """
+    The ``buildPeripheralRing`` method to nest a universe object within a peripheral
+    ring. 
+
+    Parameters
+    ----------
+    ringId : str
+        name of ring universe
+    radius : float
+        radius of peripheral ring 
+    material : material object
+        optional material to fill inside peripheral ring
+    isVoid : bool
+        True/False fill ring with void
+
+    Raises
+    ------
+    TypeError
+        If ``id`` is not a str
+        If ``radius`` not a number
+        If ``material`` not a material object
+        If ``isVoid`` not a bool
+    ValueError
+        If `radius`` is not a positive number
+
+    Examples
+    --------
+    >>> acLatMap = "0 0 1 1 1 0 0;\
+                    0 1 1 1 1 1 0;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    0 1 1 1 1 1 0;\
+                    0 0 1 1 1 0 0"
+    >>> acUnivMap = {"1": fa1, "0": ca1}
+    >>> nOuter = 2
+    >>> ac =  buildSquareLattice("ac", acLatMap, acUnivMap, nOuter, assemPitch)
+    >>> acCool = buildPeripheralRing(ac, activeCoreRad, material = MATLIB['H2O'], ringId = "acCool")
+    """
+    _isstr(ringId, "universe id")
+    _isbool(isVoid, "True/False is universe void")
+    #_isinstance(material, material, "fill material")
+    #_isinstance(nOuter, numbers.Integral, "number of outer layers")
+    _ispositive(radius, "ring radius")
     prSurf1 = surf(ringId+"cc1", "cyl", np.array([0.0, 0.0, radius]))
     if innerUniv.boundary != None:
         if not isVoid:
@@ -220,6 +265,7 @@ def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoi
     return totUniv
 
 def buildPeripheralObject(innerUniv, outerUniv):
+
     totUniv = universe(innerUniv.id + outerUniv.id+"_univ")
     totCell1 = cell(innerUniv.id +outerUniv.id+"_cell1", isVoid=False)
     totCell1.setFill(innerUniv)
@@ -360,6 +406,55 @@ def build3DPinPlanes(baseId, pinMaterials, pinRadii, nactiveLayers, activedz, h0
 
 def buildHexLattice(id, mapStr, univMap, nOuter, pitch, latType = "FLAT", boundaryType = None,
                                              hexApothem = None, outerRadius = None):
+    """
+    The ``buildSquareLattice`` method serves to build a square lattice object. 
+
+    Parameters
+    ----------
+    id : str
+        name of universe
+    mapStr : str
+        str of lattice map, with ; delimitinng each row 
+    univMap : dict
+        dictionary mapping mapStr id to univer object, "0" designated to outer univ.
+    nOuter : int
+        number of outer layers
+    pitch : float
+        lattice square pitch
+    latType : str
+        "FLAT" or "POINT"
+    hexApothem : float
+        hexagonal boundary apothem
+
+    Raises
+    ------
+    TypeError
+        If ``id``, ``mapStr`` is not a str
+        If ``univMap`` not a dict
+        If ``nOuter``, ``pitch`` is not a number
+    ValueError
+        If ``pitch`` is not a positive number
+
+    Examples
+    --------
+    >>> acLatMap = "0 0 1 1 1 0 0;\
+                    0 1 1 1 1 1 0;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    0 1 1 1 1 1 0;\
+                    0 0 1 1 1 0 0"
+    >>> acUnivMap = {"1": fa1, "0": ca1}
+    >>> nOuter = 2
+    >>> ac =  buildSquareLattice("ac", acLatMap, acUnivMap, nOuter, assemPitch)
+    """
+    _isstr(id, "lattice id")
+    _isstr(mapStr, "lattice map")
+    _isinstance(univMap, dict, "universe map")
+    _isinstance(nOuter, numbers.Integral, "number of outer layers")
+    _ispositive(pitch, "lattice pitch")
+    if hexApothem != None:
+        _ispositive(hexApothem, "hex boundary apothem")
     map, hexSize = __latticeStrParser(mapStr)
     if not __isHexagonal(map):
         raise ValueError("hexagonal lattice map must have hexagonal shape not {}"
@@ -368,10 +463,53 @@ def buildHexLattice(id, mapStr, univMap, nOuter, pitch, latType = "FLAT", bounda
     hexLatObj = __buildHexLatticeObject(id, fullMap, univMap, pitch, latType=latType)
     
     if hexApothem != None:
-        hexLatObj = buildHexLatticeWithHexBorder(hexLatObj, hexApothem, latType = latType)
+        hexLatObj = __buildHexLatticeWithHexBorder(hexLatObj, hexApothem, latType = latType)
     return hexLatObj
 
 def buildSquareLattice(id, mapStr, univMap, nOuter, pitch):
+    """
+    The ``buildSquareLattice`` method serves to build a square lattice object. 
+
+    Parameters
+    ----------
+    id : str
+        name of universe
+    mapStr : str
+        str of lattice map, with ; delimitinng each row 
+    univMap : dict
+        dictionary mapping mapStr id to univer object, "0" designated to outer univ.
+    nOuter : int
+        number of outer layers
+    pitch : float
+        lattice square pitch
+
+    Raises
+    ------
+    TypeError
+        If ``id``, ``mapStr`` is not a str
+        If ``univMap`` not a dict
+        If ``nOuter``, ``pitch`` is not a number
+    ValueError
+        If ``pitch`` is not a positive number
+
+    Examples
+    --------
+    >>> acLatMap = "0 0 1 1 1 0 0;\
+                    0 1 1 1 1 1 0;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    0 1 1 1 1 1 0;\
+                    0 0 1 1 1 0 0"
+    >>> acUnivMap = {"1": fa1, "0": ca1}
+    >>> nOuter = 2
+    >>> ac =  buildSquareLattice("ac", acLatMap, acUnivMap, nOuter, assemPitch)
+    """
+    _isstr(id, "lattice id")
+    _isstr(mapStr, "lattice map")
+    _isinstance(univMap, dict, "universe map")
+    _isinstance(nOuter, numbers.Integral, "number of outer layers")
+    _ispositive(pitch, "lattice pitch")
     map, hexSize = __latticeStrParser(mapStr)
     # if not __isHexagonal(map):
     #     raise ValueError("hexagonal lattice map must have hexagonal shape not {}"
@@ -381,6 +519,39 @@ def buildSquareLattice(id, mapStr, univMap, nOuter, pitch):
     return hexLatObj
 
 def buildStack(id, univs, dzs, boundary = None):
+    """
+    The ``buildStack`` method serves to build a general stack of universe objects
+
+    Parameters
+    ----------
+    id : str
+        name of stack universe
+    univs : list of universe objects
+        list of universes to be filled in stack from bottom up
+    dzs : list of numbers
+        list of widths of each universe in stack
+    boundary: surface obj
+        surface obj serving as boundary for stack
+
+    Raises
+    ------
+    TypeError
+        If ``id`` is not a str.
+        If ``univs`` is not a list of universe objects
+        If ``dzs`` is not a list of numbers
+    ValueError
+        If ``dzs`` is not a list of positive numbers
+
+    Examples
+    --------
+    >>> univs = [u1, u2, u3]
+    >>> dzs = [1, 1, 1]
+    >>> stack1 = buildStack("stack1", univs, dzs)
+    """
+    _isinstanceList(univs, universe, "list of universe")
+    _isinstanceList(dzs, numbers.Real, "list of universe widths" )
+    if boundary != None:
+        _isinstance(boundary, surf)
     nlayers = len(univs)
     heights = [0]*nlayers
     thickness = np.sum(np.array(dzs))
@@ -397,6 +568,39 @@ def buildStack(id, univs, dzs, boundary = None):
     return stack 
 
 def buildStackPlanes(id, univs, dzs, h0, boundary = None):
+    """
+    The ``buildStackPlanes`` method serves to build a general stack of universe 
+    objects using planes instead of stack lattice 
+
+    Parameters
+    ----------
+    id : str
+        name of stack universe
+    univs : list of universe objects
+        list of universes to be filled in stack from bottom up
+    dzs : list of numbers
+        list of widths of each universe in stack
+    h0 : float
+        initial height of stack (cm)
+    boundary: surface obj
+        surface obj serving as boundary for stack
+
+    Raises
+    ------
+    TypeError
+        If ``id`` is not a str.
+        If ``univs`` is not a list of universe objects
+        If ``dzs`` is not a list of numbers
+    ValueError
+        If ``dzs`` is not a list of positive numbers
+
+    Examples
+    --------
+    >>> univs = [u1, u2, u3]
+    >>> dzs = [1, 1, 1]
+    >>> h0 = 17.12
+    >>> stack1 = buildStackPlanes("stack1", univs, dzs, h0)
+    """
     stack = universe(id)
     nlayers = len(univs)
     heights = [0]*nlayers
@@ -423,57 +627,3 @@ def buildStackPlanes(id, univs, dzs, h0, boundary = None):
         stack.setBoundary(boundary)
 
     return stack 
-
-# def buildActiveCore(hexLat, ):
-#     pr1 = buildPeripheralRings(hexLat,  MATLIB['Reflector'], 11.6926, "pr1")
-#     #print(pr1.toString())
-#     pr2 = buildPeripheralRings(pr1,  MATLIB['Zr'], 11.87704, "pr2")
-#     print(vars(pr2))
-#     print(pr2._geoString())
-#     return
-
-# univ1 = pin("A", 3)
-# radii = [1, 2, 3]
-# maties = [MATLIB['Zr'], MATLIB['H2O'], MATLIB['UO2']]
-# univ1.set('radii', radii)
-# univ1.set('materials', maties)
-
-# univ2 = pin("B", 3)
-# univ2.set('radii', radii)
-# univ2.set('materials', maties)
-
-# univ3 = pin("C", 3)
-# univ3.set('radii', radii)
-# univ3.set('materials', maties)
-
-# latticeMap = {'1': univ1, '2': univ2, '0':univ3}
-# layout = " 2 2 2;\
-#           2 1 1 2;\
-#          2 1 1 1 2;\
-#           2 1 1 2;\
-#            2 2 2"
-# nOuter = 2
-# pitch = 1.260
-# hexApothem = 11.414
-
-# hexLat1 = buildHexLattice(layout, latticeMap, nOuter, pitch, hexApothem=hexApothem)
-# activeCore = buildActiveCore(hexLat1)
-
-# #print(hexLat1._geoString())
-#coreMap = {'lattice':hexLat1, 'intRef': intRef, 'barrel':barrel}
-
-# mats1 = [MATLIB['UO2'], MATLIB['Zr'], MATLIB['H2O']]
-# radii = [1, 2]
-# topRefMats = [MATLIB['Reflector'].duplicateMat("topRefMat"), MATLIB['UO2']]
-# botRefMats = [MATLIB['Reflector'].duplicateMat("botRefMat"), MATLIB['UO2']]
-# topRef = pin("topRef", 2)
-# topRef.set('materials', topRefMats)
-# topRef.set('radii', [2])
-# botRef = pin("botRef", 2)
-# botRef.set('materials', botRefMats)
-# botRef.set('radii', [2])
-# topRefdz = 5
-# botRefdz = 10
-
-# build3Dpin("3Dpin", mats1, radii, 20, dz = 1, topUniv=topRef, topUnivdz=topRefdz, botUniv = botRef, botUnivdz=botRefdz)
-
