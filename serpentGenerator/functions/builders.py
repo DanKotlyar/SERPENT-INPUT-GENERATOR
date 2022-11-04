@@ -27,6 +27,7 @@ from serpentGenerator.functions.housing import housing as hous
 from serpentGenerator.functions.branches import branches as bdict
 from serpentGenerator.functions.core import core
 from serpentGenerator.functions.templates import SNAP
+from serpentGenerator.functions.material import material as matObj
 from serpentGenerator.functions.checkerrors import (
     _isinstance, _is1darray, _isbool, _isint, _ispositive, _ispositiveArray,
     _isstr, _isinstanceList
@@ -205,9 +206,9 @@ def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoi
     """
     _isstr(ringId, "universe id")
     _isbool(isVoid, "True/False is universe void")
-    #_isinstance(material, material, "fill material")
-    #_isinstance(nOuter, numbers.Integral, "number of outer layers")
+    _isinstance(material, matObj, "fill material")
     _ispositive(radius, "ring radius")
+    _isinstance(innerUniv, universe, "inner universe object")
     prSurf1 = surf(ringId+"cc1", "cyl", np.array([0.0, 0.0, radius]))
     if innerUniv.boundary != None:
         if not isVoid:
@@ -265,7 +266,40 @@ def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoi
     return totUniv
 
 def buildPeripheralObject(innerUniv, outerUniv):
+    """
+    The ``buildPeripheralObject`` method is used to nest a universe object within a 
+    custom peripheral universe object. This method should be used when dealing with
+    custom geometries.
 
+    Parameters
+    ----------
+    innerUniv : universe object
+        inner universe object (objected being nested)
+    outerUniv : universe object
+        outer univserse object (object surrounding nested universe)
+
+    Raises
+    ------
+    TypeError
+        If ``innerUniv``, ``outerUniv`` is not a universe object.
+
+    Examples
+    --------
+    >>> acLatMap = "0 0 1 1 1 0 0;\
+                    0 1 1 1 1 1 0;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    0 1 1 1 1 1 0;\
+                    0 0 1 1 1 0 0"
+    >>> acUnivMap = {"1": fa1, "0": ca1}
+    >>> nOuter = 2
+    >>> ac =  buildSquareLattice("ac", acLatMap, acUnivMap, nOuter, assemPitch)
+    >>> customUniv = universe("custom")
+    >>> acCool = buildPeripheralObject(ac, customUniv)
+    """
+    _isinstance(innerUniv, universe, "inner universe object")
+    _isinstance(outerUniv, universe, "outer universe object")
     totUniv = universe(innerUniv.id + outerUniv.id+"_univ")
     totCell1 = cell(innerUniv.id +outerUniv.id+"_cell1", isVoid=False)
     totCell1.setFill(innerUniv)
@@ -281,6 +315,52 @@ def buildPeripheralObject(innerUniv, outerUniv):
     return totUniv
 
 def buildBoundingBox(innerUniv, width = None, length = None, height =None):
+    """
+    The ``buildBoundingBox`` method is used to designate the end of the active
+    particle area of the serpent geometry. In otherwords, it used to denote the 
+    beginning of the "outside" region in serpent. If the geometry is cylindrical or 
+    hexagonal the program is smart enought to set the dimension of the bounding box
+    for you. If not, one can always specify the width length and height of the box.
+
+    Parameters
+    ----------
+    innerUniv : universe object
+        inner universe object (object being enclosed)
+    width : float
+        box half width (x), [-x, x]
+    length : float
+        box half length (y), [-y, y]
+    hieght : float
+        box half height (z), [-z, z]
+
+    Raises
+    ------
+    TypeError
+        If ``innerUniv`` is not a universe object.
+        If ``width``, ``length``, ``height`` is not a number.
+    ValueError
+        If ``width``, ``length``, ``height`` is not a positive number.
+
+    Examples
+    --------
+    >>> acLatMap = "0 0 1 1 1 0 0;\
+                    0 1 1 1 1 1 0;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    0 1 1 1 1 1 0;\
+                    0 0 1 1 1 0 0"
+    >>> acUnivMap = {"1": fa1, "0": ca1}
+    >>> nOuter = 2
+    >>> ac =  buildSquareLattice("ac", acLatMap, acUnivMap, nOuter, assemPitch)
+    >>> acCool = buildPeripheralRing(ac, activeCoreRad, material = MATLIB['H2O'], ringId = "acCool")
+    >>> box = buildBoundingBox(acCool)
+    """
+    _isinstance(innerUniv, universe, "inner universe object")
+    _ispositive(width, "box half width")
+    _ispositive(length, "box half length")
+    _ispositive(height, "box half height")
+
     zUniv = universe("1")
     zCell1 = cell("fillRegion", isVoid=False)
     zCell1.setFill(innerUniv)
@@ -320,6 +400,80 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None):
     return z0Univ
     
 def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = None, hasUniqueMatlayers = False, topUniv = None, topUnivdz = None, botUniv = None, botUnivdz = None):
+    """
+    The ``build3Dpin`` method is used to build traditional 3D pin geometries in 3D.
+
+    Parameters
+    ----------
+    baseId : str
+        name of base pin id, all pin objects will use this id as a base with a suffix
+        attached.
+    pinMaterials : list of material objects
+        list of materials for pin in respective order 
+    pinRadii : list of float
+        list of radii for pin materials in respective order
+    nLayers : int
+        number of discretized axial layers
+    dz : float
+        axial discretization step 
+    hasUniqueMaterials : bool
+        True/False, each discretized axial nested universe has unique material across
+        pin
+    topUniv : universe object
+        universe object which will be placed on the top of the 3D pin
+    topUnivdz : float
+        thickness of top universe object
+    botUniv : universe object
+        universe object which will be placed on the bottom of the 3D pin
+    botUnivdz : float
+        thickness of bottom universe object
+
+    Raises
+    ------
+    TypeError
+        If ``baseId`` is not a str
+        If ``pinMaterials`` is not a list of material objects
+        If ``pinRadii`` is not a list of float objects
+        If ``hasUniqueMaterials`` is not a bool.
+    ValueError
+        If ``nlayers``, ``dz``, ``topUnivdz``, ``botUnivdz`` is not a positive number
+
+    Examples
+    --------
+    >>> upperEndCap = pin("upperEndCap", 2)
+    >>> upperEndCap.set('materials', [cladMat, airMat ])
+    >>> upperEndCap.set('radii', [cladRad])
+
+    >>> upperPois = pin("upperPoison", 1)
+    >>> upperPois.set('materials', [bpMat])
+
+    >>> lvt = 3.7293
+    >>> uvt = 3.65 
+
+    >>> uecPois = buildStackPlanes("uecWithPoison", [upperPois, upperEndCap], [upT, upperEndcapThick], -22.9+lvt+lgt+activeFuelHeight+lowerEndcapThick)
+    >>> uecPoisLen = upT + upperEndcapThick
+
+    >>> lowerEndCap = pin("lowerEndCap", 2)
+    >>> lowerEndCap.set('materials', [cladMat, airMat])
+    >>> lowerEndCap.set('radii', [cladRad])
+    >>> fuelSer = build3DPin("fuelElem", fuelSerMats, fuelSerRadii, nActiveLayers, dz, topUniv=uecPois, topUnivdz=uecPoisLen, botUniv=lowerEndCap, botUnivdz=lowerEndcapThick)
+    """
+    _isstr(baseId, "base pin id")
+    _isinstanceList(pinMaterials, matObj, "list of pin materials" )
+    _isinstanceList(pinRadii, numbers.Real, "list of pin radii" )
+    _isint(nLayers, "number of axial layers")
+    if dz != None:
+        _ispositive(dz, "axial discretization step")
+    if hasUniqueMatlayers != None:
+        _isbool(hasUniqueMatlayers, "True/False has unique materials for pins")
+    if topUniv != None:
+        _isinstance(topUniv, universe, "Top universe object")
+        _ispositive(topUnivdz, "top universe axial thickness")
+    if botUniv != None:
+        _isinstance(botUniv, universe, "Bottom universe object")
+        _ispositive(botUnivdz, "bottom universe axial thickness")
+    
+
     base = stack(baseId, 0, 0, nLayers)
     pins = [0]*nLayers
     heights = [0]*nLayers
@@ -386,6 +540,76 @@ def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = Non
     return base
 
 def build3DPinPlanes(baseId, pinMaterials, pinRadii, nactiveLayers, activedz, h0, topUniv = None, topUnivdz = None, botUniv = None, botUnivdz = None):
+    """
+    The ``build3Dpin`` method is used to build traditional 3D pin geometries in 3D.
+
+    Parameters
+    ----------
+    baseId : str
+        name of base pin id, all pin objects will use this id as a base with a suffix
+        attached.
+    pinMaterials : list of material objects
+        list of materials for pin in respective order 
+    pinRadii : list of float
+        list of radii for pin materials in respective order
+    nactiveLayers : int
+        number of discretized axial layers
+    activedz : float
+        axial discretization step 
+    h0 : float
+        initial hieght of stack, (global not relative)
+    topUniv : universe object
+        universe object which will be placed on the top of the 3D pin
+    topUnivdz : float
+        thickness of top universe object
+    botUniv : universe object
+        universe object which will be placed on the bottom of the 3D pin
+    botUnivdz : float
+        thickness of bottom universe object
+
+    Raises
+    ------
+    TypeError
+        If ``baseId`` is not a str
+        If ``pinMaterials`` is not a list of material objects
+        If ``pinRadii`` is not a list of float objects
+        If ``hasUniqueMaterials`` is not a bool.
+    ValueError
+        If ``nlayers``, ``dz``, ``topUnivdz``, ``botUnivdz`` is not a positive number
+
+    Examples
+    --------
+    >>> upperEndCap = pin("upperEndCap", 2)
+    >>> upperEndCap.set('materials', [cladMat, airMat ])
+    >>> upperEndCap.set('radii', [cladRad])
+
+    >>> upperPois = pin("upperPoison", 1)
+    >>> upperPois.set('materials', [bpMat])
+
+    >>> lvt = 3.7293
+    >>> uvt = 3.65 
+
+    >>> uecPois = buildStackPlanes("uecWithPoison", [upperPois, upperEndCap], [upT, upperEndcapThick], -22.9+lvt+lgt+activeFuelHeight+lowerEndcapThick)
+    >>> uecPoisLen = upT + upperEndcapThick
+
+    >>> lowerEndCap = pin("lowerEndCap", 2)
+    >>> lowerEndCap.set('materials', [cladMat, airMat])
+    >>> lowerEndCap.set('radii', [cladRad])
+    >>> fuelSer = build3DPin("fuelElem", fuelSerMats, fuelSerRadii, nActiveLayers, dz, topUniv=uecPois, topUnivdz=uecPoisLen, botUniv=lowerEndCap, botUnivdz=lowerEndcapThick)
+    """
+    _isstr(baseId, "base pin id")
+    _isinstanceList(pinMaterials, matObj, "list of pin materials" )
+    _isinstanceList(pinRadii, numbers.Real, "list of pin radii" )
+    _isint(nactiveLayers, "number of axial layers")
+    _isinstance(h0, numbers.Real, "iniitial height of stack h0")
+    if activedz != None:
+        _ispositive(activedz, "axial discretization step")
+    if topUniv != None:
+        _isinstance(topUniv, universe, "Top universe object")
+        _ispositive(topUnivdz, "top universe axial thickness")
+    if botUniv != None:
+        _isinstance(botUniv, universe, "Bottom universe object")
+        _ispositive(botUnivdz, "bottom universe axial thickness")
     univDzs = [activedz]*(nactiveLayers)
     univDzs.insert(0, botUnivdz)
     univDzs.append(topUnivdz)
