@@ -7,7 +7,6 @@ email: dan.kotlyar@me.gatech.edu
 email: iaguirre6@gatech.edu
 """
 import numbers
-from os import access
 import numpy as np
 import math
 from serpentGenerator.data.materialLibrary import MATLIB
@@ -206,7 +205,8 @@ def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoi
     """
     _isstr(ringId, "universe id")
     _isbool(isVoid, "True/False is universe void")
-    _isinstance(material, matObj, "fill material")
+    if (type(material) != type(None)):
+        _isinstance(material, matObj, "fill material")
     _ispositive(radius, "ring radius")
     _isinstance(innerUniv, universe, "inner universe object")
     prSurf1 = surf(ringId+"cc1", "cyl", np.array([0.0, 0.0, radius]))
