@@ -68,6 +68,7 @@ class core:
         self.xs = {}
         self.branch = {}
         self.settings = {}
+        self.pert = None
         self.plot = {}
         self.coef = {}
         self.xsLibs = {}
@@ -368,7 +369,7 @@ class core:
     #     self.coef['toString'] = coefString
 
 
-    def setSettings(self, geoType, nps, nact, nskip, xsAbsPath, plotOptions = None):
+    def setSettings(self, geoType, bc, nps, nact, nskip, xsAbsPath, plotOptions = None):
         """
         The ``setSettings`` method serves to set general settings in the inputfile.
 
@@ -376,6 +377,8 @@ class core:
         ----------
         geoType : str
             can be either "2D" or "3D"
+        bc : str
+            can be either "Reflective or Vacuum"
         nps : int
             number of particles per cycle.
         nact : int
@@ -407,10 +410,16 @@ class core:
         incStr = "include "+self.baseFileName+".mat\ninclude "+self.baseFileName+".geo\n"
         setDict["include"] = incStr
         if geoType == '2D':
-            bcStr = "set bc 1 1 2\n"
+            if bc == 'Reflective':
+                bcStr = "set bc 2 2 2\n"
+            else:
+                bcStr = "set bc 1 1 2\n"
             setDict['bc'] = bcStr
         elif(geoType == '3D'):
-            bcStr = "set bc 1 1 1\n"
+            if bc == 'Reflective':
+                bcStr = "set bc 2 2 1\n"
+            else:
+                bcStr = "set bc 1 1 1\n"
             setDict['bc'] = bcStr
 
         popStr = "set pop "+str(int(nps))+" "+str(int(nact))+" " + str(int(nskip))+"\n"
@@ -437,7 +446,12 @@ class core:
 
     
         self.settings = setDict
-        return 
+        return
+
+    def setPert(self, pertObj):
+        self.pert = pertObj
+        return
+
 
     # def setSettings(self, power, bc, egrid, nps, nact, nskip, setPCC = False,
     #     misc = []):
@@ -587,7 +601,11 @@ class core:
         mainFile = open(self.baseFileName+".main", "w")
         if 'settings' in self.settings:
             mainStr = self.settings['settings']
-        mainFile.write(mainStr)
+        if self.pert != None:
+            pertStr = self.pert.toString()
+        else:
+            pertStr = ""
+        mainFile.write(mainStr+pertStr)
         mainFile.close()
         return
 

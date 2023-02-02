@@ -357,13 +357,17 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None):
     >>> box = buildBoundingBox(acCool)
     """
     _isinstance(innerUniv, universe, "inner universe object")
-    _ispositive(width, "box half width")
-    _ispositive(length, "box half length")
-    _ispositive(height, "box half height")
+    if width != None:
+        _ispositive(width, "box half width")
+    if length != None:
+        _ispositive(length, "box half length")
+    if height != None:
+        _ispositive(height, "box half height")
 
     zUniv = universe("1")
     zCell1 = cell("fillRegion", isVoid=False)
     zCell1.setFill(innerUniv)
+
     zCell1.setSurfs([innerUniv.boundary], [1])
 
     if width == None:
