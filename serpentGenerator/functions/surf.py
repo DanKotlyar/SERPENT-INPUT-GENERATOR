@@ -60,6 +60,12 @@ class surf:
         newSurf.id = newSurfId
 
         return newSurf
+    
+
+class unionSurf(surf):
+    def __init__(self, surfs):
+        self.surfs = surfs
+
 
 
  

@@ -19,7 +19,7 @@ from serpentGenerator.functions.lats import lats as ldict
 from serpentGenerator.functions.cell import cell 
 from serpentGenerator.functions.pins import pins as pdict
 from serpentGenerator.functions.mats import mats
-from serpentGenerator.functions.surf import surf 
+from serpentGenerator.functions.surf import surf, unionSurf
 from serpentGenerator.functions.surfs import surfs as sdict
 from serpentGenerator.functions.cells import cells as cdict
 from serpentGenerator.functions.housing import housing as hous
@@ -210,11 +210,12 @@ def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoi
     _ispositive(radius, "ring radius")
     _isinstance(innerUniv, universe, "inner universe object")
     prSurf1 = surf(ringId+"cc1", "cyl", np.array([0.0, 0.0, radius]))
-    if innerUniv.boundary != None:
+    hasInnerBound = False if innerUniv.boundary == None else True
+    if hasInnerBound:
+        innerSurf = innerUniv.boundary
         if not isVoid:
             prUniv = universe(ringId+"_univ")
             prCell = cell(ringId+"_cell", mat=material, isVoid=False)
-            innerSurf = innerUniv.boundary
             prDirs = [0, 1]
             prSurfs = [innerSurf, prSurf1]
             prCell.setSurfs(prSurfs, prDirs)
@@ -235,7 +236,6 @@ def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoi
         else:
             prUniv = universe(ringId+"_univ")
             prCell = cell(ringId+"_cell", isVoid=True)
-            innerSurf = innerUniv.boundary
             prDirs = [0, 1]
             prSurfs = [innerSurf, prSurf1]
             prCell.setSurfs(prSurfs, prDirs)
@@ -253,14 +253,15 @@ def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoi
             totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
 
             totUniv.setGeom([totCell1, totCell2])
+        totUniv.setBoundary(prSurf1, innerBoundary=innerSurf)
     else:
         totUniv = universe(ringId+"_univ")
         totCell = cell(ringId+"_cell", isVoid=False)
         totCell.setFill(innerUniv)
         totCell.setSurfs([prSurf1], [1])
         totUniv.setGeom([totCell])
+        totUniv.setBoundary(prSurf1)
 
-    totUniv.setBoundary(prSurf1)
     totUniv.collectAll()
 
     return totUniv
@@ -368,7 +369,10 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None):
     zCell1 = cell("fillRegion", isVoid=False)
     zCell1.setFill(innerUniv)
 
-    zCell1.setSurfs([innerUniv.boundary], [1])
+    if type(innerUniv.boundary) == unionSurf:
+        zCell1.setSurfs([innerUniv.boundary.surfs[0],innerUniv.boundary.surfs[1]], [1, 1])
+    else:
+        zCell1.setSurfs([innerUniv.boundary], [1])
 
     if width == None:
         if innerUniv.boundary.type == "cyl":
@@ -377,17 +381,24 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None):
             print("not yet supported 1")
         bSurf = surf("putBorder", "rect", params)
     else:
-        if innerUniv.boundary.type == "cyl":
+        if type(innerUniv.boundary) == unionSurf:
+            params = np.array([-width, width, -length, length, -height, height])
+        elif innerUniv.boundary.type == "cyl":
             params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2], -height, height])
         elif innerUniv.boundary.type == "hexyc":
             params = np.array([-width, width, -length, length, -height, height])
         else:
             print('surf', innerUniv.id, innerUniv.boundary.type)
         bSurf = surf("putBorder", "cuboid", params)
+
+    ins = innerUniv.boundary    
         
-    zUniv.setBoundary(bSurf)
+    zUniv.setBoundary(bSurf, ins)
     zCell2 = cell("voidRegion", isVoid=True)
-    zCell2.setSurfs([innerUniv.boundary, bSurf], [0, 1])
+    if type(ins) != unionSurf:
+        zCell2.setSurfs([ins, bSurf], [0, 1])
+    else:
+        zCell2.setSurfs([ins.surfs[0], ins.surfs[1], bSurf], [0, 0, 1], hasUnion=True)
     zUniv.setGeom([zCell1, zCell2])
     zUniv.collectAll()
 
@@ -615,8 +626,10 @@ def build3DPinPlanes(baseId, pinMaterials, pinRadii, nactiveLayers, activedz, h0
         _isinstance(botUniv, universe, "Bottom universe object")
         _ispositive(botUnivdz, "bottom universe axial thickness")
     univDzs = [activedz]*(nactiveLayers)
-    univDzs.insert(0, botUnivdz)
-    univDzs.append(topUnivdz)
+    if botUniv != None:
+        univDzs.insert(0, botUnivdz)
+    if topUniv != None: 
+        univDzs.append(topUnivdz)
 
     basePin = pin(baseId, len(pinMaterials))
     basePin.set('materials', pinMaterials)
@@ -626,8 +639,10 @@ def build3DPinPlanes(baseId, pinMaterials, pinRadii, nactiveLayers, activedz, h0
     for i in range(0, nactiveLayers):
         pins[i] = basePin.duplicate(baseId+"z"+str(i))
 
-    pins.insert(0, botUniv)
-    pins.append(topUniv)
+    if topUniv != None:
+        pins.insert(0, botUniv)
+    if botUniv != None: 
+        pins.append(topUniv)
 
     stack = buildStackPlanes(baseId, pins, univDzs, h0)
     return stack

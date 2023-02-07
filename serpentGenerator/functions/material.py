@@ -69,6 +69,7 @@ class material:
         self.thermLib = None
         self.color = None
         self.rgb = None
+        self.aceTherm = None
 
     def __str__(self):
         """" Overwrites print method, prints all objects variables. """
@@ -145,10 +146,15 @@ class material:
 
         densString = str(self.dens) if self.dens != None else "sum"
 
-        matHeader = "mat " + self.id +"    "+densString+ " "+moderString +" "\
+        if self.aceTherm != None:
+            aceHeader = self.aceTherm +"\n"
+        else:
+            aceHeader = ""
+
+        matHeader = "mat " + self.id +" "+densString+ " "+moderString +" "\
             +burnString +" "+ tempString+" "+ rgbString +"\n"
 
-        matString = matString + matHeader
+        matString = matString + aceHeader+ matHeader
 
         matNucFracStr = ""
         for i in range(0, len(self.nuclides)):

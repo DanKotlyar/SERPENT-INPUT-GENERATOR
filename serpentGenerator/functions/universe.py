@@ -10,9 +10,10 @@ from serpentGenerator.functions.mix import mix
 from serpentGenerator.functions.cells import cells as cdict
 from serpentGenerator.functions.surfs import surfs as sdict
 from serpentGenerator.functions.cell import cell
-
 import numpy as np
 import copy 
+from sympy import *
+from sympy.geometry import *
 
 from serpentGenerator.functions.checkerrors import (
     _isstr, _isinstanceList
@@ -40,15 +41,64 @@ class universe:
         self.univSurfs = {}
         self.geoLevel = 1
         self.boundary = None
+        self.innerBoundary = None
+        self.area = None
+        self.volume = None
         self.__allElements = {}
         self.__allMats = {}
         self.__allSurfs = {}
         self.__allCells = {}
 
-    def setBoundary(self, boundary):
+    def setBoundary(self, boundary, innerBoundary=None):
         self.boundary = boundary
+        self.innerBoundary = innerBoundary
         return
-        
+
+    def setArea(self):
+        def calcAreaFilled(surf):
+            gSurf = None                        
+            if surf.type == 'cyl':
+                sx = surf.params[0]
+                sy = surf.params[1]
+                sr = surf.params[2]
+                gPoint = Point(sx, sy)
+                gSurf = Circle(gPoint, sr)
+            elif surf.type == 'hexxc':
+                sx = surf.params[0]
+                sy = surf.params[1]
+                sa = surf.params[2]
+                ss = sa/np.sqrt(3)
+                sr = np.sqrt(ss**2 + sa**2)
+                gPoint = Point(sx, sy)
+                gSurf = RegularPolygon(gPoint, sr, 6, 0)
+            elif surf.type == 'hexyc':
+                sx = surf.params[0]
+                sy = surf.params[1]
+                sa = surf.params[2]
+                ss = sa/np.sqrt(3)
+                sr = np.sqrt(ss**2 + sa**2)
+                gPoint = Point(sx, sy)
+                gSurf = RegularPolygon(gPoint, sr, 6, 30)
+            elif surf.type == 'rect':
+                sr = np.sqrt(surf.params[1]**2 + surf.params[1]**2)
+                gPoint = Point(0, 0)
+                gSurf = RegularPolygon(gPoint, sr, 4, 0)
+            return float(gSurf.area)
+
+        ins = self.innerBoundary
+        outs = self.boundary
+
+        if ins == None:
+            area = calcAreaFilled(outs)
+            self.area = area
+            return area
+        else:
+            oArea = calcAreaFilled(outs)
+            iArea = calcAreaFilled(ins)
+            area = oArea - iArea
+            self.area = area
+            return area
+
     def setGeom(self, cells):
         """Assign surfaces and cells to a universe object.
 

@@ -613,7 +613,11 @@ class core:
             self.__buildSerpentMaterialFile()
             self.__buildSerpentGeometryFile()
             self.__buildSerpentMainFile()
-            return  
+            return
+
+    def verifyVolumes(self, mvolPath):
+            
+        return  
 
     def plotHistoryData(self, hisFile):
         his = serpentTools.read(hisFile)
