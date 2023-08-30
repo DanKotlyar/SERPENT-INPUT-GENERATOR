@@ -44,10 +44,19 @@ class universe:
         self.innerBoundary = None
         self.area = None
         self.volume = None
+        self.gcuId = None
         self.__allElements = {}
         self.__allMats = {}
         self.__allSurfs = {}
         self.__allCells = {}
+        self.__allGCU = {}
+
+    def setGCU(self, gcuId):
+        self.gcuId = gcuId
+        return
+    
+    def _getAllGCU(self):
+        return self.__allGCU
 
     def setBoundary(self, boundary, innerBoundary=None):
         self.boundary = boundary
@@ -200,8 +209,17 @@ class universe:
         allSurfs = {}
         self.__collectAllElementsAndMatsAndCellsAndSurfs(allSurfs)
         self.__allSurfs = allSurfs
+        self.collectAllGCU()
         return
     
+    def collectAllGCU(self):
+        unis = self.__allElements
+        gcus = self.__allGCU
+        for uni in unis:
+            if unis[uni].gcuId != None:
+                gcus[uni] = unis[uni].gcuId
+        return
+
     def toString(self):
         """display properties of a universe in string form
 

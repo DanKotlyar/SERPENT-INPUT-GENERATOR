@@ -369,7 +369,7 @@ class core:
     #     self.coef['toString'] = coefString
 
 
-    def setSettings(self, geoType, bc, nps, nact, nskip, xsAbsPath, plotOptions = None):
+    def setSettings(self, geoType, bc, nps, nact, nskip, xsAbsPath, plotOptions = None, setGCU = False):
         """
         The ``setSettings`` method serves to set general settings in the inputfile.
 
@@ -441,8 +441,18 @@ class core:
 
         hisStr = "set his 1\n"
         setDict['history'] = hisStr
+
+
+
+        gcuStr = "set gcu 0"
+
+        if setGCU:
+            gcus = self.mainUniv._getAllGCU()
+            for gcu in gcus:
+                gcuStr = gcuStr + " {} ".format(gcus[gcu])
+            gcuStr = gcuStr + "\n" 
         
-        setDict['settings'] = incStr + bcStr + popStr + xsStr + plotStr + hisStr
+        setDict['settings'] = incStr + bcStr + popStr + xsStr + plotStr + hisStr + gcuStr
 
     
         self.settings = setDict
@@ -595,7 +605,7 @@ class core:
         geom = self.mainUniv._geoString()
         dimsFile.write(geom)
         dimsFile.close()
-        return
+        return self.baseFileName+".geo"
 
     def __buildSerpentMainFile(self):
         mainFile = open(self.baseFileName+".main", "w")
@@ -608,13 +618,38 @@ class core:
         mainFile.write(mainStr+pertStr)
         mainFile.close()
         return
+    
+    def __parseUniverseToNumber(self, geometryFile):
+        gcus = self.mainUniv._getAllGCU()
 
-    def toSerpent(self):
+        with open(geometryFile, "r") as f:
+            lines = f.readlines()
+            for i in range(0, len(lines)):
+                for gcu in gcus:
+                    gcuAdj = " "+gcu+" "
+                    if gcuAdj in lines[i]:
+                        splits = lines[i].split()
+                        for j in range(0, len(splits)):
+                            if gcu == splits[j]:
+                                splits[j] = str(gcus[gcu])
+                        joins = " ".join(splits) + "\n"
+                        lines[i] = joins
+            f.close()
+        with open(geometryFile, "w") as f:
+            f.writelines(lines)
+            f.close()                 
+        return
+
+
+    def toSerpent(self, exportUniverseAsNumber = False):
             self.__buildSerpentMaterialFile()
-            self.__buildSerpentGeometryFile()
+            geometryFile = self.__buildSerpentGeometryFile()
             self.__buildSerpentMainFile()
-            return
 
+            if exportUniverseAsNumber:
+                self.__parseUniverseToNumber(geometryFile)
+            return
+    
     def verifyVolumes(self, mvolPath):
             
         return  
