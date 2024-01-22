@@ -163,7 +163,7 @@ def __buildHexLatticeWithHexBorder(hexLat, hexApothem, latType = "FLAT"):
     acUniv.collectAll()
     return acUniv
 
-def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoid = False):
+def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoid = False, setGCU = None, fill = None):
     """
     The ``buildPeripheralRing`` method to nest a universe object within a peripheral
     ring. 
@@ -213,7 +213,7 @@ def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoi
     hasInnerBound = False if innerUniv.boundary == None else True
     if hasInnerBound:
         innerSurf = innerUniv.boundary
-        if not isVoid:
+        if (not isVoid) & (fill == None) :
             prUniv = universe(ringId+"_univ")
             prCell = cell(ringId+"_cell", mat=material, isVoid=False)
             prDirs = [0, 1]
@@ -222,6 +222,8 @@ def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoi
             prUniv.setGeom([prCell])
             prUniv.setBoundary(prSurf1)
             prUniv.collectAll()
+
+            prUniv.setGCU(setGCU)
 
             totUniv = universe(innerUniv.id + ringId+"_univ")
             totCell1 = cell(innerUniv.id +ringId+"_cell1", isVoid=False)
@@ -233,7 +235,7 @@ def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoi
             totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
 
             totUniv.setGeom([totCell1, totCell2])
-        else:
+        elif fill ==  None:
             prUniv = universe(ringId+"_univ")
             prCell = cell(ringId+"_cell", isVoid=True)
             prDirs = [0, 1]
@@ -242,6 +244,7 @@ def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoi
             prUniv.setGeom([prCell])
             prUniv.setBoundary(prSurf1)
             prUniv.collectAll()
+            prUniv.setGCU(setGCU)
 
             totUniv = universe(innerUniv.id + ringId+"_univ")
             totCell1 = cell(innerUniv.id +ringId+"_cell1", isVoid=False)
@@ -253,10 +256,169 @@ def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoi
             totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
 
             totUniv.setGeom([totCell1, totCell2])
+        else:
+            print()
+            prUniv = universe(ringId+"_univ")
+            prCell = cell(ringId+"_cell", isVoid=False)
+            prDirs = [0, 1]
+            prSurfs = [innerSurf, prSurf1]
+            prCell.setFill(fill)
+            prCell.setSurfs(prSurfs, prDirs)
+            
+            prUniv.setGeom([prCell])
+            prUniv.setBoundary(prSurf1)
+            prUniv.collectAll()
+
+            prUniv.setGCU(setGCU)
+
+            totUniv = universe(innerUniv.id + ringId+"_univ")
+            totCell1 = cell(innerUniv.id +ringId+"_cell1", isVoid=False)
+            totCell1.setFill(innerUniv)
+            totCell1.setSurfs([innerSurf], [1])
+
+            totCell2 = cell(innerUniv.id +ringId+"_cell2", isVoid=False)
+            totCell2.setFill(prUniv)
+            totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
+
+            totUniv.setGeom([totCell1, totCell2])
+
         totUniv.setBoundary(prSurf1, innerBoundary=innerSurf)
     else:
         totUniv = universe(ringId+"_univ")
         totCell = cell(ringId+"_cell", isVoid=False)
+        totCell.setFill(innerUniv)
+        totCell.setSurfs([prSurf1], [1])
+        totUniv.setGeom([totCell])
+        totUniv.setBoundary(prSurf1)
+
+    totUniv.collectAll()
+
+    return totUniv
+
+
+def buildPeripheralSquare(innerUniv, halfWidth, material = None, squareId = None, isVoid = False, setGCU = None, fill = None):
+    """
+    The ``buildPeripheralRing`` method to nest a universe object within a peripheral
+    ring. 
+
+    Parameters
+    ----------
+    sqaureId : str
+        name of ring universe
+    radius : float
+        radius of peripheral ring 
+    material : material object
+        optional material to fill inside peripheral ring
+    isVoid : bool
+        True/False fill ring with void
+
+    Raises
+    ------
+    TypeError
+        If ``id`` is not a str
+        If ``radius`` not a number
+        If ``material`` not a material object
+        If ``isVoid`` not a bool
+    ValueError
+        If `radius`` is not a positive number
+
+    Examples
+    --------
+    >>> acLatMap = "0 0 1 1 1 0 0;\
+                    0 1 1 1 1 1 0;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    0 1 1 1 1 1 0;\
+                    0 0 1 1 1 0 0"
+    >>> acUnivMap = {"1": fa1, "0": ca1}
+    >>> nOuter = 2
+    >>> ac =  buildSquareLattice("ac", acLatMap, acUnivMap, nOuter, assemPitch)
+    >>> acCool = buildPeripheralRing(ac, activeCoreRad, material = MATLIB['H2O'], ringId = "acCool")
+    """
+    _isstr(squareId, "universe id")
+    _isbool(isVoid, "True/False is universe void")
+    if (type(material) != type(None)):
+        _isinstance(material, matObj, "fill material")
+    _ispositive(halfWidth, "ring radius")
+    _isinstance(innerUniv, universe, "inner universe object")
+    prSurf1 = surf(squareId+"sqc1", "sqc", np.array([0.0, 0.0, halfWidth]))
+    hasInnerBound = False if innerUniv.boundary == None else True
+    if hasInnerBound:
+        innerSurf = innerUniv.boundary
+        if (not isVoid) & (fill == None) :
+            prUniv = universe(squareId+"_univ")
+            prCell = cell(squareId+"_cell", mat=material, isVoid=False)
+            prDirs = [0, 1]
+            prSurfs = [innerSurf, prSurf1]
+            prCell.setSurfs(prSurfs, prDirs)
+            prUniv.setGeom([prCell])
+            prUniv.setBoundary(prSurf1)
+            prUniv.collectAll()
+
+            prUniv.setGCU(setGCU)
+
+            totUniv = universe(innerUniv.id + squareId+"_univ")
+            totCell1 = cell(innerUniv.id +squareId+"_cell1", isVoid=False)
+            totCell1.setFill(innerUniv)
+            totCell1.setSurfs([innerSurf], [1])
+
+            totCell2 = cell(innerUniv.id +squareId+"_cell2", isVoid=False)
+            totCell2.setFill(prUniv)
+            totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
+
+            totUniv.setGeom([totCell1, totCell2])
+        elif fill ==  None:
+            prUniv = universe(squareId+"_univ")
+            prCell = cell(squareId+"_cell", isVoid=True)
+            prDirs = [0, 1]
+            prSurfs = [innerSurf, prSurf1]
+            prCell.setSurfs(prSurfs, prDirs)
+            prUniv.setGeom([prCell])
+            prUniv.setBoundary(prSurf1)
+            prUniv.collectAll()
+            prUniv.setGCU(setGCU)
+
+            totUniv = universe(innerUniv.id + squareId+"_univ")
+            totCell1 = cell(innerUniv.id +squareId+"_cell1", isVoid=False)
+            totCell1.setFill(innerUniv)
+            totCell1.setSurfs([innerSurf], [1])
+
+            totCell2 = cell(innerUniv.id +squareId+"_cell2", isVoid=True)
+            totCell2.setFill(prUniv)
+            totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
+
+            totUniv.setGeom([totCell1, totCell2])
+        else:
+            print()
+            prUniv = universe(squareId+"_univ")
+            prCell = cell(squareId+"_cell", isVoid=False)
+            prDirs = [0, 1]
+            prSurfs = [innerSurf, prSurf1]
+            prCell.setFill(fill)
+            prCell.setSurfs(prSurfs, prDirs)
+            
+            prUniv.setGeom([prCell])
+            prUniv.setBoundary(prSurf1)
+            prUniv.collectAll()
+
+            prUniv.setGCU(setGCU)
+
+            totUniv = universe(innerUniv.id + squareId+"_univ")
+            totCell1 = cell(innerUniv.id +squareId+"_cell1", isVoid=False)
+            totCell1.setFill(innerUniv)
+            totCell1.setSurfs([innerSurf], [1])
+
+            totCell2 = cell(innerUniv.id +squareId+"_cell2", isVoid=False)
+            totCell2.setFill(prUniv)
+            totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
+
+            totUniv.setGeom([totCell1, totCell2])
+
+        totUniv.setBoundary(prSurf1, innerBoundary=innerSurf)
+    else:
+        totUniv = universe(squareId+"_univ")
+        totCell = cell(squareId+"_cell", isVoid=False)
         totCell.setFill(innerUniv)
         totCell.setSurfs([prSurf1], [1])
         totUniv.setGeom([totCell])
@@ -315,7 +477,7 @@ def buildPeripheralObject(innerUniv, outerUniv):
     totUniv.collectAll()
     return totUniv
 
-def buildBoundingBox(innerUniv, width = None, length = None, height =None):
+def buildBoundingBox(innerUniv, width = None, length = None, height =None, isHex = False, hexApothem = None):
     """
     The ``buildBoundingBox`` method is used to designate the end of the active
     particle area of the serpent geometry. In otherwords, it used to denote the 
@@ -362,59 +524,90 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None):
         _ispositive(width, "box half width")
     if length != None:
         _ispositive(length, "box half length")
-    if height != None:
-        _ispositive(height, "box half height")
+    
+    # if height != None:
+    #     if type(height) != type([]):
+    #         _ispositive(height, "box half height")
+    #     else:
+    #         _ispositive(height, "box height")
 
     zUniv = universe("1")
     zCell1 = cell("fillRegion", isVoid=False)
     zCell1.setFill(innerUniv)
 
-    if type(innerUniv.boundary) == unionSurf:
-        zCell1.setSurfs([innerUniv.boundary.surfs[0],innerUniv.boundary.surfs[1]], [1, 1])
-    else:
-        zCell1.setSurfs([innerUniv.boundary], [1])
-
-    if width == None:
-        if innerUniv.boundary.type == "cyl":
-            params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2] ])
-        else:
-            print("not yet supported 1")
-        bSurf = surf("putBorder", "rect", params)
-    else:
+    if innerUniv.boundary != None:
         if type(innerUniv.boundary) == unionSurf:
-            params = np.array([-width, width, -length, length, -height, height])
-        elif innerUniv.boundary.type == "cyl":
-            params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2], -height, height])
-        elif innerUniv.boundary.type == "hexyc":
-            params = np.array([-width, width, -length, length, -height, height])
+            zCell1.setSurfs([innerUniv.boundary.surfs[0],innerUniv.boundary.surfs[1]], [1, 1])
         else:
-            print('surf', innerUniv.id, innerUniv.boundary.type)
-        bSurf = surf("putBorder", "cuboid", params)
+            zCell1.setSurfs([innerUniv.boundary], [1])
+        if not isHex:
+            if width == None:
+                if innerUniv.boundary.type == "cyl":
+                    params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2] ])
+                else:
+                    print("not yet supported 1")
+                bSurf = surf("putBorder", "rect", params)
+            else:
+                if type(innerUniv.boundary) == unionSurf:
+                    params = np.array([-width, width, -length, length, -height[0], height[1]])
+                elif innerUniv.boundary.type == "cyl":
+                    params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2], -height[0], height[1]])
+                elif innerUniv.boundary.type == "hexyc":
+                    params = np.array([-width, width, -length, length, -height[0], height[1]])
+                else:
+                    print('surf', innerUniv.id, innerUniv.boundary.type)
+                bSurf = surf("putBorder", "cuboid", params)
 
-    ins = innerUniv.boundary    
-        
-    zUniv.setBoundary(bSurf, ins)
-    zCell2 = cell("voidRegion", isVoid=True)
-    if type(ins) != unionSurf:
-        zCell2.setSurfs([ins, bSurf], [0, 1])
+        ins = innerUniv.boundary    
+            
+        zUniv.setBoundary(bSurf, ins)
+        zCell2 = cell("voidRegion", isVoid=True)
+        if type(ins) != unionSurf:
+            zCell2.setSurfs([ins, bSurf], [0, 1])
+        else:
+            zCell2.setSurfs([ins.surfs[0], ins.surfs[1], bSurf], [0, 0, 1], hasUnion=True)
+        zUniv.setGeom([zCell1, zCell2])
+        zUniv.collectAll()
+
+        z0Univ = universe("0")
+        zCell3 = cell("outRegionIn", isVoid=False)
+        zCell3.setSurfs([bSurf], [1])
+        zCell3.setFill(zUniv)
+
+        zCell4 = cell("outRegionOut", isVoid=False)
+        zCell4.setSurfs([bSurf], [0])
+
+        z0Univ.setGeom([zCell3, zCell4])
+        z0Univ.collectAll()
     else:
-        zCell2.setSurfs([ins.surfs[0], ins.surfs[1], bSurf], [0, 0, 1], hasUnion=True)
-    zUniv.setGeom([zCell1, zCell2])
-    zUniv.collectAll()
+        if not isHex:
+            if height == None:
+                params = np.array([-width, width, -length, length])
+                bSurf = surf("putBorder", "rect", params)
+            else:
+                params = np.array([-width, width, -length, length, -height[0], height[1]])
+                bSurf = surf("putBorder", "cuboid", params)
+        else:
+            if height == None:
+                params = np.array([0, 0, hexApothem])
+                bSurf = surf("putBorder", "hexyc", params)
+            else:
+                params = np.array([0, 0, hexApothem, -height[0], height[1]])
+                bSurf = surf("putBorder", "hexyprism", params) 
 
-    z0Univ = universe("0")
-    zCell3 = cell("outRegionIn", isVoid=False)
-    zCell3.setSurfs([bSurf], [1])
-    zCell3.setFill(zUniv)
+        z0Univ = universe("0")
+        zCell3 = cell("outRegionIn", isVoid=False)
+        zCell3.setSurfs([bSurf], [1])
+        zCell3.setFill(innerUniv)
 
-    zCell4 = cell("outRegionOut", isVoid=False)
-    zCell4.setSurfs([bSurf], [0])
+        zCell4 = cell("outRegionOut", isVoid=False)
+        zCell4.setSurfs([bSurf], [0])
 
-    z0Univ.setGeom([zCell3, zCell4])
-    z0Univ.collectAll()
+        z0Univ.setGeom([zCell3, zCell4])
+        z0Univ.collectAll()
     return z0Univ
     
-def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = None, hasUniqueMatlayers = False, topUniv = None, topUnivdz = None, botUniv = None, botUnivdz = None):
+def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = None, hasUniqueMatlayers = False, topUniv = None, topUnivdz = None, botUniv = None, botUnivdz = None, setGCUSeed = None):
     """
     The ``build3Dpin`` method is used to build traditional 3D pin geometries in 3D.
 
@@ -474,7 +667,12 @@ def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = Non
     >>> fuelSer = build3DPin("fuelElem", fuelSerMats, fuelSerRadii, nActiveLayers, dz, topUniv=uecPois, topUnivdz=uecPoisLen, botUniv=lowerEndCap, botUnivdz=lowerEndcapThick)
     """
     _isstr(baseId, "base pin id")
-    _isinstanceList(pinMaterials, matObj, "list of pin materials" )
+    for i in range(0, len(pinMaterials)):
+        try:
+            #_isinstance(pinMaterials[i], matObj, "list of pin materials" )
+            issubclass(type(pinMaterials[i]), matObj)
+        except:
+            _isinstance(pinMaterials[i], universe, "list of pin materials" )
     _isinstanceList(pinRadii, numbers.Real, "list of pin radii" )
     _isint(nLayers, "number of axial layers")
     if dz != None:
@@ -498,21 +696,34 @@ def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = Non
             def __dupMats(mats, index):
                 dupMats = [0]*len(mats)
                 for i in range(0, len(mats)):
-                    dupMats[i] = mats[i].duplicateMat(mats[i].id+"z"+str(index))
+                    if issubclass(type(mats[i]), matObj):
+                        dupMats[i] = mats[i].duplicateMat(mats[i].id+"z"+str(index))
+                    else:
+                        dupMats[i] = mats[i].duplicate(str(int(mats[i].id) + index))
+                        if mats[i].gcuId !=None:
+                            dupMats[i].setGCU(int(mats[i].id) + index)
+
                 return dupMats
             for i in range(0, nLayers):
-                pins[i] = pin(baseId+"z"+str(i+1), len(pinMaterials))
+                if setGCUSeed == None:
+                    pinName = baseId+"z"+str(i+1)
+                else:
+                    pinName = str(setGCUSeed+i+1)
+                pins[i] = pin(pinName, len(pinMaterials))
                 uniqMats = __dupMats(pinMaterials, i+1)
-                pins[i].set('materials', uniqMats)
-                pins[i].set('radii', pinRadii)
+                pins[i].setPin(uniqMats, pinRadii)
                 heights[i] = i*dz
         else:
-            print("here 1")
             basePin = pin(baseId, len(pinMaterials))
-            basePin.set('materials', pinMaterials)
-            basePin.set('radii', pinRadii)
+            basePin.setPin(pinMaterials, pinRadii)
+    
             for i in range(0, nLayers):
-                pins[i] = basePin.duplicate(baseId+"z"+str(i+1))
+                if setGCUSeed == None:
+                    pinName = baseId+"z"+str(i+1)
+                else:
+                    pinName = str(setGCUSeed+i+1)
+                pins[i] = pin(pinName, len(pinMaterials))
+                pins[i] = basePin.duplicate(pinName)
                 heights[i] = i*dz
     else:
         if hasUniqueMatlayers:
@@ -530,15 +741,17 @@ def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = Non
                     pins[i] = topUniv
                     heights[i] = botUnivdz + (i-1)*dz
                 else:
-                    pins[i] = pin(baseId+"z"+str(i), len(pinMaterials))
+                    if setGCUSeed == None:
+                        pinName = baseId+"z"+str(i+1)
+                    else:
+                        pinName = str(setGCUSeed+i+1)
+                    pins[i] = pin(pinName, len(pinMaterials))
                     uniqMats = __dupMats(pinMaterials, i)
-                    pins[i].set('materials', uniqMats)
-                    pins[i].set('radii', pinRadii)
+                    pins[i].setPin(uniqMats, pinRadii)
                     heights[i] = botUnivdz + (i-1)*dz
         else:
             basePin = pin(baseId, len(pinMaterials))
-            basePin.set('materials', pinMaterials)
-            basePin.set('radii', pinRadii)
+            basePin.setPin(pinMaterials, pinRadii)
             for i in range(0, nLayers):
                 if i == 0:
                     pins[i] = botUniv
@@ -547,7 +760,11 @@ def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = Non
                     pins[i] = topUniv
                     heights[i] = botUnivdz + (i-1)*dz
                 else:
-                    pins[i] = basePin.duplicate(baseId+"z"+str(i))
+                    if setGCUSeed == None:
+                        pinName = baseId+"z"+str(i+1)
+                    else:
+                        pinName = setGCUSeed+i+1
+                    pins[i] = basePin.duplicate(pinName)
                     heights[i] = botUnivdz + (i-1)*dz
 
     base.setStack(np.array(pins), np.array(heights))
@@ -870,3 +1087,105 @@ def buildStackPlanes(id, univs, dzs, h0, boundary = None):
         stack.setBoundary(boundary)
 
     return stack 
+
+### PWR fuelpin dimensions & materials
+# fuelRad = 0.4096
+# cladRad = 0.476
+
+# fpRadii = [fuelRad, cladRad]
+
+# fuelMat = MATLIB['UO2']
+# cladMat = MATLIB['Zr']
+# coolMat = MATLIB['H2O']
+
+# fpMats = [fuelMat, cladMat, coolMat]
+
+# print(vars(fuelMat))
+
+# print(fuelMat.toString())
+
+# nLayers = 20
+# fp1 = build3Dpin("fp1", fpMats, fpRadii, nLayers, dz=1, setGCUSeed=100)
+
+# cp1 = build3Dpin("cp1", [MATLIB['H2O']], [], nLayers, dz = 1, setGCUSeed=800)
+
+# cp2 = cp1.duplicate("cp2", makeNestedUnique = True, setGCUSeed = 900)
+
+# fp1.setGCU(100, setAllElementsGCU=True)
+# cp1.setGCU(800, setAllElementsGCU=True)
+# # cp2.setGCU(900, setAllElementsGCU=True)
+
+
+# pinPitch = 1.2623
+
+# fa1LatMap =  "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;\
+#               1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1"
+
+# fa1UnivMap = {"1": fp1, '0': cp1} #0 denotes the outer univ for outerlayers
+# nOuter = 1
+
+# fa1 =  buildSquareLattice("fa1", fa1LatMap, fa1UnivMap, nOuter, pinPitch)
+# # fa1.setGCU(100, setAllElementsGCU=True)
+
+
+# ca1 = fa1.duplicate("ca1")
+# ca1.replaceUniv(cp1, cp2)
+# ca1.replaceUniv(fp1, cp2)
+# #fa1.setGCU(100, setAllElementsGCU=True)
+
+# print(fa1.toString())
+
+# assemPitch = 21.6038
+# activeCoreRad = 83.4152
+# barrelRad = 103.4152 
+# thermalShieldRad  = 131.4152 
+# vesselRad = 151.4152
+
+# acLatMap =  "0 0 1 1 1 0 0;\
+#              0 1 1 1 1 1 0;\
+#              1 1 1 1 1 1 1;\
+#              1 1 1 1 1 1 1;\
+#              1 1 1 1 1 1 1;\
+#              0 1 1 1 1 1 0;\
+#              0 0 1 1 1 0 0"
+
+# acUnivMap = {"1": fa1, "0": ca1}
+
+# nOuter = 2
+
+# ac =  buildSquareLattice("ac", acLatMap, acUnivMap, nOuter, assemPitch)
+
+# print(ac.toString())
+
+# acCool = buildPeripheralRing(ac, activeCoreRad, material = MATLIB['H2O'], ringId = "acCool")
+# barrel = buildPeripheralRing(acCool, barrelRad, material = MATLIB['Zr'], ringId = "barrel")
+# # barrel.setGCU(uniDict["barrel"])
+# therm  = buildPeripheralRing(barrel, thermalShieldRad, material = MATLIB['H2O'], ringId = "thermShield")
+# vess = buildPeripheralRing(therm, vesselRad, material = MATLIB['Zr'], ringId = "vessel")
+
+# box = buildBoundingBox(vess)
+
+# fgs_hr18 = [1.39000000E-10, 1.00000000E-08, 1.00000000E-07,  4.00000000E-07, 9.96000000E-07, 2.38236967E-06, 8.31528719E-06, 2.90232041E-05,
+# 7.88932483E-05, 4.53999298E-04, 2.86348774E-03, 1.50344000E-02,
+# 8.65170000E-02, 3.87742000E-01, 8.20850000E-01, 1.35335000E+00,
+# 2.86505000E+00, 1.00000000E+01, 2.00000000E+01]
+
+# pwr1 = core(box, "pwr_test_gcu")
+# xsPath = r"/mnt/c/Users/user/Documents/endfb7/sss_endfb7u.xsdata"
+# pwr1.setSettings(geoType='2D', bc = 2, nps = 1E+05, nact = 100, nskip=100, xsAbsPath=xsPath, plotOptions=([3], 5000, [0], 1), setGCU = True, fgs = fgs_hr18)
+# pwr1.toSerpent(exportUniverseAsNumber = True)

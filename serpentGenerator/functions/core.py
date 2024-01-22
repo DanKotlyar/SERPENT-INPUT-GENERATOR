@@ -33,6 +33,7 @@ from serpentGenerator.functions.checkerrors import (
     _isstr, _isinstanceList
 )
 
+
 class core:
     """Basic data definition for an core obj
 
@@ -369,7 +370,23 @@ class core:
     #     self.coef['toString'] = coefString
 
 
-    def setSettings(self, geoType, bc, nps, nact, nskip, xsAbsPath, plotOptions = None, setGCU = False):
+
+    def __createDetectors(self, detType, unis):
+        DET_TYPE = {
+            'nuFiss': -7,
+            'capture': -2,
+            'total': -1,
+            'scalar': 0,
+        }
+        detStr = ""
+        for i in range(0, len(unis)):
+            if detType != "scalar":
+                detStr = detStr + 'det {}Rate{} du {} dr {} void\n'.format(detType, unis[i], unis[i], DET_TYPE[detType])
+            else:
+                detStr = detStr + 'det {}Flux{} du {}\n'.format(detType, unis[i], unis[i])
+        return detStr
+
+    def setSettings(self, geoType, bc, nps, nact, nskip, xsAbsPath, plotOptions = None, setGCU = False, fgs = None, setPower = None, setDetectors = False, detTypes = None):
         """
         The ``setSettings`` method serves to set general settings in the inputfile.
 
@@ -451,8 +468,34 @@ class core:
             for gcu in gcus:
                 gcuStr = gcuStr + " {} ".format(gcus[gcu])
             gcuStr = gcuStr + "\n" 
+
+            gcuStr = gcuStr + "ene fgs 1 "
+            for bin in fgs:
+                gcuStr = gcuStr + "{} ".format(bin)
+            gcuStr = gcuStr + "\nset nfg fgs\n"
+
+        detStr = ""
+        if setDetectors:
+            gcus = list(self.mainUniv._getAllGCU().values())
+            for detType in detTypes:
+                print(gcus)
+                print(type(gcus))
+
+                detStr = detStr + self.__createDetectors(detType, gcus)
+
+                    
+
+
+
+                
+
+        powStr = ""
+
+        if setPower!= None:
+            powStr = "set power {:.2f}\n".format(setPower)
+
         
-        setDict['settings'] = incStr + bcStr + popStr + xsStr + plotStr + hisStr + gcuStr
+        setDict['settings'] = incStr + bcStr + popStr + xsStr + plotStr + hisStr + gcuStr + powStr + detStr
 
     
         self.settings = setDict
@@ -619,6 +662,22 @@ class core:
         mainFile.close()
         return
     
+    def __buildSerpentFile(self):
+        mainFile = open(self.baseFileName+".sss", "w")
+        if 'settings' in self.settings:
+            mainStr = self.settings['settings']
+        if self.pert != None:
+            pertStr = self.pert.toString()
+        else:
+            pertStr = ""
+        geom = self.mainUniv._geoString()
+        matSerp = self.mainUniv._matString()
+
+        mainFile.write(mainStr+pertStr+geom+matSerp)
+        mainFile.close()
+    
+
+    
     def __parseUniverseToNumber(self, geometryFile):
         gcus = self.mainUniv._getAllGCU()
 
@@ -642,14 +701,14 @@ class core:
 
 
     def toSerpent(self, exportUniverseAsNumber = False):
-            self.__buildSerpentMaterialFile()
-            geometryFile = self.__buildSerpentGeometryFile()
-            self.__buildSerpentMainFile()
+        self.__buildSerpentMaterialFile()
+        geometryFile = self.__buildSerpentGeometryFile()
+        self.__buildSerpentMainFile()
 
-            if exportUniverseAsNumber:
-                self.__parseUniverseToNumber(geometryFile)
-            return
-    
+        if exportUniverseAsNumber:
+            self.__parseUniverseToNumber(geometryFile)
+        return
+
     def verifyVolumes(self, mvolPath):
             
         return  

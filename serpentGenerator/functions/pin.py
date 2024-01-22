@@ -11,7 +11,7 @@ email: iaguirre6@gatech.edu
 import numpy as np
 from serpentGenerator.functions.checkerrors import (
     _isstr, _isint, _isinstanceArray, _ispositive,
-    _ispositiveArray, _isSorted, _isinstanceList
+    _ispositiveArray, _isSorted, _isinstanceList, _isinstance
 )
 from serpentGenerator.functions.universe import universe
 from serpentGenerator.functions.material import material
@@ -49,7 +49,9 @@ class pin(universe):
         super().__init__(id)
         self.id = id # pin universe id
         self.nregions = nregions # number of pin regions
-        self.materials = [] # pin materials 
+        # self.materials = [] # pin materials 
+        # self.univs = []
+        self.pinelems = []
         self.radii = [] # pin radii // Order dependent
         self.isVoid = isVoid
         
@@ -209,15 +211,27 @@ class pin(universe):
         >>> radii1 = [.45, .47]
         >>> pin1.setPin(materials1, radii1)
         """
-        _isinstanceList(materials, material, "list of pin materials")
+        for i in range(0, len(materials)):
+            try:
+                _isinstance(materials[i], material, "pin materials or universe")
+            except:
+                _isinstance(materials[i], universe, "pin materials or universe")
+
+        #_isinstanceList(materials, material, "list of pin materials")
         _isinstanceList(radii, Number, "list of pin materials")
 
-        self.univMats = {}
-        self.materials = materials
-        self.radii = radii
+        for i in range(0, len(materials)):
+            if issubclass(type(materials[i]), universe):
+                if materials[i].id not in self.elements:
+                    self.elements[materials[i].id] = materials[i]
 
-        for i in range(0, len(self.materials)):
-                self.univMats[self.materials[i].id] = self.materials[i]
+        self.univMats = {}
+        self.radii = radii
+        self.pinelems = materials
+
+        for i in range(0, len(materials)):
+            if issubclass(type(materials[i]), material):
+                self.univMats[materials[i].id] = materials[i]
 
         return
 
@@ -255,8 +269,8 @@ class pin(universe):
         """
         _isstr(newPinId, "newPinId")
         newPin = pin(newPinId, self.nregions)
-        newPin.set('materials', self.materials)
-        newPin.set('radii',  self.radii)
+        newPin = pin(newPinId, self.nregions)
+        newPin.setPin(self.pinelems, self.radii)
         return newPin
 
     def _geoHeader(self):
@@ -277,15 +291,21 @@ class pin(universe):
         pinString = pinHeader 
 
 
-        univMatsList = self.materials
+        univMatsList = self.pinelems
         if not self.isVoid:
             for i in range(0,len(univMatsList)):
-
-                if (i != (len(univMatsList)-1)):
-                    pinString = pinString + univMatsList[i].id +"\t" \
-                    + str(self.radii[i]) +"\n"
+                if issubclass(type(univMatsList[i]), material):
+                    if (i != (len(univMatsList)-1)):
+                        pinString = pinString + univMatsList[i].id +"\t" \
+                        + str(self.radii[i]) +"\n"
+                    else:
+                        pinString = pinString + univMatsList[i].id +"\n"
                 else:
-                    pinString = pinString + univMatsList[i].id +"\n"
+                    if (i != (len(univMatsList)-1)):
+                        pinString = pinString + "fill "+ univMatsList[i].id +"\t" \
+                        + str(self.radii[i]) +"\n"
+                    else:
+                        pinString = pinString + "fill "+ univMatsList[i].id +"\n"      
         else:
             pinString = pinString + "void\n"
 

@@ -123,43 +123,56 @@ class stack(universe):
 
         self.heights = heights
 
-    def duplicate(self, newLatId):
-        """returns a deep copy of the stack object must set a new lat id for the
-         new duplicated lattice.
+    def duplicate(self, newId, makeNestedUnique = False, setGCUSeed = None):
+        """returns a deep copy of the universe object must set a new universe id for
+         the new duplicated universe.
 
-        The purpose of the ``duplicateLat`` function is to return a deep copy of a 
-        stack object. The user must provide a new lattice id for the copy, 
-        as lattice ids must be unique. 
+        The purpose of the ``duplicate`` function is to return a deep copy of a 
+        universe object. The user must provide a new universe id for the copy, 
+        as universe ids must be unique. 
 
         Parameters
         ----------
-        newLatId : str
-            lattice id to be set for the copy lattice being returned.
+        newId : str
+            universe id to be set for the copy universe being returned.
     
         Returns
         -------
-        newLat : stack object
-            copy of the orginal stack object. 
+        newUniv : universe object
+            copy of the orginal universe object. 
 
         Raises
         ------
         TypeError
-            If ``newLatId`` is not str.
+            If ``newId`` is not str.
 
         Examples
         --------
-        >>> lat1 = stack("101", 0, 0, 4)
-        >>> p1 = univ('1', 3)
-        >>> p2 = univ('2', 3)
-        >>> univs1 = np.array([p1, p2, p2, p1])
-        >>> heights1 = np.array([-20, 0, 20.2, 40.1])
-        >>> lat1.setStack(univs1, heights1)
-        >>> lat2 = lat1.duplicateLat("102")
+        >>> universe1 = universe("u1")
+        >>> cells1 = [cell1]
+        >>> universe1.setGeom(cells1)
+        >>> universe2 = universe1.duplicateUniv("u2")
         """
-        _isstr(newLatId, "new lattice universe id")
-        newLat = copy.deepcopy(self)
-        newLat.id = newLatId
-        return newLat
+        _isstr(newId, "new universe id")
+        newUniv = copy.deepcopy(self)
+        newUniv.id = newId
+
+        newCells = {}
+        for cellId in self.cells:
+            newCells[cellId+newId] =  self.cells[cellId].duplicateCell(cellId+newId)
+
+        if makeNestedUnique:
+            newElems = {}
+            for elem in self.elements:
+                newElems[elem+newId] =  self.elements[elem].duplicate(elem+newId)
+            newUniv.elements = newElems
+
+            for i in range(0, len(self.univs)):
+                newUniv.univs[i] = newUniv.univs[i].duplicate(newUniv.univs[i].id+newId)
+
+        newUniv.cells = newCells
+        return newUniv
+
 
     def replaceuniv(self, olduniv, newuniv):
         """replaces desired univ object with a new univ object from lattice map layout.

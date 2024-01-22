@@ -51,8 +51,13 @@ class universe:
         self.__allCells = {}
         self.__allGCU = {}
 
-    def setGCU(self, gcuId):
+    def setGCU(self, gcuId, setAllElementsGCU=False):
         self.gcuId = gcuId
+        if setAllElementsGCU:
+            count = 1
+            for elem in self.elements:
+                self.elements[elem].gcuId = int(self.gcuId) + count
+                count = count + 1
         return
     
     def _getAllGCU(self):
@@ -200,7 +205,7 @@ class universe:
         return allSurfs
 
     def collectAll(self):
-        """Collects all nested objects within a universe
+        """Collects all  objects within a universe
 
         The purpose of the ``collectAll`` function is to collect all nested universe
         objects within a universe object. This should be used after nesting multiple
@@ -287,10 +292,8 @@ class universe:
         geoString = ""
 
         return geoString
-
     
-    
-    def duplicate(self, newId):
+    def duplicate(self, newId, makeNestedUnique = False):
         """returns a deep copy of the universe object must set a new universe id for
          the new duplicated universe.
 
@@ -327,8 +330,13 @@ class universe:
         newCells = {}
         for cellId in self.cells:
             newCells[cellId+newId] =  self.cells[cellId].duplicateCell(cellId+newId)
-        self.cells = newCells
 
+        if makeNestedUnique:
+            newElems = {}
+            for elem in self.elements:
+                newElems[elem+newId] =  self.elements[elem].duplicate(elem+newId)
+            newUniv.elements = newElems
+        newUniv.cells = newCells
         return newUniv
 
     def replaceElement(self, oldElement, newElement):
