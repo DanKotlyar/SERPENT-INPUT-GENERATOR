@@ -379,11 +379,11 @@ class core:
             'scalar': 0,
         }
         detStr = ""
-        for i in range(0, len(unis)):
-            if detType != "scalar":
-                detStr = detStr + 'det {}Rate{} du {} dr {} void\n'.format(detType, unis[i], unis[i], DET_TYPE[detType])
-            else:
-                detStr = detStr + 'det {}Flux{} du {}\n'.format(detType, unis[i], unis[i])
+        #for i in range(0, len(unis)):
+        if detType != "scalar":
+            detStr = detStr + 'det {}Rate{} du {} dr {} void\n'.format(detType, unis, unis, DET_TYPE[detType])
+        else:
+            detStr = detStr + 'det {}Flux{} du {}\n'.format(detType, unis, unis)
         return detStr
 
     def setSettings(self, geoType, bc, nps, nact, nskip, xsAbsPath, plotOptions = None, setGCU = False, fgs = None, setPower = None, setDetectors = False, detTypes = None):
@@ -462,9 +462,9 @@ class core:
 
 
         gcuStr = "set gcu 0"
-
+        gcus = self.mainUniv._getAllGCU()
         if setGCU:
-            gcus = self.mainUniv._getAllGCU()
+            #gcus = self.mainUniv._getAllGCU()
             for gcu in gcus:
                 gcuStr = gcuStr + " {} ".format(gcus[gcu])
             gcuStr = gcuStr + "\n" 
@@ -476,12 +476,12 @@ class core:
 
         detStr = ""
         if setDetectors:
-            gcus = list(self.mainUniv._getAllGCU().values())
             for detType in detTypes:
-                print(gcus)
-                print(type(gcus))
+                for gcu in gcus:
+                    detStr = detStr + self.__createDetectors(detType, gcus[gcu])
 
-                detStr = detStr + self.__createDetectors(detType, gcus)
+            fgsDet = "det fgsdet du 0 de fgs\n"
+            detStr = detStr + fgsDet
 
                     
 
@@ -698,7 +698,6 @@ class core:
             f.writelines(lines)
             f.close()                 
         return
-
 
     def toSerpent(self, exportUniverseAsNumber = False):
         self.__buildSerpentMaterialFile()
