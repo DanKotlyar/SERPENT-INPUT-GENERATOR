@@ -554,6 +554,8 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None, isHex
                     params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2], height[0], height[1]])
                 elif innerUniv.boundary.type == "hexyc":
                     params = np.array([-width, width, -length, length, height[0], height[1]])
+                elif innerUniv.boundary.type == "sqc":
+                    params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2], height[0], height[1]])
                 else:
                     print('surf', innerUniv.id, innerUniv.boundary.type)
                 bSurf = surf("putBorder", "cuboid", params)
