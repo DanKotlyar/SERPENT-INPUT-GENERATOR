@@ -25,7 +25,6 @@ from serpentGenerator.functions.cells import cells as cdict
 from serpentGenerator.functions.housing import housing as hous
 from serpentGenerator.functions.branches import branches as bdict
 from serpentGenerator.functions.core import core
-from serpentGenerator.functions.templates import SNAP
 from serpentGenerator.functions.material import material as matObj
 from serpentGenerator.functions.checkerrors import (
     _isinstance, _is1darray, _isbool, _isint, _ispositive, _ispositiveArray,
