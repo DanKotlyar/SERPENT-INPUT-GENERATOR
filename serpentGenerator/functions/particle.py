@@ -134,11 +134,6 @@ class particle(universe):
                         particleString += f"{elems[i].id}\t{self.radii[i]}\n"
                     else:
                         particleString += f"{elems[i].id}\n"
-                else:
-                    if i != (len(elems) - 1):
-                        particleString += f"fill {elems[i].id}\t{self.radii[i]}\n"
-                    else:
-                        particleString += f"fill {elems[i].id}\n"
         else:
             particleString += "void\n"
 
