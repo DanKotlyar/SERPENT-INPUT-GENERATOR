@@ -36,7 +36,7 @@ class particle(universe):
         Particle radii ndarray, order dependent from innermost to outermost (cm).
     """
 
-    def __init__(self, id, nregions, isVoid=False):
+    def __init__(self, id, nregions, file = False, disperseduniv = False ,backgrounduniv = False, isVoid=False):
         """Define the basic data for the particle.
         Examples
         --------
@@ -48,9 +48,12 @@ class particle(universe):
         super().__init__(id)
         self.id = id  # Particle universe id
         self.nregions = nregions  # Number of particle regions
-        self.particle_elems = []  # Particle elements (materials or nested universes)
+        self.particle_mats = []  # Particle elements (materials or nested universes)
         self.radii = []  # Particle radii, order dependent
         self.isVoid = isVoid
+        self.file = file
+        self.backgrounduniv = backgrounduniv
+        self.disperseduniv = disperseduniv
 
     def __str__(self):
         """Overwrites the print method, prints all object variables."""
@@ -59,7 +62,7 @@ class particle(universe):
     def toString(self):
         """Display properties of particle element in string form for Serpent input."""
         particleString = f"particle {self.id}\n"
-        materials = self.particle_elems
+        materials = self.particle_mats
 
         for i in range(0, len(materials)):
             if i != (len(materials) - 1):
@@ -95,7 +98,11 @@ class particle(universe):
         _isinstanceList(radii, Number, "list of particle radii")
 
         self.radii = radii
-        self.particle_elems = materials
+        self.particle_mats = materials
+        self.univMats = {}
+        for i in range(0, len(materials)):
+            if issubclass(type(materials[i]), material):
+                self.univMats[materials[i].id] = materials[i]
 
         return
 
@@ -119,23 +126,59 @@ class particle(universe):
         """
         _isstr(newParticleId, "newParticleId")
         newParticle = particle(newParticleId, self.nregions)
-        newParticle.setParticle(self.particle_elems, self.radii)
+        newParticle.setParticle(self.particle_mats, self.radii)
         return newParticle
 
     def _geoHeader(self):
         """Return the particle geometry in string form for Serpent input."""
         particleString = f"particle {self.id}\n"
-        elems = self.particle_elems
+        mats = self.particle_mats
 
         if not self.isVoid:
-            for i in range(0, len(elems)):
-                if issubclass(type(elems[i]), material):
-                    if i != (len(elems) - 1):
-                        particleString += f"{elems[i].id}\t{self.radii[i]}\n"
+            for i in range(0, len(mats)):
+                if issubclass(type(mats[i]), material):
+                    if i != (len(mats) - 1):
+                        particleString += f"{mats[i].id}\t{self.radii[i]}\n"
                     else:
-                        particleString += f"{elems[i].id}\n"
+                        particleString += f"{mats[i].id}\n"
         else:
             particleString += "void\n"
 
+        particleString += self._pbed()
         particleString += "\n"
         return particleString
+
+    def setpbed(self, file, disperseduniv, backgrounduniv):
+        _isstr(file, "Path to dispersion routine file")
+        _isinstance(disperseduniv, universe, "Universe of the dispersed medium")
+        _isinstance(backgrounduniv, universe, "Universe of material in between particles")
+        self.file = file
+        self.disperseduniv = disperseduniv
+        self.backgrounduniv = backgrounduniv
+        return
+
+    def _pbed(self, *opts):
+        """Defines a stochastic particle / pebble-bed geometry for Serpent input.
+
+        Parameters:
+        disperseduniv (int or str): Universe name for the dispersed medium, this will be new.
+        backgrounduniv (int or str): Background universe (space between particles/pebbles).
+        file (str): Input file containing the particle/pebble data.
+        opts: Additional optional parameters.
+    
+        Returns:
+        str: A formatted string to define the particle bed geometry in Serpent.
+        """
+    
+        # Base string for pbed command
+        pbed_string = f"pbed {self.disperseduniv.id} {self.backgrounduniv.id} \"{self.file}\""
+    
+        # Check if any additional options are provided
+        if opts:
+            # Add each option to the pbed string
+            for opt in opts:
+                pbed_string += f" {opt}"
+    
+        pbed_string += "\n"
+    
+        return pbed_string
