@@ -22,8 +22,11 @@ from serpentGenerator.functions.surfs import surfs as sdict
 from serpentGenerator.functions.cells import cells as cdict
 from serpentGenerator.functions.housing import housing as hous
 from serpentGenerator.functions.branches import branches as bdict
+from serpentGenerator.functions.pin import pin
 from matplotlib import pyplot as plt
 import serpentTools
+
+from serpentGenerator.functions.utilities import createDummyMaterial
 
 import pandas as pd
 from tabulate import tabulate
@@ -32,7 +35,6 @@ from serpentGenerator.functions.checkerrors import (
     _isinstance, _is1darray, _isbool, _isint, _ispositive, _ispositiveArray,
     _isstr, _isinstanceList
 )
-
 
 class core:
     """Basic data definition for an core obj
@@ -369,8 +371,6 @@ class core:
 
     #     self.coef['toString'] = coefString
 
-
-
     def __createDetectors(self, detType, unis):
         DET_TYPE = {
             'nuFiss': -7,
@@ -483,21 +483,10 @@ class core:
             fgsDet = "det fgsdet du 0 de fgs\n"
             detStr = detStr + fgsDet
 
-                    
-
-
-
-                
-
         powStr = ""
-
         if setPower!= None:
             powStr = "set power {:.2f}\n".format(setPower)
-
-        
         setDict['settings'] = incStr + bcStr + popStr + xsStr + plotStr + hisStr + gcuStr + powStr + detStr
-
-    
         self.settings = setDict
         return
 
@@ -505,6 +494,93 @@ class core:
         self.pert = pertObj
         return
 
+    def outputCellData(self, outputFile):
+        tallied = self.mainUniv._getAllGCU()
+        gcus = self.mainUniv._getAllElements()
+        for gcu in tallied:
+            print(gcu, gcus[gcu].univMats.keys())
+            newdum = createDummyMaterial(str(int(int(tallied[gcu])*10)))
+            for cell in gcus[gcu].cells:
+                print("    {}: {}".format(gcus[gcu].cells[cell].id, gcus[gcu].cells[cell].universe))
+        return
+
+    def createDummyCore(self):
+        cellUni = {}
+        cellMat = {}
+        pinMat = {}
+        pinUni = {}
+        dummyUni = self.mainUniv.duplicate("dummy")
+        tallied = dummyUni._getAllGCU()
+        gcus = dummyUni._getAllElements()
+        for gcu in tallied:
+            #newdum = createDummyMaterial(str(int(int(tallied[gcu])*10)))
+            cells = gcus[gcu].cells
+            
+            if isinstance(gcus[gcu], pin):
+                numMats = len(gcus[gcu].pinelems)
+                pinMat[gcu] = numMats
+                if gcus[gcu].gcuId == None:
+                    pinUni[gcu] = tallied[gcu]
+                else:
+                    pinUni[gcu] = gcus[gcu].gcuId
+            for cell in cells:  
+                if cells[cell].material != None:
+                    cellUni[cell] = tallied[gcu]
+                    cellMat[cell] = cells[cell].material.id
+
+            gcu_elems = gcus[gcu]._getAllElements()
+            gcu_cells = gcus[gcu]._getAllCells()
+
+            for elem in gcu_elems:
+                if isinstance(gcu_elems[elem], pin):
+                    numMats = len(gcu_elems[elem].pinelems)
+                    pinMat[elem] = numMats
+                    if gcu_elems[elem].gcuId == None:
+                        pinUni[elem] = tallied[gcu]
+                    else:
+                        pinUni[elem] = gcu_elems[elem].gcuId
+                    # if gcu in pinUni:
+                    #     pinUni[gcu].append(elem)
+                    # else:
+                    #     pinUni[gcu].append(elem)
+            for cell in gcu_cells:
+                if gcu_cells[cell].material != None:
+                    cellUni[cell] = tallied[gcu]
+                    cellMat[cell] = gcu_cells[cell].material.id     
+            #print(gcu, gcu_elems.keys())
+            # print(pinMat)
+            # print(pinUni)
+        #print(cellUni)
+        #print(cellMat)
+        #print(pinMat)
+        dimsFile = open(self.baseFileName+".geo", "r")
+        lines = dimsFile.readlines()
+
+        for ldx, line in enumerate(lines):
+            for cell in cellUni:
+                if (" {} ".format(cell) in line):
+                    lines[ldx] = line.replace(" {} ".format(cellMat[cell]), " "+str(cellUni[cell])+" ")
+            for uni in pinMat:
+                # print(uni, pinMat[uni])
+                if ("pin {}\n".format(uni) in line):
+                    for i in range(0, pinMat[uni]):
+                        # print("numMats", pinMat[uni])
+                        # print(lines[ldx + i])
+                        # print(lines[ldx + i + 1])
+                        mat = lines[ldx + i + 1].split()[0]
+                        # print(mat)
+                        lines[ldx + i + 1] = lines[ldx + i + 1].replace(mat, str(pinUni[uni]))         
+        matStr = "\nset pop 100000 100 100\n"
+        for uni in list(tallied.values()):
+            matStr = matStr + createDummyMaterial(str(uni)).toString()
+        dimsFile.close()
+
+        tempFile = open(self.baseFileName+"_volumeTally.geo", "w")
+        tempFile.writelines(lines)
+
+        tempFile.write(matStr)
+        tempFile.close()
+        return
 
     # def setSettings(self, power, bc, egrid, nps, nact, nskip, setPCC = False,
     #     misc = []):
@@ -677,7 +753,6 @@ class core:
         mainFile.close()
     
 
-    
     def __parseUniverseToNumber(self, geometryFile):
         gcus = self.mainUniv._getAllGCU()
 
@@ -709,7 +784,6 @@ class core:
         return
 
     def verifyVolumes(self, mvolPath):
-            
         return  
 
     def plotHistoryData(self, hisFile):

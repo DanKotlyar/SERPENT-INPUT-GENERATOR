@@ -10,6 +10,8 @@
 from serpentGenerator.functions.checkerrors import _is1dlist
 import numpy as np
 from sympy.geometry import *
+from serpentGenerator.functions.material import material
+from serpentGenerator.data.materialLibrary import MATLIB
 
 def createDictFromConatinerList(list):
     _is1dlist(list, "List being converted to dictionary")
@@ -33,3 +35,6 @@ def calcVertexFromApothem(apothem):
     sr = np.sqrt(ss**2 + sa**2)
     return sr
         
+def createDummyMaterial(name):
+    dum = MATLIB['H2O'].duplicateMat(name)
+    return dum

@@ -126,10 +126,16 @@ class hexLat(universe):
                                 .format(self.nelements, self.nelements,  map.shape))        
         self.map = map
         mapList = list(map.flatten())
+
+        geoLevels = []
         for i in range(0, len(mapList)):
             if mapList[i].id not in self.elements:
                 self.elements[mapList[i].id] = mapList[i]
+                geoLevels.append(mapList[i].geoLevel)
 
+        self.geoLevel = np.max(geoLevels) + 1
+        self.collectAll()
+        return
     
     def replacePin(self, oldPin, newPin):
         """replaces desired pin object with a new pin object from lattice map layout.
@@ -176,6 +182,7 @@ class hexLat(universe):
 
         self.elements[newPin.id] = newPin
         self.elements.pop(oldPin.id)
+        return
 
     def duplicateLat(self, newLatId):
         """returns a deep copy of the hexLat object must set a new lat id for the new

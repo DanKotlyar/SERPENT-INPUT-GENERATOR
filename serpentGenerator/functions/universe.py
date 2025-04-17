@@ -62,6 +62,15 @@ class universe:
     
     def _getAllGCU(self):
         return self.__allGCU
+    
+    def _getAllElements(self):
+        return self.__allElements
+    
+    def _getAllCells(self):
+        return self.__allCells
+    
+    def _getAllMats(self):
+        return self.__allMats
 
     def setBoundary(self, boundary, innerBoundary=None):
         self.boundary = boundary
@@ -199,6 +208,7 @@ class universe:
             for surfId in self.__allElements[elementId].univSurfs:
                 allSurfs[surfId] = self.__allElements[elementId].univSurfs[surfId]
 
+
         for surfId in self.univSurfs:
             allSurfs[surfId] = self.univSurfs[surfId]
 
@@ -214,6 +224,7 @@ class universe:
         allSurfs = {}
         self.__collectAllElementsAndMatsAndCellsAndSurfs(allSurfs)
         self.__allSurfs = allSurfs
+        self.__setGeoLevel()
         self.collectAllGCU()
         return
     
