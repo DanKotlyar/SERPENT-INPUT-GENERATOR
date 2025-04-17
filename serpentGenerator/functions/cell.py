@@ -176,7 +176,7 @@ class cell:
         return cellStr
 
     def _geoHeader(self):
-        def sign(orientation):
+        def sign(orientation, iter):
             if(orientation == 1):
                 sign = "-"
             elif(orientation == 0):
@@ -184,7 +184,10 @@ class cell:
             elif(orientation == 2):
                 sign = "):("
             elif(orientation == 3):
-                sign = "):(-"
+                if iter != 0:
+                    sign = "):(-"
+                else:
+                    sign = "(-"
             return sign
         if((self.material == "")&(self.fill == "")&(self.isVoid == False)):
             raise ValueError("Cell material or filling universe must be set."
@@ -201,19 +204,21 @@ class cell:
         surfString = ""
         if (not self.hasUnion) & (not self.hasMultUnion):
             for i in range(0,len(self.surfs)):
-                surfString = surfString + sign(self.dirs[i]) + self.surfs[i].id + " "
+                surfString = surfString + sign(self.dirs[i], i) + self.surfs[i].id + " "
+            if self.dirs[-1] == 3:
+                surfString = surfString + ")"
         elif not self.hasMultUnion:
             lenSurf = len(self.surfs)
             commonSurf = self.surfs[-1].id
             commonSurfDir = sign(self.dirs[-1])
             for i in range(0, lenSurf-1):
-                surfString = surfString+"("+sign(self.dirs[i]) + self.surfs[i].id +" "+ commonSurfDir+commonSurf+ ")"
+                surfString = surfString+"("+sign(self.dirs[i], i) + self.surfs[i].id +" "+ commonSurfDir+commonSurf+ ")"
                 if i < (lenSurf -2):
                     surfString = surfString + ":"
         else:
             surfString = surfString + "("
             for i in range(0,len(self.surfs)):
-                surfString = surfString + sign(self.dirs[i]) + self.surfs[i].id + " "
+                surfString = surfString + sign(self.dirs[i], i) + self.surfs[i].id + " "
             surfString = surfString + ")"
         cellStr = "cell "+self.id+" "+uniString+ matString + voidString + \
                                                             fillString + surfString

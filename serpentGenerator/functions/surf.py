@@ -36,7 +36,12 @@ class surf:
 
         self.id = id
         self.type = type 
-        self.params = params 
+        self.params = params
+        self.rotation = None
+
+    def setRotation(self,ccDegrees):
+        self.rotation = ccDegrees
+        return
 
     def toString(self):
         """display properties of surface object in string form
@@ -53,7 +58,12 @@ class surf:
         paramString = ""
         for i in range(0, len(self.params)):
             paramString = paramString + str(self.params[i]) + " "
-        return "surf " + self.id + " " + self.type + " " + paramString+ "\n"
+        
+        surfStr = "surf " + self.id + " " + self.type + " " + paramString+ "\n"
+
+        if self.rotation != None:
+            surfStr = surfStr + "trans S {} rot 0 0 0 0 0 1 {}\n".format(self.id, self.rotation)
+        return surfStr
 
     def duplicateSurf(self, newSurfId):
         newSurf = copy.deepcopy(self)
