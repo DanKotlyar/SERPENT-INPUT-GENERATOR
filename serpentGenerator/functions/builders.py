@@ -294,6 +294,140 @@ def buildPeripheralRing(innerUniv, radius, material = None, ringId = None, isVoi
 
     return totUniv
 
+def buildPeripheralRingNoNest(innerUniv, radius, material = None, ringId = None, isVoid = False, setGCU = None, fill = None):
+    """
+    The ``buildPeripheralRing`` method to nest a universe object within a peripheral
+    ring. 
+
+    Parameters
+    ----------
+    ringId : str
+        name of ring universe
+    radius : float
+        radius of peripheral ring 
+    material : material object
+        optional material to fill inside peripheral ring
+    isVoid : bool
+        True/False fill ring with void
+
+    Raises
+    ------
+    TypeError
+        If ``id`` is not a str
+        If ``radius`` not a number
+        If ``material`` not a material object
+        If ``isVoid`` not a bool
+    ValueError
+        If `radius`` is not a positive number
+
+    Examples
+    --------
+    >>> acLatMap = "0 0 1 1 1 0 0;\
+                    0 1 1 1 1 1 0;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    0 1 1 1 1 1 0;\
+                    0 0 1 1 1 0 0"
+    >>> acUnivMap = {"1": fa1, "0": ca1}
+    >>> nOuter = 2
+    >>> ac =  buildSquareLattice("ac", acLatMap, acUnivMap, nOuter, assemPitch)
+    >>> acCool = buildPeripheralRing(ac, activeCoreRad, material = MATLIB['H2O'], ringId = "acCool")
+    """
+    _isstr(ringId, "universe id")
+    _isbool(isVoid, "True/False is universe void")
+    if (type(material) != type(None)):
+        _isinstance(material, matObj, "fill material")
+    _ispositive(radius, "ring radius")
+    _isinstance(innerUniv, universe, "inner universe object")
+    prSurf1 = surf(ringId+"cc1", "cyl", np.array([0.0, 0.0, radius]))
+    hasInnerBound = False if innerUniv.boundary == None else True
+    if hasInnerBound:
+        innerSurf = innerUniv.boundary
+        if (not isVoid) & (fill == None) :
+            #prUniv = universe(ringId+"_univ")
+            prCell = cell(ringId+"_cell", mat=material, isVoid=False)
+            prDirs = [0, 1]
+            prSurfs = [innerSurf, prSurf1]
+            prCell.setSurfs(prSurfs, prDirs)
+            # prUniv.setGeom([prCell])
+            # prUniv.setBoundary(prSurf1)
+            # prUniv.collectAll()
+            innerUniv.setGeom(list(prUniv.cells.items()).append(prCell))
+            innerUniv.setBoundary(prSurf1)
+            innerUniv.collectAll()
+            # prUniv.setGCU(setGCU)
+
+            # totUniv = universe(innerUniv.id + ringId+"_univ")
+            # totCell1 = cell(innerUniv.id +ringId+"_cell1", isVoid=False)
+            # totCell1.setFill(innerUniv)
+            # totCell1.setSurfs([innerSurf], [1])
+
+            # totCell2 = cell(innerUniv.id +ringId+"_cell2", isVoid=False)
+            # totCell2.setFill(prUniv)
+            # totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
+
+            # totUniv.setGeom([totCell1, totCell2])
+        elif fill ==  None:
+            prUniv = universe(ringId+"_univ")
+            prCell = cell(ringId+"_cell", isVoid=True)
+            prDirs = [0, 1]
+            prSurfs = [innerSurf, prSurf1]
+            prCell.setSurfs(prSurfs, prDirs)
+            prUniv.setGeom([prCell])
+            prUniv.setBoundary(prSurf1)
+            prUniv.collectAll()
+            prUniv.setGCU(setGCU)
+
+            totUniv = universe(innerUniv.id + ringId+"_univ")
+            totCell1 = cell(innerUniv.id +ringId+"_cell1", isVoid=False)
+            totCell1.setFill(innerUniv)
+            totCell1.setSurfs([innerSurf], [1])
+
+            totCell2 = cell(innerUniv.id +ringId+"_cell2", isVoid=True)
+            totCell2.setFill(prUniv)
+            totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
+
+            totUniv.setGeom([totCell1, totCell2])
+        else:
+            print()
+            prUniv = universe(ringId+"_univ")
+            prCell = cell(ringId+"_cell", isVoid=False)
+            prDirs = [0, 1]
+            prSurfs = [innerSurf, prSurf1]
+            prCell.setFill(fill)
+            prCell.setSurfs(prSurfs, prDirs)
+            
+            prUniv.setGeom([prCell])
+            prUniv.setBoundary(prSurf1)
+            prUniv.collectAll()
+
+            prUniv.setGCU(setGCU)
+
+            totUniv = universe(innerUniv.id + ringId+"_univ")
+            totCell1 = cell(innerUniv.id +ringId+"_cell1", isVoid=False)
+            totCell1.setFill(innerUniv)
+            totCell1.setSurfs([innerSurf], [1])
+
+            totCell2 = cell(innerUniv.id +ringId+"_cell2", isVoid=False)
+            totCell2.setFill(prUniv)
+            totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
+
+            totUniv.setGeom([totCell1, totCell2])
+
+        totUniv.setBoundary(prSurf1, innerBoundary=innerSurf)
+    else:
+        totUniv = universe(ringId+"_univ")
+        totCell = cell(ringId+"_cell", isVoid=False)
+        totCell.setFill(innerUniv)
+        totCell.setSurfs([prSurf1], [1])
+        totUniv.setGeom([totCell])
+        totUniv.setBoundary(prSurf1)
+
+    totUniv.collectAll()
+
+    return totUniv
+
 def buildPeripheralSurf(innerUniv, surface, material = None, regionId = None, isVoid = False, setGCU = None, fill = None):
     """
     The ``buildPeripheralRing`` method to nest a universe object within a peripheral
@@ -392,6 +526,156 @@ def buildPeripheralSurf(innerUniv, surface, material = None, regionId = None, is
             totUniv.setGeom([totCell1, totCell2])
         else:
             print()
+            prUniv = universe(ringId+"_univ")
+            prCell = cell(ringId+"_cell", isVoid=False)
+            prDirs = [0, 1]
+            prSurfs = [innerSurf, prSurf1]
+            prCell.setFill(fill)
+            prCell.setSurfs(prSurfs, prDirs)
+            
+            prUniv.setGeom([prCell])
+            prUniv.setBoundary(prSurf1)
+            prUniv.collectAll()
+
+            prUniv.setGCU(setGCU)
+
+            totUniv = universe(innerUniv.id + ringId+"_univ")
+            totCell1 = cell(innerUniv.id +ringId+"_cell1", isVoid=False)
+            totCell1.setFill(innerUniv)
+            totCell1.setSurfs([innerSurf], [1])
+
+            totCell2 = cell(innerUniv.id +ringId+"_cell2", isVoid=False)
+            totCell2.setFill(prUniv)
+            totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
+
+            totUniv.setGeom([totCell1, totCell2])
+
+        totUniv.setBoundary(prSurf1, innerBoundary=innerSurf)
+    else:
+        totUniv = universe(ringId+"_univ")
+        totCell = cell(ringId+"_cell", isVoid=False)
+        totCell.setFill(innerUniv)
+        totCell.setSurfs([prSurf1], [1])
+        totUniv.setGeom([totCell])
+        totUniv.setBoundary(prSurf1)
+
+    totUniv.collectAll()
+
+    return totUniv
+
+def buildPeripheralSurfNoNest(innerUniv, surface, material = None, regionId = None, isVoid = False, setGCU = None, fill = None):
+    """
+    The ``buildPeripheralRing`` method to nest a universe object within a peripheral
+    ring. 
+
+    Parameters
+    ----------
+    ringId : str
+        name of ring universe
+    radius : float
+        radius of peripheral ring 
+    material : material object
+        optional material to fill inside peripheral ring
+    isVoid : bool
+        True/False fill ring with void
+
+    Raises
+    ------
+    TypeError
+        If ``id`` is not a str
+        If ``radius`` not a number
+        If ``material`` not a material object
+        If ``isVoid`` not a bool
+    ValueError
+        If `radius`` is not a positive number
+
+    Examples
+    --------
+    >>> acLatMap = "0 0 1 1 1 0 0;\
+                    0 1 1 1 1 1 0;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    0 1 1 1 1 1 0;\
+                    0 0 1 1 1 0 0"
+    >>> acUnivMap = {"1": fa1, "0": ca1}
+    >>> nOuter = 2
+    >>> ac =  buildSquareLattice("ac", acLatMap, acUnivMap, nOuter, assemPitch)
+    >>> acCool = buildPeripheralRing(ac, activeCoreRad, material = MATLIB['H2O'], ringId = "acCool")
+    """
+    ringId =regionId
+    _isstr(ringId, "universe id")
+    _isbool(isVoid, "True/False is universe void")
+    if (type(material) != type(None)):
+        _isinstance(material, matObj, "fill material")
+    # _ispositive(radius, "ring radius")
+    _isinstance(innerUniv, universe, "inner universe object")
+    #prSurf1 = surf(ringId+"cc1", "cyl", np.array([0.0, 0.0, radius]))
+    prSurf1 = surface
+   
+    hasInnerBound = False if innerUniv.boundary == None else True
+    if hasInnerBound:
+        innerSurf = innerUniv.boundary
+        if (not isVoid) & (fill == None) :
+            # prUniv = universe(ringId+"_univ")
+            # prCell = cell(ringId+"_cell", mat=material, isVoid=False)
+            # prDirs = [0, 1]
+            # prSurfs = [innerSurf, prSurf1]
+            # prCell.setSurfs(prSurfs, prDirs)
+            # prUniv.setGeom([prCell])
+            # prUniv.setBoundary(prSurf1)
+            # prUniv.collectAll()
+
+            # prUniv.setGCU(setGCU)
+
+            # totUniv = universe(innerUniv.id + ringId+"_univ")
+            # totCell1 = cell(innerUniv.id +ringId+"_cell1", isVoid=False)
+            # totCell1.setFill(innerUniv)
+            # totCell1.setSurfs([innerSurf], [1])
+
+            # totCell2 = cell(innerUniv.id +ringId+"_cell2", isVoid=False)
+            # totCell2.setFill(prUniv)
+            # totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
+
+            #prUniv = universe(ringId+"_univ")
+            prCell = cell(ringId+"_cell", mat=material, isVoid=False)
+            prDirs = [0, 1]
+            prSurfs = [innerSurf, prSurf1]
+            prCell.setSurfs(prSurfs, prDirs)
+            # prUniv.setGeom([prCell])
+            # prUniv.setBoundary(prSurf1)
+            # prUniv.collectAll()
+            univCells = list(innerUniv.cells.values())
+            print("BRRRRRRRRRRRRRRRRRRRRR", univCells)
+
+            univCells.append(prCell)
+            innerUniv.setGeom(univCells)
+            innerUniv.setBoundary(prSurf1)
+            #innerUniv.collectAll()
+
+            totUniv = innerUniv
+        elif fill ==  None:
+            prUniv = universe(ringId+"_univ")
+            prCell = cell(ringId+"_cell", isVoid=True)
+            prDirs = [0, 1]
+            prSurfs = [innerSurf, prSurf1]
+            prCell.setSurfs(prSurfs, prDirs)
+            prUniv.setGeom([prCell])
+            prUniv.setBoundary(prSurf1)
+            prUniv.collectAll()
+            prUniv.setGCU(setGCU)
+
+            totUniv = universe(innerUniv.id + ringId+"_univ")
+            totCell1 = cell(innerUniv.id +ringId+"_cell1", isVoid=False)
+            totCell1.setFill(innerUniv)
+            totCell1.setSurfs([innerSurf], [1])
+
+            totCell2 = cell(innerUniv.id +ringId+"_cell2", isVoid=True)
+            totCell2.setFill(prUniv)
+            totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
+
+            totUniv.setGeom([totCell1, totCell2])
+        else:
             prUniv = universe(ringId+"_univ")
             prCell = cell(ringId+"_cell", isVoid=False)
             prDirs = [0, 1]
@@ -611,7 +895,60 @@ def buildPeripheralObject(innerUniv, outerUniv):
     totUniv.collectAll()
     return totUniv
 
-def buildBoundingBox(innerUniv, width = None, length = None, height =None, isHex = False, hexApothem = None):
+def buildPeripheralObjectNoNest(innerUniv, outerUniv):
+    """
+    The ``buildPeripheralObject`` method is used to nest a universe object within a 
+    custom peripheral universe object. This method should be used when dealing with
+    custom geometries.
+
+    Parameters
+    ----------
+    innerUniv : universe object
+        inner universe object (objected being nested)
+    outerUniv : universe object
+        outer univserse object (object surrounding nested universe)
+
+    Raises
+    ------
+    TypeError
+        If ``innerUniv``, ``outerUniv`` is not a universe object.
+
+    Examples
+    --------
+    >>> acLatMap = "0 0 1 1 1 0 0;\
+                    0 1 1 1 1 1 0;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    0 1 1 1 1 1 0;\
+                    0 0 1 1 1 0 0"
+    >>> acUnivMap = {"1": fa1, "0": ca1}
+    >>> nOuter = 2
+    >>> ac =  buildSquareLattice("ac", acLatMap, acUnivMap, nOuter, assemPitch)
+    >>> customUniv = universe("custom")
+    >>> acCool = buildPeripheralObject(ac, customUniv)
+    """
+    _isinstance(innerUniv, universe, "inner universe object")
+    _isinstance(outerUniv, universe, "outer universe object")
+    # totUniv = universe(innerUniv.id + outerUniv.id+"_univ")
+    # totCell1 = cell(innerUniv.id +outerUniv.id+"_cell1", isVoid=False)
+    # totCell1.setFill(innerUniv)
+    # totCell1.setSurfs([innerUniv.boundary], [1])
+
+    totCell2 = cell(outerUniv.id+"_percell", isVoid=False)
+    totCell2.setFill(outerUniv)
+    totCell2.setSurfs([innerUniv.boundary, outerUniv.boundary], [0, 1])
+
+
+    univCells = list(innerUniv.cells.values())
+    univCells.append(totCell2)
+    innerUniv.setGeom(univCells)
+    innerUniv.setBoundary(outerUniv.boundary)
+    innerUniv.collectAll()
+    return innerUniv
+
+
+def buildBoundingBox(innerUniv, width = None, length = None, height =None, isHex = False, hexApothem = None, hexType = None):
     """
     The ``buildBoundingBox`` method is used to designate the end of the active
     particle area of the serpent geometry. In otherwords, it used to denote the 
@@ -678,6 +1015,8 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None, isHex
             if width == None:
                 if innerUniv.boundary.type == "cyl":
                     params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2] ])
+                elif innerUniv.boundary.type == "sqc":
+                    params = np.array([-(innerUniv.boundary.params[2] + 1), (innerUniv.boundary.params[2] + 1), -(innerUniv.boundary.params[2] + 1), (innerUniv.boundary.params[2] + 1) ])
                 else:
                     print("not yet supported 1")
                 bSurf = surf("putBorder", "rect", params)
@@ -693,6 +1032,19 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None, isHex
                 else:
                     print('surf', innerUniv.id, innerUniv.boundary.type)
                 bSurf = surf("putBorder", "cuboid", params)
+        else:
+            if height == None:
+                params = np.array([0, 0, hexApothem])
+                if hexType == "FLAT":
+                    bSurf = surf("putBorder", "hexyc", params)
+                else:
+                    bSurf = surf("putBorder", "hexxc", params)
+            else:
+                params = np.array([0, 0, hexApothem, height[0], height[1]])
+                if hexType == "FLAT":
+                    bSurf = surf("putBorder", "hexyprism", params)
+                else:
+                    bSurf = surf("putBorder", "hexxprism", params)
 
         ins = innerUniv.boundary    
             
@@ -742,6 +1094,150 @@ def buildBoundingBox(innerUniv, width = None, length = None, height =None, isHex
         z0Univ.setGeom([zCell3, zCell4])
         z0Univ.collectAll()
     return z0Univ
+
+def buildBoundingBoxNoNest(innerUniv, width = None, length = None, height =None, isHex = False, hexApothem = None, hexType = None):
+    """
+    The ``buildBoundingBox`` method is used to designate the end of the active
+    particle area of the serpent geometry. In otherwords, it used to denote the 
+    beginning of the "outside" region in serpent. If the geometry is cylindrical or 
+    hexagonal the program is smart enought to set the dimension of the bounding box
+    for you. If not, one can always specify the width length and height of the box.
+
+    Parameters
+    ----------
+    innerUniv : universe object
+        inner universe object (object being enclosed)
+    width : float
+        box half width (x), [-x, x]
+    length : float
+        box half length (y), [-y, y]
+    hieght : float
+        box half height (z), [-z, z]
+
+    Raises
+    ------
+    TypeError
+        If ``innerUniv`` is not a universe object.
+        If ``width``, ``length``, ``height`` is not a number.
+    ValueError
+        If ``width``, ``length``, ``height`` is not a positive number.
+
+    Examples
+    --------
+    >>> acLatMap = "0 0 1 1 1 0 0;\
+                    0 1 1 1 1 1 0;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    1 1 1 1 1 1 1;\
+                    0 1 1 1 1 1 0;\
+                    0 0 1 1 1 0 0"
+    >>> acUnivMap = {"1": fa1, "0": ca1}
+    >>> nOuter = 2
+    >>> ac =  buildSquareLattice("ac", acLatMap, acUnivMap, nOuter, assemPitch)
+    >>> acCool = buildPeripheralRing(ac, activeCoreRad, material = MATLIB['H2O'], ringId = "acCool")
+    >>> box = buildBoundingBox(acCool)
+    """
+    _isinstance(innerUniv, universe, "inner universe object")
+    if width != None:
+        _ispositive(width, "box half width")
+    if length != None:
+        _ispositive(length, "box half length")
+    
+    # if height != None:
+    #     if type(height) != type([]):
+    #         _ispositive(height, "box half height")
+    #     else:
+    #         _ispositive(height, "box height")
+
+    zUniv = universe("0")
+    zCell1 = cell("fillRegion", isVoid=False)
+    zCell1.setFill(innerUniv)
+
+    if innerUniv.boundary != None:
+        if not isHex:
+            if width == None:
+                if innerUniv.boundary.type == "cyl":
+                    params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2] ])
+                elif innerUniv.boundary.type == "sqc":
+                    params = np.array([-(innerUniv.boundary.params[2] + 1), (innerUniv.boundary.params[2] + 1), -(innerUniv.boundary.params[2] + 1), (innerUniv.boundary.params[2] + 1) ])
+                else:
+                    print("not yet supported 1")
+                bSurf = surf("putBorder", "rect", params)
+            else:
+                if type(innerUniv.boundary) == unionSurf:
+                    params = np.array([-width, width, -length, length, height[0], height[1]])
+                elif innerUniv.boundary.type == "cyl":
+                    params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2], height[0], height[1]])
+                elif innerUniv.boundary.type == "hexyc":
+                    params = np.array([-width, width, -length, length, height[0], height[1]])
+                elif innerUniv.boundary.type == "sqc":
+                    params = np.array([-innerUniv.boundary.params[2], innerUniv.boundary.params[2], -innerUniv.boundary.params[2], innerUniv.boundary.params[2], height[0], height[1]])
+                else:
+                    print('surf', innerUniv.id, innerUniv.boundary.type)
+                bSurf = surf("putBorder", "cuboid", params)
+        else:
+            if height == None:
+                params = np.array([0, 0, hexApothem])
+                if hexType == "FLAT":
+                    bSurf = surf("putBorder", "hexyc", params)
+                else:
+                    bSurf = surf("putBorder", "hexxc", params)
+            else:
+                params = np.array([0, 0, hexApothem, height[0], height[1]])
+                if hexType == "FLAT":
+                    bSurf = surf("putBorder", "hexyprism", params)
+                else:
+                    bSurf = surf("putBorder", "hexxprism", params)
+        if type(innerUniv.boundary) == unionSurf:
+            zCell1.setSurfs([innerUniv.boundary.surfs[0],innerUniv.boundary.surfs[1], bSurf], [1, 1, 1])
+        else:
+            zCell1.setSurfs([innerUniv.boundary, bSurf], [1, 1])
+
+        ins = innerUniv.boundary    
+            
+        zUniv.setBoundary(bSurf, ins)
+        zCell2 = cell("voidRegion", isVoid=True)
+        if type(ins) != unionSurf:
+            zCell2.setSurfs([ins, bSurf], [0, 1])
+        else:
+            zCell2.setSurfs([ins.surfs[0], ins.surfs[1], bSurf], [0, 0, 1], hasUnion=True)
+
+        zCell4 = cell("outRegionOut", isVoid=False)
+        zCell4.setSurfs([bSurf], [0])
+
+        zUniv.setGeom([zCell1, zCell2, zCell4])
+        zUniv.collectAll()
+
+        z0Univ = zUniv
+
+    else:
+        if not isHex:
+            if height == None:
+                params = np.array([-width, width, -length, length])
+                bSurf = surf("putBorder", "rect", params)
+            else:
+                params = np.array([-width, width, -length, length, height[0], height[1]])
+                bSurf = surf("putBorder", "cuboid", params)
+        else:
+            if height == None:
+                params = np.array([0, 0, hexApothem])
+                bSurf = surf("putBorder", "hexyc", params)
+            else:
+                params = np.array([0, 0, hexApothem, height[0], height[1]])
+                bSurf = surf("putBorder", "hexyprism", params) 
+
+        z0Univ = universe("0")
+        zCell3 = cell("outRegionIn", isVoid=False)
+        zCell3.setSurfs([bSurf], [1])
+        zCell3.setFill(innerUniv)
+
+        zCell4 = cell("outRegionOut", isVoid=False)
+        zCell4.setSurfs([bSurf], [0])
+
+        z0Univ.setGeom([zCell3, zCell4])
+        z0Univ.collectAll()
+    return z0Univ
+
     
 def build3Dpin(baseId, pinMaterials, pinRadii, nLayers, heights = None, dz = None, hasUniqueMatlayers = False, topUniv = None, topUnivdz = None, botUniv = None, botUnivdz = None, setGCUSeed = None, z0 = None):
     """

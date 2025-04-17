@@ -32,16 +32,50 @@ class surf:
     def __init__(self, id, type, params):
         _isstr(id, "surface id")
         _isstr(type, "surface geo type")
-        _isnumberArray(params, "surface geo parameters")
 
         self.id = id
-        self.type = type 
-        self.params = params
+        self.type = type
+
+        if type != "inf":
+            _isnumberArray(params, "surface geo parameters")
+            self.params = params
+        else:
+            self.params = None
         self.rotation = None
 
-    def setRotation(self,ccDegrees):
+    def setRotation(self, ccDegrees):
         self.rotation = ccDegrees
         return
+    
+    def rccToCyl(self):
+        newParams = np.array([self.params[0], self.params[1], self.params[-1]])
+        self.type = "cyl"
+        self.params = newParams
+        return self
+    
+    def boxToRect(self):
+        if ((self.params[3] < 0) & (self.params[0] < 0)):
+            x1, x0 = self.params[0], self.params[0] + self.params[3]
+        elif (self.params[3] < 0):
+            x0, x1 = self.params[0], self.params[0] + -1*self.params[3]
+        elif ((self.params[3] > 0) & (self.params[0] < 0)):
+            x0, x1 = self.params[0], self.params[0] + self.params[3]
+        else:
+            x0, x1 = self.params[0], self.params[0] + self.params[3]
+
+        if ((self.params[7] < 0) & (self.params[1] < 0)):
+            y1, y0 = self.params[1], self.params[1] + self.params[7]
+        elif (self.params[7] < 0):
+            y0, y1 = self.params[1], self.params[1] + -1*self.params[7]
+        elif ((self.params[7] > 0) & (self.params[1] < 0)):
+            y0, y1 = self.params[1], self.params[1] + self.params[7]
+        else:
+            y0, y1 = self.params[1], self.params[1] + self.params[7]
+
+        newParams = np.array([x0, x1, y0, y1])
+        self.type = "rect"
+        self.params = newParams
+        return self
 
     def toString(self):
         """display properties of surface object in string form
@@ -56,8 +90,12 @@ class surf:
             the serpent input file.
         """
         paramString = ""
-        for i in range(0, len(self.params)):
-            paramString = paramString + str(self.params[i]) + " "
+
+        if (type(self.params) != type(None)):
+            for i in range(0, len(self.params)):
+                paramString = paramString + str(self.params[i]) + " "
+        else:
+            pass
         
         surfStr = "surf " + self.id + " " + self.type + " " + paramString+ "\n"
 
