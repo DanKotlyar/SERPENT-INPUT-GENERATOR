@@ -439,7 +439,10 @@ class core:
                 bcStr = "set bc 1 1 1\n"
             setDict['bc'] = bcStr
 
-        popStr = "set pop "+str(int(nps))+" "+str(int(nact))+" " + str(int(nskip))+"\n"
+        if int(nps) == -1:
+            popStr = ""
+        else:
+            popStr = "set pop "+str(int(nps))+" "+str(int(nact))+" " + str(int(nskip))+"\n"
         setDict['pop'] = popStr
         
         xsStr = 'set acelib "'+xsAbsPath+'"\n'
@@ -461,9 +464,10 @@ class core:
 
 
 
-        gcuStr = "set gcu 0"
+        gcuStr = "set gcu -1"
         gcus = self.mainUniv._getAllGCU()
         if setGCU:
+            gcuStr = "set gcu 0"
             #gcus = self.mainUniv._getAllGCU()
             for gcu in gcus:
                 gcuStr = gcuStr + " {} ".format(gcus[gcu])
@@ -712,21 +716,29 @@ class core:
     #     inputString = inputString + self.xsLibs['toString']
     #     return inputString
 
-    def __buildSerpentMaterialFile(self):
+    def __buildSerpentMaterialFile(self, extra = None):
         matsFile = open(self.baseFileName+".mat", "w")
         matSerp = self.mainUniv._matString()
+        if extra == None:
+            pass
+        else:
+            matSerp = matSerp + extra
         matsFile.write(matSerp)
         matsFile.close()
         return
 
-    def __buildSerpentGeometryFile(self):
+    def __buildSerpentGeometryFile(self, extra = None):
         dimsFile = open(self.baseFileName+".geo", "w")
         geom = self.mainUniv._geoString()
+        if extra == None:
+            pass
+        else:
+            geom = geom + extra
         dimsFile.write(geom)
         dimsFile.close()
         return self.baseFileName+".geo"
 
-    def __buildSerpentMainFile(self):
+    def __buildSerpentMainFile(self, extra = None):
         mainFile = open(self.baseFileName+".main", "w")
         if 'settings' in self.settings:
             mainStr = self.settings['settings']
@@ -734,6 +746,10 @@ class core:
             pertStr = self.pert.toString()
         else:
             pertStr = ""
+        if extra == None:
+            pass
+        else:
+            mainStr = mainStr + extra
         mainFile.write(mainStr+pertStr)
         mainFile.close()
         return
@@ -774,10 +790,10 @@ class core:
             f.close()                 
         return
 
-    def toSerpent(self, exportUniverseAsNumber = False):
-        self.__buildSerpentMaterialFile()
-        geometryFile = self.__buildSerpentGeometryFile()
-        self.__buildSerpentMainFile()
+    def toSerpent(self, exportUniverseAsNumber = False, geomExtra = None, matExtra = None, mainExtra = None):
+        self.__buildSerpentMaterialFile(extra = matExtra)
+        geometryFile = self.__buildSerpentGeometryFile(extra = geomExtra)
+        self.__buildSerpentMainFile(extra = mainExtra)
 
         if exportUniverseAsNumber:
             self.__parseUniverseToNumber(geometryFile)

@@ -207,10 +207,10 @@ class cell:
                 surfString = surfString + sign(self.dirs[i], i) + self.surfs[i].id + " "
             if self.dirs[-1] == 3:
                 surfString = surfString + ")"
-        elif not self.hasMultUnion:
+        elif self.hasMultUnion:
             lenSurf = len(self.surfs)
             commonSurf = self.surfs[-1].id
-            commonSurfDir = sign(self.dirs[-1])
+            commonSurfDir = sign(self.dirs[-1], 0)
             for i in range(0, lenSurf-1):
                 surfString = surfString+"("+sign(self.dirs[i], i) + self.surfs[i].id +" "+ commonSurfDir+commonSurf+ ")"
                 if i < (lenSurf -2):

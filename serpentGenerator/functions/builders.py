@@ -390,7 +390,6 @@ def buildPeripheralRingNoNest(innerUniv, radius, material = None, ringId = None,
 
             totUniv.setGeom([totCell1, totCell2])
         else:
-            print()
             prUniv = universe(ringId+"_univ")
             prCell = cell(ringId+"_cell", isVoid=False)
             prDirs = [0, 1]
@@ -525,7 +524,7 @@ def buildPeripheralSurf(innerUniv, surface, material = None, regionId = None, is
 
             totUniv.setGeom([totCell1, totCell2])
         else:
-            print()
+
             prUniv = universe(ringId+"_univ")
             prCell = cell(ringId+"_cell", isVoid=False)
             prDirs = [0, 1]
@@ -646,7 +645,7 @@ def buildPeripheralSurfNoNest(innerUniv, surface, material = None, regionId = No
             # prUniv.setBoundary(prSurf1)
             # prUniv.collectAll()
             univCells = list(innerUniv.cells.values())
-            print("BRRRRRRRRRRRRRRRRRRRRR", univCells)
+            #print("BRRRRRRRRRRRRRRRRRRRRR", univCells)
 
             univCells.append(prCell)
             innerUniv.setGeom(univCells)
@@ -678,11 +677,19 @@ def buildPeripheralSurfNoNest(innerUniv, surface, material = None, regionId = No
         else:
             prUniv = universe(ringId+"_univ")
             prCell = cell(ringId+"_cell", isVoid=False)
-            prDirs = [0, 1]
-            prSurfs = [innerSurf, prSurf1]
+            if type(innerSurf) == unionSurf:
+                if len(innerSurf.surfs) > 1:
+                    oSurfs = innerSurf.surfs
+                    surfs =  oSurfs + [prSurf1]  
+                    signs = [0]*len(oSurfs) + [1]
+                    prCell.setSurfs(surfs, signs, hasMultUnion=True)
+                else:
+                    prCell.setSurfs([innerUniv.boundary, outerUniv.boundary], [0, 1], hasUnion=True)
+            else:
+                prDirs = [0, 1]
+                prSurfs = [innerSurf, prSurf1]
+                prCell.setSurfs(prSurfs, prDirs)
             prCell.setFill(fill)
-            prCell.setSurfs(prSurfs, prDirs)
-            
             prUniv.setGeom([prCell])
             prUniv.setBoundary(prSurf1)
             prUniv.collectAll()
@@ -692,11 +699,30 @@ def buildPeripheralSurfNoNest(innerUniv, surface, material = None, regionId = No
             totUniv = universe(innerUniv.id + ringId+"_univ")
             totCell1 = cell(innerUniv.id +ringId+"_cell1", isVoid=False)
             totCell1.setFill(innerUniv)
-            totCell1.setSurfs([innerSurf], [1])
+            if type(innerSurf) == unionSurf:
+                if len(innerSurf.surfs) > 1:
+                    oSurfs = innerSurf.surfs
+                    signs = [1]*len(oSurfs)
+                    totCell1.setSurfs(oSurfs, signs, hasMultUnion=False)
+                else:
+                    totCell1.setSurfs([innerUniv.boundary, outerUniv.boundary], [0, 1], hasUnion=True)
+            else:
+                totCell1.setSurfs([innerSurf], [1])
+            
 
             totCell2 = cell(innerUniv.id +ringId+"_cell2", isVoid=False)
             totCell2.setFill(prUniv)
-            totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
+
+            if type(innerSurf) == unionSurf:
+                if len(innerSurf.surfs) > 1:
+                    oSurfs = innerSurf.surfs
+                    surfs =  oSurfs + [prSurf1]  
+                    signs = [0]*len(oSurfs) + [1]
+                    totCell2.setSurfs(surfs, signs, hasMultUnion=True)
+                else:
+                    totCell2.setSurfs([innerUniv.boundary, outerUniv.boundary], [0, 1], hasUnion=True)
+            else:
+                totCell2.setSurfs([innerSurf, prSurf1], [0, 1])
 
             totUniv.setGeom([totCell1, totCell2])
 
@@ -937,8 +963,29 @@ def buildPeripheralObjectNoNest(innerUniv, outerUniv):
 
     totCell2 = cell(outerUniv.id+"_percell", isVoid=False)
     totCell2.setFill(outerUniv)
-    totCell2.setSurfs([innerUniv.boundary, outerUniv.boundary], [0, 1])
 
+    if (type(innerUniv.boundary) != unionSurf) & (type(outerUniv.boundary) != unionSurf):
+        totCell2.setSurfs([innerUniv.boundary, outerUniv.boundary], [0, 1])
+    elif (type(outerUniv.boundary) == unionSurf) & (type(innerUniv.boundary) != unionSurf):
+        if len(outerUniv.boundary.surfs) > 1:
+            print("HUHHHHHH", innerUniv.id, outerUniv.id)
+            oSurfs = outerUniv.boundary.surfs
+            surfs = [innerUniv.boundary] + oSurfs 
+            signs = [0] + [1]*len(oSurfs)
+            totCell2.setSurfs(surfs, signs, hasMultUnion=False)
+            print(totCell2.id)
+        else:
+            totCell2.setSurfs([innerUniv.boundary, outerUniv.boundary], [0, 1], hasUnion=True)
+    elif (type(outerUniv.boundary) != unionSurf) & (type(innerUniv.boundary) == unionSurf):
+        if len(innerUniv.boundary.surfs) > 1:
+            oSurfs = innerUniv.boundary.surfs
+            surfs = oSurfs + [outerUniv.boundary]
+            signs = [0]*len(oSurfs) + [1]
+            totCell2.setSurfs(surfs, signs, hasMultUnion=True)
+        else:
+            totCell2.setSurfs([innerUniv.boundary, outerUniv.boundary], [0, 1], hasUnion=True)
+    else:
+        totCell2.setSurfs([innerUniv.boundary, outerUniv.boundary], [0, 1])
 
     univCells = list(innerUniv.cells.values())
     univCells.append(totCell2)
